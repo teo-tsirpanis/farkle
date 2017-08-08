@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Lens - Farkle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="author" content="Theodore Tsirpanis"/>
+
+    <script src="https://code.jquery.com/jquery-1.8.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet"/>
+
+    <link type="text/css" rel="stylesheet" href="/Farkle/content/style.css" />
+    <script type="text/javascript" src="/Farkle/content/tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="http://fsharp.org">fsharp.org</a></li>
+          <li><a href="https://github.com/teo-tsirpanis/Farkle/">github page</a></li>
+        </ul>
+        <h3 class="muted"><a href="/Farkle/index.html">Farkle</a></h3>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="span9" id="main">
+          
+
+
+
+<h1>Lens</h1>
+<p>
+  <span>Namespace: global</span><br />
+  <span>Parent Module: <a href="global-aether.html">Aether</a></span>
+</p>
+<div class="xmldoc">
+<p>Functions for creating or using lenses.</p>
+
+</div>
+
+<!-- Render nested types and modules, if there are any -->
+
+  <h3>Functions and values</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Function or value</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '100', 100)" onmouseover="showTip(event, '100', 100)">
+            get(l)
+          </code>
+          <div class="tip" id="100">
+            <strong>Signature:</strong> l:^?8342 -&gt; &#39;?8343 -&gt; &#39;?8344<br />
+                          <strong>Type parameters:</strong> ^?8342, '?8343, '?8344          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/paket-files/xyncro/aether/src/Aether/Aether.fs#L276-276" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Get a value using a lens.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '101', 101)" onmouseover="showTip(event, '101', 101)">
+            getPartial(arg1, arg2)
+          </code>
+          <div class="tip" id="101">
+            <strong>Signature:</strong> ((&#39;a -&gt; &#39;b option) * (&#39;b -&gt; &#39;a -&gt; &#39;a)) -&gt; &#39;a -&gt; &#39;b option<br />
+                          <strong>Type parameters:</strong> 'a, 'b          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/paket-files/xyncro/aether/src/Aether/Aether.fs#L281-281" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Get a value option using a partial lens</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '102', 102)" onmouseover="showTip(event, '102', 102)">
+            getPartialOrElse(arg1, arg2) b
+          </code>
+          <div class="tip" id="102">
+            <strong>Signature:</strong> ((&#39;a -&gt; &#39;b option) * (&#39;b -&gt; &#39;a -&gt; &#39;a)) -&gt; b:&#39;b -&gt; &#39;a -&gt; &#39;b<br />
+                          <strong>Type parameters:</strong> 'a, 'b          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/paket-files/xyncro/aether/src/Aether/Aether.fs#L286-286" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Get a value or a default using a partial lens</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '103', 103)" onmouseover="showTip(event, '103', 103)">
+            map(l)
+          </code>
+          <div class="tip" id="103">
+            <strong>Signature:</strong> l:^?8359 -&gt; &#39;?8360 -&gt; &#39;?8361<br />
+                          <strong>Type parameters:</strong> ^?8359, '?8360, '?8361          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/paket-files/xyncro/aether/src/Aether/Aether.fs#L301-301" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Map a value using a lens.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '104', 104)" onmouseover="showTip(event, '104', 104)">
+            mapPartial(arg1, arg2)
+          </code>
+          <div class="tip" id="104">
+            <strong>Signature:</strong> ((&#39;a -&gt; &#39;b option) * (&#39;b -&gt; &#39;a -&gt; &#39;a)) -&gt; (&#39;b -&gt; &#39;b) -&gt; &#39;a -&gt; &#39;a<br />
+                          <strong>Type parameters:</strong> 'a, 'b          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/paket-files/xyncro/aether/src/Aether/Aether.fs#L306-306" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Modify a value using a partial lens</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '105', 105)" onmouseover="showTip(event, '105', 105)">
+            ofIsomorphism(arg1, arg2)
+          </code>
+          <div class="tip" id="105">
+            <strong>Signature:</strong> ((&#39;a -&gt; &#39;b) * (&#39;b -&gt; &#39;a)) -&gt; Lens&lt;&#39;a,&#39;b&gt;<br />
+                          <strong>Type parameters:</strong> 'a, 'b          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/paket-files/xyncro/aether/src/Aether/Aether.fs#L264-264" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Converts an isomorphism into a lens.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '106', 106)" onmouseover="showTip(event, '106', 106)">
+            set(l)
+          </code>
+          <div class="tip" id="106">
+            <strong>Signature:</strong> l:^?8352 -&gt; &#39;?8353 -&gt; &#39;?8354<br />
+                          <strong>Type parameters:</strong> ^?8352, '?8353, '?8354          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/paket-files/xyncro/aether/src/Aether/Aether.fs#L291-291" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Set a value using a lens.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '107', 107)" onmouseover="showTip(event, '107', 107)">
+            setPartial(arg1, arg2)
+          </code>
+          <div class="tip" id="107">
+            <strong>Signature:</strong> ((&#39;a -&gt; &#39;b option) * (&#39;b -&gt; &#39;a -&gt; &#39;a)) -&gt; &#39;b -&gt; &#39;a -&gt; &#39;a<br />
+                          <strong>Type parameters:</strong> 'a, 'b          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/paket-files/xyncro/aether/src/Aether/Aether.fs#L296-296" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Set a value using a partial lens</p>
+
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+        </div>
+        <div class="span3">
+          <img src="/Farkle/img/logo.png" alt="F# Project" style="width:150px;margin:10px" />  
+          <ul class="nav nav-list" id="menu" style="margin-top: 20px;">
+            <li class="nav-header">Farkle</li>
+            <li><a href="/Farkle/index.html">Home page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://nuget.org/packages/Farkle">Get Library via NuGet</a></li>
+            <li><a href="https://github.com/teo-tsirpanis/Farkle/">Source Code on GitHub</a></li>
+            <li><a href="/Farkle/license.html">License</a></li>
+            <li><a href="/Farkle/release-notes.html">Release Notes</a></li>
+            
+            <li class="nav-header">Getting started</li>
+            <li><a href="/Farkle/tutorial.html">Sample tutorial</a></li>
+
+            <li class="nav-header">Documentation</li>
+            <li><a href="/Farkle/reference/index.html">API Reference</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <a href="https://github.com/teo-tsirpanis/Farkle/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"/></a>
+  </body>
+  </html>

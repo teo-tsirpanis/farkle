@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Namespaces - Farkle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="author" content="Theodore Tsirpanis"/>
+
+    <script src="https://code.jquery.com/jquery-1.8.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet"/>
+
+    <link type="text/css" rel="stylesheet" href="/Farkle/content/style.css" />
+    <script type="text/javascript" src="/Farkle/content/tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="http://fsharp.org">fsharp.org</a></li>
+          <li><a href="https://github.com/teo-tsirpanis/Farkle/">github page</a></li>
+        </ul>
+        <h3 class="muted"><a href="/Farkle/index.html">Farkle</a></h3>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="span9" id="main">
+          
+
+<h1>Farkle</h1>
+
+
+  <h2>Farkle Namespace</h2>
+    <div>
+      <table class="table table-bordered type-list">
+    <thead>
+      <tr><td>Type</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-listerror.html">ListError</a>
+          </td>
+          <td class="xmldoc"><p>What can go wrong with a list operation</p>
+
+</td>
+        </tr>
+    </tbody>
+  </table>
+  <table class="table table-bordered module-list">
+    <thead>
+      <tr><td>Module</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-common.html">Common</a>
+          </td>
+          <td class="xmldoc"><p>Some useful functions and types that could be used from many points from the library.</p>
+
+</td>
+        </tr>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-list.html">List</a>
+          </td>
+          <td class="xmldoc"><p>Functions on lists that mostly deal with the <a href="farkle-monads-stateresult.html" title="StateResult"><code>StateResult</code></a> and <a href="farkle-monads-state.html" title="State"><code>State</code></a> monads.
+The type of the actual list is subject to change as long as the public API remains stable.</p>
+
+</td>
+        </tr>
+    </tbody>
+  </table>
+
+    </div>
+  <h2>Farkle.Grammar Namespace</h2>
+    <div>
+      <table class="table table-bordered type-list">
+    <thead>
+      <tr><td>Type</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-grammar-advancemode.html">AdvanceMode</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-grammar-charset.html">CharSet</a>
+          </td>
+          <td class="xmldoc"><p>A set of characters. See <a href="farkle-common-rangeset.html" title="RangeSet"><code>RangeSet</code></a> too.</p>
+
+</td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-grammar-dfastate.html">DFAState</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-grammar-egtreaderror.html">EGTReadError</a>
+          </td>
+          <td class="xmldoc"><p>What can go wrong with reading an EGT file.</p>
+
+</td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-grammar-endingmode.html">EndingMode</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-grammar-grammar.html">Grammar</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-grammar-group.html">Group</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-grammar-initialstates.html">InitialStates</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-grammar-lalraction.html">LALRAction</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-grammar-lalrstate.html">LALRState</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-grammar-production.html">Production</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-grammar-properties.html">Properties</a>
+          </td>
+          <td class="xmldoc"><p>Arbitrary metadata a grammar has.
+A simple key-value collection.</p>
+
+</td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-grammar-symbol.html">Symbol</a>
+          </td>
+          <td class="xmldoc"><p>A symbol of a grammar.</p>
+
+</td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-grammar-symboltype.html">SymbolType</a>
+          </td>
+          <td class="xmldoc"><p>The type of a symbol</p>
+
+</td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-grammar-tablecounts.html">TableCounts</a>
+          </td>
+          <td class="xmldoc"><p>A record that stores how many of each tables exist in an EGT file.
+It's needed only for verifying that the grammar was successfuly read.</p>
+
+</td>
+        </tr>
+    </tbody>
+  </table>
+  <table class="table table-bordered module-list">
+    <thead>
+      <tr><td>Module</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-grammar-advancemodemodule.html">AdvanceMode</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-grammar-dfastatemodule.html">DFAState</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-grammar-egt.html">EGT</a>
+          </td>
+          <td class="xmldoc"><p>Functions to convert EGT files to make a grammar.
+This is the easiest and <em>only</em> public API about EGT files; there's no reason to expose more.</p>
+
+</td>
+        </tr>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-grammar-endingmodemodule.html">EndingMode</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-grammar-grammarmodule.html">Grammar</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-grammar-groupmodule.html">Group</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-grammar-initialstatesmodule.html">InitialStates</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-grammar-lalractionmodule.html">LALRAction</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-grammar-productionmodule.html">Production</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-grammar-symbolmodule.html">Symbol</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-grammar-symboltypemodule.html">SymbolType</a>
+          </td>
+          <td class="xmldoc"><p>Functions to work with the <a href="farkle-grammar-symboltype.html" title="SymbolType"><code>SymbolType</code></a> type.</p>
+
+</td>
+        </tr>
+    </tbody>
+  </table>
+
+    </div>
+  <h2>Farkle.Monads Namespace</h2>
+    <div>
+      <table class="table table-bordered type-list">
+    <thead>
+      <tr><td>Type</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-monads-state-2.html">State<'s, 't></a>
+          </td>
+          <td class="xmldoc"><p>The well-known State monad.</p>
+
+</td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-monads-stateresult-3.html">StateResult<'TSuccess, 'TState, 'TError></a>
+          </td>
+          <td class="xmldoc"><p>A combination of the <a href="aether-optics-result.html" title="Result"><code>Result</code></a> and <a href="farkle-monads-state.html" title="State"><code>State</code></a> monads.
+F# has no monad transformers, so it was manually done.</p>
+
+</td>
+        </tr>
+    </tbody>
+  </table>
+
+    </div>
+  <h2>Farkle.Parser Namespace</h2>
+    <div>
+      <table class="table table-bordered type-list">
+    <thead>
+      <tr><td>Type</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-parser-parseerror.html">ParseError</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-parser-parsemessage.html">ParseMessage</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-parser-parserstate.html">ParserState</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-parser-reduction.html">Reduction</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-parser-token.html">Token</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+    </tbody>
+  </table>
+  <table class="table table-bordered module-list">
+    <thead>
+      <tr><td>Module</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-parser-parsemessagemodule.html">ParseMessage</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-parser-parserstatemodule.html">ParserState</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-parser-reductionmodule.html">Reduction</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-parser-tokenmodule.html">Token</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+    </tbody>
+  </table>
+
+    </div>
+  <h2>global Namespace</h2>
+    <div>
+      <table class="table table-bordered module-list">
+    <thead>
+      <tr><td>Module</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="module-name">
+            <a href="global-aether.html">Aether</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+    </tbody>
+  </table>
+
+    </div>
+
+        </div>
+        <div class="span3">
+          <img src="/Farkle/img/logo.png" alt="F# Project" style="width:150px;margin:10px" />  
+          <ul class="nav nav-list" id="menu" style="margin-top: 20px;">
+            <li class="nav-header">Farkle</li>
+            <li><a href="/Farkle/index.html">Home page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://nuget.org/packages/Farkle">Get Library via NuGet</a></li>
+            <li><a href="https://github.com/teo-tsirpanis/Farkle/">Source Code on GitHub</a></li>
+            <li><a href="/Farkle/license.html">License</a></li>
+            <li><a href="/Farkle/release-notes.html">Release Notes</a></li>
+            
+            <li class="nav-header">Getting started</li>
+            <li><a href="/Farkle/tutorial.html">Sample tutorial</a></li>
+
+            <li class="nav-header">Documentation</li>
+            <li><a href="/Farkle/reference/index.html">API Reference</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <a href="https://github.com/teo-tsirpanis/Farkle/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"/></a>
+  </body>
+  </html>
