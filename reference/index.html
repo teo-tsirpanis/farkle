@@ -309,6 +309,20 @@ F# has no monad transformers, so it was manually done.</p>
     <tbody>
         <tr>
           <td class="type-name">
+            <a href="farkle-parser-goldparser.html">GOLDParser</a>
+          </td>
+          <td class="xmldoc"><p>Functions that parse strings according to a specific grammar.
+This is the definitive reference for all users of the library.
+<em> If the function succeeds, its return value is the top reduction of the grammar.
+</em> If it fails, the first message explains the reason it failed.
+The rest of the messages are a kind of a log of the parser.
+The term "trivial reductions" means a reduction that has only one nonterminal.
+They can optionally be trimmed, so that the resulting parse tree is simplified.</p>
+
+</td>
+        </tr>
+        <tr>
+          <td class="type-name">
             <a href="farkle-parser-parseerror.html">ParseError</a>
           </td>
           <td class="xmldoc"></td>
