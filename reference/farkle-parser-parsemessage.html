@@ -7,13 +7,13 @@
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
 
-    <script src="https://code.jquery.com/jquery-1.8.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" async></script>
     <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
-    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet"/>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet" async/>
 
     <link type="text/css" rel="stylesheet" href="/Farkle/content/style.css" />
-    <script type="text/javascript" src="/Farkle/content/tips.js"></script>
+    <script type="text/javascript" src="/Farkle/content/tips.js" async></script>
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -40,6 +40,9 @@
   <span>Namespace: Farkle.Parser</span><br />
 </p>
 <div class="xmldoc">
+<p>A message describing what a <a href="farkle-parser-parser.html" title="Parser"><code>Parser</code></a> did, or what error it encountered.
+Some of these will only appear while using the <a href="farkle-parser-goldparser.html" title="GOLDParser"><code>GOLDParser</code></a> API.</p>
+
 </div>
   <h3>Union Cases</h3>
   <table class="table table-bordered member-list">
@@ -50,181 +53,230 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '239', 239)" onmouseover="showTip(event, '239', 239)">
+          <code onmouseout="hideTip(event, '261', 261)" onmouseover="showTip(event, '261', 261)">
             Accept(Reduction)
           </code>
-          <div class="tip" id="239">
+          <div class="tip" id="261">
             <strong>Signature:</strong> Reduction<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle.Engine/Parser/ParserTypes.fs#L75-75" class="github-link">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L108-108" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>The parser finished parsing and returned a reduction.</p>
+
+
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '240', 240)" onmouseover="showTip(event, '240', 240)">
+          <code onmouseout="hideTip(event, '262', 262)" onmouseover="showTip(event, '262', 262)">
             EGTReadError(EGTReadError)
           </code>
-          <div class="tip" id="240">
+          <div class="tip" id="262">
             <strong>Signature:</strong> EGTReadError<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle.Engine/Parser/ParserTypes.fs#L71-71" class="github-link">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L110-110" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>Something is wrong with the reading of the EGT file.</p>
+
+
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '241', 241)" onmouseover="showTip(event, '241', 241)">
-            FatalError(ParseMessage)
-          </code>
-          <div class="tip" id="241">
-            <strong>Signature:</strong> ParseMessage<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle.Engine/Parser/ParserTypes.fs#L80-80" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '242', 242)" onmouseover="showTip(event, '242', 242)">
+          <code onmouseout="hideTip(event, '263', 263)" onmouseover="showTip(event, '263', 263)">
             GroupError
           </code>
-          <div class="tip" id="242">
+          <div class="tip" id="263">
             <strong>Signature:</strong> <br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle.Engine/Parser/ParserTypes.fs#L78-78" class="github-link">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L118-118" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>Unexpected end of input.</p>
+
+
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '243', 243)" onmouseover="showTip(event, '243', 243)">
-            InternalErrors(ParseError list)
+          <code onmouseout="hideTip(event, '264', 264)" onmouseover="showTip(event, '264', 264)">
+            InputFileNotExist(string)
           </code>
-          <div class="tip" id="243">
-            <strong>Signature:</strong> ParseError list<br />
+          <div class="tip" id="264">
+            <strong>Signature:</strong> string<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle.Engine/Parser/ParserTypes.fs#L79-79" class="github-link">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L112-112" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>The file containing the input does not exist.</p>
+
+
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '244', 244)" onmouseover="showTip(event, '244', 244)">
-            LexicalError(Token)
+          <code onmouseout="hideTip(event, '265', 265)" onmouseover="showTip(event, '265', 265)">
+            InternalError(ParseInternalError)
           </code>
-          <div class="tip" id="244">
-            <strong>Signature:</strong> Token<br />
+          <div class="tip" id="265">
+            <strong>Signature:</strong> ParseInternalError<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle.Engine/Parser/ParserTypes.fs#L76-76" class="github-link">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L120-120" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>Internal error. This is a bug.</p>
+
+
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '245', 245)" onmouseover="showTip(event, '245', 245)">
+          <code onmouseout="hideTip(event, '266', 266)" onmouseover="showTip(event, '266', 266)">
+            LexicalError(char)
+          </code>
+          <div class="tip" id="266">
+            <strong>Signature:</strong> char<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L114-114" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>A character was not recognized.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '267', 267)" onmouseover="showTip(event, '267', 267)">
             Reduction(Reduction)
           </code>
-          <div class="tip" id="245">
+          <div class="tip" id="267">
             <strong>Signature:</strong> Reduction<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle.Engine/Parser/ParserTypes.fs#L73-73" class="github-link">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L104-104" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>A rule was reduced.</p>
+
+
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '246', 246)" onmouseover="showTip(event, '246', 246)">
+          <code onmouseout="hideTip(event, '268', 268)" onmouseover="showTip(event, '268', 268)">
             Shift(Indexed&lt;LALRState&gt;)
           </code>
-          <div class="tip" id="246">
+          <div class="tip" id="268">
             <strong>Signature:</strong> Indexed&lt;LALRState&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle.Engine/Parser/ParserTypes.fs#L74-74" class="github-link">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L106-106" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>The parser shifted to a different LALR state.</p>
+
+
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '247', 247)" onmouseover="showTip(event, '247', 247)">
+          <code onmouseout="hideTip(event, '269', 269)" onmouseover="showTip(event, '269', 269)">
             SyntaxError(expected,actual)
           </code>
-          <div class="tip" id="247">
+          <div class="tip" id="269">
             <strong>Signature:</strong> Symbol list * Symbol<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle.Engine/Parser/ParserTypes.fs#L77-77" class="github-link">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L116-116" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>A symbol was read, while some others were expected.</p>
+
+
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '248', 248)" onmouseover="showTip(event, '248', 248)">
+          <code onmouseout="hideTip(event, '270', 270)" onmouseover="showTip(event, '270', 270)">
             TokenRead(Token)
           </code>
-          <div class="tip" id="248">
+          <div class="tip" id="270">
             <strong>Signature:</strong> Token<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle.Engine/Parser/ParserTypes.fs#L72-72" class="github-link">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L102-102" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>A token was read.</p>
+
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Instance members</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Instance member</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '271', 271)" onmouseover="showTip(event, '271', 271)">
+            IsError
+          </code>
+          <div class="tip" id="271">
+            <strong>Signature:</strong> bool<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L122-122" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Whether the message signifies an error or not.</p>
+
+
+              <p>CompiledName: <code>get_IsError</code></p>
         </td>
       </tr>
     </tbody>
@@ -243,7 +295,7 @@
             <li><a href="/Farkle/release-notes.html">Release Notes</a></li>
             
             <li class="nav-header">Getting started</li>
-            <li><a href="/Farkle/tutorial.html">Sample tutorial</a></li>
+            <li><a href="/Farkle/quickstart.html">Quick Start</a></li>
 
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>

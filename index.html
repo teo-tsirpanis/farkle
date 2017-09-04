@@ -8,13 +8,13 @@
     <meta name="description" content="A LALR parsing toolkit for F#."/>
     <meta name="author" content="Theodore Tsirpanis"/>
 
-    <script src="https://code.jquery.com/jquery-1.8.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" async></script>
     <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
-    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet"/>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet" async/>
 
     <link type="text/css" rel="stylesheet" href="/Farkle/content/style.css" />
-    <script type="text/javascript" src="/Farkle/content/tips.js"></script>
+    <script type="text/javascript" src="/Farkle/content/tips.js" async></script>
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -36,11 +36,11 @@
 <h1><a name="What-is-Farkle" class="anchor" href="#What-is-Farkle">What is Farkle?</a></h1>
 <p>Farkle is a parser generator for F# and other .NET languages. It is made (or <em>will</em> be made) of the following components:</p>
 <ul>
-<li><strong>Farkle.Engine</strong> (first version complete): An engine for the <a href="http://www.goldparser.org/">GOLD Parsing system</a>.</li>
-<li><strong>TBA</strong> (under development, <em>only</em> for F#): A code generator that creates type-safe Abstract Syntax Trees.</li>
-<li><strong>TBA</strong> (I'm not sure about it): A replacement of GOLD Parser Builder.</li>
-<li><strong>TBA</strong>: MsBuild Integration.</li>
-<li><strong>TBA</strong>: A Farkle type provider.</li>
+<li>An engine for the <a href="http://www.goldparser.org/">GOLD Parsing system</a>.</li>
+<li>A code generator that creates type-safe Abstract Syntax Trees (under development, <em>only</em> for F#).</li>
+<li>MsBuild Integration (future plan).</li>
+<li>A replacement of GOLD Parser Builder (I am not sure about it).</li>
+<li>A Farkle type provider (I am not sure about it too).</li>
 </ul>
 <div class="row">
   <div class="span1"></div>
@@ -52,65 +52,16 @@
   </div>
   <div class="span1"></div>
 </div>
-<h2><a name="Example" class="anchor" href="#Example">Example</a></h2>
-<p>This example demonstrates using a function defined in this sample library.</p>
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
-<span class="l"> 2: </span>
-<span class="l"> 3: </span>
-<span class="l"> 4: </span>
-<span class="l"> 5: </span>
-<span class="l"> 6: </span>
-<span class="l"> 7: </span>
-<span class="l"> 8: </span>
-<span class="l"> 9: </span>
-<span class="l">10: </span>
-<span class="l">11: </span>
-<span class="l">12: </span>
-<span class="l">13: </span>
-<span class="l">14: </span>
-<span class="l">15: </span>
-<span class="l">16: </span>
-<span class="l">17: </span>
-<span class="l">18: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="prep">#r</span> <span class="s">&quot;Farkle.Engine.dll&quot;</span>
-<span class="prep">#r</span> <span class="s">&quot;Chessie.dll&quot;</span>
-<span class="k">open</span> <span class="i">Farkle</span><span class="o">.</span><span class="i">Parser</span>
-<span class="k">open</span> <span class="i">Chessie</span><span class="o">.</span><span class="i">ErrorHandling</span>
-
-<span class="k">let</span> (<span class="i">result</span>, <span class="i">log</span>) <span class="o">=</span>
-  <span class="i">GOLDParser</span><span class="o">.</span><span class="i">Parse</span>(<span class="s">&quot;sample.egt&quot;</span>, <span class="s">&quot;(111 * 555) + 617&quot;</span>, <span class="k">false</span>)
-  <span class="o">|&gt;</span> <span class="i">GOLDParser</span><span class="o">.</span><span class="i">FormatErrors</span>
-
-<span class="i">printfn</span> <span class="s">&quot;##########LOG##########&quot;</span>
-<span class="i">log</span> <span class="o">|&gt;</span> <span class="i">Array</span><span class="o">.</span><span class="i">iter</span> (<span class="i">printfn</span> <span class="s">&quot;%s&quot;</span>)
-<span class="k">match</span> <span class="i">result</span> <span class="k">with</span>
-| <span class="i">Choice1Of2</span> <span class="i">x</span> <span class="k">-&gt;</span>
-  <span class="i">printfn</span> <span class="s">&quot;##########SUCCESS##########&quot;</span>
-  <span class="i">x</span> <span class="o">|&gt;</span> <span class="i">Reduction</span><span class="o">.</span><span class="i">drawReductionTree</span> <span class="o">|&gt;</span> <span class="i">printfn</span> <span class="s">&quot;%s&quot;</span>
-| <span class="i">Choice2Of2</span> <span class="i">x</span> <span class="k">-&gt;</span>
-  <span class="i">printfn</span> <span class="s">&quot;##########ERROR##########&quot;</span>
-  <span class="i">printfn</span> <span class="s">&quot;%s&quot;</span> <span class="i">x</span>
-</code></pre></td>
-</tr>
-</table>
-<h2><a name="Samples-amp-documentation" class="anchor" href="#Samples-amp-documentation">Samples &amp; documentation</a></h2>
-<p>The library comes with comprehensible documentation.
-It can include tutorials automatically generated from <code>*.fsx</code> files in <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/docs/content">the content folder</a>.
-The API reference is automatically generated from Markdown comments in the library implementation.</p>
+<h2><a name="Documentation" class="anchor" href="#Documentation">Documentation</a></h2>
+<p>The library comes with comprehensible documentation.</p>
 <ul>
-<li><p><a href="tutorial.html">Tutorial</a> contains a further explanation of this sample library (to be written).</p></li>
-<li>
-<p><a href="reference/index.html">API Reference</a> contains automatically generated documentation for all types, modules
-and functions in the library. This includes additional brief samples on using most of the
-functions.</p>
-</li>
+<li><p><a href="quickstart.html">Quick Start</a> to get started.</p></li>
+<li><p><a href="reference/index.html">API Reference</a> contains automatically generated documentation for all types, modules and functions in the library. This includes additional brief samples on using most of the functions.</p></li>
 </ul>
 <h2><a name="Contributing-and-copyright" class="anchor" href="#Contributing-and-copyright">Contributing and copyright</a></h2>
 <p>The project is hosted on <a href="https://github.com/teo-tsirpanis/Farkle">GitHub</a> where you can <a href="https://github.com/teo-tsirpanis/Farkle/issues">report issues</a>, fork
 the project and submit pull requests. If you're adding a new public API, please also
-consider adding <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/docs/content">samples</a> that can be turned into a documentation. You might
-also want to read the <a href="https://github.com/teo-tsirpanis/Farkle/blob/master/README.md">library design notes</a> to understand how it works.</p>
+consider adding <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/docs/content">samples</a> that can be turned into a documentation.</p>
 <p>The library is available under the MIT license, which allows modification and
 redistribution for both commercial and non-commercial purposes. For more information see the
 <a href="https://github.com/teo-tsirpanis/Farkle/blob/master/LICENSE.txt">License file</a> in the GitHub repository.</p>
@@ -129,7 +80,7 @@ redistribution for both commercial and non-commercial purposes. For more informa
             <li><a href="/Farkle/release-notes.html">Release Notes</a></li>
             
             <li class="nav-header">Getting started</li>
-            <li><a href="/Farkle/tutorial.html">Sample tutorial</a></li>
+            <li><a href="/Farkle/quickstart.html">Quick Start</a></li>
 
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>

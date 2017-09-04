@@ -7,13 +7,13 @@
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
 
-    <script src="https://code.jquery.com/jquery-1.8.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" async></script>
     <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
-    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet"/>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet" async/>
 
     <link type="text/css" rel="stylesheet" href="/Farkle/content/style.css" />
-    <script type="text/javascript" src="/Farkle/content/tips.js"></script>
+    <script type="text/javascript" src="/Farkle/content/tips.js" async></script>
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -40,15 +40,198 @@
   <span>Namespace: Farkle.Parser</span><br />
 </p>
 <div class="xmldoc">
-<p>Functions that parse strings according to a specific grammar.
-This is the definitive reference for all users of the library.
-<em> If the function succeeds, its return value is the top reduction of the grammar.
-</em> If it fails, the first message explains the reason it failed.
+<p>A reusable parser created for a specific grammar that can parse input from multiple sources
+This is the highest-level API. THe parsing function's return values merit some explanation.
+If parsing succeeds, its return value is the top reduction of the grammar.
+If it fails, the first message explains the reason it failed.
 The rest of the messages are a kind of a log of the parser.
 The term "trivial reductions" means a reduction that has only one nonterminal.
 They can optionally be trimmed, so that the resulting parse tree is simplified.</p>
 
 </div>
+  <h3>Constructors</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Constructor</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '248', 248)" onmouseover="showTip(event, '248', 248)">
+            new(egtFile, trimReductions)
+          </code>
+          <div class="tip" id="248">
+            <strong>Signature:</strong> (egtFile:string * trimReductions:bool) -&gt; GOLDParser<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L42-42" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Creates a parser from a <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a> stored in an EGT file in the given path, with an option to trim trivial reductions.
+If there is a problem with the file, the constructor will throw an exception.</p>
+
+
+              <p>CompiledName: <code>.ctor</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '249', 249)" onmouseover="showTip(event, '249', 249)">
+            new(egtFile)
+          </code>
+          <div class="tip" id="249">
+            <strong>Signature:</strong> egtFile:string -&gt; GOLDParser<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L36-36" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Creates a parser from a <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a> stored in an EGT file in the given path.
+Trivial reductions are not trimmed.
+If there is a problem with the file, the constructor will throw an exception.</p>
+
+
+              <p>CompiledName: <code>.ctor</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '250', 250)" onmouseover="showTip(event, '250', 250)">
+            new(grammar)
+          </code>
+          <div class="tip" id="250">
+            <strong>Signature:</strong> grammar:Grammar -&gt; GOLDParser<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L31-31" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Creates a parser from a given <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a>.
+Trivial reductions are not trimmed.</p>
+
+
+              <p>CompiledName: <code>.ctor</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '251', 251)" onmouseover="showTip(event, '251', 251)">
+            new(grammar, trimReductions)
+          </code>
+          <div class="tip" id="251">
+            <strong>Signature:</strong> (grammar:Grammar * trimReductions:bool) -&gt; GOLDParser<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L25-25" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+              <p>CompiledName: <code>.ctor</code></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Instance members</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Instance member</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '252', 252)" onmouseover="showTip(event, '252', 252)">
+            ParseChars(input)
+          </code>
+          <div class="tip" id="252">
+            <strong>Signature:</strong> (input:char list) -&gt; Result&lt;Reduction,(Position * ParseMessage)&gt;<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L51-51" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Evaluates a <a href="farkle-parser-parser.html" title="Parser"><code>Parser</code></a> that parses the given list of characters, unitl it either succeeds or fails.
+What it returns is described in the <a href="farkle-parser-goldparser.html" title="GOLDParser"><code>GOLDParser</code></a> class documentation.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '253', 253)" onmouseover="showTip(event, '253', 253)">
+            ParseFile(path)
+          </code>
+          <div class="tip" id="253">
+            <strong>Signature:</strong> path:string -&gt; Result&lt;Reduction,(Position * ParseMessage)&gt;<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L78-78" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Parses the contents of a file in the given path.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '254', 254)" onmouseover="showTip(event, '254', 254)">
+            ParseStream(inputStream)
+          </code>
+          <div class="tip" id="254">
+            <strong>Signature:</strong> inputStream:Stream -&gt; Result&lt;Reduction,(Position * ParseMessage)&gt;<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L71-71" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Parses a <code>Stream</code>. Its character encoding is automatically detected.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '255', 255)" onmouseover="showTip(event, '255', 255)">
+            ParseString(input)
+          </code>
+          <div class="tip" id="255">
+            <strong>Signature:</strong> input:string -&gt; Result&lt;Reduction,(Position * ParseMessage)&gt;<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L68-68" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Parses a string.</p>
+
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
   <h3>Static members</h3>
   <table class="table table-bordered member-list">
     <thead>
@@ -58,130 +241,42 @@ They can optionally be trimmed, so that the resulting parse tree is simplified.<
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '231', 231)" onmouseover="showTip(event, '231', 231)">
+          <code onmouseout="hideTip(event, '256', 256)" onmouseover="showTip(event, '256', 256)">
+            CreateParser(...)
+          </code>
+          <div class="tip" id="256">
+            <strong>Signature:</strong> trimReductions:bool -&gt; grammar:Grammar -&gt; (input:char list) -&gt; Parser<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L47-47" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Creates a parser that parses <code>input</code> based on the given <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a>, with the option to trim trivial reductions.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '257', 257)" onmouseover="showTip(event, '257', 257)">
             FormatErrors(result)
           </code>
-          <div class="tip" id="231">
-            <strong>Signature:</strong> (result:Result&lt;Reduction,(ParseMessage * Position)&gt;) -&gt; Choice&lt;Reduction,string&gt; * string []<br />
+          <div class="tip" id="257">
+            <strong>Signature:</strong> (result:Result&lt;Reduction,(Position * ParseMessage)&gt;) -&gt; Choice&lt;Reduction,string&gt; * seq&lt;string&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle.Engine/Parser/Parser.fs#L52-52" class="github-link">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L89-89" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Converts a parsing result to a result with human-readable error messages.</p>
-<h2>Parameters</h2>
-<ul>
-<li>`result: The parsing result input.</li>
-</ul>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '232', 232)" onmouseover="showTip(event, '232', 232)">
-            Parse(...)
-          </code>
-          <div class="tip" id="232">
-            <strong>Signature:</strong> (grammar:Grammar * inputStream:Stream * encoding:Encoding * trimReductions:bool) -&gt; Result&lt;Reduction,(ParseMessage * Position)&gt;<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle.Engine/Parser/Parser.fs#L93-93" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Parses a <code>Stream</code> based on the given <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a> object, with an option to trim trivial reductions.</p>
-<h2>Parameters</h2>
-<ul>
-<li><code>grammar</code>: The <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a> object that contains the parsing logic.</li>
-<li><code>inputStream</code>: The input stream.</li>
-<li><code>encoding</code>: The character encoding of the bytes in the stream.</li>
-<li><code>trimReductions</code>: Whether the trivial reductions are trimmed.</li>
-</ul>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '233', 233)" onmouseover="showTip(event, '233', 233)">
-            Parse(egtFile, input, trimReductions)
-          </code>
-          <div class="tip" id="233">
-            <strong>Signature:</strong> (egtFile:string * input:string * trimReductions:bool) -&gt; Result&lt;Reduction,(ParseMessage * Position)&gt;<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle.Engine/Parser/Parser.fs#L82-82" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Parses a string based on the grammar on the given EGT file, with an option to trim trivial reductions.
-Please note that <em>only</em> EGT files are supported, <em>not</em> CGT files (an error will be raised in that case).</p>
-<h2>Parameters</h2>
-<ul>
-<li><code>egtFile</code>: The path of the EGTfile that contains the parsing logic.</li>
-<li><code>input</code>: The input string.</li>
-<li><code>trimReductions</code>: Whether the trivial reductions are trimmed.</li>
-</ul>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '234', 234)" onmouseover="showTip(event, '234', 234)">
-            Parse(grammar, input, trimReductions)
-          </code>
-          <div class="tip" id="234">
-            <strong>Signature:</strong> (grammar:Grammar * input:string * trimReductions:bool) -&gt; Result&lt;Reduction,(ParseMessage * Position)&gt;<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle.Engine/Parser/Parser.fs#L74-74" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Parses a string based on the given <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a> object, with an option to trim trivial reductions.
-Currently, the only way to create <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a>s is by using the functions in the <a href="farkle-grammar-egt.html" title="EGT"><code>EGT</code></a> module.
-It's better to use this function if the same grammar is used multiple times, to avoid multiple grammars being constructed.</p>
-<h2>Parameters</h2>
-<ul>
-<li><code>grammar</code>: The <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a> object that contains the parsing logic.</li>
-<li><code>input</code>: The input string.</li>
-<li><code>trimReductions</code>: Whether the trivial reductions are trimmed.</li>
-</ul>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '235', 235)" onmouseover="showTip(event, '235', 235)">
-            ParseState(state)
-          </code>
-          <div class="tip" id="235">
-            <strong>Signature:</strong> state:ParserState -&gt; Result&lt;Reduction,(ParseMessage * Position)&gt;<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle.Engine/Parser/Parser.fs#L31-31" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Parses a parser state.
-This is the lowest-level method.</p>
-<h2>Parameters</h2>
-<ul>
-<li><code>state</code>: The parser state.</li>
-</ul>
+          <p>Converts a parsing result to a result with human-readable error messages.
+The result is a tuple.
+The first element is the parsing result as a <a href="aether-optics-choice.html" title="Choice"><code>Choice</code></a> of either the final reduction, or the fatal error message.
+The second element is a sequence with the log messages as strings.</p>
 
 
         </td>
@@ -202,7 +297,7 @@ This is the lowest-level method.</p>
             <li><a href="/Farkle/release-notes.html">Release Notes</a></li>
             
             <li class="nav-header">Getting started</li>
-            <li><a href="/Farkle/tutorial.html">Sample tutorial</a></li>
+            <li><a href="/Farkle/quickstart.html">Quick Start</a></li>
 
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
