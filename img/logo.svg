@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="250mm"
+   height="250mm"
+   viewBox="0 0 250 250"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="C:\code\Farkle\docsrc\files\img\logo.png"
+   inkscape:export-xdpi="52.019199"
+   inkscape:export-ydpi="52.019199">
+  <title
+     id="title5977">The logo of the Farkle Parser</title>
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient4513"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4511" />
+    </linearGradient>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath6023">
+      <use
+         x="0"
+         y="0"
+         xlink:href="#g6019"
+         id="use6025"
+         width="100%"
+         height="100%" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#282828"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.5"
+     inkscape:cx="-160.60463"
+     inkscape:cy="561.30273"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer3"
+     showgrid="false"
+     inkscape:pagecheckerboard="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     borderlayer="false"
+     showborder="true" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>The logo of the Farkle Parser</dc:title>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/" />
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Theodore Tsirpanis</dc:title>
+          </cc:Agent>
+        </dc:creator>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/by-sa/4.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Notice" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#ShareAlike" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="Layer 5">
+    <rect
+       style="fill:#282828;fill-opacity:1;stroke:none;stroke-width:0.81372422;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4518"
+       width="250"
+       height="250"
+       x="0"
+       y="-1.1200109e-005" />
+  </g>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-47)">
+    <g
+       id="g24"
+       transform="matrix(0.86254227,0,0,0.86254227,4.2380396,50.997683)">
+      <path
+         id="path18"
+         style="fill:#fefefe;fill-opacity:0.6"
+         d="M 5,63 61,7 V 35 L 33,63 61,91 v 28 z"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path20"
+         style="fill:#fefefe;fill-opacity:0.6"
+         d="M 41,63 61,43 v 40 z"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path22"
+         style="fill:#ffffff;fill-opacity:0.8"
+         d="M 123,63 65,7 V 35 L 93,63 65,91 v 28 z"
+         inkscape:connector-curvature="0" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Layer 2">
+    <g
+       id="g6021"
+       clip-path="url(#clipPath6023)"
+       transform="matrix(1.0826569,0,0,1.0826569,-13.833038,-19.168069)">
+      <g
+         inkscape:label="Clip"
+         id="g6019">
+        <g
+           aria-label="F"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:189.71003723px;line-height:1.25;font-family:VASCA;-inkscape-font-specification:VASCA;letter-spacing:0px;word-spacing:0px;fill:#336699;fill-opacity:1;stroke:none;stroke-width:1.00000012;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="text4515">
+          <path
+             d="m 108.50557,240.95297 21.62694,-31.49186 9.86492,-81.00619 -23.52404,-34.147806 H 228.2126 l 11.57231,44.961276 q -3.7942,-1.8971 -7.20898,-3.41478 -3.22507,-1.51768 -6.45014,-2.84565 -4.17362,-1.70739 -8.72666,-3.03536 -4.36333,-1.32797 -9.86492,-2.46623 -3.41478,-0.75884 -6.45014,-1.32797 -2.84565,-0.56913 -5.88101,-0.94855 -3.22507,-0.56913 -6.63986,-0.75884 -3.22507,-0.37942 -7.20898,-0.56913 v 32.44042 q 2.08681,-0.18971 3.7942,-0.56913 1.70739,-0.37942 3.41478,-0.75884 1.51768,-0.37942 3.03536,-0.94855 1.51769,-0.56913 3.22508,-1.13826 0.37942,-0.18971 0.75884,-0.18971 0.37942,-0.18971 0.75884,-0.37942 2.46623,-0.94856 4.55304,-1.89711 2.08681,-1.13826 4.17362,-2.27652 1.32797,-0.94855 2.84565,-1.8971 1.51768,-1.13826 3.22507,-2.46623 l 0.75884,44.96128 q -2.27652,-0.75884 -4.17362,-1.32797 -1.70739,-0.56913 -3.60449,-1.13826 -1.8971,-0.56913 -3.98391,-0.94855 -1.8971,-0.56913 -4.36333,-1.13826 -1.8971,-0.37942 -3.7942,-0.75884 -1.7074,-0.37942 -3.41479,-0.75884 -1.70739,-0.37942 -3.41478,-0.56913 -1.70739,-0.37942 -3.7942,-0.56913 v 29.59477 l 22.5755,29.78447 h -95.42415 z"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:189.71003723px;font-family:VASCA;-inkscape-font-specification:VASCA;fill:#336699;fill-opacity:1;stroke:none;stroke-width:1.00000012;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+             id="path4512" />
+        </g>
+        <g
+           style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           id="text4505" />
+      </g>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 3"
+     style="display:inline">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:Rajdhani;-inkscape-font-specification:Rajdhani;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;stroke-opacity:1"
+       x="132.45876"
+       y="181.15138"
+       id="text4518"><tspan
+         sodipodi:role="line"
+         id="tspan4516"
+         x="132.45876"
+         y="181.15138"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Rajdhani;-inkscape-font-specification:Rajdhani;stroke:none;stroke-width:0.26458332;stroke-opacity:1">Farkle</tspan><tspan
+         sodipodi:role="line"
+         x="132.45876"
+         y="194.38055"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Rajdhani;-inkscape-font-specification:Rajdhani;stroke:none;stroke-width:0.26458332;stroke-opacity:1"
+         id="tspan4520">Recognizes</tspan><tspan
+         sodipodi:role="line"
+         x="132.45876"
+         y="207.60971"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Rajdhani;-inkscape-font-specification:Rajdhani;stroke:none;stroke-width:0.26458332;stroke-opacity:1"
+         id="tspan4522">Known</tspan><tspan
+         sodipodi:role="line"
+         x="132.45876"
+         y="220.83888"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Rajdhani;-inkscape-font-specification:Rajdhani;stroke:none;stroke-width:0.26458332;stroke-opacity:1"
+         id="tspan4524">Languages</tspan><tspan
+         sodipodi:role="line"
+         x="132.45876"
+         y="234.06805"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Rajdhani;-inkscape-font-specification:Rajdhani;stroke:none;stroke-width:0.26458332;stroke-opacity:1"
+         id="tspan4526">Easily</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Layer 4">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.87286663px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.09682167"
+       x="40.474487"
+       y="247.43486"
+       id="text4507"><tspan
+         sodipodi:role="line"
+         id="tspan4505"
+         x="40.474487"
+         y="247.43486"
+         style="stroke-width:0.09682167">Technology Supports Independent Reasoning & Promotes Obliterating Stereotypes</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.3499999px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:0.3115578;stroke:none;stroke-width:0.26458332;"
+       x="1.8520803"
+       y="6.583333"
+       id="text4517"><tspan
+         sodipodi:role="line"
+         id="tspan4515"
+         x="1.8520803"
+         y="6.583333"
+         style="font-size:6.3499999px;stroke-width:0.26458332;fill-opacity:0.3115578;fill:#000000;">26-15-1-14-17-10 14-20-23 26-9-3-15-8-19-3 15-2-5 8-20-8-23-19-15-8-10-13</tspan></text>
+  </g>
+</svg>
