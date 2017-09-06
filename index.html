@@ -58,6 +58,16 @@
 <li><p><a href="quickstart.html">Quick Start</a> to get started.</p></li>
 <li><p><a href="reference/index.html">API Reference</a> contains automatically generated documentation for all types, modules and functions in the library. This includes additional brief samples on using most of the functions.</p></li>
 </ul>
+<h2><a name="Some-important-notes" class="anchor" href="#Some-important-notes">Some important notes</a></h2>
+<h3><a name="3rd-party-bundled-libraries" class="anchor" href="#3rd-party-bundled-libraries">3rd-party bundled libraries</a></h3>
+<p>Farkle is also bundled with some F# libraries that uses. They are imported as <a href="https://fsprojects.github.io/Paket/github-dependencies.html">Paket GitHub dependencies</a> and you can use them without installing another NuGet package. These libraries are:
+<em> [Aether], an open-source optics library.
+</em> [FSharpx.Collections], a library with efficient immutable collection types. <strong>⚠ Only <code>RandomAccesList</code> is bundled from FSharpx.Collections</strong></p>
+<p>The second library is not available for .NET Standard. I have filed <a href="https://github.com/fsprojects/FSharpx.Collections/issues/77">an issue</a> to support .NET Standard, yet it appears that the project is no longer maintained.</p>
+<p>These libraries <strong>may be removed from the project in any time if they are not needed anymore.</strong></p>
+<h3><a name="Respecting-SemVer" class="anchor" href="#Respecting-SemVer">Respecting SemVer</a></h3>
+<p>Farkle is a new library with a growing and developing API. Old designs are replaced with newer ones many times. Moreover, Farkle also contains some code not related with its purpose, but used internally. The purpose of Farkle is to make parsing text easily. [SemVer] is making things harder, and version numbers growing faster. Even worse, taking SemVer into consideration while changing APIs that have no connection with parsing text makes the project harder to be changed.</p>
+<p>In a 🌰🐚: <strong>APIs other than some high-level ones (like <code>GOLDParser</code> and <code>EGT</code>) are subject to breaking changes even between minor releases. You use them at your own risk.</strong></p>
 <h2><a name="Contributing-and-copyright" class="anchor" href="#Contributing-and-copyright">Contributing and copyright</a></h2>
 <p>The project is hosted on <a href="https://github.com/teo-tsirpanis/Farkle">GitHub</a> where you can <a href="https://github.com/teo-tsirpanis/Farkle/issues">report issues</a>, fork
 the project and submit pull requests. If you're adding a new public API, please also
