@@ -55,15 +55,15 @@ It is modeled after the <a href="https://fsharpforfunandprofit.com/cap/">Designi
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '275', 275)" onmouseover="showTip(event, '275', 275)">
-            Continuing(...)
+          <code onmouseout="hideTip(event, '284', 284)" onmouseover="showTip(event, '284', 284)">
+            Continuing(ParseMessage,Lazy&lt;Parser&gt;)
           </code>
-          <div class="tip" id="275">
-            <strong>Signature:</strong> Position * ParseMessage * Lazy&lt;Parser&gt;<br />
+          <div class="tip" id="284">
+            <strong>Signature:</strong> ParseMessage * Lazy&lt;Parser&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L186-186" class="github-link">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L198-198" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -76,15 +76,15 @@ The log message of it is returned as well as a thunk of the next parser.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '276', 276)" onmouseover="showTip(event, '276', 276)">
-            Failed(Position,ParseMessage)
+          <code onmouseout="hideTip(event, '285', 285)" onmouseover="showTip(event, '285', 285)">
+            Failed(ParseMessage)
           </code>
-          <div class="tip" id="276">
-            <strong>Signature:</strong> Position * ParseMessage<br />
+          <div class="tip" id="285">
+            <strong>Signature:</strong> ParseMessage<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L189-189" class="github-link">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L201-201" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -97,40 +97,20 @@ No lazy parser is returned, so the parsing process cannot continue.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '277', 277)" onmouseover="showTip(event, '277', 277)">
-            Finished(Position,Reduction)
+          <code onmouseout="hideTip(event, '286', 286)" onmouseover="showTip(event, '286', 286)">
+            Finished(ParseMessage,Reduction)
           </code>
-          <div class="tip" id="277">
-            <strong>Signature:</strong> Position * Reduction<br />
+          <div class="tip" id="286">
+            <strong>Signature:</strong> ParseMessage * Reduction<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L192-192" class="github-link">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L204-204" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           <p>The parser has finished parsing.
 No lazy parser is returned, as the parsing process is complete.</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '278', 278)" onmouseover="showTip(event, '278', 278)">
-            Started(Lazy&lt;Parser&gt;)
-          </code>
-          <div class="tip" id="278">
-            <strong>Signature:</strong> Lazy&lt;Parser&gt;<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L183-183" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>The parser has just started.</p>
 
 
         </td>

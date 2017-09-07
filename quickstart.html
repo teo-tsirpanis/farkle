@@ -152,14 +152,12 @@
 <span class="l">3: </span>
 <span class="l">4: </span>
 <span class="l">5: </span>
-<span class="l">6: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="prep">#r</span> <span class="s">&quot;Chessie.dll&quot;</span> <span class="c">// You only need it on FSI.</span>
 <span class="prep">#r</span> <span class="s">&quot;Farkle.dll&quot;</span> <span class="c">// You only need it on FSI.</span>
 
-<span class="k">open</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">Chessie</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="i">ErrorHandling</span> <span class="c">// Some useful types.</span>
-<span class="k">open</span> <span onmouseout="hideTip(event, 'fs3', 3)" onmouseover="showTip(event, 'fs3', 3)" class="i">Farkle</span>
-<span class="k">open</span> <span onmouseout="hideTip(event, 'fs3', 4)" onmouseover="showTip(event, 'fs3', 4)" class="i">Farkle</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 5)" onmouseover="showTip(event, 'fs4', 5)" class="i">Parser</span> <span class="c">// The high-level API resides here.</span>
+<span class="k">open</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">Farkle</span>
+<span class="k">open</span> <span onmouseout="hideTip(event, 'fs1', 2)" onmouseover="showTip(event, 'fs1', 2)" class="i">Farkle</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs2', 3)" onmouseover="showTip(event, 'fs2', 3)" class="i">Parser</span> <span class="c">// The high-level API resides here.</span>
 </code></pre></td>
 </tr>
 </table>
@@ -169,9 +167,9 @@
 <span class="l">2: </span>
 <span class="l">3: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs5', 6)" onmouseover="showTip(event, 'fs5', 6)" class="i">parser</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs6', 7)" onmouseover="showTip(event, 'fs6', 7)" class="t">GOLDParser</span>(<span class="s">&quot;simple.egt&quot;</span>) <span class="c">// We pass the grammar&#39;s file name. Note that if there is a problem with the file, an exception will be raised.</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs3', 4)" onmouseover="showTip(event, 'fs3', 4)" class="i">parser</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs4', 5)" onmouseover="showTip(event, 'fs4', 5)" class="t">GOLDParser</span>(<span class="s">&quot;simple.egt&quot;</span>) <span class="c">// We pass the grammar&#39;s file name. Note that if there is a problem with the file, an exception will be raised.</span>
 
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs7', 8)" onmouseover="showTip(event, 'fs7', 8)" class="i">parser2</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs6', 9)" onmouseover="showTip(event, 'fs6', 9)" class="t">GOLDParser</span>(<span class="s">&quot;simple.egt&quot;</span>, <span class="k">true</span>) <span class="c">// The second parameter indicates whether the resulting parse tree is simplified. It&#39;s false by default.</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs5', 6)" onmouseover="showTip(event, 'fs5', 6)" class="i">parser2</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs4', 7)" onmouseover="showTip(event, 'fs4', 7)" class="t">GOLDParser</span>(<span class="s">&quot;simple.egt&quot;</span>, <span class="k">true</span>) <span class="c">// The second parameter indicates whether the resulting parse tree is simplified. It&#39;s false by default.</span>
 </code></pre></td>
 </tr>
 </table>
@@ -181,7 +179,7 @@
 <p><code>617 == (1 / 0)</code></p>
 <p><code>617 &gt; 198 &gt; 45 &gt; 477</code></p>
 <blockquote>
-<p><strong>Note:</strong> We don't <em>evaluate</em> the expression. We just make them in a form that a computer can easier work with.</p>
+<p><strong>Note:</strong> We don't <em>evaluate</em> the expression. We just make it in a form that a computer can easier understand.</p>
 </blockquote>
 <p>We can parse data from many sources like these:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
@@ -190,36 +188,24 @@
 <span class="l">4: </span>
 <span class="l">5: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs8', 10)" onmouseover="showTip(event, 'fs8', 10)" class="i">result</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs5', 11)" onmouseover="showTip(event, 'fs5', 11)" class="i">parser</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs9', 12)" onmouseover="showTip(event, 'fs9', 12)" class="f">ParseString</span> <span class="s">&quot;477 = 0&quot;</span> <span class="c">// We can parse a simple string.</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs6', 8)" onmouseover="showTip(event, 'fs6', 8)" class="i">result</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs3', 9)" onmouseover="showTip(event, 'fs3', 9)" class="i">parser</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs7', 10)" onmouseover="showTip(event, 'fs7', 10)" class="f">ParseString</span> <span class="s">&quot;477 = 0&quot;</span> <span class="c">// A simple string.</span>
 
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs10', 13)" onmouseover="showTip(event, 'fs10', 13)" class="i">result2</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs5', 14)" onmouseover="showTip(event, 'fs5', 14)" class="i">parser</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs11', 15)" onmouseover="showTip(event, 'fs11', 15)" class="f">ParseFile</span> <span class="s">&quot;WhatAWonderful.file&quot;</span> <span class="c">// A file.</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs8', 11)" onmouseover="showTip(event, 'fs8', 11)" class="i">result2</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs3', 12)" onmouseover="showTip(event, 'fs3', 12)" class="i">parser</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs9', 13)" onmouseover="showTip(event, 'fs9', 13)" class="f">ParseFile</span> <span class="s">&quot;WhatAWonderful.file&quot;</span> <span class="c">// A file.</span>
 
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs12', 16)" onmouseover="showTip(event, 'fs12', 16)" class="i">result3</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs13', 17)" onmouseover="showTip(event, 'fs13', 17)" class="i">System</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs14', 18)" onmouseover="showTip(event, 'fs14', 18)" class="i">IO</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs15', 19)" onmouseover="showTip(event, 'fs15', 19)" class="t">File</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs16', 20)" onmouseover="showTip(event, 'fs16', 20)" class="f">OpenRead</span> <span class="s">&quot;ThisWasA.triumph&quot;</span> <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs5', 21)" onmouseover="showTip(event, 'fs5', 21)" class="i">parser</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs17', 22)" onmouseover="showTip(event, 'fs17', 22)" class="f">ParseStream</span> <span class="c">// Or a stream. This is almost the same thing with `ParseFile`.</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs10', 14)" onmouseover="showTip(event, 'fs10', 14)" class="i">result3</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs11', 15)" onmouseover="showTip(event, 'fs11', 15)" class="i">System</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs12', 16)" onmouseover="showTip(event, 'fs12', 16)" class="i">IO</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs13', 17)" onmouseover="showTip(event, 'fs13', 17)" class="t">File</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs14', 18)" onmouseover="showTip(event, 'fs14', 18)" class="f">OpenRead</span> <span class="s">&quot;ThisWasA.triumph&quot;</span> <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs3', 19)" onmouseover="showTip(event, 'fs3', 19)" class="i">parser</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs15', 20)" onmouseover="showTip(event, 'fs15', 20)" class="f">ParseStream</span> <span class="c">// Or a stream. This is almost the same thing with `ParseFile`.</span>
 </code></pre></td>
 </tr>
 </table>
-<p>See the result's type? It's a <code>Chessie.ErrorHandling.Result&lt;Reduction,(Position * ParseMessage)&gt;</code>. Check more about the <code>Result</code> type <a href="https://fsprojects.github.io/Chessie/">here</a>.</p>
+<p>See the result's type? It's a <code>ParseResult</code>. It is a simple discriminated union that represents either a parsing success or a parsing failure</p>
 <p>In other words, if the functions succeed, they give a <code>Reduction</code>, which is a structure that describes a parse tree.</p>
-<p>They also carry a "message" paired with the location it appeared. These messages are like the log of a parser.</p>
-<p>If the parsing fails, the first message indicates why it failed.</p>
-<p>The Position type is what it says it it. No more explanation is needed.</p>
-<p>The <code>ParseMessage</code> is a discriminated union that documents every possible error (the "impossibles" (like stream errors) throw exceptions 😛).</p>
+<p>It also carries a list of "messages" which are like the log of a parser.</p>
+<p>If the parsing fails, the message that explains the failure is separated from the rest..</p>
+<p>The <code>ParseMessage</code> is made a discriminated union that documents every possible error (the "impossibles" (like stream errors) throw exceptions 😛), and the position it happened.</p>
 <ul>
 <li>But these errors are not so descriptive for the end user. Isn't there a way to make them more simpler?</li>
-<li><p>Yes it is. Meet <code>GOLDParser.FormatErrors</code>. But let's just see it in action:</p></li>
+<li>Yes it is. ParseResult has some utility functions which make our life easier! 😃</li>
 </ul>
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs18', 23)" onmouseover="showTip(event, 'fs18', 23)" class="i">simpleResult</span>, <span onmouseout="hideTip(event, 'fs19', 24)" onmouseover="showTip(event, 'fs19', 24)" class="i">messages</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs6', 25)" onmouseover="showTip(event, 'fs6', 25)" class="t">GOLDParser</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs20', 26)" onmouseover="showTip(event, 'fs20', 26)" class="f">FormatErrors</span> <span onmouseout="hideTip(event, 'fs8', 27)" onmouseover="showTip(event, 'fs8', 27)" class="i">result</span>
-</code></pre></td>
-</tr>
-</table>
-<p><code>messages</code> is a simple <code>IEnumerable&lt;string&gt;</code> with friendly, textual log messages.
-<code>simpleResult</code> is an equally simple F# <code>Choice</code> which contains either the final <code>Reduction</code>, or the fatal error as a string.</p>
-<blockquote>
-<p><strong>Note:</strong> If parsing fails, <code>messages</code> will <em>not</em> contain the error message; only the messages that describe what the parser was doing before he died.</p>
-</blockquote>
-<p>Now our life became easier! 😃 We can do this for example:</p>
+<p>We can do this for example:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -227,12 +213,12 @@
 <span class="l">5: </span>
 <span class="l">6: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs19', 28)" onmouseover="showTip(event, 'fs19', 28)" class="i">messages</span> <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs21', 29)" onmouseover="showTip(event, 'fs21', 29)" class="t">Seq</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs22', 30)" onmouseover="showTip(event, 'fs22', 30)" class="f">iter</span> (<span onmouseout="hideTip(event, 'fs23', 31)" onmouseover="showTip(event, 'fs23', 31)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%s</span><span class="s">&quot;</span>)
-<span class="k">match</span> <span onmouseout="hideTip(event, 'fs18', 32)" onmouseover="showTip(event, 'fs18', 32)" class="i">simpleResult</span> <span class="k">with</span>
-| <span onmouseout="hideTip(event, 'fs24', 33)" onmouseover="showTip(event, 'fs24', 33)" class="p">Choice1Of2</span> <span onmouseout="hideTip(event, 'fs25', 34)" onmouseover="showTip(event, 'fs25', 34)" class="i">x</span> <span class="k">-&gt;</span>
-    <span onmouseout="hideTip(event, 'fs23', 35)" onmouseover="showTip(event, 'fs23', 35)" class="f">printfn</span> <span class="s">&quot;Success!&quot;</span>
-    <span onmouseout="hideTip(event, 'fs25', 36)" onmouseover="showTip(event, 'fs25', 36)" class="i">x</span> <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs26', 37)" onmouseover="showTip(event, 'fs26', 37)" class="t">Reduction</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs27', 38)" onmouseover="showTip(event, 'fs27', 38)" class="f">drawReductionTree</span> <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs23', 39)" onmouseover="showTip(event, 'fs23', 39)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%s</span><span class="s">&quot;</span> <span class="c">// drawReductionTree makes a fancy ASCII parse tree from a reduction.</span>
-| <span onmouseout="hideTip(event, 'fs28', 40)" onmouseover="showTip(event, 'fs28', 40)" class="p">Choice2Of2</span> <span onmouseout="hideTip(event, 'fs29', 41)" onmouseover="showTip(event, 'fs29', 41)" class="i">x</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs23', 42)" onmouseover="showTip(event, 'fs23', 42)" class="f">printfn</span> <span class="s">&quot;Oops! There is an error, sorry: </span><span class="pf">%s</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs29', 43)" onmouseover="showTip(event, 'fs29', 43)" class="i">x</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs6', 21)" onmouseover="showTip(event, 'fs6', 21)" class="i">result</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs16', 22)" onmouseover="showTip(event, 'fs16', 22)" class="i">MessagesAsString</span> <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs17', 23)" onmouseover="showTip(event, 'fs17', 23)" class="t">Seq</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs18', 24)" onmouseover="showTip(event, 'fs18', 24)" class="f">iter</span> (<span onmouseout="hideTip(event, 'fs19', 25)" onmouseover="showTip(event, 'fs19', 25)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%s</span><span class="s">&quot;</span>)
+<span class="k">match</span> <span onmouseout="hideTip(event, 'fs6', 26)" onmouseover="showTip(event, 'fs6', 26)" class="i">result</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs20', 27)" onmouseover="showTip(event, 'fs20', 27)" class="i">Simple</span> <span class="k">with</span>
+| <span onmouseout="hideTip(event, 'fs21', 28)" onmouseover="showTip(event, 'fs21', 28)" class="p">Choice1Of2</span> <span onmouseout="hideTip(event, 'fs22', 29)" onmouseover="showTip(event, 'fs22', 29)" class="i">x</span> <span class="k">-&gt;</span>
+    <span onmouseout="hideTip(event, 'fs19', 30)" onmouseover="showTip(event, 'fs19', 30)" class="f">printfn</span> <span class="s">&quot;Success!&quot;</span>
+    <span onmouseout="hideTip(event, 'fs22', 31)" onmouseover="showTip(event, 'fs22', 31)" class="i">x</span> <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs23', 32)" onmouseover="showTip(event, 'fs23', 32)" class="t">Reduction</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs24', 33)" onmouseover="showTip(event, 'fs24', 33)" class="f">drawReductionTree</span> <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs19', 34)" onmouseover="showTip(event, 'fs19', 34)" class="f">printfn</span> <span class="s">&quot;</span><span class="pf">%s</span><span class="s">&quot;</span> <span class="c">// drawReductionTree makes a fancy ASCII parse tree from a reduction.</span>
+| <span onmouseout="hideTip(event, 'fs25', 35)" onmouseover="showTip(event, 'fs25', 35)" class="p">Choice2Of2</span> <span onmouseout="hideTip(event, 'fs26', 36)" onmouseover="showTip(event, 'fs26', 36)" class="i">x</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs19', 37)" onmouseover="showTip(event, 'fs19', 37)" class="f">printfn</span> <span class="s">&quot;Oops! There is an error, sorry: </span><span class="pf">%s</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs26', 38)" onmouseover="showTip(event, 'fs26', 38)" class="i">x</span>
 </code></pre></td>
 </tr>
 </table>
@@ -274,35 +260,32 @@
 <p>I hope you understand. If you have any question, found a 🐛, or want a feature, feel free to <a href="https://github.com/teo-tsirpanis/farkle/issues">open a GitHub issue</a>.
 I didn't tell you how to navigate through a <code>Reduction</code> yet. The Reduction type is a little hard to use, but a dedicated <code>AST</code> type will enter the stage in the future.</p>
 
-<div class="tip" id="fs1">namespace Chessie</div>
-<div class="tip" id="fs2">namespace Chessie.ErrorHandling</div>
-<div class="tip" id="fs3">namespace Farkle</div>
-<div class="tip" id="fs4">namespace Farkle.Parser</div>
-<div class="tip" id="fs5">val parser : GOLDParser<br /><br />Full name: Quickstart.parser</div>
-<div class="tip" id="fs6">Multiple items<br />type GOLDParser =<br />&#160;&#160;new : egtFile:string -&gt; GOLDParser<br />&#160;&#160;new : grammar:Grammar -&gt; GOLDParser<br />&#160;&#160;new : egtFile:string * trimReductions:bool -&gt; GOLDParser<br />&#160;&#160;new : grammar:Grammar * trimReductions:bool -&gt; GOLDParser<br />&#160;&#160;member ParseChars : input:char list -&gt; Result&lt;Reduction,(Position * ParseMessage)&gt;<br />&#160;&#160;member ParseFile : path:string -&gt; Result&lt;Reduction,(Position * ParseMessage)&gt;<br />&#160;&#160;member ParseStream : inputStream:Stream -&gt; Result&lt;Reduction,(Position * ParseMessage)&gt;<br />&#160;&#160;member ParseString : input:string -&gt; Result&lt;Reduction,(Position * ParseMessage)&gt;<br />&#160;&#160;static member CreateParser : trimReductions:bool -&gt; grammar:Grammar -&gt; input:char list -&gt; Parser<br />&#160;&#160;static member FormatErrors : result:Result&lt;Reduction,(Position * ParseMessage)&gt; -&gt; Choice&lt;Reduction,string&gt; * seq&lt;string&gt;<br /><br />Full name: Farkle.Parser.GOLDParser<br /><br />--------------------<br />new : grammar:Grammar.Grammar -&gt; GOLDParser<br />new : egtFile:string -&gt; GOLDParser<br />new : grammar:Grammar.Grammar * trimReductions:bool -&gt; GOLDParser<br />new : egtFile:string * trimReductions:bool -&gt; GOLDParser</div>
-<div class="tip" id="fs7">val parser2 : GOLDParser<br /><br />Full name: Quickstart.parser2</div>
-<div class="tip" id="fs8">val result : Result&lt;Reduction,(Position * ParseMessage)&gt;<br /><br />Full name: Quickstart.result</div>
-<div class="tip" id="fs9">member GOLDParser.ParseString : input:string -&gt; Result&lt;Reduction,(Position * ParseMessage)&gt;</div>
-<div class="tip" id="fs10">val result2 : Result&lt;Reduction,(Position * ParseMessage)&gt;<br /><br />Full name: Quickstart.result2</div>
-<div class="tip" id="fs11">member GOLDParser.ParseFile : path:string -&gt; Result&lt;Reduction,(Position * ParseMessage)&gt;</div>
-<div class="tip" id="fs12">val result3 : Result&lt;Reduction,(Position * ParseMessage)&gt;<br /><br />Full name: Quickstart.result3</div>
-<div class="tip" id="fs13">namespace System</div>
-<div class="tip" id="fs14">namespace System.IO</div>
-<div class="tip" id="fs15">type File =<br />&#160;&#160;static member AppendAllLines : path:string * contents:IEnumerable&lt;string&gt; -&gt; unit + 1 overload<br />&#160;&#160;static member AppendAllText : path:string * contents:string -&gt; unit + 1 overload<br />&#160;&#160;static member AppendText : path:string -&gt; StreamWriter<br />&#160;&#160;static member Copy : sourceFileName:string * destFileName:string -&gt; unit + 1 overload<br />&#160;&#160;static member Create : path:string -&gt; FileStream + 3 overloads<br />&#160;&#160;static member CreateText : path:string -&gt; StreamWriter<br />&#160;&#160;static member Decrypt : path:string -&gt; unit<br />&#160;&#160;static member Delete : path:string -&gt; unit<br />&#160;&#160;static member Encrypt : path:string -&gt; unit<br />&#160;&#160;static member Exists : path:string -&gt; bool<br />&#160;&#160;...<br /><br />Full name: System.IO.File</div>
-<div class="tip" id="fs16">System.IO.File.OpenRead(path: string) : System.IO.FileStream</div>
-<div class="tip" id="fs17">member GOLDParser.ParseStream : inputStream:System.IO.Stream -&gt; Result&lt;Reduction,(Position * ParseMessage)&gt;</div>
-<div class="tip" id="fs18">val simpleResult : Choice&lt;Reduction,string&gt;<br /><br />Full name: Quickstart.simpleResult</div>
-<div class="tip" id="fs19">val messages : seq&lt;string&gt;<br /><br />Full name: Quickstart.messages</div>
-<div class="tip" id="fs20">static member GOLDParser.FormatErrors : result:Result&lt;Reduction,(Position * ParseMessage)&gt; -&gt; Choice&lt;Reduction,string&gt; * seq&lt;string&gt;</div>
-<div class="tip" id="fs21">Multiple items<br />module Seq<br /><br />from Farkle<br /><br />--------------------<br />module Seq<br /><br />from Microsoft.FSharp.Collections</div>
-<div class="tip" id="fs22">val iter : action:(&#39;T -&gt; unit) -&gt; source:seq&lt;&#39;T&gt; -&gt; unit<br /><br />Full name: Microsoft.FSharp.Collections.Seq.iter</div>
-<div class="tip" id="fs23">val printfn : format:Printf.TextWriterFormat&lt;&#39;T&gt; -&gt; &#39;T<br /><br />Full name: Microsoft.FSharp.Core.ExtraTopLevelOperators.printfn</div>
-<div class="tip" id="fs24">union case Choice.Choice1Of2: &#39;T1 -&gt; Choice&lt;&#39;T1,&#39;T2&gt;</div>
-<div class="tip" id="fs25">val x : Reduction</div>
-<div class="tip" id="fs26">Multiple items<br />union case ParseMessage.Reduction: Reduction -&gt; ParseMessage<br /><br />--------------------<br />module Reduction<br /><br />from Farkle.Parser<br /><br />--------------------<br />type Reduction =<br />&#160;&#160;{Tokens: (Token * Reduction option) list;<br />&#160;&#160;&#160;Parent: Production;}<br />&#160;&#160;override ToString : unit -&gt; string<br /><br />Full name: Farkle.Parser.Reduction</div>
-<div class="tip" id="fs27">val drawReductionTree : x:Reduction -&gt; string<br /><br />Full name: Farkle.Parser.Reduction.drawReductionTree</div>
-<div class="tip" id="fs28">union case Choice.Choice2Of2: &#39;T2 -&gt; Choice&lt;&#39;T1,&#39;T2&gt;</div>
-<div class="tip" id="fs29">val x : string</div>
+<div class="tip" id="fs1">namespace Farkle</div>
+<div class="tip" id="fs2">namespace Farkle.Parser</div>
+<div class="tip" id="fs3">val parser : GOLDParser<br /><br />Full name: Quickstart.parser</div>
+<div class="tip" id="fs4">Multiple items<br />type GOLDParser =<br />&#160;&#160;new : egtFile:string -&gt; GOLDParser<br />&#160;&#160;new : grammar:Grammar -&gt; GOLDParser<br />&#160;&#160;new : egtFile:string * trimReductions:bool -&gt; GOLDParser<br />&#160;&#160;new : grammar:Grammar * trimReductions:bool -&gt; GOLDParser<br />&#160;&#160;member ParseChars : input:char list -&gt; ParseResult<br />&#160;&#160;member ParseFile : path:string -&gt; ParseResult<br />&#160;&#160;member ParseStream : inputStream:Stream -&gt; ParseResult<br />&#160;&#160;member ParseString : input:string -&gt; ParseResult<br />&#160;&#160;static member CreateParser : trimReductions:bool -&gt; grammar:Grammar -&gt; input:char list -&gt; Parser<br /><br />Full name: Farkle.Parser.GOLDParser<br /><br />--------------------<br />new : grammar:Grammar.Grammar -&gt; GOLDParser<br />new : egtFile:string -&gt; GOLDParser<br />new : grammar:Grammar.Grammar * trimReductions:bool -&gt; GOLDParser<br />new : egtFile:string * trimReductions:bool -&gt; GOLDParser</div>
+<div class="tip" id="fs5">val parser2 : GOLDParser<br /><br />Full name: Quickstart.parser2</div>
+<div class="tip" id="fs6">val result : ParseResult<br /><br />Full name: Quickstart.result</div>
+<div class="tip" id="fs7">member GOLDParser.ParseString : input:string -&gt; ParseResult</div>
+<div class="tip" id="fs8">val result2 : ParseResult<br /><br />Full name: Quickstart.result2</div>
+<div class="tip" id="fs9">member GOLDParser.ParseFile : path:string -&gt; ParseResult</div>
+<div class="tip" id="fs10">val result3 : ParseResult<br /><br />Full name: Quickstart.result3</div>
+<div class="tip" id="fs11">namespace System</div>
+<div class="tip" id="fs12">namespace System.IO</div>
+<div class="tip" id="fs13">type File =<br />&#160;&#160;static member AppendAllLines : path:string * contents:IEnumerable&lt;string&gt; -&gt; unit + 1 overload<br />&#160;&#160;static member AppendAllText : path:string * contents:string -&gt; unit + 1 overload<br />&#160;&#160;static member AppendText : path:string -&gt; StreamWriter<br />&#160;&#160;static member Copy : sourceFileName:string * destFileName:string -&gt; unit + 1 overload<br />&#160;&#160;static member Create : path:string -&gt; FileStream + 3 overloads<br />&#160;&#160;static member CreateText : path:string -&gt; StreamWriter<br />&#160;&#160;static member Decrypt : path:string -&gt; unit<br />&#160;&#160;static member Delete : path:string -&gt; unit<br />&#160;&#160;static member Encrypt : path:string -&gt; unit<br />&#160;&#160;static member Exists : path:string -&gt; bool<br />&#160;&#160;...<br /><br />Full name: System.IO.File</div>
+<div class="tip" id="fs14">System.IO.File.OpenRead(path: string) : System.IO.FileStream</div>
+<div class="tip" id="fs15">member GOLDParser.ParseStream : inputStream:System.IO.Stream -&gt; ParseResult</div>
+<div class="tip" id="fs16">property ParseResult.MessagesAsString: seq&lt;string&gt;</div>
+<div class="tip" id="fs17">Multiple items<br />module Seq<br /><br />from Farkle<br /><br />--------------------<br />module Seq<br /><br />from Microsoft.FSharp.Collections</div>
+<div class="tip" id="fs18">val iter : action:(&#39;T -&gt; unit) -&gt; source:seq&lt;&#39;T&gt; -&gt; unit<br /><br />Full name: Microsoft.FSharp.Collections.Seq.iter</div>
+<div class="tip" id="fs19">val printfn : format:Printf.TextWriterFormat&lt;&#39;T&gt; -&gt; &#39;T<br /><br />Full name: Microsoft.FSharp.Core.ExtraTopLevelOperators.printfn</div>
+<div class="tip" id="fs20">property ParseResult.Simple: Choice&lt;Reduction,string&gt;</div>
+<div class="tip" id="fs21">union case Choice.Choice1Of2: &#39;T1 -&gt; Choice&lt;&#39;T1,&#39;T2&gt;</div>
+<div class="tip" id="fs22">val x : Reduction</div>
+<div class="tip" id="fs23">Multiple items<br />union case ParseMessageType.Reduction: Reduction -&gt; ParseMessageType<br /><br />--------------------<br />module Reduction<br /><br />from Farkle.Parser<br /><br />--------------------<br />type Reduction =<br />&#160;&#160;{Tokens: (Token * Reduction option) list;<br />&#160;&#160;&#160;Parent: Production;}<br />&#160;&#160;override ToString : unit -&gt; string<br /><br />Full name: Farkle.Parser.Reduction</div>
+<div class="tip" id="fs24">val drawReductionTree : x:Reduction -&gt; string<br /><br />Full name: Farkle.Parser.Reduction.drawReductionTree</div>
+<div class="tip" id="fs25">union case Choice.Choice2Of2: &#39;T2 -&gt; Choice&lt;&#39;T1,&#39;T2&gt;</div>
+<div class="tip" id="fs26">val x : string</div>
 
         </div>
         <div class="span3">

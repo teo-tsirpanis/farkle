@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Token - Farkle</title>
+    <title>ParseResult - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -35,37 +35,36 @@
 
 
 
-<h1>Token</h1>
+<h1>ParseResult</h1>
 <p>
   <span>Namespace: Farkle.Parser</span><br />
 </p>
 <div class="xmldoc">
-<p>A token is an instance of a <a href="farkle-grammar-symbol.html" title="Symbol"><code>Symbol</code></a>.
-Tokens carry parsed data, as well as their position within the text file.</p>
+<p>A dedicated type to signify the result of a parser.</p>
 
 </div>
-  <h3>Record Fields</h3>
+  <h3>Union Cases</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Record Field</td><td>Description</td></tr>
+      <tr><td>Union Case</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '289', 289)" onmouseover="showTip(event, '289', 289)">
-            Data
+          <code onmouseout="hideTip(event, '278', 278)" onmouseover="showTip(event, '278', 278)">
+            Failure(fatalMessage,messages)
           </code>
-          <div class="tip" id="289">
-            <strong>Signature:</strong> string<br />
+          <div class="tip" id="278">
+            <strong>Signature:</strong> ParseMessage * seq&lt;ParseMessage&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L24-24" class="github-link">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L23-23" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>The actual content of the token.</p>
+          <p>Parsing failed, The fatal <a href="farkle-parser-parsemessage.html" title="ParseMessage"><code>ParseMessage</code></a> is separately returned.</p>
 
 
         </td>
@@ -73,67 +72,89 @@ Tokens carry parsed data, as well as their position within the text file.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '290', 290)" onmouseover="showTip(event, '290', 290)">
-            Position
+          <code onmouseout="hideTip(event, '279', 279)" onmouseover="showTip(event, '279', 279)">
+            Success(reduction,messages)
           </code>
-          <div class="tip" id="290">
-            <strong>Signature:</strong> Position<br />
+          <div class="tip" id="279">
+            <strong>Signature:</strong> Reduction * seq&lt;ParseMessage&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L22-22" class="github-link">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L21-21" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>The <a href="farkle-common-position.html" title="Position"><code>Position</code></a> of the token in the input string.</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '291', 291)" onmouseover="showTip(event, '291', 291)">
-            Symbol
-          </code>
-          <div class="tip" id="291">
-            <strong>Signature:</strong> Symbol<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L20-20" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>The <a href="farkle-grammar-symbol.html" title="Symbol"><code>Symbol</code></a> whose instance is this token.</p>
+          <p>Parsing succeeded. The final <a href="farkle-parser-reduction.html" title="Reduction"><code>Reduction</code></a> and the parsing log are returned.</p>
 
 
         </td>
       </tr>
     </tbody>
   </table>
-  <h3>Static members</h3>
+  <h3>Instance members</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Static member</td><td>Description</td></tr>
+      <tr><td>Instance member</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '292', 292)" onmouseover="showTip(event, '292', 292)">
-            AppendData(data x)
+          <code onmouseout="hideTip(event, '280', 280)" onmouseover="showTip(event, '280', 280)">
+            Messages
           </code>
-          <div class="tip" id="292">
-            <strong>Signature:</strong> data:string -&gt; x:Token -&gt; Token<br />
+          <div class="tip" id="280">
+            <strong>Signature:</strong> seq&lt;ParseMessage&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L36-36" class="github-link">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L25-25" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Returns a new token which has a string appended to its data.</p>
+          <p>The parsing log. In case of failure, the fatal <a href="farkle-parser-parsemessage.html" title="ParseMessage"><code>ParseMessage</code></a> is <em>not</em> included.</p>
+
+
+              <p>CompiledName: <code>get_Messages</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '281', 281)" onmouseover="showTip(event, '281', 281)">
+            MessagesAsString
+          </code>
+          <div class="tip" id="281">
+            <strong>Signature:</strong> seq&lt;string&gt;<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L30-30" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>The parsing log in human-friendly format.</p>
+
+
+              <p>CompiledName: <code>get_MessagesAsString</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '282', 282)" onmouseover="showTip(event, '282', 282)">
+            ReductionOrFail()
+          </code>
+          <div class="tip" id="282">
+            <strong>Signature:</strong> unit -&gt; Reduction<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L37-37" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Returns the final <a href="farkle-parser-reduction.html" title="Reduction"><code>Reduction</code></a> or throws an exception.</p>
 
 
         </td>
@@ -141,21 +162,22 @@ Tokens carry parsed data, as well as their position within the text file.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '293', 293)" onmouseover="showTip(event, '293', 293)">
-            Create(pos sym data)
+          <code onmouseout="hideTip(event, '283', 283)" onmouseover="showTip(event, '283', 283)">
+            Simple
           </code>
-          <div class="tip" id="293">
-            <strong>Signature:</strong> pos:Position -&gt; sym:Symbol -&gt; data:string -&gt; Token<br />
+          <div class="tip" id="283">
+            <strong>Signature:</strong> Choice&lt;Reduction,string&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L34-34" class="github-link">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L32-32" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>A shortcut for creating a token.</p>
+          <p>A simple <a href="aether-optics-choice.html" title="Choice"><code>Choice</code></a> with either the final <a href="farkle-parser-reduction.html" title="Reduction"><code>Reduction</code></a> or the fatal <a href="farkle-parser-parsemessage.html" title="ParseMessage"><code>ParseMessage</code></a> as a string.</p>
 
 
+              <p>CompiledName: <code>get_Simple</code></p>
         </td>
       </tr>
     </tbody>
