@@ -40,13 +40,7 @@
   <span>Namespace: Farkle.Parser</span><br />
 </p>
 <div class="xmldoc">
-<p>A reusable parser created for a specific grammar that can parse input from multiple sources
-This is the highest-level API. THe parsing function's return values merit some explanation.
-If parsing succeeds, its return value is the top reduction of the grammar.
-If it fails, the first message explains the reason it failed.
-The rest of the messages are a kind of a log of the parser.
-The term "trivial reductions" means a reduction that has only one nonterminal.
-They can optionally be trimmed, so that the resulting parse tree is simplified.</p>
+<p>A reusable parser created for a specific grammar that can parse input from multiple sources.</p>
 
 </div>
   <h3>Constructors</h3>
@@ -58,41 +52,19 @@ They can optionally be trimmed, so that the resulting parse tree is simplified.<
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '251', 251)" onmouseover="showTip(event, '251', 251)">
-            new(egtFile, trimReductions)
-          </code>
-          <div class="tip" id="251">
-            <strong>Signature:</strong> (egtFile:string * trimReductions:bool) -&gt; GOLDParser<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L73-73" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Creates a parser from a <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a> stored in an EGT file in the given path, with an option to trim trivial reductions.
-If there is a problem with the file, the constructor will throw an exception.</p>
-
-
-              <p>CompiledName: <code>.ctor</code></p>
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '252', 252)" onmouseover="showTip(event, '252', 252)">
+          <code onmouseout="hideTip(event, '214', 214)" onmouseover="showTip(event, '214', 214)">
             new(egtFile)
           </code>
-          <div class="tip" id="252">
+          <div class="tip" id="214">
             <strong>Signature:</strong> egtFile:string -&gt; GOLDParser<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L67-67" class="github-link">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L60-60" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Creates a parser from a <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a> stored in an EGT file in the given path.
+          <p>Creates a parser from a <code>Grammar</code> stored in an EGT file in the given path.
 Trivial reductions are not trimmed.
 If there is a problem with the file, the constructor will throw an exception.</p>
 
@@ -103,37 +75,15 @@ If there is a problem with the file, the constructor will throw an exception.</p
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '253', 253)" onmouseover="showTip(event, '253', 253)">
+          <code onmouseout="hideTip(event, '215', 215)" onmouseover="showTip(event, '215', 215)">
             new(grammar)
           </code>
-          <div class="tip" id="253">
-            <strong>Signature:</strong> grammar:Grammar -&gt; GOLDParser<br />
+          <div class="tip" id="215">
+            <strong>Signature:</strong> grammar:RuntimeGrammar -&gt; GOLDParser<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L62-62" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Creates a parser from a given <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a>.
-Trivial reductions are not trimmed.</p>
-
-
-              <p>CompiledName: <code>.ctor</code></p>
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '254', 254)" onmouseover="showTip(event, '254', 254)">
-            new(grammar, trimReductions)
-          </code>
-          <div class="tip" id="254">
-            <strong>Signature:</strong> (grammar:Grammar * trimReductions:bool) -&gt; GOLDParser<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L50-50" class="github-link">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L49-49" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -152,15 +102,15 @@ Trivial reductions are not trimmed.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '255', 255)" onmouseover="showTip(event, '255', 255)">
+          <code onmouseout="hideTip(event, '216', 216)" onmouseover="showTip(event, '216', 216)">
             ParseChars(input)
           </code>
-          <div class="tip" id="255">
-            <strong>Signature:</strong> (input:char list) -&gt; ParseResult<br />
+          <div class="tip" id="216">
+            <strong>Signature:</strong> input:HybridStream&lt;char&gt; -&gt; ParseResult<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L82-82" class="github-link">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L69-69" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -173,19 +123,38 @@ What it returns is described in the <a href="farkle-parser-goldparser.html" titl
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '256', 256)" onmouseover="showTip(event, '256', 256)">
+          <code onmouseout="hideTip(event, '217', 217)" onmouseover="showTip(event, '217', 217)">
             ParseFile(path)
           </code>
-          <div class="tip" id="256">
+          <div class="tip" id="217">
             <strong>Signature:</strong> path:string -&gt; ParseResult<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L108-108" class="github-link">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L110-110" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Parses the contents of a file in the given path.</p>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '218', 218)" onmouseover="showTip(event, '218', 218)">
+            ParseFile(path, settings)
+          </code>
+          <div class="tip" id="218">
+            <strong>Signature:</strong> (path:string * settings:GOLDParserConfig) -&gt; ParseResult<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L103-103" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Parses the contents of a file in the given path.
+A <a href="farkle-parser-goldparserconfig.html" title="GOLDParserConfig"><code>GOLDParserConfig</code></a> is required.</p>
 
 
         </td>
@@ -193,19 +162,19 @@ What it returns is described in the <a href="farkle-parser-goldparser.html" titl
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '257', 257)" onmouseover="showTip(event, '257', 257)">
+          <code onmouseout="hideTip(event, '219', 219)" onmouseover="showTip(event, '219', 219)">
             ParseStream(inputStream)
           </code>
-          <div class="tip" id="257">
+          <div class="tip" id="219">
             <strong>Signature:</strong> inputStream:Stream -&gt; ParseResult<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L101-101" class="github-link">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L99-99" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Parses a <code>Stream</code>. Its character encoding is automatically detected.</p>
+          <p>Parses a .NET <code>Stream</code>.</p>
 
 
         </td>
@@ -213,15 +182,36 @@ What it returns is described in the <a href="farkle-parser-goldparser.html" titl
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '258', 258)" onmouseover="showTip(event, '258', 258)">
+          <code onmouseout="hideTip(event, '220', 220)" onmouseover="showTip(event, '220', 220)">
+            ParseStream(inputStream, settings)
+          </code>
+          <div class="tip" id="220">
+            <strong>Signature:</strong> (inputStream:Stream * settings:GOLDParserConfig) -&gt; ParseResult<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L92-92" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Parses a .NET <code>Stream</code>.
+A <a href="farkle-parser-goldparserconfig.html" title="GOLDParserConfig"><code>GOLDParserConfig</code></a> is required.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '221', 221)" onmouseover="showTip(event, '221', 221)">
             ParseString(input)
           </code>
-          <div class="tip" id="258">
+          <div class="tip" id="221">
             <strong>Signature:</strong> input:string -&gt; ParseResult<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L98-98" class="github-link">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L88-88" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -241,19 +231,19 @@ What it returns is described in the <a href="farkle-parser-goldparser.html" titl
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '259', 259)" onmouseover="showTip(event, '259', 259)">
-            CreateParser(...)
+          <code onmouseout="hideTip(event, '222', 222)" onmouseover="showTip(event, '222', 222)">
+            CreateParser(grammar input)
           </code>
-          <div class="tip" id="259">
-            <strong>Signature:</strong> trimReductions:bool -&gt; grammar:Grammar -&gt; (input:char list) -&gt; Parser<br />
+          <div class="tip" id="222">
+            <strong>Signature:</strong> grammar:RuntimeGrammar -&gt; input:HybridStream&lt;char&gt; -&gt; Parser<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L78-78" class="github-link">
+            <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L65-65" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Creates a parser that parses <code>input</code> based on the given <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a>, with the option to trim trivial reductions.</p>
+          <p>Creates a parser that parses <code>input</code> based on the given <code>Grammar</code>, with the option to trim trivial reductions.</p>
 
 
         </td>
@@ -263,7 +253,7 @@ What it returns is described in the <a href="farkle-parser-goldparser.html" titl
 
         </div>
         <div class="span3">
-          <img src="/Farkle/img/logo.png" alt="F# Project" style="width:150px;margin:10px" />  
+          <img src="/Farkle/img/logo.png" alt="F# Project" style="width:150px;margin:10px" />
           <ul class="nav nav-list" id="menu" style="margin-top: 20px;">
             <li class="nav-header">Farkle</li>
             <li><a href="/Farkle/index.html">Home page</a></li>
@@ -272,7 +262,7 @@ What it returns is described in the <a href="farkle-parser-goldparser.html" titl
             <li><a href="https://github.com/teo-tsirpanis/Farkle/">Source Code on GitHub</a></li>
             <li><a href="/Farkle/license.html">License</a></li>
             <li><a href="/Farkle/release-notes.html">Release Notes</a></li>
-            
+
             <li class="nav-header">Getting started</li>
             <li><a href="/Farkle/quickstart.html">Quick Start</a></li>
 
@@ -282,6 +272,6 @@ What it returns is described in the <a href="farkle-parser-goldparser.html" titl
         </div>
       </div>
     </div>
-    <a href="https://github.com/teo-tsirpanis/Farkle/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"/></a>
+    <a href="https://github.com/teo-tsirpanis/Farkle/" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
   </body>
-  </html>
+</html>
