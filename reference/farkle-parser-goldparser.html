@@ -37,35 +37,107 @@
 
 <h1>GOLDParser</h1>
 <p>
-
-    <span>Namespace: Farkle.Parser</span><br />
-    </p>
+  <span>Namespace: Farkle.Parser</span><br />
+        <span>
+          Attributes:<br />
+[&lt;RequireQualifiedAccess&gt;]<br />
+          
+      </span>
+</p>
 <div class="xmldoc">
-<p>A reusable parser created for a specific grammar that can parse input from multiple sources.</p>
+<p>Functions to create <a href="farkle-ast.html" title="AST"><code>AST</code></a>s by parsing input, based on <a href="farkle-runtimegrammar.html" title="RuntimeGrammar"><code>RuntimeGrammar</code></a>s.
+They accept a callback for each log message the parser encounters.</p>
 
 </div>
-  <h3>Record Fields</h3>
+
+<!-- Render nested types and modules, if there are any -->
+
+  <h3>Functions and values</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Record Field</td><td>Description</td></tr>
+      <tr><td>Function or value</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '223', 223)" onmouseover="showTip(event, '223', 223)">
-            Grammar
+          <code onmouseout="hideTip(event, '75', 75)" onmouseover="showTip(event, '75', 75)">
+            GOLDParser.parseChars(...)
           </code>
-          <div class="tip" id="223">
-            <strong>Signature:</strong> RuntimeGrammar<br />
+          <div class="tip" id="75">
+            <strong>Signature:</strong> grammar:RuntimeGrammar -&gt; fMessage:(ParseMessage -&gt; unit) -&gt; input:HybridStream&lt;char&gt; -&gt; Result&lt;AST,ParseError&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L30-30" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L36-36" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>Parses a <a href="farkle-hybridstream.html" title="HybridStream"><code>HybridStream</code></a> of characters.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '76', 76)" onmouseover="showTip(event, '76', 76)">
+            GOLDParser.parseFile(...)
+          </code>
+          <div class="tip" id="76">
+            <strong>Signature:</strong> g:RuntimeGrammar -&gt; fMessage:(ParseMessage -&gt; unit) -&gt; doLazyLoad:bool -&gt; encoding:Encoding -&gt; path:string -&gt; Result&lt;AST,ParseError&gt;<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L87-87" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Parses the contents of a file in the given path whose bytes are encoded with the given <code>Encoding</code>.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '77', 77)" onmouseover="showTip(event, '77', 77)">
+            GOLDParser.parseStream(...)
+          </code>
+          <div class="tip" id="77">
+            <strong>Signature:</strong> g:RuntimeGrammar -&gt; fMessage:(ParseMessage -&gt; unit) -&gt; doLazyLoad:bool -&gt; encoding:Encoding -&gt; inputStream:Stream -&gt; Result&lt;AST,ParseError&gt;<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L80-80" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Parses a .NET <code>Stream</code> whose bytes are encoded with the given <code>Encoding</code>.
+There is an option to load the entire stream at once, instead of gradually loading it the moment it is required.
+It slightly improves performance, but it should not be used on files whose size might be big.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '78', 78)" onmouseover="showTip(event, '78', 78)">
+            GOLDParser.parseString g fMessage input
+          </code>
+          <div class="tip" id="78">
+            <strong>Signature:</strong> g:RuntimeGrammar -&gt; fMessage:(ParseMessage -&gt; unit) -&gt; input:string -&gt; Result&lt;AST,ParseError&gt;<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/GOLDParser.fs#L75-75" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Parses a string.</p>
+
+
         </td>
       </tr>
     </tbody>

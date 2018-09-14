@@ -53,11 +53,11 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '46', 46)" onmouseover="showTip(event, '46', 46)">
+          <code onmouseout="hideTip(event, '12', 12)" onmouseover="showTip(event, '12', 12)">
             asGOLDParser
           </code>
-          <div class="tip" id="46">
-            <strong>Signature:</strong> RuntimeFarkle&lt;&#39;?7998&gt; -&gt; Result&lt;GOLDParser,FarkleError&gt;<br />
+          <div class="tip" id="12">
+            <strong>Signature:</strong> RuntimeFarkle&lt;&#39;?7998&gt; -&gt; Result&lt;RuntimeGrammar,FarkleError&gt;<br />
                           <strong>Type parameters:</strong> '?7998                      </div>
         </td>
         <td class="xmldoc">
@@ -74,10 +74,10 @@ This function is useful to access the lower-level APIs, for more advanced cases 
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '47', 47)" onmouseover="showTip(event, '47', 47)">
+          <code onmouseout="hideTip(event, '13', 13)" onmouseover="showTip(event, '13', 13)">
             create grammar postProcessor
           </code>
-          <div class="tip" id="47">
+          <div class="tip" id="13">
             <strong>Signature:</strong> grammar:RuntimeGrammar -&gt; postProcessor:PostProcessor -&gt; RuntimeFarkle&lt;&#39;TResult&gt;<br />
                           <strong>Type parameters:</strong> 'TResult                      </div>
         </td>
@@ -95,10 +95,10 @@ The function takes a <a href="farkle-runtimegrammar.html" title="RuntimeGrammar"
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '48', 48)" onmouseover="showTip(event, '48', 48)">
+          <code onmouseout="hideTip(event, '14', 14)" onmouseover="showTip(event, '14', 14)">
             ofEGTFile fileName postProcessor
           </code>
-          <div class="tip" id="48">
+          <div class="tip" id="14">
             <strong>Signature:</strong> fileName:string -&gt; postProcessor:PostProcessor -&gt; RuntimeFarkle&lt;&#39;TResult&gt;<br />
                           <strong>Type parameters:</strong> 'TResult                      </div>
         </td>
@@ -117,10 +117,10 @@ In case the grammar file fails to be read, the <a href="farkle-runtimefarkle.htm
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '49', 49)" onmouseover="showTip(event, '49', 49)">
+          <code onmouseout="hideTip(event, '15', 15)" onmouseover="showTip(event, '15', 15)">
             parseChars fMessage x input
           </code>
-          <div class="tip" id="49">
+          <div class="tip" id="15">
             <strong>Signature:</strong> fMessage:(ParseMessage -&gt; unit) -&gt; x:RuntimeFarkle&lt;&#39;?8006&gt; -&gt; input:HybridStream&lt;char&gt; -&gt; Result&lt;&#39;?8006,FarkleError&gt;<br />
                           <strong>Type parameters:</strong> '?8006                      </div>
         </td>
@@ -138,11 +138,11 @@ This function also accepts a custom parse message handler.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '50', 50)" onmouseover="showTip(event, '50', 50)">
-            parseFile x settings inputFile
+          <code onmouseout="hideTip(event, '16', 16)" onmouseover="showTip(event, '16', 16)">
+            parseFile(...)
           </code>
-          <div class="tip" id="50">
-            <strong>Signature:</strong> x:RuntimeFarkle&lt;&#39;?8010&gt; -&gt; settings:GOLDParserConfig -&gt; inputFile:string -&gt; Result&lt;&#39;?8010,FarkleError&gt;<br />
+          <div class="tip" id="16">
+            <strong>Signature:</strong> x:RuntimeFarkle&lt;&#39;?8010&gt; -&gt; doLazyLoad:bool -&gt; encoding:Encoding -&gt; inputFile:string -&gt; Result&lt;&#39;?8010,FarkleError&gt;<br />
                           <strong>Type parameters:</strong> '?8010                      </div>
         </td>
         <td class="xmldoc">
@@ -150,7 +150,7 @@ This function also accepts a custom parse message handler.</p>
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Parses and post-processes a file at the given path with the given settings.</p>
+          <p>Parses and post-processes a file at the given path with the given settings that are explained in the <code>ParserImplementation</code> module.</p>
 
 
         </td>
@@ -158,19 +158,19 @@ This function also accepts a custom parse message handler.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '51', 51)" onmouseover="showTip(event, '51', 51)">
-            parseStream x settings inputStream
+          <code onmouseout="hideTip(event, '17', 17)" onmouseover="showTip(event, '17', 17)">
+            parseStream(...)
           </code>
-          <div class="tip" id="51">
-            <strong>Signature:</strong> x:RuntimeFarkle&lt;&#39;?8012&gt; -&gt; settings:GOLDParserConfig -&gt; inputStream:Stream -&gt; Result&lt;&#39;?8012,FarkleError&gt;<br />
+          <div class="tip" id="17">
+            <strong>Signature:</strong> x:RuntimeFarkle&lt;&#39;?8012&gt; -&gt; doLazyLoad:bool -&gt; encoding:Encoding -&gt; inputStream:Stream -&gt; Result&lt;&#39;?8012,FarkleError&gt;<br />
                           <strong>Type parameters:</strong> '?8012                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/RuntimeFarkle.fs#L86-86" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/RuntimeFarkle.fs#L87-87" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Parses and post-processes a .NET <code>Stream</code> with the given settings.</p>
+          <p>Parses and post-processes a .NET <code>Stream</code> with the given settings that are explained in the <code>ParserImplementation</code> module.</p>
 
 
         </td>
@@ -178,11 +178,11 @@ This function also accepts a custom parse message handler.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '52', 52)" onmouseover="showTip(event, '52', 52)">
+          <code onmouseout="hideTip(event, '18', 18)" onmouseover="showTip(event, '18', 18)">
             parseString x inputString
           </code>
-          <div class="tip" id="52">
-            <strong>Signature:</strong> x:RuntimeFarkle&lt;&#39;?8008&gt; -&gt; inputString:seq&lt;char&gt; -&gt; Result&lt;&#39;?8008,FarkleError&gt;<br />
+          <div class="tip" id="18">
+            <strong>Signature:</strong> x:RuntimeFarkle&lt;&#39;?8008&gt; -&gt; inputString:string -&gt; Result&lt;&#39;?8008,FarkleError&gt;<br />
                           <strong>Type parameters:</strong> '?8008                      </div>
         </td>
         <td class="xmldoc">

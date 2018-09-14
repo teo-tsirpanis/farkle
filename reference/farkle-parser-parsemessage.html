@@ -41,80 +41,31 @@
     <span>Namespace: Farkle.Parser</span><br />
     </p>
 <div class="xmldoc">
-<p>A message from a <a href="farkle-parser-parser.html" title="Parser"><code>Parser</code></a>, and the position it was encountered.</p>
+<p>A log message from a <a href="farkle-parser-parser.html" title="Parser"><code>Parser</code></a>, and the position it was encountered.</p>
 
 </div>
-  <h3>Record Fields</h3>
+  <h3>Union Cases</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Record Field</td><td>Description</td></tr>
+      <tr><td>Union Case</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '238', 238)" onmouseover="showTip(event, '238', 238)">
-            MessageType
+          <code onmouseout="hideTip(event, '184', 184)" onmouseover="showTip(event, '184', 184)">
+            ParseMessage(Position,ParseMessageType)
           </code>
-          <div class="tip" id="238">
-            <strong>Signature:</strong> ParseMessageType<br />
+          <div class="tip" id="184">
+            <strong>Signature:</strong> Position * ParseMessageType<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L77-77" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>The type of the message.</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '239', 239)" onmouseover="showTip(event, '239', 239)">
-            Position
-          </code>
-          <div class="tip" id="239">
-            <strong>Signature:</strong> Position<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L79-79" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>The position the message was encountered.</p>
-
-
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <h3>Instance members</h3>
-  <table class="table table-bordered member-list">
-    <thead>
-      <tr><td>Instance member</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '240', 240)" onmouseover="showTip(event, '240', 240)">
-            x.IsError
-          </code>
-          <div class="tip" id="240">
-            <strong>Signature:</strong> bool<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L81-81" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L51-51" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           
-              <p>CompiledName: <code>get_IsError</code></p>
         </td>
       </tr>
     </tbody>
@@ -128,42 +79,21 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '241', 241)" onmouseover="showTip(event, '241', 241)">
-            ParseMessage.Create position messageType
+          <code onmouseout="hideTip(event, '185', 185)" onmouseover="showTip(event, '185', 185)">
+            ParseMessage.CreateSimple(mt)
           </code>
-          <div class="tip" id="241">
-            <strong>Signature:</strong> position:Position -&gt; messageType:ParseMessageType -&gt; ParseMessage<br />
+          <div class="tip" id="185">
+            <strong>Signature:</strong> mt:ParseMessageType -&gt; ParseMessage<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L84-84" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Creates a parse message of the given type at the given position.</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '242', 242)" onmouseover="showTip(event, '242', 242)">
-            ParseMessage.CreateSimple
-          </code>
-          <div class="tip" id="242">
-            <strong>Signature:</strong> ParseMessageType -&gt; ParseMessage<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L86-86" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L55-55" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           <p>Creates a parse message at the default position.</p>
 
 
-              <p>CompiledName: <code>get_CreateSimple</code></p>
         </td>
       </tr>
     </tbody>

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>StateResult<'TSuccess, 'TState, 'TError> - Farkle</title>
+    <title>ParseError - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -35,16 +35,46 @@
 
 
 
-<h1>StateResult<'TSuccess, 'TState, 'TError></h1>
+<h1>ParseError</h1>
 <p>
 
-    <span>Namespace: Farkle.Monads</span><br />
-    </p>
+    <span>Namespace: Farkle.Parser</span><br />
+            <span>
+            Attributes: <br />
+[&lt;RequireQualifiedAccess&gt;]<br />
+            
+        </span>
+</p>
 <div class="xmldoc">
-<p>A combination of the <a href="farkle-common-result.html" title="Result"><code>Result</code></a> and <a href="farkle-monads-state.html" title="State"><code>State</code></a> monads.
-F# has no monad transformers, so it was manually done.</p>
+<p>A log message from a <a href="farkle-parser-parser.html" title="Parser"><code>Parser</code></a>, and the position it was encountered.</p>
 
 </div>
+  <h3>Union Cases</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Union Case</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '175', 175)" onmouseover="showTip(event, '175', 175)">
+            ParseError(Position,ParseErrorType)
+          </code>
+          <div class="tip" id="175">
+            <strong>Signature:</strong> Position * ParseErrorType<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L81-81" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
         </div>
         <div class="span3">

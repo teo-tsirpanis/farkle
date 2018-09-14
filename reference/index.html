@@ -151,16 +151,6 @@ A runtime grammar however can be created from anywhere.</p>
         </tr>
         <tr>
           <td class="module-name">
-            <a href="farkle-common.html">Common</a>
-          </td>
-          <td class="xmldoc">
-          <p>Some useful functions and types that could be used from many points from the library.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="module-name">
             <a href="farkle-endlessprocess.html">EndlessProcess</a>
           </td>
           <td class="xmldoc">
@@ -481,30 +471,10 @@ A simple key-value collection.</p>
     <tbody>
         <tr>
           <td class="type-name">
-            <a href="farkle-grammar-goldparser-egtfile.html">EGTFile</a>
-          </td>
-          <td class="xmldoc">
-          <p>An EGT file is made of a header string and a list of <a href="farkle-grammar-goldparser-record.html" title="Record"><code>Record</code></a>s.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
             <a href="farkle-grammar-goldparser-egtreaderror.html">EGTReadError</a>
           </td>
           <td class="xmldoc">
           <p>What can go wrong with reading an EGT file.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-grammar-goldparser-entry.html">Entry</a>
-          </td>
-          <td class="xmldoc">
-          <p>An entry of an EGT file.</p>
 
 
           </td>
@@ -516,16 +486,6 @@ A simple key-value collection.</p>
           <td class="xmldoc">
           <p>A structure that describes a grammar - the logic under which a string is parsed.
 Its constructor is private; use functions like these from the <a href="farkle-grammar-goldparser-egt.html" title="EGT"><code>EGT</code></a> module to create one.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-grammar-goldparser-record.html">Record</a>
-          </td>
-          <td class="xmldoc">
-          <p>An EGT record is a list of grouped entries.</p>
 
 
           </td>
@@ -600,26 +560,6 @@ F# has no monad transformers, so it was manually done.</p>
     <tbody>
         <tr>
           <td class="type-name">
-            <a href="farkle-parser-goldparser.html">GOLDParser</a>
-          </td>
-          <td class="xmldoc">
-          <p>A reusable parser created for a specific grammar that can parse input from multiple sources.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-parser-goldparserconfig.html">GOLDParserConfig</a>
-          </td>
-          <td class="xmldoc">
-          <p>A set of settings to customize a parser.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
             <a href="farkle-parser-lalrparser.html">LALRParser</a>
           </td>
           <td class="xmldoc">
@@ -640,6 +580,26 @@ is abstracted from the rest of the parser.</p>
         </tr>
         <tr>
           <td class="type-name">
+            <a href="farkle-parser-parseerror.html">ParseError</a>
+          </td>
+          <td class="xmldoc">
+          <p>A log message from a <a href="farkle-parser-parser.html" title="Parser"><code>Parser</code></a>, and the position it was encountered.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-parser-parseerrortype.html">ParseErrorType</a>
+          </td>
+          <td class="xmldoc">
+          <p>An error</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
             <a href="farkle-parser-parseinternalerror.html">ParseInternalError</a>
           </td>
           <td class="xmldoc">
@@ -655,7 +615,7 @@ Another possible way of manifestation is creating deliberately faulty <code>Gram
             <a href="farkle-parser-parsemessage.html">ParseMessage</a>
           </td>
           <td class="xmldoc">
-          <p>A message from a <a href="farkle-parser-parser.html" title="Parser"><code>Parser</code></a>, and the position it was encountered.</p>
+          <p>A log message from a <a href="farkle-parser-parser.html" title="Parser"><code>Parser</code></a>, and the position it was encountered.</p>
 
 
           </td>
@@ -665,8 +625,7 @@ Another possible way of manifestation is creating deliberately faulty <code>Gram
             <a href="farkle-parser-parsemessagetype.html">ParseMessageType</a>
           </td>
           <td class="xmldoc">
-          <p>A message describing what a <a href="farkle-parser-parser.html" title="Parser"><code>Parser</code></a> did, or what error it encountered.
-Some of these will only appear while using the <a href="farkle-parser-goldparser.html" title="GOLDParser"><code>GOLDParser</code></a> API.</p>
+          <p>An action of the parser.</p>
 
 
           </td>
@@ -718,18 +677,11 @@ That's the reason of this type.</p>
     <tbody>
         <tr>
           <td class="module-name">
-            <a href="farkle-parser-goldparsermodule.html">GOLDParser</a>
+            <a href="farkle-parser-goldparser.html">GOLDParser</a>
           </td>
           <td class="xmldoc">
-          
-          </td>
-        </tr>
-        <tr>
-          <td class="module-name">
-            <a href="farkle-parser-parsermodule.html">Parser</a>
-          </td>
-          <td class="xmldoc">
-          <p>Functions to create low-level <a href="farkle-parser-parser.html" title="Parser"><code>Parser</code></a>s.</p>
+          <p>Functions to create <a href="farkle-ast.html" title="AST"><code>AST</code></a>s by parsing input, based on <a href="farkle-runtimegrammar.html" title="RuntimeGrammar"><code>RuntimeGrammar</code></a>s.
+They accept a callback for each log message the parser encounters.</p>
 
 
           </td>
