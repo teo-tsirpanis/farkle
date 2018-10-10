@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>AST - Farkle</title>
+    <title>State - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -35,9 +35,9 @@
 
 
 
-<h1>AST</h1>
+<h1>State</h1>
 <p>
-  <span>Namespace: Farkle</span><br />
+  <span>Namespace: Farkle.Monads.Extra</span><br />
         <span>
           Attributes:<br />
 [&lt;RequireQualifiedAccess&gt;]<br />
@@ -45,7 +45,7 @@
       </span>
 </p>
 <div class="xmldoc">
-<p>Functions to work with <a href="farkle-ast.html" title="AST"><code>AST</code></a>s.</p>
+<p>Some more functions to work with <code>State</code>.</p>
 
 </div>
 
@@ -60,76 +60,63 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '1', 1)" onmouseover="showTip(event, '1', 1)">
-            AST.simplify(x)
+          <code onmouseout="hideTip(event, '53', 53)" onmouseover="showTip(event, '53', 53)">
+            State.runOver m1 m2 s1 s2
           </code>
-          <div class="tip" id="1">
-            <strong>Signature:</strong> x:AST -&gt; AST<br />
-                                    <span>
-            <strong>Attributes:</strong><br />
-[&lt;CompiledName(&quot;Simplify&quot;)&gt;]<br />
-          </span>
-          </div>
+          <div class="tip" id="53">
+            <strong>Signature:</strong> m1:State&lt;&#39;?8692,&#39;?8693&gt; -&gt; m2:(&#39;?8693 -&gt; State&lt;&#39;?8694,&#39;?8695 option&gt;) -&gt; s1:&#39;?8692 -&gt; s2:&#39;?8694 -&gt; &#39;?8695 * &#39;?8694<br />
+                          <strong>Type parameters:</strong> '?8692, '?8693, '?8694, '?8695                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/AST.fs#L66-66" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/MonadsExtra.fs#L23-23" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Simplifies an <a href="farkle-ast.html" title="AST"><code>AST</code></a> in the same fashion with GOLD Parser's "trim reductions" option.</p>
+          <p>Continuously runs a <code>State</code> object, whose result is given
+to a function, until the function's result contains some value.</p>
 
 
-              <p>CompiledName: <code>Simplify</code></p>
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '2', 2)" onmouseover="showTip(event, '2', 2)">
-            AST.tee fContent fNonterminal _arg1
+          <code onmouseout="hideTip(event, '54', 54)" onmouseover="showTip(event, '54', 54)">
+            State.runOverSeq xs m s
           </code>
-          <div class="tip" id="2">
-            <strong>Signature:</strong> fContent:(Token -&gt; &#39;?8165) -&gt; fNonterminal:(Production * AST list -&gt; &#39;?8165) -&gt; _arg1:AST -&gt; &#39;?8165<br />
-                          <strong>Type parameters:</strong> '?8165                        <span>
-            <strong>Attributes:</strong><br />
-[&lt;CompiledName(&quot;Tee&quot;)&gt;]<br />
-          </span>
-          </div>
+          <div class="tip" id="54">
+            <strong>Signature:</strong> xs:seq&lt;&#39;b&gt; -&gt; m:(&#39;b -&gt; State&lt;&#39;c,&#39;d option&gt;) -&gt; s:&#39;c -&gt; &#39;d * &#39;c<br />
+                          <strong>Type parameters:</strong> 'b, 'c, 'd                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/AST.fs#L57-57" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/MonadsExtra.fs#L33-33" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Maps an <a href="farkle-ast.html" title="AST"><code>AST</code></a> with either fContent or fNonterminal depending on what it is.</p>
+          <p>Gives each item of a sequence to a function that returns a <code>State</code> object, until this object returns some value.
+If the sequence ends, the last element will be continuously applied to the function.</p>
 
 
-              <p>CompiledName: <code>Tee</code></p>
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '3', 3)" onmouseover="showTip(event, '3', 3)">
-            AST.toASCIITree(x)
+          <code onmouseout="hideTip(event, '55', 55)" onmouseover="showTip(event, '55', 55)">
+            State.toSeq stateM initialState
           </code>
-          <div class="tip" id="3">
-            <strong>Signature:</strong> x:AST -&gt; string<br />
-                                    <span>
-            <strong>Attributes:</strong><br />
-[&lt;CompiledName(&quot;ToASCIITree&quot;)&gt;]<br />
-          </span>
-          </div>
+          <div class="tip" id="55">
+            <strong>Signature:</strong> stateM:State&lt;&#39;a,&#39;b&gt; -&gt; initialState:&#39;a -&gt; seq&lt;&#39;b&gt;<br />
+                          <strong>Type parameters:</strong> 'a, 'b                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/AST.fs#L70-70" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/MonadsExtra.fs#L17-17" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Visualizes an <a href="farkle-ast.html" title="AST"><code>AST</code></a> in the form of a textual "parse tree".</p>
+          <p>Creates an endless sequence by continuously running the given <code>State</code> with the given initial state.</p>
 
 
-              <p>CompiledName: <code>ToASCIITree</code></p>
         </td>
       </tr>
     </tbody>

@@ -55,16 +55,6 @@
         </tr>
         <tr>
           <td class="type-name">
-            <a href="farkle-endlessprocess-1.html">EndlessProcess<'T></a>
-          </td>
-          <td class="xmldoc">
-          <p>Like <code>LazyFeedbackProcess</code>, except that this one never ends.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
             <a href="farkle-farkleerror.html">FarkleError</a>
           </td>
           <td class="xmldoc">
@@ -85,23 +75,11 @@
         </tr>
         <tr>
           <td class="type-name">
-            <a href="farkle-rangeset-1.html">RangeSet<'a></a>
-          </td>
-          <td class="xmldoc">
-          <p>A simple and efficient set of items based on ranges.
-Instead of storing <em>all</em> the elements of a set, only the first and last are.
-This closely follows the paradigm of GOLD Parser 5 sets.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
             <a href="farkle-runtimefarkle-1.html">RuntimeFarkle<'TResult></a>
           </td>
           <td class="xmldoc">
           <p>A reusable parser <strong>and post-processor</strong>, created for a specific grammar, and returning
-a specific object that describes an expression of the language of this grammar.
+a specific object that best describes an expression of the language of this grammar.
 This is the highest-level API, and the easiest-to-use one.
 10: BTW, Farkle means: "FArkle Recognizes Known Languages Easily".
 20: And "FArkle" means: (GOTO 10) 😁
@@ -127,7 +105,7 @@ A runtime grammar however can be created from anywhere.</p>
             <a href="farkle-setex-1.html">SetEx<'a></a>
           </td>
           <td class="xmldoc">
-          <p>An unordered set that is either represented as an F# set or a <a href="farkle-rangeset.html" title="RangeSet"><code>RangeSet</code></a>.</p>
+          <p>A set with a varying representation.</p>
 
 
           </td>
@@ -151,12 +129,10 @@ A runtime grammar however can be created from anywhere.</p>
         </tr>
         <tr>
           <td class="module-name">
-            <a href="farkle-endlessprocess.html">EndlessProcess</a>
+            <a href="farkle-hybridstream.html">HybridStream</a>
           </td>
           <td class="xmldoc">
-          <p>Functions for working with <code>EndlessProcess&lt;'T&gt;</code>.</p>
-
-
+          
           </td>
         </tr>
         <tr>
@@ -164,7 +140,7 @@ A runtime grammar however can be created from anywhere.</p>
             <a href="farkle-rangeset.html">RangeSet</a>
           </td>
           <td class="xmldoc">
-          <p>Functions to work with the <a href="farkle-rangeset.html" title="RangeSet"><code>RangeSet</code></a> type.</p>
+          <p>Functions to work with lists of ranges.</p>
 
 
           </td>
@@ -174,7 +150,9 @@ A runtime grammar however can be created from anywhere.</p>
             <a href="farkle-runtimefarkle.html">RuntimeFarkle</a>
           </td>
           <td class="xmldoc">
-          
+          <p>Functions to create and use <a href="farkle-runtimefarkle.html" title="RuntimeFarkle"><code>RuntimeFarkle</code></a>s.</p>
+
+
           </td>
         </tr>
         <tr>
@@ -212,28 +190,9 @@ A runtime grammar however can be created from anywhere.</p>
             <a href="farkle-setutils.html">SetUtils</a>
           </td>
           <td class="xmldoc">
-          <p>Some utilities to work with <a href="farkle-setex.html" title="SetEx"><code>SetEx</code></a>es, mainly for building grammars.</p>
+          <p>Functions to work between sets of different types.</p>
 
 
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-    </div>
-  <h2>Farkle.Builder Namespace</h2>
-    <div>
-      <table class="table table-bordered module-list">
-    <thead>
-      <tr><td>Module</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td class="module-name">
-            <a href="farkle-builder-predefinedsets.html">PredefinedSets</a>
-          </td>
-          <td class="xmldoc">
-          
           </td>
         </tr>
     </tbody>
@@ -263,6 +222,17 @@ A runtime grammar however can be created from anywhere.</p>
           </td>
           <td class="xmldoc">
           <p>A type-safe reference to a value based on its index.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-collections-rangemap-2.html">RangeMap<'key, 'a></a>
+          </td>
+          <td class="xmldoc">
+          <p>A map data structure that works best when a continuous range of keys is assigned the same value.
+It can also double as a set, when the value type is a unit.</p>
 
 
           </td>
@@ -305,12 +275,10 @@ Safe random access is faciliated through <a href="farkle-collections-indexed.htm
         </tr>
         <tr>
           <td class="module-name">
-            <a href="farkle-collections-indexed.html">Indexed</a>
+            <a href="farkle-collections-rangemap.html">RangeMap</a>
           </td>
           <td class="xmldoc">
-          <p>Functions for working with <code>Indexed&lt;'a&gt;</code>.</p>
-
-
+          
           </td>
         </tr>
         <tr>
@@ -436,24 +404,7 @@ A simple key-value collection.</p>
             <a href="farkle-grammar-symbol.html">Symbol</a>
           </td>
           <td class="xmldoc">
-          <p>A symbol of a grammar</p>
-
-
-          </td>
-        </tr>
-    </tbody>
-  </table>
-  <table class="table table-bordered module-list">
-    <thead>
-      <tr><td>Module</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td class="module-name">
-            <a href="farkle-grammar-groupmodule.html">Group</a>
-          </td>
-          <td class="xmldoc">
-          <p>Functions to work with <a href="farkle-grammar-group.html" title="Group"><code>Group</code></a>s.</p>
+          <p>A symbol of a grammar.</p>
 
 
           </td>
@@ -502,7 +453,7 @@ Its constructor is private; use functions like these from the <a href="farkle-gr
             <a href="farkle-grammar-goldparser-egt.html">EGT</a>
           </td>
           <td class="xmldoc">
-          <p>Functions to convert EGT files to make a grammar.</p>
+          <p>Functions to read EGT files to make a grammar.</p>
 
 
           </td>
@@ -541,8 +492,29 @@ Its constructor is private; use functions like these from the <a href="farkle-gr
             <a href="farkle-monads-stateresult-3.html">StateResult<'TSuccess, 'TState, 'TError></a>
           </td>
           <td class="xmldoc">
-          <p>A combination of the <a href="farkle-common-result.html" title="Result"><code>Result</code></a> and <a href="farkle-monads-state.html" title="State"><code>State</code></a> monads.
+          <p>A combination of the <a href="farkle-common-result.html" title="Result"><code>Result</code></a> and <code>State</code> monads.
 F# has no monad transformers, so it was manually done.</p>
+
+
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </div>
+  <h2>Farkle.Monads.Extra Namespace</h2>
+    <div>
+      <table class="table table-bordered module-list">
+    <thead>
+      <tr><td>Module</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-monads-extra-state.html">State</a>
+          </td>
+          <td class="xmldoc">
+          <p>Some more functions to work with <code>State</code>.</p>
 
 
           </td>
@@ -583,7 +555,7 @@ is abstracted from the rest of the parser.</p>
             <a href="farkle-parser-parseerror.html">ParseError</a>
           </td>
           <td class="xmldoc">
-          <p>A log message from a <a href="farkle-parser-parser.html" title="Parser"><code>Parser</code></a>, and the position it was encountered.</p>
+          <p>A log message from a <code>Parser</code>, and the position it was encountered.</p>
 
 
           </td>
@@ -615,7 +587,7 @@ Another possible way of manifestation is creating deliberately faulty <code>Gram
             <a href="farkle-parser-parsemessage.html">ParseMessage</a>
           </td>
           <td class="xmldoc">
-          <p>A log message from a <a href="farkle-parser-parser.html" title="Parser"><code>Parser</code></a>, and the position it was encountered.</p>
+          <p>A log message from a <code>Parser</code>, and the position it was encountered.</p>
 
 
           </td>
@@ -632,56 +604,20 @@ Another possible way of manifestation is creating deliberately faulty <code>Gram
         </tr>
         <tr>
           <td class="type-name">
-            <a href="farkle-parser-parser.html">Parser</a>
-          </td>
-          <td class="xmldoc">
-          <p>A type signifying the state of a parser.
-The parsing process can be continued by evaluating the lazy <a href="farkle-parser-parser.html" title="Parser"><code>Parser</code></a> values.
-This type is the lowest-level public API.
-It is modeled after the <a href="https://fsharpforfunandprofit.com/cap/">Designing with Capabilities</a> presentation.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
             <a href="farkle-parser-tokenizer.html">Tokenizer</a>
           </td>
           <td class="xmldoc">
-          <p>A tokenizer. What is it actually? An infinite stream of tokens (and some other information).
-It is infinite because the architecture currently requires it.
-But after one point, the tokenizer returns just EOFs forever.</p>
+          <p>A tokenizer. What is it actually? A sequence of tokens (or some other information).</p>
 
 
           </td>
         </tr>
         <tr>
           <td class="type-name">
-            <a href="farkle-parser-tokenizerfeedback.html">TokenizerFeedback</a>
+            <a href="farkle-parser-tokenizerresult.html">TokenizerResult</a>
           </td>
           <td class="xmldoc">
-          <p>The feedback from the tokenizer after a token is read.
-Because the tokenizer is completely isolated, it needs to provide
-some more information to the rest of the code than just the token.
-That's the reason of this type.</p>
-
-
-          </td>
-        </tr>
-    </tbody>
-  </table>
-  <table class="table table-bordered module-list">
-    <thead>
-      <tr><td>Module</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td class="module-name">
-            <a href="farkle-parser-goldparser.html">GOLDParser</a>
-          </td>
-          <td class="xmldoc">
-          <p>Functions to create <a href="farkle-ast.html" title="AST"><code>AST</code></a>s by parsing input, based on <a href="farkle-runtimegrammar.html" title="RuntimeGrammar"><code>RuntimeGrammar</code></a>s.
-They accept a callback for each log message the parser encounters.</p>
+          <p>The result of a tokenizer step.</p>
 
 
           </td>
@@ -711,43 +647,10 @@ or, if they are productions, are the products of previous fusers.</p>
         </tr>
         <tr>
           <td class="type-name">
-            <a href="farkle-postprocessor-postprocesserror.html">PostProcessError</a>
-          </td>
-          <td class="xmldoc">
-          <p>An error in the post-processor.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-postprocessor-postprocessor.html">PostProcessor</a>
-          </td>
-          <td class="xmldoc">
-          <p>A post-processor.
-Post-processors convert <a href="farkle-ast.html" title="AST"><code>AST</code></a>s into some more meaningful types for the library that uses the parser.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
             <a href="farkle-postprocessor-transformer.html">Transformer</a>
           </td>
           <td class="xmldoc">
           <p>This type contains the logic to transform <em>one</em> terminal symbol to an arbitrary object.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-postprocessor-unknownterminal.html">UnknownTerminal</a>
-          </td>
-          <td class="xmldoc">
-          <p>This special type signifies that a terminal symbol was not recognized by the terminal post-processor.
-The terminal post-processor <em>is</em> allowed to fail. Some symbols like
-the semicolons in programming languages carry no significant information up to the higher levels of the parser.</p>
 
 
           </td>
@@ -771,10 +674,10 @@ the semicolons in programming languages carry no significant information up to t
         </tr>
         <tr>
           <td class="module-name">
-            <a href="farkle-postprocessor-postprocessormodule.html">PostProcessor</a>
+            <a href="farkle-postprocessor-postprocessor.html">PostProcessor</a>
           </td>
           <td class="xmldoc">
-          <p>Functions to create <a href="farkle-postprocessor-postprocessor.html" title="PostProcessor"><code>PostProcessor</code></a>s.</p>
+          <p>Functions to create <a href="farkle-postprocessor-postprocessor.html" title="PostProcessor"><code>PostProcessor</code></a>s, as well as some ready to use.</p>
 
 
           </td>
@@ -785,48 +688,6 @@ the semicolons in programming languages carry no significant information up to t
           </td>
           <td class="xmldoc">
           <p>Functions to create <a href="farkle-postprocessor-transformer.html" title="Transformer"><code>Transformer</code></a>s.</p>
-
-
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-    </div>
-  <h2>Farkle.RuntimeHelpers Namespace</h2>
-    <div>
-      <table class="table table-bordered type-list">
-    <thead>
-      <tr><td>Type</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-runtimehelpers-deserializationerror.html">DeserializationError</a>
-          </td>
-          <td class="xmldoc">
-          <p>A type signifying an error during the deserialization of an object.</p>
-
-
-          </td>
-        </tr>
-    </tbody>
-  </table>
-  <table class="table table-bordered module-list">
-    <thead>
-      <tr><td>Module</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td class="module-name">
-            <a href="farkle-runtimehelpers-serialization.html">Serialization</a>
-          </td>
-          <td class="xmldoc">
-          <p>This module implements a simple API to serialize and deserialize objects, powered by the .NET's binary serializer.
-The objects are serialized to a Base64 string.
-This string is not version-tolerant by design (i.e. you can deserialize only strings that were created in the same version of Farkle).
-It was mainly made to embed <code>RuntimeGrammars</code> inside template source files.
-It is <strong>not</strong> recommended for use in user code.</p>
 
 
           </td>

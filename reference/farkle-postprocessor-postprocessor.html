@@ -37,54 +37,80 @@
 
 <h1>PostProcessor</h1>
 <p>
-
-    <span>Namespace: Farkle.PostProcessor</span><br />
-    </p>
+  <span>Namespace: Farkle.PostProcessor</span><br />
+  </p>
 <div class="xmldoc">
-<p>A post-processor.
-Post-processors convert <a href="farkle-ast.html" title="AST"><code>AST</code></a>s into some more meaningful types for the library that uses the parser.</p>
+<p>Functions to create <a href="farkle-postprocessor-postprocessor.html" title="PostProcessor"><code>PostProcessor</code></a>s, as well as some ready to use.</p>
 
 </div>
-  <h3>Record Fields</h3>
+
+<!-- Render nested types and modules, if there are any -->
+
+  <h3>Functions and values</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Record Field</td><td>Description</td></tr>
+      <tr><td>Function or value</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '202', 202)" onmouseover="showTip(event, '202', 202)">
-            ProductionPostProcessor
+          <code onmouseout="hideTip(event, '64', 64)" onmouseover="showTip(event, '64', 64)">
+            ast
           </code>
-          <div class="tip" id="202">
-            <strong>Signature:</strong> Map&lt;uint32,Fuser&gt;<br />
+          <div class="tip" id="64">
+            <strong>Signature:</strong> PostProcessor&lt;AST&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/PostProcessor.fs#L15-15" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/PostProcessor.fs#L36-36" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>This post-processor creates a domain-ignorant <a href="farkle-ast.html" title="AST"><code>AST</code></a> that contains the information</p>
+
+
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '203', 203)" onmouseover="showTip(event, '203', 203)">
-            TerminalPostProcessor
+          <code onmouseout="hideTip(event, '65', 65)" onmouseover="showTip(event, '65', 65)">
+            ofSeq transformers fusers
           </code>
-          <div class="tip" id="203">
-            <strong>Signature:</strong> Map&lt;uint32,Transformer&gt;<br />
-                                  </div>
+          <div class="tip" id="65">
+            <strong>Signature:</strong> transformers:seq&lt;Transformer&gt; -&gt; fusers:seq&lt;Fuser&gt; -&gt; PostProcessor&lt;&#39;result&gt;<br />
+                          <strong>Type parameters:</strong> 'result                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/PostProcessor.fs#L14-14" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/PostProcessor.fs#L49-49" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>Creates a <a href="farkle-postprocessor-postprocessor.html" title="PostProcessor"><code>PostProcessor</code></a> from the given sequences of <a href="farkle-postprocessor-transformer.html" title="Transformer"><code>Transformer</code></a>s, and <a href="farkle-postprocessor-fuser.html" title="Fuser"><code>Fuser</code></a>s.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '66', 66)" onmouseover="showTip(event, '66', 66)">
+            syntaxCheck
+          </code>
+          <div class="tip" id="66">
+            <strong>Signature:</strong> PostProcessor&lt;unit&gt;<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/PostProcessor.fs#L28-28" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>This post-processor does not return anything meaningful to its consumer.
+It is useful for checking the syntax of a string with respect to a grammar.</p>
+
+
         </td>
       </tr>
     </tbody>

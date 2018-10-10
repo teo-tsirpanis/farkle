@@ -38,7 +38,12 @@
 <h1>SetEx</h1>
 <p>
   <span>Namespace: Farkle</span><br />
-  </p>
+        <span>
+          Attributes:<br />
+[&lt;RequireQualifiedAccess&gt;]<br />
+          
+      </span>
+</p>
 <div class="xmldoc">
 <p>Functions to work with <a href="farkle-setex.html" title="SetEx"><code>SetEx</code></a>es.</p>
 
@@ -55,59 +60,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '24', 24)" onmouseover="showTip(event, '24', 24)">
-            ( - ) x1 x2
-          </code>
-          <div class="tip" id="24">
-            <strong>Signature:</strong> x1:SetEx&lt;char&gt; -&gt; x2:SetEx&lt;char&gt; -&gt; SetEx&lt;char&gt;<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/Set.fs#L87-87" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Subtracts the second character <a href="farkle-setex.html" title="SetEx"><code>SetEx</code></a> from the first.
-The result is represented as an F# set.</p>
-
-
-              <p>CompiledName: <code>op_Subtraction</code></p>
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
           <code onmouseout="hideTip(event, '25', 25)" onmouseover="showTip(event, '25', 25)">
-            ( + ) x1 x2
+            SetEx.contains(x)
           </code>
           <div class="tip" id="25">
-            <strong>Signature:</strong> x1:SetEx&lt;char&gt; -&gt; x2:SetEx&lt;char&gt; -&gt; SetEx&lt;char&gt;<br />
-                                  </div>
+            <strong>Signature:</strong> x:&#39;?8423 -&gt; SetEx&lt;&#39;?8423&gt; -&gt; bool<br />
+                          <strong>Type parameters:</strong> '?8423                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/Set.fs#L83-83" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Unites two character <a href="farkle-setex.html" title="SetEx"><code>SetEx</code></a>es.
-The result is represented as an F# set.</p>
-
-
-              <p>CompiledName: <code>op_Addition</code></p>
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '26', 26)" onmouseover="showTip(event, '26', 26)">
-            contains(x)
-          </code>
-          <div class="tip" id="26">
-            <strong>Signature:</strong> x:&#39;?8584 -&gt; SetEx&lt;&#39;?8584&gt; -&gt; bool<br />
-                          <strong>Type parameters:</strong> '?8584                      </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/Set.fs#L79-79" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/Set.fs#L73-73" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -119,15 +80,35 @@ The result is represented as an F# set.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '27', 27)" onmouseover="showTip(event, '27', 27)">
-            tee fRange fSet _arg1
+          <code onmouseout="hideTip(event, '26', 26)" onmouseover="showTip(event, '26', 26)">
+            SetEx.ofRanges(ranges)
           </code>
-          <div class="tip" id="27">
-            <strong>Signature:</strong> fRange:(RangeSet&lt;&#39;?8577&gt; -&gt; &#39;?8578) -&gt; fSet:(Set&lt;&#39;?8577&gt; -&gt; &#39;?8578) -&gt; _arg1:SetEx&lt;&#39;?8577&gt; -&gt; &#39;?8578<br />
-                          <strong>Type parameters:</strong> '?8577, '?8578                      </div>
+          <div class="tip" id="26">
+            <strong>Signature:</strong> ranges:(^?8413 * ^?8413) list -&gt; SetEx&lt;^?8413&gt;<br />
+                          <strong>Type parameters:</strong> ^?8413                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/Set.fs#L63-63" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/Set.fs#L49-49" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Creates a <a href="farkle-setex.html" title="SetEx"><code>SetEx</code></a> from the given list of ranges.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '27', 27)" onmouseover="showTip(event, '27', 27)">
+            SetEx.tee fRange fSet _arg1
+          </code>
+          <div class="tip" id="27">
+            <strong>Signature:</strong> fRange:((&#39;?8415 * &#39;?8415) list -&gt; &#39;?8416) -&gt; fSet:(Set&lt;&#39;?8415&gt; -&gt; &#39;?8416) -&gt; _arg1:SetEx&lt;&#39;?8415&gt; -&gt; &#39;?8416<br />
+                          <strong>Type parameters:</strong> '?8415, '?8416                      </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/Set.fs#L61-61" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -140,18 +121,18 @@ The result is represented as an F# set.</p>
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '28', 28)" onmouseover="showTip(event, '28', 28)">
-            toCharSet
+            SetEx.toRanges(x)
           </code>
           <div class="tip" id="28">
-            <strong>Signature:</strong> SetEx&lt;char&gt; -&gt; Set&lt;char&gt;<br />
-                                  </div>
+            <strong>Signature:</strong> x:SetEx&lt;^?8420&gt; -&gt; (^?8420 * ^?8420) list<br />
+                          <strong>Type parameters:</strong> ^?8420, ^?8421                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/Set.fs#L69-69" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/Set.fs#L70-70" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Converts a <a href="farkle-setex.html" title="SetEx"><code>SetEx</code></a> to an F# set.</p>
+          <p>Converts a <a href="farkle-setex.html" title="SetEx"><code>SetEx</code></a> to a list of ranges.</p>
 
 
         </td>
@@ -160,39 +141,18 @@ The result is represented as an F# set.</p>
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '29', 29)" onmouseover="showTip(event, '29', 29)">
-            toRangeCharSet
+            SetEx.toSet(x)
           </code>
           <div class="tip" id="29">
-            <strong>Signature:</strong> SetEx&lt;char&gt; -&gt; RangeSet&lt;char&gt;<br />
-                                  </div>
+            <strong>Signature:</strong> x:SetEx&lt;^?8418&gt; -&gt; Set&lt;^?8418&gt;<br />
+                          <strong>Type parameters:</strong> ^?8418                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/Set.fs#L76-76" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/Set.fs#L67-67" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Converts a <a href="farkle-setex.html" title="SetEx"><code>SetEx</code></a> of characters to a <a href="farkle-rangeset.html" title="RangeSet"><code>RangeSet</code></a> of characters.</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '30', 30)" onmouseover="showTip(event, '30', 30)">
-            toRangeSet(fSuccessor)
-          </code>
-          <div class="tip" id="30">
-            <strong>Signature:</strong> fSuccessor:(&#39;?8581 -&gt; &#39;?8581) -&gt; SetEx&lt;&#39;?8581&gt; -&gt; RangeSet&lt;&#39;?8581&gt;<br />
-                          <strong>Type parameters:</strong> '?8581                      </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/Set.fs#L73-73" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Converts a <a href="farkle-setex.html" title="SetEx"><code>SetEx</code></a> to a <a href="farkle-rangeset.html" title="RangeSet"><code>RangeSet</code></a>.
-To make the function generic, a function that returns the successor of a value is required.</p>
+          <p>Converts a <a href="farkle-setex.html" title="SetEx"><code>SetEx</code></a> to an F# set.</p>
 
 
         </td>

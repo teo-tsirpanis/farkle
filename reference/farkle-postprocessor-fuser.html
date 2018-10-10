@@ -55,29 +55,11 @@ or, if they are productions, are the products of previous fusers.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '196', 196)" onmouseover="showTip(event, '196', 196)">
+          <code onmouseout="hideTip(event, '167', 167)" onmouseover="showTip(event, '167', 167)">
             InputTypes
           </code>
-          <div class="tip" id="196">
-            <strong>Signature:</strong> Type list<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Fuser.fs#L15-15" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '197', 197)" onmouseover="showTip(event, '197', 197)">
-            OutputType
-          </code>
-          <div class="tip" id="197">
-            <strong>Signature:</strong> Type<br />
+          <div class="tip" id="167">
+            <strong>Signature:</strong> Type []<br />
                                   </div>
         </td>
         <td class="xmldoc">
@@ -91,15 +73,51 @@ or, if they are productions, are the products of previous fusers.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '198', 198)" onmouseover="showTip(event, '198', 198)">
-            TheFuser
+          <code onmouseout="hideTip(event, '168', 168)" onmouseover="showTip(event, '168', 168)">
+            OutputType
           </code>
-          <div class="tip" id="198">
-            <strong>Signature:</strong> obj list -&gt; obj<br />
+          <div class="tip" id="168">
+            <strong>Signature:</strong> Type<br />
                                   </div>
         </td>
         <td class="xmldoc">
                       <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Fuser.fs#L17-17" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '169', 169)" onmouseover="showTip(event, '169', 169)">
+            ProductionIndex
+          </code>
+          <div class="tip" id="169">
+            <strong>Signature:</strong> uint32<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Fuser.fs#L15-15" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '170', 170)" onmouseover="showTip(event, '170', 170)">
+            TheFuser
+          </code>
+          <div class="tip" id="170">
+            <strong>Signature:</strong> obj [] -&gt; obj<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Fuser.fs#L18-18" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -117,22 +135,19 @@ or, if they are productions, are the products of previous fusers.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '199', 199)" onmouseover="showTip(event, '199', 199)">
-            Fuser.Fuse x fus
+          <code onmouseout="hideTip(event, '171', 171)" onmouseover="showTip(event, '171', 171)">
+            Fuser.Create prod input output f
           </code>
-          <div class="tip" id="199">
-            <strong>Signature:</strong> (x:obj list) -&gt; fus:Fuser -&gt; Result&lt;obj,PostProcessError&gt;<br />
+          <div class="tip" id="171">
+            <strong>Signature:</strong> prod:uint32 -&gt; (input:Type []) -&gt; output:Type -&gt; (f:(obj [] -&gt; obj)) -&gt; Fuser<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Fuser.fs#L22-22" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Fuser.fs#L21-21" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Fuses the many post-processed parts of a production into one.
-The types of the objects are optionally checked, depending on the kind of the fuser in question.</p>
-
-
+          
         </td>
       </tr>
     </tbody>

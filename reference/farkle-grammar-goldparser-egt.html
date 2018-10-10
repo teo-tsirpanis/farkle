@@ -40,7 +40,7 @@
   <span>Namespace: Farkle.Grammar.GOLDParser</span><br />
   </p>
 <div class="xmldoc">
-<p>Functions to convert EGT files to make a grammar.</p>
+<p>Functions to read EGT files to make a grammar.</p>
 
 </div>
 
@@ -55,10 +55,35 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '66', 66)" onmouseover="showTip(event, '66', 66)">
+          <code onmouseout="hideTip(event, '43', 43)" onmouseover="showTip(event, '43', 43)">
+            ofBase64String(x)
+          </code>
+          <div class="tip" id="43">
+            <strong>Signature:</strong> x:string -&gt; Result&lt;GOLDGrammar,EGTReadError&gt;<br />
+                                    <span>
+            <strong>Attributes:</strong><br />
+[&lt;CompiledName(&quot;CreateFromBase64String&quot;)&gt;]<br />
+          </span>
+          </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/EGT.fs#L22-22" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Reads a Base64-encoded string of the EGT file and returns a grammar.</p>
+
+
+              <p>CompiledName: <code>CreateFromBase64String</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '44', 44)" onmouseover="showTip(event, '44', 44)">
             ofFile(path)
           </code>
-          <div class="tip" id="66">
+          <div class="tip" id="44">
             <strong>Signature:</strong> path:string -&gt; Result&lt;GOLDGrammar,EGTReadError&gt;<br />
                                     <span>
             <strong>Attributes:</strong><br />
@@ -67,11 +92,11 @@
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/EGT.fs#L23-23" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/EGT.fs#L29-29" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Reads an EGT file and returns a <code>Grammar</code>.</p>
+          <p>Reads an EGT file from the file system and returns a <code>Grammar</code>.</p>
 
 
               <p>CompiledName: <code>CreateFromFile</code></p>
@@ -80,10 +105,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '67', 67)" onmouseover="showTip(event, '67', 67)">
+          <code onmouseout="hideTip(event, '45', 45)" onmouseover="showTip(event, '45', 45)">
             ofStream(stream)
           </code>
-          <div class="tip" id="67">
+          <div class="tip" id="45">
             <strong>Signature:</strong> stream:Stream -&gt; Result&lt;GOLDGrammar,EGTReadError&gt;<br />
                                     <span>
             <strong>Attributes:</strong><br />
@@ -92,12 +117,11 @@
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/EGT.fs#L17-17" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/EGT.fs#L16-16" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Reads a stream that represents an EGT file and returns a <code>Grammar</code>.
-The stream can be disposed when it ends.</p>
+          <p>Reads a stream that represents an EGT file and returns a <code>Grammar</code>.</p>
 
 
               <p>CompiledName: <code>CreateFromStream</code></p>

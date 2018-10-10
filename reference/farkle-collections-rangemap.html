@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>AST - Farkle</title>
+    <title>RangeMap - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -35,18 +35,11 @@
 
 
 
-<h1>AST</h1>
+<h1>RangeMap</h1>
 <p>
-  <span>Namespace: Farkle</span><br />
-        <span>
-          Attributes:<br />
-[&lt;RequireQualifiedAccess&gt;]<br />
-          
-      </span>
-</p>
+  <span>Namespace: Farkle.Collections</span><br />
+  </p>
 <div class="xmldoc">
-<p>Functions to work with <a href="farkle-ast.html" title="AST"><code>AST</code></a>s.</p>
-
 </div>
 
 <!-- Render nested types and modules, if there are any -->
@@ -60,76 +53,128 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '1', 1)" onmouseover="showTip(event, '1', 1)">
-            AST.simplify(x)
+          <code onmouseout="hideTip(event, '33', 33)" onmouseover="showTip(event, '33', 33)">
+            containsKey(k)
           </code>
-          <div class="tip" id="1">
-            <strong>Signature:</strong> x:AST -&gt; AST<br />
-                                    <span>
+          <div class="tip" id="33">
+            <strong>Signature:</strong> k:&#39;?8662 -&gt; RangeMap&lt;&#39;?8662,&#39;?8663&gt; -&gt; bool<br />
+                          <strong>Type parameters:</strong> '?8662, '?8663                        <span>
             <strong>Attributes:</strong><br />
-[&lt;CompiledName(&quot;Simplify&quot;)&gt;]<br />
+[&lt;CompiledName(&quot;ContainsKey&quot;)&gt;]<br />
           </span>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/AST.fs#L66-66" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/RangeMap.fs#L49-49" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Simplifies an <a href="farkle-ast.html" title="AST"><code>AST</code></a> in the same fashion with GOLD Parser's "trim reductions" option.</p>
+          <p>Checks if the given <a href="farkle-collections-rangemap.html" title="RangeMap"><code>RangeMap</code></a> contains the given element.</p>
 
 
-              <p>CompiledName: <code>Simplify</code></p>
+              <p>CompiledName: <code>ContainsKey</code></p>
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '2', 2)" onmouseover="showTip(event, '2', 2)">
-            AST.tee fContent fNonterminal _arg1
+          <code onmouseout="hideTip(event, '34', 34)" onmouseover="showTip(event, '34', 34)">
+            empty
           </code>
-          <div class="tip" id="2">
-            <strong>Signature:</strong> fContent:(Token -&gt; &#39;?8165) -&gt; fNonterminal:(Production * AST list -&gt; &#39;?8165) -&gt; _arg1:AST -&gt; &#39;?8165<br />
-                          <strong>Type parameters:</strong> '?8165                        <span>
+          <div class="tip" id="34">
+            <strong>Signature:</strong> RangeMap&lt;&#39;?8656,&#39;?8657&gt;<br />
+                          <strong>Type parameters:</strong> '?8656, '?8657                        <span>
             <strong>Attributes:</strong><br />
-[&lt;CompiledName(&quot;Tee&quot;)&gt;]<br />
+[&lt;CompiledName(&quot;Empty&quot;)&gt;]<br />
           </span>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/AST.fs#L57-57" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/RangeMap.fs#L28-28" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Maps an <a href="farkle-ast.html" title="AST"><code>AST</code></a> with either fContent or fNonterminal depending on what it is.</p>
+          <p>An empty <a href="farkle-collections-rangemap.html" title="RangeMap"><code>RangeMap</code></a>.</p>
 
 
-              <p>CompiledName: <code>Tee</code></p>
+              <p>CompiledName: <code>Empty</code></p>
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '3', 3)" onmouseover="showTip(event, '3', 3)">
-            AST.toASCIITree(x)
+          <code onmouseout="hideTip(event, '35', 35)" onmouseover="showTip(event, '35', 35)">
+            isEmpty(arg1)
           </code>
-          <div class="tip" id="3">
-            <strong>Signature:</strong> x:AST -&gt; string<br />
-                                    <span>
+          <div class="tip" id="35">
+            <strong>Signature:</strong> RangeMap&lt;&#39;?8665,&#39;?8666&gt; -&gt; bool<br />
+                          <strong>Type parameters:</strong> '?8665, '?8666                        <span>
             <strong>Attributes:</strong><br />
-[&lt;CompiledName(&quot;ToASCIITree&quot;)&gt;]<br />
+[&lt;CompiledName(&quot;IsEmpty&quot;)&gt;]<br />
           </span>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/AST.fs#L70-70" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/RangeMap.fs#L53-53" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Visualizes an <a href="farkle-ast.html" title="AST"><code>AST</code></a> in the form of a textual "parse tree".</p>
+          <p>Checks if the given <a href="farkle-collections-rangemap.html" title="RangeMap"><code>RangeMap</code></a> is empty.</p>
 
 
-              <p>CompiledName: <code>ToASCIITree</code></p>
+              <p>CompiledName: <code>IsEmpty</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '36', 36)" onmouseover="showTip(event, '36', 36)">
+            ofRanges(pairs)
+          </code>
+          <div class="tip" id="36">
+            <strong>Signature:</strong> pairs:((&#39;a * &#39;a) [] * &#39;b) [] -&gt; RangeMap&lt;&#39;a,&#39;b&gt; option<br />
+                          <strong>Type parameters:</strong> 'a, 'b                        <span>
+            <strong>Attributes:</strong><br />
+[&lt;CompiledName(&quot;CreateFromRanges&quot;)&gt;]<br />
+          </span>
+          </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/RangeMap.fs#L71-71" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Creates a <a href="farkle-collections-rangemap.html" title="RangeMap"><code>RangeMap</code></a> from an array of a range of keys and their corresponding value.
+The ranges are inclusive.
+The function may return <code>None</code> if some ranges overlap.</p>
+
+
+              <p>CompiledName: <code>CreateFromRanges</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '37', 37)" onmouseover="showTip(event, '37', 37)">
+            tryFind k arg2
+          </code>
+          <div class="tip" id="37">
+            <strong>Signature:</strong> k:&#39;b -&gt; RangeMap&lt;&#39;b,&#39;c&gt; -&gt; &#39;c option<br />
+                          <strong>Type parameters:</strong> 'b, 'c                        <span>
+            <strong>Attributes:</strong><br />
+[&lt;CompiledName(&quot;TryFind&quot;)&gt;]<br />
+          </span>
+          </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/RangeMap.fs#L32-32" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Looks up an element in a <a href="farkle-collections-rangemap.html" title="RangeMap"><code>RangeMap</code></a>, returning its corresponding value if it exists.</p>
+
+
+              <p>CompiledName: <code>TryFind</code></p>
         </td>
       </tr>
     </tbody>
