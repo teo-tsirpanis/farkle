@@ -11,7 +11,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" async></script>
     <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
-    <link href="https://bootswatch.com/2/cyborg/bootstrap.min.css" rel="stylesheet" async/>
+    <link href="https://stackpath.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" integrity="sha384-4FeI0trTH/PCsLWrGCD1mScoFu9Jf2NdknFdFoJhXZFwsvzZ3Bo5sAh7+zL8Xgnd" crossorigin="anonymous">
 
     <link type="text/css" rel="stylesheet" href="/Farkle/content/style.css" />
     <script type="text/javascript" src="/Farkle/content/tips.js" async></script>
@@ -24,7 +24,6 @@
     <div class="container">
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
-          <li><a href="http://fsharp.org">fsharp.org</a></li>
           <li><a href="https://github.com/teo-tsirpanis/Farkle">github page</a></li>
         </ul>
         <h3 class="muted"><a href="/Farkle/index.html">Farkle</a></h3>
@@ -52,8 +51,8 @@
 <p>It's also time to install Farkle's NuGet package with <a href="https://fsprojects.github.io/Paket/">your favorite NuGet client</a> (or another one).</p>
 <h2><a name="Compiling-the-grammar" class="anchor" href="#Compiling-the-grammar">Compiling the grammar</a></h2>
 <p><img src="img/goldBuilder.png" alt="The GOLD Parser Builder" /></p>
-<p>See the button writing "Next" at the bottom-right? <s>Mash</s> Keep pressing it until you see this dialog.</p>
-<p><img src="img/saveasegt.png" alt="The save dialog" /></p>
+<p>See the button writing "Next" at the bottom-right? Keep pressing it until you see this dialog.</p>
+<p><img src="img/saveAsEGT.png" alt="The save dialog" /></p>
 <p>Pay attention to the file type. Only EGT files work.</p>
 <p>Now, click on the menu bar: <code>Project - Create Skeleton Program</code>.</p>
 <p>You will be presented with the following dialog.</p>
@@ -119,65 +118,67 @@
 <span class="l">56: </span>
 <span class="l">57: </span>
 <span class="l">58: </span>
+<span class="l">59: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">open</span> <span class="id">Farkle</span>
 <span class="k">open</span> <span class="id">Farkle</span><span class="pn">.</span><span class="id">PostProcessor</span>
+<span class="k">open</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="id">System</span>
 
-<span class="k">type</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="vt">Symbol</span> <span class="o">=</span>
+<span class="k">type</span> <span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="vt">Symbol</span> <span class="o">=</span>
 <span class="c">/// (EOF)</span>
-<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="en">EOF</span>        <span class="o">=</span>  <span class="n">0</span>
+<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs3', 3)" onmouseover="showTip(event, 'fs3', 3)" class="en">EOF</span>        <span class="o">=</span>  <span class="n">0</span>
 <span class="c">/// (Error)</span>
-<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs3', 3)" onmouseover="showTip(event, 'fs3', 3)" class="en">Error</span>      <span class="o">=</span>  <span class="n">1</span>
+<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs4', 4)" onmouseover="showTip(event, 'fs4', 4)" class="en">Error</span>      <span class="o">=</span>  <span class="n">1</span>
 <span class="c">/// Whitespace</span>
-<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs4', 4)" onmouseover="showTip(event, 'fs4', 4)" class="en">Whitespace</span> <span class="o">=</span>  <span class="n">2</span>
+<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs5', 5)" onmouseover="showTip(event, 'fs5', 5)" class="en">Whitespace</span> <span class="o">=</span>  <span class="n">2</span>
 <span class="c">/// &#39;-&#39;</span>
-<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs5', 5)" onmouseover="showTip(event, 'fs5', 5)" class="en">Minus</span>      <span class="o">=</span>  <span class="n">3</span>
+<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs6', 6)" onmouseover="showTip(event, 'fs6', 6)" class="en">Minus</span>      <span class="o">=</span>  <span class="n">3</span>
 <span class="c">/// &#39;(&#39;</span>
-<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs6', 6)" onmouseover="showTip(event, 'fs6', 6)" class="en">LParen</span>     <span class="o">=</span>  <span class="n">4</span>
+<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs7', 7)" onmouseover="showTip(event, 'fs7', 7)" class="en">LParen</span>     <span class="o">=</span>  <span class="n">4</span>
 <span class="c">/// &#39;)&#39;</span>
-<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs7', 7)" onmouseover="showTip(event, 'fs7', 7)" class="en">RParen</span>     <span class="o">=</span>  <span class="n">5</span>
+<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs8', 8)" onmouseover="showTip(event, 'fs8', 8)" class="en">RParen</span>     <span class="o">=</span>  <span class="n">5</span>
 <span class="c">/// &#39;*&#39;</span>
-<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs8', 8)" onmouseover="showTip(event, 'fs8', 8)" class="en">Times</span>      <span class="o">=</span>  <span class="n">6</span>
+<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs9', 9)" onmouseover="showTip(event, 'fs9', 9)" class="en">Times</span>      <span class="o">=</span>  <span class="n">6</span>
 <span class="c">/// &#39;/&#39;</span>
-<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs9', 9)" onmouseover="showTip(event, 'fs9', 9)" class="en">Div</span>        <span class="o">=</span>  <span class="n">7</span>
+<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs10', 10)" onmouseover="showTip(event, 'fs10', 10)" class="en">Div</span>        <span class="o">=</span>  <span class="n">7</span>
 <span class="c">/// &#39;+&#39;</span>
-<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs10', 10)" onmouseover="showTip(event, 'fs10', 10)" class="en">Plus</span>       <span class="o">=</span>  <span class="n">8</span>
+<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs11', 11)" onmouseover="showTip(event, 'fs11', 11)" class="en">Plus</span>       <span class="o">=</span>  <span class="n">8</span>
 <span class="c">/// Number</span>
-<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs11', 11)" onmouseover="showTip(event, 'fs11', 11)" class="en">Number</span>     <span class="o">=</span>  <span class="n">9</span>
+<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs12', 12)" onmouseover="showTip(event, 'fs12', 12)" class="en">Number</span>     <span class="o">=</span>  <span class="n">9</span>
 <span class="c">/// &lt;Add Exp&gt;</span>
-<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs12', 12)" onmouseover="showTip(event, 'fs12', 12)" class="en">AddExp</span>     <span class="o">=</span> <span class="n">10</span>
+<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs13', 13)" onmouseover="showTip(event, 'fs13', 13)" class="en">AddExp</span>     <span class="o">=</span> <span class="n">10</span>
 <span class="c">/// &lt;Expression&gt;</span>
-<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs13', 13)" onmouseover="showTip(event, 'fs13', 13)" class="en">Expression</span> <span class="o">=</span> <span class="n">11</span>
+<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs14', 14)" onmouseover="showTip(event, 'fs14', 14)" class="en">Expression</span> <span class="o">=</span> <span class="n">11</span>
 <span class="c">/// &lt;Mult Exp&gt;</span>
-<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs14', 14)" onmouseover="showTip(event, 'fs14', 14)" class="en">MultExp</span>    <span class="o">=</span> <span class="n">12</span>
+<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs15', 15)" onmouseover="showTip(event, 'fs15', 15)" class="en">MultExp</span>    <span class="o">=</span> <span class="n">12</span>
 <span class="c">/// &lt;Negate Exp&gt;</span>
-<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs15', 15)" onmouseover="showTip(event, 'fs15', 15)" class="en">NegateExp</span>  <span class="o">=</span> <span class="n">13</span>
+<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs16', 16)" onmouseover="showTip(event, 'fs16', 16)" class="en">NegateExp</span>  <span class="o">=</span> <span class="n">13</span>
 <span class="c">/// &lt;Value&gt;</span>
-<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs16', 16)" onmouseover="showTip(event, 'fs16', 16)" class="en">Value</span>      <span class="o">=</span> <span class="n">14</span>
+<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs17', 17)" onmouseover="showTip(event, 'fs17', 17)" class="en">Value</span>      <span class="o">=</span> <span class="n">14</span>
 
-<span class="k">type</span> <span onmouseout="hideTip(event, 'fs17', 17)" onmouseover="showTip(event, 'fs17', 17)" class="vt">Production</span> <span class="o">=</span>
+<span class="k">type</span> <span onmouseout="hideTip(event, 'fs18', 18)" onmouseover="showTip(event, 'fs18', 18)" class="vt">Production</span> <span class="o">=</span>
 <span class="c">/// &lt;Expression&gt; ::= &lt;Add Exp&gt;</span>
-<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs18', 18)" onmouseover="showTip(event, 'fs18', 18)" class="en">Expression</span>        <span class="o">=</span>  <span class="n">0</span>
+<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs19', 19)" onmouseover="showTip(event, 'fs19', 19)" class="en">Expression</span>        <span class="o">=</span>  <span class="n">0</span>
 <span class="c">/// &lt;Add Exp&gt; ::= &lt;Add Exp&gt; &#39;+&#39; &lt;Mult Exp&gt;</span>
-<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs19', 19)" onmouseover="showTip(event, 'fs19', 19)" class="en">AddExpPlus</span>        <span class="o">=</span>  <span class="n">1</span>
+<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs20', 20)" onmouseover="showTip(event, 'fs20', 20)" class="en">AddExpPlus</span>        <span class="o">=</span>  <span class="n">1</span>
 <span class="c">/// &lt;Add Exp&gt; ::= &lt;Add Exp&gt; &#39;-&#39; &lt;Mult Exp&gt;</span>
-<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs20', 20)" onmouseover="showTip(event, 'fs20', 20)" class="en">AddExpMinus</span>       <span class="o">=</span>  <span class="n">2</span>
+<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs21', 21)" onmouseover="showTip(event, 'fs21', 21)" class="en">AddExpMinus</span>       <span class="o">=</span>  <span class="n">2</span>
 <span class="c">/// &lt;Add Exp&gt; ::= &lt;Mult Exp&gt;</span>
-<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs21', 21)" onmouseover="showTip(event, 'fs21', 21)" class="en">AddExp</span>            <span class="o">=</span>  <span class="n">3</span>
+<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs22', 22)" onmouseover="showTip(event, 'fs22', 22)" class="en">AddExp</span>            <span class="o">=</span>  <span class="n">3</span>
 <span class="c">/// &lt;Mult Exp&gt; ::= &lt;Mult Exp&gt; &#39;*&#39; &lt;Negate Exp&gt;</span>
-<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs22', 22)" onmouseover="showTip(event, 'fs22', 22)" class="en">MultExpTimes</span>      <span class="o">=</span>  <span class="n">4</span>
+<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs23', 23)" onmouseover="showTip(event, 'fs23', 23)" class="en">MultExpTimes</span>      <span class="o">=</span>  <span class="n">4</span>
 <span class="c">/// &lt;Mult Exp&gt; ::= &lt;Mult Exp&gt; &#39;/&#39; &lt;Negate Exp&gt;</span>
-<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs23', 23)" onmouseover="showTip(event, 'fs23', 23)" class="en">MultExpDiv</span>        <span class="o">=</span>  <span class="n">5</span>
+<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs24', 24)" onmouseover="showTip(event, 'fs24', 24)" class="en">MultExpDiv</span>        <span class="o">=</span>  <span class="n">5</span>
 <span class="c">/// &lt;Mult Exp&gt; ::= &lt;Negate Exp&gt;</span>
-<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs24', 24)" onmouseover="showTip(event, 'fs24', 24)" class="en">MultExp</span>           <span class="o">=</span>  <span class="n">6</span>
+<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs25', 25)" onmouseover="showTip(event, 'fs25', 25)" class="en">MultExp</span>           <span class="o">=</span>  <span class="n">6</span>
 <span class="c">/// &lt;Negate Exp&gt; ::= &#39;-&#39; &lt;Value&gt;</span>
-<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs25', 25)" onmouseover="showTip(event, 'fs25', 25)" class="en">NegateExpMinus</span>    <span class="o">=</span>  <span class="n">7</span>
+<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs26', 26)" onmouseover="showTip(event, 'fs26', 26)" class="en">NegateExpMinus</span>    <span class="o">=</span>  <span class="n">7</span>
 <span class="c">/// &lt;Negate Exp&gt; ::= &lt;Value&gt;</span>
-<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs26', 26)" onmouseover="showTip(event, 'fs26', 26)" class="en">NegateExp</span>         <span class="o">=</span>  <span class="n">8</span>
+<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs27', 27)" onmouseover="showTip(event, 'fs27', 27)" class="en">NegateExp</span>         <span class="o">=</span>  <span class="n">8</span>
 <span class="c">/// &lt;Value&gt; ::= Number</span>
-<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs27', 27)" onmouseover="showTip(event, 'fs27', 27)" class="en">ValueNumber</span>       <span class="o">=</span>  <span class="n">9</span>
+<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs28', 28)" onmouseover="showTip(event, 'fs28', 28)" class="en">ValueNumber</span>       <span class="o">=</span>  <span class="n">9</span>
 <span class="c">/// &lt;Value&gt; ::= &#39;(&#39; &lt;Expression&gt; &#39;)&#39;</span>
-<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs28', 28)" onmouseover="showTip(event, 'fs28', 28)" class="en">ValueLParenRParen</span> <span class="o">=</span> <span class="n">10</span>
+<span class="pn">|</span> <span onmouseout="hideTip(event, 'fs29', 29)" onmouseover="showTip(event, 'fs29', 29)" class="en">ValueLParenRParen</span> <span class="o">=</span> <span class="n">10</span>
 </code></pre></td>
 </tr>
 </table>
@@ -193,9 +194,13 @@
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs29', 29)" onmouseover="showTip(event, 'fs29', 29)" class="id">transformers</span> <span class="o">=</span> <span class="pn">[</span>
-    <span class="id">Transformer</span><span class="pn">.</span><span class="id">create</span> <span onmouseout="hideTip(event, 'fs1', 30)" onmouseover="showTip(event, 'fs1', 30)" class="id">Symbol</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs11', 31)" onmouseover="showTip(event, 'fs11', 31)" class="id">Number</span> <span onmouseout="hideTip(event, 'fs30', 32)" onmouseover="showTip(event, 'fs30', 32)" class="id">System</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs31', 33)" onmouseover="showTip(event, 'fs31', 33)" class="id">Convert</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs32', 34)" onmouseover="showTip(event, 'fs32', 34)" class="id">ToInt32</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs30', 30)" onmouseover="showTip(event, 'fs30', 30)" class="id">transformers</span> <span class="o">=</span> <span class="pn">[</span>
+    <span class="c">// Transformer.createS Symbol.Number Int32.Parse</span>
+    <span class="c">// You could have done it this way, but there is a built-in.</span>
+    <span class="id">Transformer</span><span class="pn">.</span><span class="id">int</span> <span onmouseout="hideTip(event, 'fs2', 31)" onmouseover="showTip(event, 'fs2', 31)" class="id">Symbol</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs12', 32)" onmouseover="showTip(event, 'fs12', 32)" class="id">Number</span>
 <span class="pn">]</span>
 </code></pre></td>
 </tr>
@@ -206,11 +211,11 @@
 <p>For example, we have the following rule: <code>&lt;Add Exp&gt; ::= &lt;Add Exp&gt; '+' &lt;Mult Exp&gt;</code> (also known as <code>Rules.AddExpPlus</code>). This rule is made of three parts: an expression, the "plus" character and another expression. We want to take the first and the last parts and add them together. So we have the following fuser:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs33', 35)" onmouseover="showTip(event, 'fs33', 35)" class="id">myFuser</span> <span class="o">=</span> <span class="id">Fuser</span><span class="pn">.</span><span class="id">take2Of</span> <span onmouseout="hideTip(event, 'fs17', 36)" onmouseover="showTip(event, 'fs17', 36)" class="id">Production</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs19', 37)" onmouseover="showTip(event, 'fs19', 37)" class="id">AddExpPlus</span> <span class="pn">(</span><span class="n">0</span><span class="pn">,</span> <span class="n">2</span><span class="pn">)</span> <span class="n">3</span> <span class="pn">(</span><span class="o">+</span><span class="pn">)</span> <span class="c">// We actually take the zeroth and the second parts, but as we all know, arrays start at zero.</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs31', 33)" onmouseover="showTip(event, 'fs31', 33)" class="id">myFuser</span> <span class="o">=</span> <span class="id">Fuser</span><span class="pn">.</span><span class="id">take2Of</span> <span onmouseout="hideTip(event, 'fs18', 34)" onmouseover="showTip(event, 'fs18', 34)" class="id">Production</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs20', 35)" onmouseover="showTip(event, 'fs20', 35)" class="id">AddExpPlus</span> <span class="pn">(</span><span class="n">0</span><span class="pn">,</span> <span class="n">2</span><span class="pn">)</span> <span class="n">3</span> <span class="pn">(</span><span class="o">+</span><span class="pn">)</span> <span class="c">// We actually take the zeroth and the second parts, but as we all know, arrays start at zero.</span>
 </code></pre></td>
 </tr>
 </table>
-<p>You might wonder: how can we "add" expressions as if they were integers? It will turn out to be that the post-processor will make them <em>actual</em> integers! But you will understand it better when we complete the fusers:</p>
+<p>You might wonder: how can we "add" expressions as if they were integers? It will turn out to be that the post-processor will make them <em>actual</em> integers. But you will understand it better when we complete the fusers:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
 <span class="l"> 2: </span>
 <span class="l"> 3: </span>
@@ -230,28 +235,28 @@
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">open</span> <span class="id">Fuser</span> <span class="c">// Open this module so that we don&#39;t have to prepend the Fuser module every time.</span>
 
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs34', 38)" onmouseover="showTip(event, 'fs34', 38)" class="id">fusers</span> <span class="o">=</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs32', 36)" onmouseover="showTip(event, 'fs32', 36)" class="id">fusers</span> <span class="o">=</span>
     <span class="pn">[</span>
-        <span class="id">identity</span> <span onmouseout="hideTip(event, 'fs17', 39)" onmouseover="showTip(event, 'fs17', 39)" class="id">Production</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs18', 40)" onmouseover="showTip(event, 'fs18', 40)" class="id">Expression</span> <span class="c">// identity means that the production is made of one part and we just take it as it is.</span>
-        <span onmouseout="hideTip(event, 'fs33', 41)" onmouseover="showTip(event, 'fs33', 41)" class="id">myFuser</span> <span class="c">// We have already written this fuser before.</span>
-        <span class="id">take2Of</span> <span onmouseout="hideTip(event, 'fs17', 42)" onmouseover="showTip(event, 'fs17', 42)" class="id">Production</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs20', 43)" onmouseover="showTip(event, 'fs20', 43)" class="id">AddExpMinus</span> <span class="pn">(</span><span class="n">0</span><span class="pn">,</span> <span class="n">2</span><span class="pn">)</span> <span class="n">3</span> <span class="pn">(</span><span class="o">-</span><span class="pn">)</span>
-        <span class="id">identity</span> <span onmouseout="hideTip(event, 'fs17', 44)" onmouseover="showTip(event, 'fs17', 44)" class="id">Production</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs21', 45)" onmouseover="showTip(event, 'fs21', 45)" class="id">AddExp</span>
-        <span class="id">take2Of</span> <span onmouseout="hideTip(event, 'fs17', 46)" onmouseover="showTip(event, 'fs17', 46)" class="id">Production</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs22', 47)" onmouseover="showTip(event, 'fs22', 47)" class="id">MultExpTimes</span> <span class="pn">(</span><span class="n">0</span><span class="pn">,</span> <span class="n">2</span><span class="pn">)</span> <span class="n">3</span> <span class="o">(*)</span>
-        <span class="id">take2Of</span> <span onmouseout="hideTip(event, 'fs17', 48)" onmouseover="showTip(event, 'fs17', 48)" class="id">Production</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs23', 49)" onmouseover="showTip(event, 'fs23', 49)" class="id">MultExpDiv</span> <span class="pn">(</span><span class="n">0</span><span class="pn">,</span> <span class="n">2</span><span class="pn">)</span> <span class="n">3</span> <span class="pn">(</span><span class="o">/</span><span class="pn">)</span>
-        <span class="id">identity</span> <span onmouseout="hideTip(event, 'fs17', 50)" onmouseover="showTip(event, 'fs17', 50)" class="id">Production</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs24', 51)" onmouseover="showTip(event, 'fs24', 51)" class="id">MultExp</span>
-        <span class="id">take1Of</span> <span onmouseout="hideTip(event, 'fs17', 52)" onmouseover="showTip(event, 'fs17', 52)" class="id">Production</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs25', 53)" onmouseover="showTip(event, 'fs25', 53)" class="id">NegateExpMinus</span> <span class="n">1</span> <span class="n">2</span> <span class="pn">(</span><span class="o">~-</span><span class="pn">)</span> <span class="c">// (~-) is different than (-). The tilde denotes an unary operator.</span>
-        <span class="id">identity</span> <span onmouseout="hideTip(event, 'fs17', 54)" onmouseover="showTip(event, 'fs17', 54)" class="id">Production</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs26', 55)" onmouseover="showTip(event, 'fs26', 55)" class="id">NegateExp</span>
-        <span class="id">identity</span> <span onmouseout="hideTip(event, 'fs17', 56)" onmouseover="showTip(event, 'fs17', 56)" class="id">Production</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs27', 57)" onmouseover="showTip(event, 'fs27', 57)" class="id">ValueNumber</span>
-        <span class="id">take1Of</span> <span onmouseout="hideTip(event, 'fs17', 58)" onmouseover="showTip(event, 'fs17', 58)" class="id">Production</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs28', 59)" onmouseover="showTip(event, 'fs28', 59)" class="id">ValueLParenRParen</span> <span class="n">1</span> <span class="n">3</span> <span onmouseout="hideTip(event, 'fs35', 60)" onmouseover="showTip(event, 'fs35', 60)" class="id">id</span>
+        <span class="id">identity</span> <span onmouseout="hideTip(event, 'fs18', 37)" onmouseover="showTip(event, 'fs18', 37)" class="id">Production</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs19', 38)" onmouseover="showTip(event, 'fs19', 38)" class="id">Expression</span> <span class="c">// identity means that the production is made of one part and we just take it as it is.</span>
+        <span onmouseout="hideTip(event, 'fs31', 39)" onmouseover="showTip(event, 'fs31', 39)" class="id">myFuser</span> <span class="c">// We have already written this fuser before.</span>
+        <span class="id">take2Of</span> <span onmouseout="hideTip(event, 'fs18', 40)" onmouseover="showTip(event, 'fs18', 40)" class="id">Production</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs21', 41)" onmouseover="showTip(event, 'fs21', 41)" class="id">AddExpMinus</span> <span class="pn">(</span><span class="n">0</span><span class="pn">,</span> <span class="n">2</span><span class="pn">)</span> <span class="n">3</span> <span class="pn">(</span><span class="o">-</span><span class="pn">)</span>
+        <span class="id">identity</span> <span onmouseout="hideTip(event, 'fs18', 42)" onmouseover="showTip(event, 'fs18', 42)" class="id">Production</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs22', 43)" onmouseover="showTip(event, 'fs22', 43)" class="id">AddExp</span>
+        <span class="id">take2Of</span> <span onmouseout="hideTip(event, 'fs18', 44)" onmouseover="showTip(event, 'fs18', 44)" class="id">Production</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs23', 45)" onmouseover="showTip(event, 'fs23', 45)" class="id">MultExpTimes</span> <span class="pn">(</span><span class="n">0</span><span class="pn">,</span> <span class="n">2</span><span class="pn">)</span> <span class="n">3</span> <span class="o">(*)</span>
+        <span class="id">take2Of</span> <span onmouseout="hideTip(event, 'fs18', 46)" onmouseover="showTip(event, 'fs18', 46)" class="id">Production</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs24', 47)" onmouseover="showTip(event, 'fs24', 47)" class="id">MultExpDiv</span> <span class="pn">(</span><span class="n">0</span><span class="pn">,</span> <span class="n">2</span><span class="pn">)</span> <span class="n">3</span> <span class="pn">(</span><span class="o">/</span><span class="pn">)</span>
+        <span class="id">identity</span> <span onmouseout="hideTip(event, 'fs18', 48)" onmouseover="showTip(event, 'fs18', 48)" class="id">Production</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs25', 49)" onmouseover="showTip(event, 'fs25', 49)" class="id">MultExp</span>
+        <span class="id">take1Of</span> <span onmouseout="hideTip(event, 'fs18', 50)" onmouseover="showTip(event, 'fs18', 50)" class="id">Production</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs26', 51)" onmouseover="showTip(event, 'fs26', 51)" class="id">NegateExpMinus</span> <span class="n">1</span> <span class="n">2</span> <span class="pn">(</span><span class="o">~-</span><span class="pn">)</span> <span class="c">// (~-) is different than (-). The tilde denotes an unary operator.</span>
+        <span class="id">identity</span> <span onmouseout="hideTip(event, 'fs18', 52)" onmouseover="showTip(event, 'fs18', 52)" class="id">Production</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs27', 53)" onmouseover="showTip(event, 'fs27', 53)" class="id">NegateExp</span>
+        <span class="id">identity</span> <span onmouseout="hideTip(event, 'fs18', 54)" onmouseover="showTip(event, 'fs18', 54)" class="id">Production</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs28', 55)" onmouseover="showTip(event, 'fs28', 55)" class="id">ValueNumber</span>
+        <span class="id">take1Of</span> <span onmouseout="hideTip(event, 'fs18', 56)" onmouseover="showTip(event, 'fs18', 56)" class="id">Production</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs29', 57)" onmouseover="showTip(event, 'fs29', 57)" class="id">ValueLParenRParen</span> <span class="n">1</span> <span class="n">3</span> <span onmouseout="hideTip(event, 'fs33', 58)" onmouseover="showTip(event, 'fs33', 58)" class="id">id</span>
     <span class="pn">]</span>
 </code></pre></td>
 </tr>
 </table>
 <p>As you see, the fuser turns the production <code>&lt;Value&gt; ::= Number</code> into an integer, by taking the <code>Number</code>, which is an integer, because the transformer made it so. The <code>&lt;Negate Exp&gt;</code> becomes an integer as well, because in both its definitions, it takes a <code>&lt;Value&gt;</code> which either negates it, or takes it as it is. By following this logic, we fill find out that every production becomes an integer.</p>
-<p>And here comes the post-processor...</p>
+<p>With the transformers and fusers ready, we now create the post-processor like this.</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs36', 61)" onmouseover="showTip(event, 'fs36', 61)" class="id">ThePostProcessor</span> <span class="o">=</span> <span class="id">PostProcessor</span><span class="pn">.</span><span class="id">ofSeq</span><span class="pn">&lt;</span><span onmouseout="hideTip(event, 'fs37', 62)" onmouseover="showTip(event, 'fs37', 62)" class="id">int</span><span class="pn">&gt;</span> <span onmouseout="hideTip(event, 'fs29', 63)" onmouseover="showTip(event, 'fs29', 63)" class="id">transformers</span> <span onmouseout="hideTip(event, 'fs34', 64)" onmouseover="showTip(event, 'fs34', 64)" class="id">fusers</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs34', 59)" onmouseover="showTip(event, 'fs34', 59)" class="id">pp</span> <span class="o">=</span> <span class="id">PostProcessor</span><span class="pn">.</span><span class="id">ofSeq</span><span class="pn">&lt;</span><span onmouseout="hideTip(event, 'fs35', 60)" onmouseover="showTip(event, 'fs35', 60)" class="id">int</span><span class="pn">&gt;</span> <span onmouseout="hideTip(event, 'fs30', 61)" onmouseover="showTip(event, 'fs30', 61)" class="id">transformers</span> <span onmouseout="hideTip(event, 'fs32', 62)" onmouseover="showTip(event, 'fs32', 62)" class="id">fusers</span>
 </code></pre></td>
 </tr>
 </table>
@@ -259,15 +264,15 @@
 <p><strong>Note</strong>: The post-processor is not <em>yet</em> perfectly type-safe. I could use a function that returns something else other than an integer, and the compiler would not shed a tear at all. However, the library will catch this error and will not throw an exception. The post-processor will be made type-safe at a later release.</p>
 </blockquote>
 <h2><a name="Making-a-runtime-Farkle" class="anchor" href="#Making-a-runtime-Farkle">Making a runtime Farkle</a></h2>
-<p>We need to make a <code>RuntimeFarkle</code>. This object is responsible for parsing <strong>and post-processing</strong> a string, a file, a .NET stream, or a <a href="/reference/farkle-hybridstream.html"><code>HybridStream&lt;char&gt;</code></a>, which is a custom type made for Farkle.</p>
+<p>We need to make a <code>RuntimeFarkle</code>. This object is responsible for parsing <strong>and post-processing</strong> a string, a file, a .NET stream, or a <code>CharStream</code>, a custom type made for Farkle.</p>
 <p>10: By the way, Farkle means: "FArkle Recognizes Known Languages Easily".
-20: And "FArkle" means: (GOTO 10) 😁
-30: I guess you can't read this line. 😛</p>
+20: And "FArkle" means: (GOTO 10).
+30: I guess you can't read this line.</p>
 <p>A runtime Farkle is made of a grammar, a post-processor, and two functions to convert terminals and productions to our custom enum types.</p>
-<p>We have the first two already, so it's time for the big 🧀:</p>
+<p>We have already created the post-processor, the grammar is in our <code>*.egt</code> file so we can create it this way:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs38', 65)" onmouseover="showTip(event, 'fs38', 65)" class="id">TheRuntimeFarkle</span> <span class="o">=</span> <span class="id">RuntimeFarkle</span><span class="pn">.</span><span class="id">ofEGTFile</span> <span onmouseout="hideTip(event, 'fs36', 66)" onmouseover="showTip(event, 'fs36', 66)" class="id">ThePostProcessor</span> <span class="s">&quot;SimpleMaths.egt&quot;</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs36', 63)" onmouseover="showTip(event, 'fs36', 63)" class="id">rf</span> <span class="o">=</span> <span class="id">RuntimeFarkle</span><span class="pn">.</span><span class="id">ofEGTFile</span> <span onmouseout="hideTip(event, 'fs34', 64)" onmouseover="showTip(event, 'fs34', 64)" class="id">pp</span> <span class="s">&quot;SimpleMaths.egt&quot;</span>
 </code></pre></td>
 </tr>
 </table>
@@ -293,79 +298,78 @@
 <span class="l">15: </span>
 <span class="l">16: </span>
 <span class="l">17: </span>
-<span class="l">18: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">open</span> <span onmouseout="hideTip(event, 'fs30', 67)" onmouseover="showTip(event, 'fs30', 67)" class="id">System</span>
-<span class="k">open</span> <span onmouseout="hideTip(event, 'fs30', 68)" onmouseover="showTip(event, 'fs30', 68)" class="id">System</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs39', 69)" onmouseover="showTip(event, 'fs39', 69)" class="id">Text</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">open</span> <span onmouseout="hideTip(event, 'fs1', 65)" onmouseover="showTip(event, 'fs1', 65)" class="id">System</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs37', 66)" onmouseover="showTip(event, 'fs37', 66)" class="id">Text</span>
 
 <span class="c">/// A utility to print a parse result.</span>
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs40', 70)" onmouseover="showTip(event, 'fs40', 70)" class="fn">printIt</span> <span class="pn">(</span><span onmouseout="hideTip(event, 'fs41', 71)" onmouseover="showTip(event, 'fs41', 71)" class="id">x</span><span class="pn">:</span> <span onmouseout="hideTip(event, 'fs42', 72)" onmouseover="showTip(event, 'fs42', 72)" class="vt">Result</span><span class="pn">&lt;</span><span class="id">_</span><span class="pn">,</span><span class="id">FarkleError</span><span class="pn">&gt;</span><span class="pn">)</span> <span class="o">=</span>
-    <span onmouseout="hideTip(event, 'fs41', 73)" onmouseover="showTip(event, 'fs41', 73)" class="id">x</span>
-    <span class="o">|&gt;</span> <span class="id">tee</span> <span class="pn">(</span><span onmouseout="hideTip(event, 'fs43', 74)" onmouseover="showTip(event, 'fs43', 74)" class="id">sprintf</span> <span class="s">&quot;%d&quot;</span><span class="pn">)</span> <span onmouseout="hideTip(event, 'fs44', 75)" onmouseover="showTip(event, 'fs44', 75)" class="id">string</span> <span class="c">// tee is a Farkle library function.</span>
-    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs45', 76)" onmouseover="showTip(event, 'fs45', 76)" class="fn">printfn</span> <span class="s">&quot;</span><span class="pf">%s</span><span class="s">&quot;</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs38', 67)" onmouseover="showTip(event, 'fs38', 67)" class="fn">printIt</span> <span class="pn">(</span><span onmouseout="hideTip(event, 'fs39', 68)" onmouseover="showTip(event, 'fs39', 68)" class="id">x</span><span class="pn">:</span> <span onmouseout="hideTip(event, 'fs40', 69)" onmouseover="showTip(event, 'fs40', 69)" class="vt">Result</span><span class="pn">&lt;</span><span class="id">_</span><span class="pn">,</span><span class="id">FarkleError</span><span class="pn">&gt;</span><span class="pn">)</span> <span class="o">=</span>
+    <span class="k">match</span> <span onmouseout="hideTip(event, 'fs39', 70)" onmouseover="showTip(event, 'fs39', 70)" class="id">x</span> <span class="k">with</span>
+    <span class="pn">|</span> <span onmouseout="hideTip(event, 'fs41', 71)" onmouseover="showTip(event, 'fs41', 71)" class="uc">Ok</span> <span onmouseout="hideTip(event, 'fs42', 72)" onmouseover="showTip(event, 'fs42', 72)" class="id">x</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs43', 73)" onmouseover="showTip(event, 'fs43', 73)" class="fn">printfn</span> <span class="s">&quot;</span><span class="pf">%d</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs42', 74)" onmouseover="showTip(event, 'fs42', 74)" class="id">x</span>
+    <span class="pn">|</span> <span onmouseout="hideTip(event, 'fs44', 75)" onmouseover="showTip(event, 'fs44', 75)" class="uc">Error</span> <span onmouseout="hideTip(event, 'fs45', 76)" onmouseover="showTip(event, 'fs45', 76)" class="id">x</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs43', 77)" onmouseover="showTip(event, 'fs43', 77)" class="fn">printfn</span> <span class="s">&quot;</span><span class="pf">%O</span><span class="s">&quot;</span> <span onmouseout="hideTip(event, 'fs45', 78)" onmouseover="showTip(event, 'fs45', 78)" class="id">x</span>
 
-<span class="id">RuntimeFarkle</span><span class="pn">.</span><span class="id">parse</span> <span onmouseout="hideTip(event, 'fs38', 77)" onmouseover="showTip(event, 'fs38', 77)" class="id">TheRuntimeFarkle</span> <span class="s">&quot;45 + 198 - 647 + 2 * 478 - 488 + 801 - 248&quot;</span> <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs40', 78)" onmouseover="showTip(event, 'fs40', 78)" class="fn">printIt</span> <span class="c">// A string.</span>
+<span class="id">RuntimeFarkle</span><span class="pn">.</span><span class="id">parse</span> <span onmouseout="hideTip(event, 'fs36', 79)" onmouseover="showTip(event, 'fs36', 79)" class="id">rf</span> <span class="s">&quot;45 + 198 - 647 + 2 * 478 - 488 + 801 - 248&quot;</span> <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs38', 80)" onmouseover="showTip(event, 'fs38', 80)" class="fn">printIt</span> <span class="c">// A string.</span>
 
-<span class="id">RuntimeFarkle</span><span class="pn">.</span><span class="id">parseFile</span> <span onmouseout="hideTip(event, 'fs38', 79)" onmouseover="showTip(event, 'fs38', 79)" class="id">TheRuntimeFarkle</span> <span onmouseout="hideTip(event, 'fs46', 80)" onmouseover="showTip(event, 'fs46', 80)" class="id">ignore</span> <span class="k">true</span> <span onmouseout="hideTip(event, 'fs47', 81)" onmouseover="showTip(event, 'fs47', 81)" class="id">Encoding</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs48', 82)" onmouseover="showTip(event, 'fs48', 82)" class="id">ASCII</span> <span class="s">&quot;gf.m&quot;</span> <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs40', 83)" onmouseover="showTip(event, 'fs40', 83)" class="fn">printIt</span> <span class="c">// A file</span>
+<span class="id">RuntimeFarkle</span><span class="pn">.</span><span class="id">parseFile</span> <span onmouseout="hideTip(event, 'fs36', 81)" onmouseover="showTip(event, 'fs36', 81)" class="id">rf</span> <span onmouseout="hideTip(event, 'fs46', 82)" onmouseover="showTip(event, 'fs46', 82)" class="id">ignore</span> <span onmouseout="hideTip(event, 'fs47', 83)" onmouseover="showTip(event, 'fs47', 83)" class="id">Encoding</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs48', 84)" onmouseover="showTip(event, 'fs48', 84)" class="id">ASCII</span> <span class="s">&quot;gf.m&quot;</span> <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs38', 85)" onmouseover="showTip(event, 'fs38', 85)" class="fn">printIt</span> <span class="c">// A file</span>
 
-<span onmouseout="hideTip(event, 'fs30', 84)" onmouseover="showTip(event, 'fs30', 84)" class="fn">System</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs49', 85)" onmouseover="showTip(event, 'fs49', 85)" class="id">IO</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs50', 86)" onmouseover="showTip(event, 'fs50', 86)" class="rt">File</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs51', 87)" onmouseover="showTip(event, 'fs51', 87)" class="id">OpenRead</span> <span class="s">&quot;fish.es&quot;</span> <span class="o">|&gt;</span> <span class="id">RuntimeFarkle</span><span class="pn">.</span><span class="id">parseStream</span> <span onmouseout="hideTip(event, 'fs38', 88)" onmouseover="showTip(event, 'fs38', 88)" class="id">TheRuntimeFarkle</span> <span onmouseout="hideTip(event, 'fs46', 89)" onmouseover="showTip(event, 'fs46', 89)" class="id">ignore</span> <span class="k">false</span> <span onmouseout="hideTip(event, 'fs47', 90)" onmouseover="showTip(event, 'fs47', 90)" class="id">Encoding</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs52', 91)" onmouseover="showTip(event, 'fs52', 91)" class="id">UTF8</span> <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs40', 92)" onmouseover="showTip(event, 'fs40', 92)" class="fn">printIt</span> <span class="c">// A stream</span>
+<span onmouseout="hideTip(event, 'fs1', 86)" onmouseover="showTip(event, 'fs1', 86)" class="fn">System</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs49', 87)" onmouseover="showTip(event, 'fs49', 87)" class="id">IO</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs50', 88)" onmouseover="showTip(event, 'fs50', 88)" class="rt">File</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs51', 89)" onmouseover="showTip(event, 'fs51', 89)" class="id">OpenRead</span> <span class="s">&quot;fish.es&quot;</span> <span class="o">|&gt;</span> <span class="id">RuntimeFarkle</span><span class="pn">.</span><span class="id">parseStream</span> <span onmouseout="hideTip(event, 'fs36', 90)" onmouseover="showTip(event, 'fs36', 90)" class="id">rf</span> <span onmouseout="hideTip(event, 'fs46', 91)" onmouseover="showTip(event, 'fs46', 91)" class="id">ignore</span> <span class="k">false</span> <span onmouseout="hideTip(event, 'fs47', 92)" onmouseover="showTip(event, 'fs47', 92)" class="id">Encoding</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs52', 93)" onmouseover="showTip(event, 'fs52', 93)" class="id">UTF8</span> <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs38', 94)" onmouseover="showTip(event, 'fs38', 94)" class="fn">printIt</span> <span class="c">// A stream, whose content is loaded entirely in memory.</span>
 
-<span class="id">RuntimeFarkle</span><span class="pn">.</span><span class="id">parseFile</span> <span onmouseout="hideTip(event, 'fs38', 93)" onmouseover="showTip(event, 'fs38', 93)" class="id">TheRuntimeFarkle</span> <span onmouseout="hideTip(event, 'fs53', 94)" onmouseover="showTip(event, 'fs53', 94)" class="id">Console</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs54', 95)" onmouseover="showTip(event, 'fs54', 95)" class="id">WriteLine</span> <span class="k">false</span> <span onmouseout="hideTip(event, 'fs47', 96)" onmouseover="showTip(event, 'fs47', 96)" class="id">Encoding</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs55', 97)" onmouseover="showTip(event, 'fs55', 97)" class="id">Unicode</span> <span class="s">&quot;itsjustgettingwetttonig.ht&quot;</span> <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs40', 98)" onmouseover="showTip(event, 'fs40', 98)" class="fn">printIt</span> <span class="c">// Another file, but with UTF-16 encoding and eagerly loaded.</span>
+<span class="id">RuntimeFarkle</span><span class="pn">.</span><span class="id">parseFile</span> <span onmouseout="hideTip(event, 'fs36', 95)" onmouseover="showTip(event, 'fs36', 95)" class="id">rf</span> <span onmouseout="hideTip(event, 'fs53', 96)" onmouseover="showTip(event, 'fs53', 96)" class="id">Console</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs54', 97)" onmouseover="showTip(event, 'fs54', 97)" class="id">WriteLine</span> <span onmouseout="hideTip(event, 'fs47', 98)" onmouseover="showTip(event, 'fs47', 98)" class="id">Encoding</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs55', 99)" onmouseover="showTip(event, 'fs55', 99)" class="id">Unicode</span> <span class="s">&quot;math.txt&quot;</span> <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs38', 100)" onmouseover="showTip(event, 'fs38', 100)" class="fn">printIt</span> <span class="c">// Another file, but with UTF-16 encoding and eagerly loaded.</span>
 
-<span class="id">RuntimeFarkle</span><span class="pn">.</span><span class="id">parseString</span> <span onmouseout="hideTip(event, 'fs38', 99)" onmouseover="showTip(event, 'fs38', 99)" class="id">TheRuntimeFarkle</span> <span onmouseout="hideTip(event, 'fs53', 100)" onmouseover="showTip(event, 'fs53', 100)" class="id">Console</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs54', 101)" onmouseover="showTip(event, 'fs54', 101)" class="id">WriteLine</span> <span class="s">&quot;111*555&quot;</span> <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs40', 102)" onmouseover="showTip(event, 'fs40', 102)" class="fn">printIt</span> <span class="c">// Like the first example, but also accepts a logging function.</span>
+<span class="id">RuntimeFarkle</span><span class="pn">.</span><span class="id">parseString</span> <span onmouseout="hideTip(event, 'fs36', 101)" onmouseover="showTip(event, 'fs36', 101)" class="id">rf</span> <span onmouseout="hideTip(event, 'fs53', 102)" onmouseover="showTip(event, 'fs53', 102)" class="id">Console</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs54', 103)" onmouseover="showTip(event, 'fs54', 103)" class="id">WriteLine</span> <span class="s">&quot;111*555&quot;</span> <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs38', 104)" onmouseover="showTip(event, 'fs38', 104)" class="fn">printIt</span> <span class="c">// Like the first example, but also accepts a logging function.</span>
 </code></pre></td>
 </tr>
 </table>
 <blockquote>
-<p><strong>Note</strong>: It has been observed that the first time a runtime Farkle parses something takes more time than the rest. This happens because it reads the EGT file the first time. There is no workaround for it available. But it's only the first time.</p>
+<s>__Note__: It has been observed that the first time a runtime Farkle parses something takes more time than the rest. This happens because it reads the EGT file the first time. There is no workaround for it available. But it's only the first time.</s>
 </blockquote>
+<p>Farkle's performance has been improved many times, and now loading grammars is much faster than previously.</p>
 <p>So that's it. I hope you understand. If you have any question, found a 🐛, or want a feature, feel free to <a href="https://github.com/teo-tsirpanis/farkle/issues">open a GitHub issue</a>.</p>
 
-<div class="tip" id="fs1">type Symbol =<br />&#160;&#160;| EOF = 0<br />&#160;&#160;| Error = 1<br />&#160;&#160;| Whitespace = 2<br />&#160;&#160;| Minus = 3<br />&#160;&#160;| LParen = 4<br />&#160;&#160;| RParen = 5<br />&#160;&#160;| Times = 6<br />&#160;&#160;| Div = 7<br />&#160;&#160;| Plus = 8<br />&#160;&#160;| Number = 9<br />&#160;&#160;| AddExp = 10<br />&#160;&#160;| Expression = 11<br />&#160;&#160;| MultExp = 12<br />&#160;&#160;| NegateExp = 13<br />&#160;&#160;| Value = 14</div>
-<div class="tip" id="fs2">Symbol.EOF: Symbol = 0<br /><em><br /><br />&#160;(EOF)</em></div>
-<div class="tip" id="fs3">Symbol.Error: Symbol = 1<br /><em><br /><br />&#160;(Error)</em></div>
-<div class="tip" id="fs4">Symbol.Whitespace: Symbol = 2<br /><em><br /><br />&#160;Whitespace</em></div>
-<div class="tip" id="fs5">Symbol.Minus: Symbol = 3<br /><em><br /><br />&#160;&#39;-&#39;</em></div>
-<div class="tip" id="fs6">Symbol.LParen: Symbol = 4<br /><em><br /><br />&#160;&#39;(&#39;</em></div>
-<div class="tip" id="fs7">Symbol.RParen: Symbol = 5<br /><em><br /><br />&#160;&#39;)&#39;</em></div>
-<div class="tip" id="fs8">Symbol.Times: Symbol = 6<br /><em><br /><br />&#160;&#39;*&#39;</em></div>
-<div class="tip" id="fs9">Symbol.Div: Symbol = 7<br /><em><br /><br />&#160;&#39;/&#39;</em></div>
-<div class="tip" id="fs10">Symbol.Plus: Symbol = 8<br /><em><br /><br />&#160;&#39;+&#39;</em></div>
-<div class="tip" id="fs11">Symbol.Number: Symbol = 9<br /><em><br /><br />&#160;Number</em></div>
-<div class="tip" id="fs12">Symbol.AddExp: Symbol = 10<br /><em><br /><br />&#160;&lt;Add Exp&gt;</em></div>
-<div class="tip" id="fs13">Symbol.Expression: Symbol = 11<br /><em><br /><br />&#160;&lt;Expression&gt;</em></div>
-<div class="tip" id="fs14">Symbol.MultExp: Symbol = 12<br /><em><br /><br />&#160;&lt;Mult Exp&gt;</em></div>
-<div class="tip" id="fs15">Symbol.NegateExp: Symbol = 13<br /><em><br /><br />&#160;&lt;Negate Exp&gt;</em></div>
-<div class="tip" id="fs16">Symbol.Value: Symbol = 14<br /><em><br /><br />&#160;&lt;Value&gt;</em></div>
-<div class="tip" id="fs17">type Production =<br />&#160;&#160;| Expression = 0<br />&#160;&#160;| AddExpPlus = 1<br />&#160;&#160;| AddExpMinus = 2<br />&#160;&#160;| AddExp = 3<br />&#160;&#160;| MultExpTimes = 4<br />&#160;&#160;| MultExpDiv = 5<br />&#160;&#160;| MultExp = 6<br />&#160;&#160;| NegateExpMinus = 7<br />&#160;&#160;| NegateExp = 8<br />&#160;&#160;| ValueNumber = 9<br />&#160;&#160;| ValueLParenRParen = 10</div>
-<div class="tip" id="fs18">Production.Expression: Production = 0<br /><em><br /><br />&#160;&lt;Expression&gt; ::= &lt;Add Exp&gt;</em></div>
-<div class="tip" id="fs19">Production.AddExpPlus: Production = 1<br /><em><br /><br />&#160;&lt;Add Exp&gt; ::= &lt;Add Exp&gt; &#39;+&#39; &lt;Mult Exp&gt;</em></div>
-<div class="tip" id="fs20">Production.AddExpMinus: Production = 2<br /><em><br /><br />&#160;&lt;Add Exp&gt; ::= &lt;Add Exp&gt; &#39;-&#39; &lt;Mult Exp&gt;</em></div>
-<div class="tip" id="fs21">Production.AddExp: Production = 3<br /><em><br /><br />&#160;&lt;Add Exp&gt; ::= &lt;Mult Exp&gt;</em></div>
-<div class="tip" id="fs22">Production.MultExpTimes: Production = 4<br /><em><br /><br />&#160;&lt;Mult Exp&gt; ::= &lt;Mult Exp&gt; &#39;*&#39; &lt;Negate Exp&gt;</em></div>
-<div class="tip" id="fs23">Production.MultExpDiv: Production = 5<br /><em><br /><br />&#160;&lt;Mult Exp&gt; ::= &lt;Mult Exp&gt; &#39;/&#39; &lt;Negate Exp&gt;</em></div>
-<div class="tip" id="fs24">Production.MultExp: Production = 6<br /><em><br /><br />&#160;&lt;Mult Exp&gt; ::= &lt;Negate Exp&gt;</em></div>
-<div class="tip" id="fs25">Production.NegateExpMinus: Production = 7<br /><em><br /><br />&#160;&lt;Negate Exp&gt; ::= &#39;-&#39; &lt;Value&gt;</em></div>
-<div class="tip" id="fs26">Production.NegateExp: Production = 8<br /><em><br /><br />&#160;&lt;Negate Exp&gt; ::= &lt;Value&gt;</em></div>
-<div class="tip" id="fs27">Production.ValueNumber: Production = 9<br /><em><br /><br />&#160;&lt;Value&gt; ::= Number</em></div>
-<div class="tip" id="fs28">Production.ValueLParenRParen: Production = 10<br /><em><br /><br />&#160;&lt;Value&gt; ::= &#39;(&#39; &lt;Expression&gt; &#39;)&#39;</em></div>
-<div class="tip" id="fs29">val transformers : obj list</div>
-<div class="tip" id="fs30">namespace System</div>
-<div class="tip" id="fs31">type Convert =<br />&#160;&#160;static val DBNull : obj<br />&#160;&#160;static member ChangeType : value:obj * typeCode:TypeCode -&gt; obj + 3 overloads<br />&#160;&#160;static member FromBase64CharArray : inArray:char[] * offset:int * length:int -&gt; byte[]<br />&#160;&#160;static member FromBase64String : s:string -&gt; byte[]<br />&#160;&#160;static member GetTypeCode : value:obj -&gt; TypeCode<br />&#160;&#160;static member IsDBNull : value:obj -&gt; bool<br />&#160;&#160;static member ToBase64CharArray : inArray:byte[] * offsetIn:int * length:int * outArray:char[] * offsetOut:int -&gt; int + 1 overload<br />&#160;&#160;static member ToBase64String : inArray:byte[] -&gt; string + 3 overloads<br />&#160;&#160;static member ToBoolean : value:obj -&gt; bool + 17 overloads<br />&#160;&#160;static member ToByte : value:obj -&gt; byte + 18 overloads<br />&#160;&#160;...</div>
-<div class="tip" id="fs32">System.Convert.ToInt32(value: System.DateTime) : int<br />&#160;&#160;&#160;<em>(+0 other overloads)</em><br />System.Convert.ToInt32(value: string) : int<br />&#160;&#160;&#160;<em>(+0 other overloads)</em><br />System.Convert.ToInt32(value: decimal) : int<br />&#160;&#160;&#160;<em>(+0 other overloads)</em><br />System.Convert.ToInt32(value: float) : int<br />&#160;&#160;&#160;<em>(+0 other overloads)</em><br />System.Convert.ToInt32(value: float32) : int<br />&#160;&#160;&#160;<em>(+0 other overloads)</em><br />System.Convert.ToInt32(value: uint64) : int<br />&#160;&#160;&#160;<em>(+0 other overloads)</em><br />System.Convert.ToInt32(value: int64) : int<br />&#160;&#160;&#160;<em>(+0 other overloads)</em><br />System.Convert.ToInt32(value: int) : int<br />&#160;&#160;&#160;<em>(+0 other overloads)</em><br />System.Convert.ToInt32(value: uint32) : int<br />&#160;&#160;&#160;<em>(+0 other overloads)</em><br />System.Convert.ToInt32(value: uint16) : int<br />&#160;&#160;&#160;<em>(+0 other overloads)</em></div>
-<div class="tip" id="fs33">val myFuser : obj</div>
-<div class="tip" id="fs34">val fusers : obj list</div>
-<div class="tip" id="fs35">val id : x:&#39;T -&gt; &#39;T</div>
-<div class="tip" id="fs36">val ThePostProcessor : obj</div>
-<div class="tip" id="fs37">Multiple items<br />val int : value:&#39;T -&gt; int (requires member op_Explicit)<br /><br />--------------------<br />type int = int32<br /><br />--------------------<br />type int&lt;&#39;Measure&gt; = int</div>
-<div class="tip" id="fs38">val TheRuntimeFarkle : obj</div>
-<div class="tip" id="fs39">namespace System.Text</div>
-<div class="tip" id="fs40">val printIt : x:&#39;a -&gt; unit<br /><em><br /><br />&#160;A utility to print a parse result.</em></div>
-<div class="tip" id="fs41">val x : &#39;a</div>
-<div class="tip" id="fs42">Multiple items<br />module Result<br /><br />from Microsoft.FSharp.Core<br /><br />--------------------<br />[&lt;Struct&gt;]<br />type Result&lt;&#39;T,&#39;TError&gt; =<br />&#160;&#160;| Ok of ResultValue: &#39;T<br />&#160;&#160;| Error of ErrorValue: &#39;TError</div>
-<div class="tip" id="fs43">val sprintf : format:Printf.StringFormat&lt;&#39;T&gt; -&gt; &#39;T</div>
-<div class="tip" id="fs44">Multiple items<br />val string : value:&#39;T -&gt; string<br /><br />--------------------<br />type string = String</div>
-<div class="tip" id="fs45">val printfn : format:Printf.TextWriterFormat&lt;&#39;T&gt; -&gt; &#39;T</div>
+<div class="tip" id="fs1">namespace System</div>
+<div class="tip" id="fs2">type Symbol =<br />&#160;&#160;| EOF = 0<br />&#160;&#160;| Error = 1<br />&#160;&#160;| Whitespace = 2<br />&#160;&#160;| Minus = 3<br />&#160;&#160;| LParen = 4<br />&#160;&#160;| RParen = 5<br />&#160;&#160;| Times = 6<br />&#160;&#160;| Div = 7<br />&#160;&#160;| Plus = 8<br />&#160;&#160;| Number = 9<br />&#160;&#160;| AddExp = 10<br />&#160;&#160;| Expression = 11<br />&#160;&#160;| MultExp = 12<br />&#160;&#160;| NegateExp = 13<br />&#160;&#160;| Value = 14</div>
+<div class="tip" id="fs3">Symbol.EOF: Symbol = 0<br /><em><br /><br />&#160;(EOF)</em></div>
+<div class="tip" id="fs4">Symbol.Error: Symbol = 1<br /><em><br /><br />&#160;(Error)</em></div>
+<div class="tip" id="fs5">Symbol.Whitespace: Symbol = 2<br /><em><br /><br />&#160;Whitespace</em></div>
+<div class="tip" id="fs6">Symbol.Minus: Symbol = 3<br /><em><br /><br />&#160;&#39;-&#39;</em></div>
+<div class="tip" id="fs7">Symbol.LParen: Symbol = 4<br /><em><br /><br />&#160;&#39;(&#39;</em></div>
+<div class="tip" id="fs8">Symbol.RParen: Symbol = 5<br /><em><br /><br />&#160;&#39;)&#39;</em></div>
+<div class="tip" id="fs9">Symbol.Times: Symbol = 6<br /><em><br /><br />&#160;&#39;*&#39;</em></div>
+<div class="tip" id="fs10">Symbol.Div: Symbol = 7<br /><em><br /><br />&#160;&#39;/&#39;</em></div>
+<div class="tip" id="fs11">Symbol.Plus: Symbol = 8<br /><em><br /><br />&#160;&#39;+&#39;</em></div>
+<div class="tip" id="fs12">Symbol.Number: Symbol = 9<br /><em><br /><br />&#160;Number</em></div>
+<div class="tip" id="fs13">Symbol.AddExp: Symbol = 10<br /><em><br /><br />&#160;&lt;Add Exp&gt;</em></div>
+<div class="tip" id="fs14">Symbol.Expression: Symbol = 11<br /><em><br /><br />&#160;&lt;Expression&gt;</em></div>
+<div class="tip" id="fs15">Symbol.MultExp: Symbol = 12<br /><em><br /><br />&#160;&lt;Mult Exp&gt;</em></div>
+<div class="tip" id="fs16">Symbol.NegateExp: Symbol = 13<br /><em><br /><br />&#160;&lt;Negate Exp&gt;</em></div>
+<div class="tip" id="fs17">Symbol.Value: Symbol = 14<br /><em><br /><br />&#160;&lt;Value&gt;</em></div>
+<div class="tip" id="fs18">type Production =<br />&#160;&#160;| Expression = 0<br />&#160;&#160;| AddExpPlus = 1<br />&#160;&#160;| AddExpMinus = 2<br />&#160;&#160;| AddExp = 3<br />&#160;&#160;| MultExpTimes = 4<br />&#160;&#160;| MultExpDiv = 5<br />&#160;&#160;| MultExp = 6<br />&#160;&#160;| NegateExpMinus = 7<br />&#160;&#160;| NegateExp = 8<br />&#160;&#160;| ValueNumber = 9<br />&#160;&#160;| ValueLParenRParen = 10</div>
+<div class="tip" id="fs19">Production.Expression: Production = 0<br /><em><br /><br />&#160;&lt;Expression&gt; ::= &lt;Add Exp&gt;</em></div>
+<div class="tip" id="fs20">Production.AddExpPlus: Production = 1<br /><em><br /><br />&#160;&lt;Add Exp&gt; ::= &lt;Add Exp&gt; &#39;+&#39; &lt;Mult Exp&gt;</em></div>
+<div class="tip" id="fs21">Production.AddExpMinus: Production = 2<br /><em><br /><br />&#160;&lt;Add Exp&gt; ::= &lt;Add Exp&gt; &#39;-&#39; &lt;Mult Exp&gt;</em></div>
+<div class="tip" id="fs22">Production.AddExp: Production = 3<br /><em><br /><br />&#160;&lt;Add Exp&gt; ::= &lt;Mult Exp&gt;</em></div>
+<div class="tip" id="fs23">Production.MultExpTimes: Production = 4<br /><em><br /><br />&#160;&lt;Mult Exp&gt; ::= &lt;Mult Exp&gt; &#39;*&#39; &lt;Negate Exp&gt;</em></div>
+<div class="tip" id="fs24">Production.MultExpDiv: Production = 5<br /><em><br /><br />&#160;&lt;Mult Exp&gt; ::= &lt;Mult Exp&gt; &#39;/&#39; &lt;Negate Exp&gt;</em></div>
+<div class="tip" id="fs25">Production.MultExp: Production = 6<br /><em><br /><br />&#160;&lt;Mult Exp&gt; ::= &lt;Negate Exp&gt;</em></div>
+<div class="tip" id="fs26">Production.NegateExpMinus: Production = 7<br /><em><br /><br />&#160;&lt;Negate Exp&gt; ::= &#39;-&#39; &lt;Value&gt;</em></div>
+<div class="tip" id="fs27">Production.NegateExp: Production = 8<br /><em><br /><br />&#160;&lt;Negate Exp&gt; ::= &lt;Value&gt;</em></div>
+<div class="tip" id="fs28">Production.ValueNumber: Production = 9<br /><em><br /><br />&#160;&lt;Value&gt; ::= Number</em></div>
+<div class="tip" id="fs29">Production.ValueLParenRParen: Production = 10<br /><em><br /><br />&#160;&lt;Value&gt; ::= &#39;(&#39; &lt;Expression&gt; &#39;)&#39;</em></div>
+<div class="tip" id="fs30">val transformers : obj list</div>
+<div class="tip" id="fs31">val myFuser : obj</div>
+<div class="tip" id="fs32">val fusers : obj list</div>
+<div class="tip" id="fs33">val id : x:&#39;T -&gt; &#39;T</div>
+<div class="tip" id="fs34">val pp : obj</div>
+<div class="tip" id="fs35">Multiple items<br />val int : value:&#39;T -&gt; int (requires member op_Explicit)<br /><br />--------------------<br />type int = int32<br /><br />--------------------<br />type int&lt;&#39;Measure&gt; = int</div>
+<div class="tip" id="fs36">val rf : obj</div>
+<div class="tip" id="fs37">namespace System.Text</div>
+<div class="tip" id="fs38">val printIt : x:Result&lt;int,&#39;a&gt; -&gt; unit<br /><em><br /><br />&#160;A utility to print a parse result.</em></div>
+<div class="tip" id="fs39">[&lt;Struct&gt;]<br />val x : Result&lt;int,&#39;a&gt;</div>
+<div class="tip" id="fs40">Multiple items<br />module Result<br /><br />from Microsoft.FSharp.Core<br /><br />--------------------<br />[&lt;Struct&gt;]<br />type Result&lt;&#39;T,&#39;TError&gt; =<br />&#160;&#160;| Ok of ResultValue: &#39;T<br />&#160;&#160;| Error of ErrorValue: &#39;TError</div>
+<div class="tip" id="fs41">union case Result.Ok: ResultValue: &#39;T -&gt; Result&lt;&#39;T,&#39;TError&gt;</div>
+<div class="tip" id="fs42">val x : int</div>
+<div class="tip" id="fs43">val printfn : format:Printf.TextWriterFormat&lt;&#39;T&gt; -&gt; &#39;T</div>
+<div class="tip" id="fs44">union case Result.Error: ErrorValue: &#39;TError -&gt; Result&lt;&#39;T,&#39;TError&gt;</div>
+<div class="tip" id="fs45">val x : &#39;a</div>
 <div class="tip" id="fs46">val ignore : value:&#39;T -&gt; unit</div>
 <div class="tip" id="fs47">type Encoding =<br />&#160;&#160;member BodyName : string<br />&#160;&#160;member Clone : unit -&gt; obj<br />&#160;&#160;member CodePage : int<br />&#160;&#160;member DecoderFallback : DecoderFallback with get, set<br />&#160;&#160;member EncoderFallback : EncoderFallback with get, set<br />&#160;&#160;member EncodingName : string<br />&#160;&#160;member Equals : value:obj -&gt; bool<br />&#160;&#160;member GetByteCount : chars:char[] -&gt; int + 3 overloads<br />&#160;&#160;member GetBytes : chars:char[] -&gt; byte[] + 5 overloads<br />&#160;&#160;member GetCharCount : bytes:byte[] -&gt; int + 2 overloads<br />&#160;&#160;...</div>
 <div class="tip" id="fs48">property Encoding.ASCII: Encoding</div>

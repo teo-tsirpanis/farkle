@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Production - Farkle</title>
+    <title>CharStream - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -34,13 +34,15 @@
 
 
 
-<h1>Production</h1>
+<h1>CharStream</h1>
 <p>
 
-    <span>Namespace: Farkle.Grammar</span><br />
+    <span>Namespace: Farkle.Collections</span><br />
     </p>
 <div class="xmldoc">
-<p>An array of <code>LALRSymbol</code>s that can produce a specific <a href="farkle-grammar-nonterminal.html" title="Nonterminal"><code>Nonterminal</code></a>.</p>
+<p>A data structure that supports efficient and copy-free access to a read-only sequence of characters.
+It is not thread-safe.
+Also, if you create a character stream from a <code>TextReader</code>, you must dispose it afterwards.</p>
 
 </div>
   <h3>Record Fields</h3>
@@ -52,19 +54,19 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '123', 123)" onmouseover="showTip(event, '123', 123)">
-            Handle
+          <code onmouseout="hideTip(event, '82', 82)" onmouseover="showTip(event, '82', 82)">
+            Source
           </code>
-          <div class="tip" id="123">
-            <strong>Signature:</strong> (type)<br />
+          <div class="tip" id="82">
+            <strong>Signature:</strong> CharStreamSource<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/GrammarTypes.fs#L129-129" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/CharStream.fs#L92-92" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>The <code>Terminals</code>s and <a href="farkle-grammar-nonterminal.html" title="Nonterminal"><code>Nonterminal</code></a>s, the production is made of.</p>
+          <p>The stream's source.</p>
 
 
         </td>
@@ -72,41 +74,97 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '124', 124)" onmouseover="showTip(event, '124', 124)">
-            Head
+          <code onmouseout="hideTip(event, '83', 83)" onmouseover="showTip(event, '83', 83)">
+            StartingIndex
           </code>
-          <div class="tip" id="124">
-            <strong>Signature:</strong> Nonterminal<br />
+          <div class="tip" id="83">
+            <strong>Signature:</strong> uint64<br />
+              <strong>Modifiers:</strong> mutable<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/GrammarTypes.fs#L127-127" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/CharStream.fs#L95-95" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>The <a href="farkle-grammar-nonterminal.html" title="Nonterminal"><code>Nonterminal</code></a> the production is referring to.</p>
+          <p>The index of the first element that <em>must</em> be retained in memory
+because it is going to be used to generate a token.</p>
 
 
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Instance members</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Instance member</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '84', 84)" onmouseover="showTip(event, '84', 84)">
+            x.FirstCharacter
+          </code>
+          <div class="tip" id="84">
+            <strong>Signature:</strong> char<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/CharStream.fs#L105-105" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>The stream's character at its current position.
+Calling this function assumes that this character is actually <code>read</code>.</p>
+
+
+              <p>CompiledName: <code>get_FirstCharacter</code></p>
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '125', 125)" onmouseover="showTip(event, '125', 125)">
-            Index
+          <code onmouseout="hideTip(event, '85', 85)" onmouseover="showTip(event, '85', 85)">
+            x.LengthSoFar
           </code>
-          <div class="tip" id="125">
-            <strong>Signature:</strong> uint32<br />
+          <div class="tip" id="85">
+            <strong>Signature:</strong> uint64<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/GrammarTypes.fs#L123-123" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/CharStream.fs#L108-108" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>The index of the production.</p>
+          <p>Returns the length of the input; or at least the
+length of the input that has ever crossed the memory.</p>
 
 
+              <p>CompiledName: <code>get_LengthSoFar</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '86', 86)" onmouseover="showTip(event, '86', 86)">
+            x.Position
+          </code>
+          <div class="tip" id="86">
+            <strong>Signature:</strong> Position<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/CharStream.fs#L102-102" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>The stream's current position.
+Reading the stream will start from here.</p>
+
+
+              <p>CompiledName: <code>get_Position</code></p>
         </td>
       </tr>
     </tbody>

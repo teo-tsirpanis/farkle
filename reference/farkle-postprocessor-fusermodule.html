@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" async></script>
     <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
-    <link href="https://bootswatch.com/2/cyborg/bootstrap.min.css" rel="stylesheet" async/>
+    <link href="https://stackpath.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" integrity="sha384-4FeI0trTH/PCsLWrGCD1mScoFu9Jf2NdknFdFoJhXZFwsvzZ3Bo5sAh7+zL8Xgnd" crossorigin="anonymous">
 
     <link type="text/css" rel="stylesheet" href="/Farkle/content/style.css" />
     <script type="text/javascript" src="/Farkle/content/tips.js" async></script>
@@ -23,7 +23,6 @@
     <div class="container">
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
-          <li><a href="http://fsharp.org">fsharp.org</a></li>
           <li><a href="https://github.com/teo-tsirpanis/Farkle">github page</a></li>
         </ul>
         <h3 class="muted"><a href="/Farkle/index.html">Farkle</a></h3>
@@ -55,15 +54,35 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '56', 56)" onmouseover="showTip(event, '56', 56)">
-            create1 prod fFuser
+          <code onmouseout="hideTip(event, '47', 47)" onmouseover="showTip(event, '47', 47)">
+            constant prod n x
           </code>
-          <div class="tip" id="56">
-            <strong>Signature:</strong> prod:^?8120 -&gt; fFuser:(&#39;d -&gt; &#39;r) -&gt; Fuser<br />
-                          <strong>Type parameters:</strong> ^?8120, 'd, 'r                      </div>
+          <div class="tip" id="47">
+            <strong>Signature:</strong> prod:int -&gt; n:int -&gt; x:&#39;r -&gt; Fuser<br />
+                          <strong>Type parameters:</strong> 'r                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Fuser.fs#L26-26" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Fuser.fs#L33-33" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Creates a <a href="farkle-postprocessor-fuser.html" title="Fuser"><code>Fuser</code></a> that ignores all child productions and returns a constant object.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '48', 48)" onmouseover="showTip(event, '48', 48)">
+            create1 prod fFuser
+          </code>
+          <div class="tip" id="48">
+            <strong>Signature:</strong> prod:^?8313 -&gt; fFuser:(&#39;d -&gt; &#39;r) -&gt; Fuser<br />
+                          <strong>Type parameters:</strong> ^?8313, 'd, 'r                      </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Fuser.fs#L41-41" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -75,15 +94,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '57', 57)" onmouseover="showTip(event, '57', 57)">
+          <code onmouseout="hideTip(event, '49', 49)" onmouseover="showTip(event, '49', 49)">
             create2 prod fFuser
           </code>
-          <div class="tip" id="57">
-            <strong>Signature:</strong> prod:^?8126 -&gt; fFuser:(&#39;d1 -&gt; &#39;d2 -&gt; &#39;r) -&gt; Fuser<br />
-                          <strong>Type parameters:</strong> ^?8126, 'd1, 'd2, 'r                      </div>
+          <div class="tip" id="49">
+            <strong>Signature:</strong> prod:^?8319 -&gt; fFuser:(&#39;d1 -&gt; &#39;d2 -&gt; &#39;r) -&gt; Fuser<br />
+                          <strong>Type parameters:</strong> ^?8319, 'd1, 'd2, 'r                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Fuser.fs#L37-37" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Fuser.fs#L52-52" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -95,15 +114,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '58', 58)" onmouseover="showTip(event, '58', 58)">
+          <code onmouseout="hideTip(event, '50', 50)" onmouseover="showTip(event, '50', 50)">
             create3 prod fFuser
           </code>
-          <div class="tip" id="58">
-            <strong>Signature:</strong> prod:^?8131 -&gt; fFuser:(&#39;d1 -&gt; &#39;d2 -&gt; &#39;d3 -&gt; &#39;r) -&gt; Fuser<br />
-                          <strong>Type parameters:</strong> ^?8131, 'd1, 'd2, 'd3, 'r                      </div>
+          <div class="tip" id="50">
+            <strong>Signature:</strong> prod:^?8324 -&gt; fFuser:(&#39;d1 -&gt; &#39;d2 -&gt; &#39;d3 -&gt; &#39;r) -&gt; Fuser<br />
+                          <strong>Type parameters:</strong> ^?8324, 'd1, 'd2, 'd3, 'r                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Fuser.fs#L45-45" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Fuser.fs#L60-60" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -115,23 +134,25 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '59', 59)" onmouseover="showTip(event, '59', 59)">
+          <code onmouseout="hideTip(event, '51', 51)" onmouseover="showTip(event, '51', 51)">
             createN prod n fType tOut fFuser
           </code>
-          <div class="tip" id="59">
-            <strong>Signature:</strong> prod:^?8137 -&gt; n:int -&gt; fType:(int -&gt; Type) -&gt; tOut:Type -&gt; fFuser:(obj [] -&gt; obj) -&gt; Fuser<br />
-                          <strong>Type parameters:</strong> ^?8137                      </div>
+          <div class="tip" id="51">
+            <strong>Signature:</strong> prod:^?8330 -&gt; n:int -&gt; fType:(int -&gt; Type option) -&gt; tOut:Type -&gt; fFuser:(obj [] -&gt; obj) -&gt; Fuser<br />
+                          <strong>Type parameters:</strong> ^?8330                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Fuser.fs#L57-57" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Fuser.fs#L75-75" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           <p>Creates a <a href="farkle-postprocessor-fuser.html" title="Fuser"><code>Fuser</code></a> which fuses a production that:
 <em> Has <code>n</code> symbols underneath.
-</em> The type of the <code>n</code>th post-processed symbol of the production is <code>fType (n-1)</code>.
-<em> The type of the output is <code>tOut</code>
-</em> The function that does the fusion is <code>fFuser</code>.</p>
+</em> The type of the <code>n</code>th post-processed symbol of
+the production is determined from <code>fType (n-1)</code>.
+If the symbol does not carry any significant information
+(such as being a "+" in a mathematical expression), the function will return <code>None.
+* The type of the output is</code>tOut<code>* The function that does the fusion is</code>fFuser`.</p>
 
 
         </td>
@@ -139,15 +160,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '60', 60)" onmouseover="showTip(event, '60', 60)">
+          <code onmouseout="hideTip(event, '52', 52)" onmouseover="showTip(event, '52', 52)">
             identity(prod)
           </code>
-          <div class="tip" id="60">
-            <strong>Signature:</strong> prod:^?8124 -&gt; Fuser<br />
-                          <strong>Type parameters:</strong> ^?8124                      </div>
+          <div class="tip" id="52">
+            <strong>Signature:</strong> prod:^?8317 -&gt; Fuser<br />
+                          <strong>Type parameters:</strong> ^?8317                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Fuser.fs#L34-34" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Fuser.fs#L49-49" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -159,15 +180,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '61', 61)" onmouseover="showTip(event, '61', 61)">
+          <code onmouseout="hideTip(event, '53', 53)" onmouseover="showTip(event, '53', 53)">
             take1Of prod index n fFuser
           </code>
-          <div class="tip" id="61">
-            <strong>Signature:</strong> prod:^?8139 -&gt; index:int -&gt; n:int -&gt; fFuser:(&#39;d -&gt; &#39;r) -&gt; Fuser<br />
-                          <strong>Type parameters:</strong> ^?8139, 'd, 'r                      </div>
+          <div class="tip" id="53">
+            <strong>Signature:</strong> prod:^?8332 -&gt; index:int -&gt; n:int -&gt; fFuser:(&#39;d -&gt; &#39;r) -&gt; Fuser<br />
+                          <strong>Type parameters:</strong> ^?8332, 'd, 'r                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Fuser.fs#L66-66" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Fuser.fs#L84-84" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -180,15 +201,15 @@ but only the <code>index + 1</code>th is significant and passed to the fusing fu
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '62', 62)" onmouseover="showTip(event, '62', 62)">
+          <code onmouseout="hideTip(event, '54', 54)" onmouseover="showTip(event, '54', 54)">
             take2Of prod (index1, index2) n fFuser
           </code>
-          <div class="tip" id="62">
-            <strong>Signature:</strong> prod:^?8143 -&gt; (index1:int * index2:int) -&gt; n:int -&gt; fFuser:(&#39;d1 -&gt; &#39;d2 -&gt; &#39;r) -&gt; Fuser<br />
-                          <strong>Type parameters:</strong> ^?8143, 'd1, 'd2, 'r                      </div>
+          <div class="tip" id="54">
+            <strong>Signature:</strong> prod:^?8336 -&gt; (index1:int * index2:int) -&gt; n:int -&gt; fFuser:(&#39;d1 -&gt; &#39;d2 -&gt; &#39;r) -&gt; Fuser<br />
+                          <strong>Type parameters:</strong> ^?8336, 'd1, 'd2, 'r                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Fuser.fs#L79-79" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Fuser.fs#L97-97" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -201,15 +222,15 @@ but only the <code>index1 + 1</code>th and the <code>index2 + 1</code>th are sig
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '63', 63)" onmouseover="showTip(event, '63', 63)">
+          <code onmouseout="hideTip(event, '55', 55)" onmouseover="showTip(event, '55', 55)">
             take3Of(...)
           </code>
-          <div class="tip" id="63">
-            <strong>Signature:</strong> prod:^?8148 -&gt; (index1:int * index2:int * index3:int) -&gt; n:int -&gt; fFuser:(&#39;d1 -&gt; &#39;d2 -&gt; &#39;d3 -&gt; &#39;r) -&gt; Fuser<br />
-                          <strong>Type parameters:</strong> ^?8148, 'd1, 'd2, 'd3, 'r                      </div>
+          <div class="tip" id="55">
+            <strong>Signature:</strong> prod:^?8341 -&gt; (index1:int * index2:int * index3:int) -&gt; n:int -&gt; fFuser:(&#39;d1 -&gt; &#39;d2 -&gt; &#39;d3 -&gt; &#39;r) -&gt; Fuser<br />
+                          <strong>Type parameters:</strong> ^?8341, 'd1, 'd2, 'd3, 'r                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Fuser.fs#L93-93" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Fuser.fs#L111-111" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>

@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" async></script>
     <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
-    <link href="https://bootswatch.com/2/cyborg/bootstrap.min.css" rel="stylesheet" async/>
+    <link href="https://stackpath.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" integrity="sha384-4FeI0trTH/PCsLWrGCD1mScoFu9Jf2NdknFdFoJhXZFwsvzZ3Bo5sAh7+zL8Xgnd" crossorigin="anonymous">
 
     <link type="text/css" rel="stylesheet" href="/Farkle/content/style.css" />
     <script type="text/javascript" src="/Farkle/content/tips.js" async></script>
@@ -23,7 +23,6 @@
     <div class="container">
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
-          <li><a href="http://fsharp.org">fsharp.org</a></li>
           <li><a href="https://github.com/teo-tsirpanis/Farkle">github page</a></li>
         </ul>
         <h3 class="muted"><a href="/Farkle/index.html">Farkle</a></h3>
@@ -39,15 +38,11 @@
 <p>
 
     <span>Namespace: Farkle.Grammar</span><br />
-            <span>
-            Attributes: <br />
-[&lt;Struct&gt;]<br />
-            
-        </span>
-</p>
+    </p>
 <div class="xmldoc">
-<p>A structure that describes a lexical group.
-In GOLD, lexical groups are used for situations where a number of recognized tokens should be organized into a single "group".
+<p>A lexical group.
+In GOLD, lexical groups are used for situations where a number
+of recognized tokens should be organized into a single "group".
 This mechanism is most commonly used to handle line and block comments.
 However, it is not limited to "noise", but can be used for any content.</p>
 
@@ -61,15 +56,15 @@ However, it is not limited to "noise", but can be used for any content.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '98', 98)" onmouseover="showTip(event, '98', 98)">
+          <code onmouseout="hideTip(event, '105', 105)" onmouseover="showTip(event, '105', 105)">
             AdvanceMode
           </code>
-          <div class="tip" id="98">
+          <div class="tip" id="105">
             <strong>Signature:</strong> AdvanceMode<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/GrammarTypes.fs#L70-70" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/GrammarTypes.fs#L93-93" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -81,15 +76,15 @@ However, it is not limited to "noise", but can be used for any content.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '99', 99)" onmouseover="showTip(event, '99', 99)">
+          <code onmouseout="hideTip(event, '106', 106)" onmouseover="showTip(event, '106', 106)">
             ContainerSymbol
           </code>
-          <div class="tip" id="99">
-            <strong>Signature:</strong> Symbol<br />
+          <div class="tip" id="106">
+            <strong>Signature:</strong> Choice&lt;Terminal,Noise&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/GrammarTypes.fs#L64-64" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/GrammarTypes.fs#L86-86" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -101,35 +96,15 @@ However, it is not limited to "noise", but can be used for any content.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '100', 100)" onmouseover="showTip(event, '100', 100)">
-            EndingMode
+          <code onmouseout="hideTip(event, '107', 107)" onmouseover="showTip(event, '107', 107)">
+            End
           </code>
-          <div class="tip" id="100">
-            <strong>Signature:</strong> EndingMode<br />
+          <div class="tip" id="107">
+            <strong>Signature:</strong> Choice&lt;GroupEnd,Terminal&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/GrammarTypes.fs#L72-72" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>The way the group ends.</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '101', 101)" onmouseover="showTip(event, '101', 101)">
-            EndSymbol
-          </code>
-          <div class="tip" id="101">
-            <strong>Signature:</strong> Symbol<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/GrammarTypes.fs#L68-68" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/GrammarTypes.fs#L91-91" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -141,19 +116,19 @@ However, it is not limited to "noise", but can be used for any content.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '102', 102)" onmouseover="showTip(event, '102', 102)">
-            Index
+          <code onmouseout="hideTip(event, '108', 108)" onmouseover="showTip(event, '108', 108)">
+            EndingMode
           </code>
-          <div class="tip" id="102">
-            <strong>Signature:</strong> uint32<br />
+          <div class="tip" id="108">
+            <strong>Signature:</strong> EndingMode<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/GrammarTypes.fs#L62-62" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/GrammarTypes.fs#L95-95" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>The index of the group as it appears on the grammar file.</p>
+          <p>The way the group ends.</p>
 
 
         </td>
@@ -161,15 +136,15 @@ However, it is not limited to "noise", but can be used for any content.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '103', 103)" onmouseover="showTip(event, '103', 103)">
+          <code onmouseout="hideTip(event, '109', 109)" onmouseover="showTip(event, '109', 109)">
             Name
           </code>
-          <div class="tip" id="103">
+          <div class="tip" id="109">
             <strong>Signature:</strong> string<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/GrammarTypes.fs#L60-60" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/GrammarTypes.fs#L84-84" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -181,15 +156,15 @@ However, it is not limited to "noise", but can be used for any content.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '104', 104)" onmouseover="showTip(event, '104', 104)">
+          <code onmouseout="hideTip(event, '110', 110)" onmouseover="showTip(event, '110', 110)">
             Nesting
           </code>
-          <div class="tip" id="104">
+          <div class="tip" id="110">
             <strong>Signature:</strong> Set&lt;Indexed&lt;Group&gt;&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/GrammarTypes.fs#L74-74" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/GrammarTypes.fs#L97-97" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -201,15 +176,15 @@ However, it is not limited to "noise", but can be used for any content.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '105', 105)" onmouseover="showTip(event, '105', 105)">
-            StartSymbol
+          <code onmouseout="hideTip(event, '111', 111)" onmouseover="showTip(event, '111', 111)">
+            Start
           </code>
-          <div class="tip" id="105">
-            <strong>Signature:</strong> Symbol<br />
+          <div class="tip" id="111">
+            <strong>Signature:</strong> GroupStart<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/GrammarTypes.fs#L66-66" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/GrammarTypes.fs#L88-88" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>

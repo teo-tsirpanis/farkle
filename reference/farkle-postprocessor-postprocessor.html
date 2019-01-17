@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" async></script>
     <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
-    <link href="https://bootswatch.com/2/cyborg/bootstrap.min.css" rel="stylesheet" async/>
+    <link href="https://stackpath.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" integrity="sha384-4FeI0trTH/PCsLWrGCD1mScoFu9Jf2NdknFdFoJhXZFwsvzZ3Bo5sAh7+zL8Xgnd" crossorigin="anonymous">
 
     <link type="text/css" rel="stylesheet" href="/Farkle/content/style.css" />
     <script type="text/javascript" src="/Farkle/content/tips.js" async></script>
@@ -23,7 +23,6 @@
     <div class="container">
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
-          <li><a href="http://fsharp.org">fsharp.org</a></li>
           <li><a href="https://github.com/teo-tsirpanis/Farkle">github page</a></li>
         </ul>
         <h3 class="muted"><a href="/Farkle/index.html">Farkle</a></h3>
@@ -55,10 +54,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '64', 64)" onmouseover="showTip(event, '64', 64)">
+          <code onmouseout="hideTip(event, '56', 56)" onmouseover="showTip(event, '56', 56)">
             ast
           </code>
-          <div class="tip" id="64">
+          <div class="tip" id="56">
             <strong>Signature:</strong> PostProcessor&lt;AST&gt;<br />
                                   </div>
         </td>
@@ -75,19 +74,20 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '65', 65)" onmouseover="showTip(event, '65', 65)">
+          <code onmouseout="hideTip(event, '57', 57)" onmouseover="showTip(event, '57', 57)">
             ofSeq transformers fusers
           </code>
-          <div class="tip" id="65">
+          <div class="tip" id="57">
             <strong>Signature:</strong> transformers:seq&lt;Transformer&gt; -&gt; fusers:seq&lt;Fuser&gt; -&gt; PostProcessor&lt;&#39;result&gt;<br />
                           <strong>Type parameters:</strong> 'result                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/PostProcessor.fs#L49-49" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/PostProcessor.fs#L44-44" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Creates a <a href="farkle-postprocessor-postprocessor.html" title="PostProcessor"><code>PostProcessor</code></a> from the given sequences of <a href="farkle-postprocessor-transformer.html" title="Transformer"><code>Transformer</code></a>s, and <a href="farkle-postprocessor-fuser.html" title="Fuser"><code>Fuser</code></a>s.</p>
+          <p>Creates a <a href="farkle-postprocessor-postprocessor.html" title="PostProcessor"><code>PostProcessor</code></a> from the given sequences of <a href="farkle-postprocessor-transformer.html" title="Transformer"><code>Transformer</code></a>s, and <a href="farkle-postprocessor-fuser.html" title="Fuser"><code>Fuser</code></a>s.
+The types of their functions are checked for correctness, in case of a failure, <code>None</code> will be returned.</p>
 
 
         </td>
@@ -95,15 +95,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '66', 66)" onmouseover="showTip(event, '66', 66)">
+          <code onmouseout="hideTip(event, '58', 58)" onmouseover="showTip(event, '58', 58)">
             syntaxCheck
           </code>
-          <div class="tip" id="66">
+          <div class="tip" id="58">
             <strong>Signature:</strong> PostProcessor&lt;unit&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/PostProcessor.fs#L28-28" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/PostProcessor.fs#L30-30" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>

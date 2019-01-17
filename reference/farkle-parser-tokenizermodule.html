@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Production - Farkle</title>
+    <title>Tokenizer - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -34,77 +34,58 @@
 
 
 
-<h1>Production</h1>
+<h1>Tokenizer</h1>
 <p>
-
-    <span>Namespace: Farkle.Grammar</span><br />
-    </p>
+  <span>Namespace: Farkle.Parser</span><br />
+        <span>
+          Attributes:<br />
+[&lt;CompilationRepresentation(4)&gt;]<br />
+          
+      </span>
+</p>
 <div class="xmldoc">
-<p>An array of <code>LALRSymbol</code>s that can produce a specific <a href="farkle-grammar-nonterminal.html" title="Nonterminal"><code>Nonterminal</code></a>.</p>
+<p>Functions to tokenize <code>CharStreams</code>.</p>
 
 </div>
-  <h3>Record Fields</h3>
+
+<!-- Render nested types and modules, if there are any -->
+
+  <h3>Functions and values</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Record Field</td><td>Description</td></tr>
+      <tr><td>Function or value</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '123', 123)" onmouseover="showTip(event, '123', 123)">
-            Handle
+          <code onmouseout="hideTip(event, '46', 46)" onmouseover="showTip(event, '46', 46)">
+            tokenize(...)
           </code>
-          <div class="tip" id="123">
-            <strong>Signature:</strong> (type)<br />
-                                  </div>
+          <div class="tip" id="46">
+            <strong>Signature:</strong> fError:(Message&lt;ParseErrorType&gt; -&gt; &#39;a) -&gt; fToken:(Position -&gt; Token option -&gt; &#39;b -&gt; &#39;a option * &#39;b) -&gt; fTokenS0:&#39;b -&gt; Grammar -&gt; pp:PostProcessor&lt;&#39;c&gt; -&gt; input:CharStream -&gt; &#39;a<br />
+                          <strong>Type parameters:</strong> 'a, 'b, 'c                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/GrammarTypes.fs#L129-129" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/Tokenizer.fs#L79-79" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>The <code>Terminals</code>s and <a href="farkle-grammar-nonterminal.html" title="Nonterminal"><code>Nonterminal</code></a>s, the production is made of.</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '124', 124)" onmouseover="showTip(event, '124', 124)">
-            Head
-          </code>
-          <div class="tip" id="124">
-            <strong>Signature:</strong> Nonterminal<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/GrammarTypes.fs#L127-127" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>The <a href="farkle-grammar-nonterminal.html" title="Nonterminal"><code>Nonterminal</code></a> the production is referring to.</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '125', 125)" onmouseover="showTip(event, '125', 125)">
-            Index
-          </code>
-          <div class="tip" id="125">
-            <strong>Signature:</strong> uint32<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/GrammarTypes.fs#L123-123" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>The index of the production.</p>
+          <p>Breaks a <a href="farkle-collections-charstream.html" title="CharStream"><code>CharStream</code></a> into a series of post-processed tokens, according to the given <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a>.
+This function is pretty complicated, so let's enumerate the parameters' purpose.
+The function accepts:
+1. a function that determines the result of <em>this</em> function, in case an error occurs.
+2. a function that accepts:
+<em> the current position (it is redundant if a token is specified, but not when input ends)
+</em> a token that was just generated (or <code>None</code> in case of an end of input).
+<em> the function's state.
+and returns
+</em> the result of <em>this</em> function, or <code>None</code>, if it should be given another token.
+* the function's new state.
+3. the initial state of the previous function.
+4. the <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a> to use.
+5. the <a href="farkle-postprocessor-postprocessor.html" title="PostProcessor"><code>PostProcessor</code></a> to use on the newly-transformd tokens.
+6. the <a href="farkle-collections-charstream.html" title="CharStream"><code>CharStream</code></a> to act as an input. <strong>Remember that <code>CharStream</code>s are <em>not</em> thread-safe.</strong></p>
 
 
         </td>

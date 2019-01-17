@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" async></script>
     <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
-    <link href="https://bootswatch.com/2/cyborg/bootstrap.min.css" rel="stylesheet" async/>
+    <link href="https://stackpath.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" integrity="sha384-4FeI0trTH/PCsLWrGCD1mScoFu9Jf2NdknFdFoJhXZFwsvzZ3Bo5sAh7+zL8Xgnd" crossorigin="anonymous">
 
     <link type="text/css" rel="stylesheet" href="/Farkle/content/style.css" />
     <script type="text/javascript" src="/Farkle/content/tips.js" async></script>
@@ -23,7 +23,6 @@
     <div class="container">
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
-          <li><a href="http://fsharp.org">fsharp.org</a></li>
           <li><a href="https://github.com/teo-tsirpanis/Farkle">github page</a></li>
         </ul>
         <h3 class="muted"><a href="/Farkle/index.html">Farkle</a></h3>
@@ -55,19 +54,145 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '67', 67)" onmouseover="showTip(event, '67', 67)">
+          <code onmouseout="hideTip(event, '59', 59)" onmouseover="showTip(event, '59', 59)">
             create sym fTransform
           </code>
-          <div class="tip" id="67">
-            <strong>Signature:</strong> sym:^?8156 -&gt; fTransform:(string -&gt; &#39;TOutput) -&gt; Transformer<br />
-                          <strong>Type parameters:</strong> ^?8156, 'TOutput                      </div>
+          <div class="tip" id="59">
+            <strong>Signature:</strong> sym:^?8363 -&gt; fTransform:C&lt;&#39;?8364&gt; -&gt; Transformer<br />
+                          <strong>Type parameters:</strong> ^?8363, '?8364                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Transformer.fs#L23-23" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Transformer.fs#L41-41" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Creates a <a href="farkle-postprocessor-transformer.html" title="Transformer"><code>Transformer</code></a> that applies the given function to the symbol's data.</p>
+          <p>Creates a <a href="farkle-postprocessor-transformer.html" title="Transformer"><code>Transformer</code></a> that applies the given delegate to the terminal's data.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '60', 60)" onmouseover="showTip(event, '60', 60)">
+            createP sym fTransform
+          </code>
+          <div class="tip" id="60">
+            <strong>Signature:</strong> sym:^?8360 -&gt; fTransform:C2&lt;&#39;?8361&gt; -&gt; Transformer<br />
+                          <strong>Type parameters:</strong> ^?8360, '?8361                      </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Transformer.fs#L38-38" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Creates a <a href="farkle-postprocessor-transformer.html" title="Transformer"><code>Transformer</code></a> that applies the given delegate to the terminal's data and position.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '61', 61)" onmouseover="showTip(event, '61', 61)">
+            createPS sym fTransform
+          </code>
+          <div class="tip" id="61">
+            <strong>Signature:</strong> sym:^?8366 -&gt; fTransform:(Position -&gt; string -&gt; &#39;?8367) -&gt; Transformer<br />
+                          <strong>Type parameters:</strong> ^?8366, '?8367                      </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Transformer.fs#L46-46" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Creates a <a href="farkle-postprocessor-transformer.html" title="Transformer"><code>Transformer</code></a> that applies the given function to the terminal's data as a string, and its position.
+This function will cause an allocation of a string, so if you don't want the string itself
+(or its entirety), it is better to use the delegate-accepting variants.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '62', 62)" onmouseover="showTip(event, '62', 62)">
+            createS sym fTransform
+          </code>
+          <div class="tip" id="62">
+            <strong>Signature:</strong> sym:^?8369 -&gt; fTransform:(string -&gt; &#39;?8370) -&gt; Transformer<br />
+                          <strong>Type parameters:</strong> ^?8369, '?8370                      </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Transformer.fs#L51-51" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Creates a <a href="farkle-postprocessor-transformer.html" title="Transformer"><code>Transformer</code></a> that applies the given function to the terminal's data as a string.
+This function will cause an allocation of a string, so if you don't want the string itself
+(or its entirety), it is better to use the delegate-accepting variants.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '63', 63)" onmouseover="showTip(event, '63', 63)">
+            ignore(sym)
+          </code>
+          <div class="tip" id="63">
+            <strong>Signature:</strong> sym:^?8376 -&gt; Transformer<br />
+                          <strong>Type parameters:</strong> ^?8376                      </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Transformer.fs#L67-67" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Creates a <a href="farkle-postprocessor-transformer.html" title="Transformer"><code>Transformer</code></a> that ignore's a terminal's data.
+It is better not to include a <a href="farkle-postprocessor-transformer.html" title="Transformer"><code>Transformer</code></a> in a post-processor
+configuration, instead of including an ignoring one.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '64', 64)" onmouseover="showTip(event, '64', 64)">
+            int(sym)
+          </code>
+          <div class="tip" id="64">
+            <strong>Signature:</strong> sym:^?8372 -&gt; Transformer<br />
+                          <strong>Type parameters:</strong> ^?8372                      </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Transformer.fs#L54-54" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Creates a <a href="farkle-postprocessor-transformer.html" title="Transformer"><code>Transformer</code></a> that transforms a terminal's data to a 32-bit signed integer.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '65', 65)" onmouseover="showTip(event, '65', 65)">
+            string(sym)
+          </code>
+          <div class="tip" id="65">
+            <strong>Signature:</strong> sym:^?8374 -&gt; Transformer<br />
+                          <strong>Type parameters:</strong> ^?8374                      </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/Transformer.fs#L62-62" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Creates a <a href="farkle-postprocessor-transformer.html" title="Transformer"><code>Transformer</code></a> that transforms a terminal's data to a string as-is.</p>
 
 
         </td>

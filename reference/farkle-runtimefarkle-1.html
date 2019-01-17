@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" async></script>
     <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
-    <link href="https://bootswatch.com/2/cyborg/bootstrap.min.css" rel="stylesheet" async/>
+    <link href="https://stackpath.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" integrity="sha384-4FeI0trTH/PCsLWrGCD1mScoFu9Jf2NdknFdFoJhXZFwsvzZ3Bo5sAh7+zL8Xgnd" crossorigin="anonymous">
 
     <link type="text/css" rel="stylesheet" href="/Farkle/content/style.css" />
     <script type="text/javascript" src="/Farkle/content/tips.js" async></script>
@@ -23,7 +23,6 @@
     <div class="container">
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
-          <li><a href="http://fsharp.org">fsharp.org</a></li>
           <li><a href="https://github.com/teo-tsirpanis/Farkle">github page</a></li>
         </ul>
         <h3 class="muted"><a href="/Farkle/index.html">Farkle</a></h3>
@@ -47,12 +46,9 @@
         </span>
 </p>
 <div class="xmldoc">
-<p>A reusable parser <strong>and post-processor</strong>, created for a specific grammar, and returning
-a specific object that best describes an expression of the language of this grammar.
-This is the highest-level API, and the easiest-to-use one.
-10: BTW, Farkle means: "FArkle Recognizes Known Languages Easily".
-20: And "FArkle" means: (GOTO 10) 😁
-30: I guess you can't read this line. 😛</p>
+<p>A reusable parser and post-processor, created for a specific grammar, and returning
+a specific type of object that best describes an expression of the language of this grammar.
+This is the highest-level API, and the easiest-to-use one.</p>
 
 </div>
   <h3>Record Fields</h3>
@@ -68,11 +64,11 @@ This is the highest-level API, and the easiest-to-use one.
             Grammar
           </code>
           <div class="tip" id="74">
-            <strong>Signature:</strong> Result&lt;RuntimeGrammar,FarkleError&gt;<br />
+            <strong>Signature:</strong> Result&lt;Grammar,FarkleError&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/RuntimeFarkle.fs#L32-32" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/RuntimeFarkle.fs#L38-38" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -90,7 +86,7 @@ This is the highest-level API, and the easiest-to-use one.
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/RuntimeFarkle.fs#L33-33" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/RuntimeFarkle.fs#L39-39" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>

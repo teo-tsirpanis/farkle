@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Production - Farkle</title>
+    <title>CharSpan - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -34,79 +34,62 @@
 
 
 
-<h1>Production</h1>
+<h1>CharSpan</h1>
 <p>
 
-    <span>Namespace: Farkle.Grammar</span><br />
+    <span>Namespace: Farkle.Collections</span><br />
     </p>
 <div class="xmldoc">
-<p>An array of <code>LALRSymbol</code>s that can produce a specific <a href="farkle-grammar-nonterminal.html" title="Nonterminal"><code>Nonterminal</code></a>.</p>
+<p>An continuous range of characters that is
+stored by its starting position and ending index.</p>
 
 </div>
-  <h3>Record Fields</h3>
+  <h3>Instance members</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Record Field</td><td>Description</td></tr>
+      <tr><td>Instance member</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '123', 123)" onmouseover="showTip(event, '123', 123)">
-            Handle
+          <code onmouseout="hideTip(event, '80', 80)" onmouseover="showTip(event, '80', 80)">
+            x.EndingIndex
           </code>
-          <div class="tip" id="123">
-            <strong>Signature:</strong> (type)<br />
+          <div class="tip" id="80">
+            <strong>Signature:</strong> uint64<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/GrammarTypes.fs#L129-129" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/CharStream.fs#L22-22" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>The <code>Terminals</code>s and <a href="farkle-grammar-nonterminal.html" title="Nonterminal"><code>Nonterminal</code></a>s, the production is made of.</p>
+          <p>The span's zero-based index of the last character.</p>
 
 
+              <p>CompiledName: <code>get_EndingIndex</code></p>
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '124', 124)" onmouseover="showTip(event, '124', 124)">
-            Head
+          <code onmouseout="hideTip(event, '81', 81)" onmouseover="showTip(event, '81', 81)">
+            x.StartingIndex
           </code>
-          <div class="tip" id="124">
-            <strong>Signature:</strong> Nonterminal<br />
+          <div class="tip" id="81">
+            <strong>Signature:</strong> uint64<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/GrammarTypes.fs#L127-127" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/CharStream.fs#L20-20" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>The <a href="farkle-grammar-nonterminal.html" title="Nonterminal"><code>Nonterminal</code></a> the production is referring to.</p>
+          <p>The span's zero-based index of the first character.</p>
 
 
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '125', 125)" onmouseover="showTip(event, '125', 125)">
-            Index
-          </code>
-          <div class="tip" id="125">
-            <strong>Signature:</strong> uint32<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/GrammarTypes.fs#L123-123" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>The index of the production.</p>
-
-
+              <p>CompiledName: <code>get_StartingIndex</code></p>
         </td>
       </tr>
     </tbody>

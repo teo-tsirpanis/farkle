@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Production - Farkle</title>
+    <title>Noise - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -34,79 +34,41 @@
 
 
 
-<h1>Production</h1>
+<h1>Noise</h1>
 <p>
 
     <span>Namespace: Farkle.Grammar</span><br />
     </p>
 <div class="xmldoc">
-<p>An array of <code>LALRSymbol</code>s that can produce a specific <a href="farkle-grammar-nonterminal.html" title="Nonterminal"><code>Nonterminal</code></a>.</p>
+<p>A symbol which is produced through a DFA, but is not significant for the grammar and is discarded.
+An example of a noise symbol would be a source code comment.</p>
 
 </div>
-  <h3>Record Fields</h3>
+  <h3>Instance members</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Record Field</td><td>Description</td></tr>
+      <tr><td>Instance member</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '123', 123)" onmouseover="showTip(event, '123', 123)">
-            Handle
+          <code onmouseout="hideTip(event, '120', 120)" onmouseover="showTip(event, '120', 120)">
+            x.Name
           </code>
-          <div class="tip" id="123">
-            <strong>Signature:</strong> (type)<br />
+          <div class="tip" id="120">
+            <strong>Signature:</strong> string<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/GrammarTypes.fs#L129-129" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/GrammarTypes.fs#L60-60" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>The <code>Terminals</code>s and <a href="farkle-grammar-nonterminal.html" title="Nonterminal"><code>Nonterminal</code></a>s, the production is made of.</p>
+          <p>The symbol's name.</p>
 
 
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '124', 124)" onmouseover="showTip(event, '124', 124)">
-            Head
-          </code>
-          <div class="tip" id="124">
-            <strong>Signature:</strong> Nonterminal<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/GrammarTypes.fs#L127-127" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>The <a href="farkle-grammar-nonterminal.html" title="Nonterminal"><code>Nonterminal</code></a> the production is referring to.</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '125', 125)" onmouseover="showTip(event, '125', 125)">
-            Index
-          </code>
-          <div class="tip" id="125">
-            <strong>Signature:</strong> uint32<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Grammar/GrammarTypes.fs#L123-123" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>The index of the production.</p>
-
-
+              <p>CompiledName: <code>get_Name</code></p>
         </td>
       </tr>
     </tbody>
