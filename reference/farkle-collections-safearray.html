@@ -54,15 +54,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '37', 37)" onmouseover="showTip(event, '37', 37)">
+          <code onmouseout="hideTip(event, '34', 34)" onmouseover="showTip(event, '34', 34)">
             getIndex x i
           </code>
-          <div class="tip" id="37">
-            <strong>Signature:</strong> x:SafeArray&lt;&#39;?9028&gt; -&gt; i:uint32 -&gt; Indexed&lt;&#39;?9028&gt; option<br />
-                          <strong>Type parameters:</strong> '?9028                      </div>
+          <div class="tip" id="34">
+            <strong>Signature:</strong> x:SafeArray&lt;&#39;?8999&gt; -&gt; i:uint32 -&gt; Indexed&lt;&#39;?8999&gt; option<br />
+                          <strong>Type parameters:</strong> '?8999                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/IndexedCollections.fs#L91-91" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Utilities/IndexedCollections.fs#L75-75" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -74,15 +74,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '38', 38)" onmouseover="showTip(event, '38', 38)">
+          <code onmouseout="hideTip(event, '35', 35)" onmouseover="showTip(event, '35', 35)">
             getUnsafe x i
           </code>
-          <div class="tip" id="38">
-            <strong>Signature:</strong> x:SafeArray&lt;&#39;?9030&gt; -&gt; i:uint32 -&gt; &#39;?9030 option<br />
-                          <strong>Type parameters:</strong> '?9030                      </div>
+          <div class="tip" id="35">
+            <strong>Signature:</strong> x:SafeArray&lt;&#39;?9001&gt; -&gt; i:uint32 -&gt; &#39;?9001 option<br />
+                          <strong>Type parameters:</strong> '?9001                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/IndexedCollections.fs#L93-93" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Utilities/IndexedCollections.fs#L77-77" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -94,15 +94,35 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '39', 39)" onmouseover="showTip(event, '39', 39)">
-            ofSeq(x)
+          <code onmouseout="hideTip(event, '36', 36)" onmouseover="showTip(event, '36', 36)">
+            ofImmutableArray(x)
           </code>
-          <div class="tip" id="39">
-            <strong>Signature:</strong> x:seq&lt;&#39;?9024&gt; -&gt; SafeArray&lt;&#39;?9024&gt;<br />
-                          <strong>Type parameters:</strong> '?9024                      </div>
+          <div class="tip" id="36">
+            <strong>Signature:</strong> x:(type) -&gt; SafeArray&lt;&#39;a&gt;<br />
+                          <strong>Type parameters:</strong> 'a                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/IndexedCollections.fs#L86-86" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Utilities/IndexedCollections.fs#L68-68" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Creates a <a href="farkle-collections-safearray.html" title="SafeArray"><code>SafeArray</code></a> from an immutable array.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '37', 37)" onmouseover="showTip(event, '37', 37)">
+            ofSeq(x)
+          </code>
+          <div class="tip" id="37">
+            <strong>Signature:</strong> x:seq&lt;&#39;?8995&gt; -&gt; SafeArray&lt;&#39;?8995&gt;<br />
+                          <strong>Type parameters:</strong> '?8995                      </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Utilities/IndexedCollections.fs#L70-70" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -114,15 +134,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '40', 40)" onmouseover="showTip(event, '40', 40)">
+          <code onmouseout="hideTip(event, '38', 38)" onmouseover="showTip(event, '38', 38)">
             retrieve x i
           </code>
-          <div class="tip" id="40">
-            <strong>Signature:</strong> x:SafeArray&lt;&#39;b&gt; -&gt; i:Indexed&lt;&#39;b&gt; -&gt; &#39;b<br />
-                          <strong>Type parameters:</strong> 'b                      </div>
+          <div class="tip" id="38">
+            <strong>Signature:</strong> x:SafeArray&lt;&#39;a&gt; -&gt; i:Indexed&lt;&#39;a&gt; -&gt; &#39;a<br />
+                          <strong>Type parameters:</strong> 'a                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/IndexedCollections.fs#L89-89" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Utilities/IndexedCollections.fs#L73-73" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -135,15 +155,15 @@ Because it does not accept an arbitrary integer, it is less likely to accidentia
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '41', 41)" onmouseover="showTip(event, '41', 41)">
+          <code onmouseout="hideTip(event, '39', 39)" onmouseover="showTip(event, '39', 39)">
             tryFindIndex x f
           </code>
-          <div class="tip" id="41">
-            <strong>Signature:</strong> x:SafeArray&lt;&#39;?9032&gt; -&gt; f:(&#39;?9032 -&gt; bool) -&gt; Indexed&lt;&#39;?9032&gt; option<br />
-                          <strong>Type parameters:</strong> '?9032                      </div>
+          <div class="tip" id="39">
+            <strong>Signature:</strong> x:SafeArray&lt;&#39;?9003&gt; -&gt; f:(&#39;?9003 -&gt; bool) -&gt; Indexed&lt;&#39;?9003&gt; option<br />
+                          <strong>Type parameters:</strong> '?9003                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/IndexedCollections.fs#L95-95" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Utilities/IndexedCollections.fs#L79-79" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -168,7 +188,8 @@ Because it does not accept an arbitrary integer, it is less likely to accidentia
             <li><a href="/Farkle/release-notes.html">Release Notes</a></li>
 
             <li class="nav-header">Getting started</li>
-            <li><a href="/Farkle/quickstart.html">Quick Start</a></li>
+            <li><a href="/Farkle/quickstart.html">Quick Start with F#</a></li>
+            <li><a href="/Farkle/quickstart-csharp.html">Quick Start with C#</a></li>
 
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>

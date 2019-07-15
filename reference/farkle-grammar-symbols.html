@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>LALRAction - Farkle</title>
+    <title>Symbols - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -34,42 +34,38 @@
 
 
 
-<h1>LALRAction</h1>
+<h1>Symbols</h1>
 <p>
 
     <span>Namespace: Farkle.Grammar</span><br />
-            <span>
-            Attributes: <br />
-[&lt;RequireQualifiedAccess&gt;]<br />
-            
-        </span>
-</p>
+    </p>
 <div class="xmldoc">
-<p>An action to be taken by the LALR parser according to the given <a href="farkle-grammar-terminal.html" title="Terminal"><code>Terminal</code></a>.</p>
+<p>A type containing all symbols of a grammar, grouped by kind.
+Group start and end symbols can be found at the group table.</p>
 
 </div>
-  <h3>Union Cases</h3>
+  <h3>Record Fields</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Union Case</td><td>Description</td></tr>
+      <tr><td>Record Field</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '124', 124)" onmouseover="showTip(event, '124', 124)">
-            Accept
+          <code onmouseout="hideTip(event, '139', 139)" onmouseover="showTip(event, '139', 139)">
+            NoiseSymbols
           </code>
-          <div class="tip" id="124">
-            <strong>Signature:</strong> <br />
+          <div class="tip" id="139">
+            <strong>Signature:</strong> (type)<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Grammar/GrammarTypes.fs#L153-153" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Grammar/GrammarTypes.fs#L183-183" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>When the parser encounters this action for a given symbol, the input text is accepted as correct and parsing ends.</p>
+          <p>The grammar's noise symbols.</p>
 
 
         </td>
@@ -77,19 +73,19 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '125', 125)" onmouseover="showTip(event, '125', 125)">
-            Reduce(Production)
+          <code onmouseout="hideTip(event, '140', 140)" onmouseover="showTip(event, '140', 140)">
+            Nonterminals
           </code>
-          <div class="tip" id="125">
-            <strong>Signature:</strong> Production<br />
+          <div class="tip" id="140">
+            <strong>Signature:</strong> (type)<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Grammar/GrammarTypes.fs#L151-151" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Grammar/GrammarTypes.fs#L181-181" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>This action indicates the parser to reduce a <a href="farkle-grammar-production.html" title="Production"><code>Production</code></a>.</p>
+          <p>The grammar's nonterminals.</p>
 
 
         </td>
@@ -97,19 +93,19 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '126', 126)" onmouseover="showTip(event, '126', 126)">
-            Shift(Indexed&lt;LALRState&gt;)
+          <code onmouseout="hideTip(event, '141', 141)" onmouseover="showTip(event, '141', 141)">
+            Terminals
           </code>
-          <div class="tip" id="126">
-            <strong>Signature:</strong> Indexed&lt;LALRState&gt;<br />
+          <div class="tip" id="141">
+            <strong>Signature:</strong> (type)<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Grammar/GrammarTypes.fs#L149-149" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Grammar/GrammarTypes.fs#L179-179" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>This action indicates the parser to shift to the specified <a href="farkle-grammar-lalrstate.html" title="LALRState"><code>LALRState</code></a>.</p>
+          <p>The grammar's terminals.</p>
 
 
         </td>

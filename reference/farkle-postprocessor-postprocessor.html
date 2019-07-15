@@ -39,7 +39,7 @@
   <span>Namespace: Farkle.PostProcessor</span><br />
   </p>
 <div class="xmldoc">
-<p>Functions to create <a href="farkle-postprocessor-postprocessor.html" title="PostProcessor"><code>PostProcessor</code></a>s, as well as some ready to use.</p>
+<p>Functions to create <code>PostProcessor</code>s, as well as some ready to use.</p>
 
 </div>
 
@@ -54,19 +54,19 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '56', 56)" onmouseover="showTip(event, '56', 56)">
+          <code onmouseout="hideTip(event, '62', 62)" onmouseover="showTip(event, '62', 62)">
             ast
           </code>
-          <div class="tip" id="56">
+          <div class="tip" id="62">
             <strong>Signature:</strong> PostProcessor&lt;AST&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/PostProcessor.fs#L36-36" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/PostProcessor/PostProcessor.fs#L42-42" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>This post-processor creates a domain-ignorant <a href="farkle-ast.html" title="AST"><code>AST</code></a> that contains the information</p>
+          <p>This post-processor creates a domain-ignorant <a href="farkle-ast.html" title="AST"><code>AST</code></a>.</p>
 
 
         </td>
@@ -74,20 +74,19 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '57', 57)" onmouseover="showTip(event, '57', 57)">
+          <code onmouseout="hideTip(event, '63', 63)" onmouseover="showTip(event, '63', 63)">
             ofSeq transformers fusers
           </code>
-          <div class="tip" id="57">
+          <div class="tip" id="63">
             <strong>Signature:</strong> transformers:seq&lt;Transformer&gt; -&gt; fusers:seq&lt;Fuser&gt; -&gt; PostProcessor&lt;&#39;result&gt;<br />
                           <strong>Type parameters:</strong> 'result                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/PostProcessor.fs#L44-44" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/PostProcessor/PostProcessor.fs#L48-48" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Creates a <a href="farkle-postprocessor-postprocessor.html" title="PostProcessor"><code>PostProcessor</code></a> from the given sequences of <a href="farkle-postprocessor-transformer.html" title="Transformer"><code>Transformer</code></a>s, and <a href="farkle-postprocessor-fuser.html" title="Fuser"><code>Fuser</code></a>s.
-The types of their functions are checked for correctness, in case of a failure, <code>None</code> will be returned.</p>
+          <p>Creates a <code>PostProcessor</code> from the given sequences of <a href="farkle-postprocessor-fsharptransformer.html" title="Transformer"><code>Transformer</code></a>s, and <code>Fuser</code>s.</p>
 
 
         </td>
@@ -95,15 +94,15 @@ The types of their functions are checked for correctness, in case of a failure, 
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '58', 58)" onmouseover="showTip(event, '58', 58)">
+          <code onmouseout="hideTip(event, '64', 64)" onmouseover="showTip(event, '64', 64)">
             syntaxCheck
           </code>
-          <div class="tip" id="58">
+          <div class="tip" id="64">
             <strong>Signature:</strong> PostProcessor&lt;unit&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/PostProcessor/PostProcessor.fs#L30-30" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/PostProcessor/PostProcessor.fs#L36-36" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -129,7 +128,8 @@ It is useful for checking the syntax of a string with respect to a grammar.</p>
             <li><a href="/Farkle/release-notes.html">Release Notes</a></li>
 
             <li class="nav-header">Getting started</li>
-            <li><a href="/Farkle/quickstart.html">Quick Start</a></li>
+            <li><a href="/Farkle/quickstart.html">Quick Start with F#</a></li>
+            <li><a href="/Farkle/quickstart-csharp.html">Quick Start with C#</a></li>
 
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>

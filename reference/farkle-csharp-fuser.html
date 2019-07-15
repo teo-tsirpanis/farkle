@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>LALRAction - Farkle</title>
+    <title>Fuser - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -34,42 +34,42 @@
 
 
 
-<h1>LALRAction</h1>
+<h1>Fuser</h1>
 <p>
 
-    <span>Namespace: Farkle.Grammar</span><br />
+    <span>Namespace: Farkle.CSharp</span><br />
             <span>
             Attributes: <br />
-[&lt;RequireQualifiedAccess&gt;]<br />
+[&lt;Sealed&gt;]<br />
             
         </span>
 </p>
 <div class="xmldoc">
-<p>An action to be taken by the LALR parser according to the given <a href="farkle-grammar-terminal.html" title="Terminal"><code>Terminal</code></a>.</p>
+<p>An object that contains a function to convert a  to an arbitrary object.</p>
 
 </div>
-  <h3>Union Cases</h3>
+  <h3>Static members</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Union Case</td><td>Description</td></tr>
+      <tr><td>Static member</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '124', 124)" onmouseover="showTip(event, '124', 124)">
-            Accept
+          <code onmouseout="hideTip(event, '84', 84)" onmouseover="showTip(event, '84', 84)">
+            Fuser.Constant(x)
           </code>
-          <div class="tip" id="124">
-            <strong>Signature:</strong> <br />
-                                  </div>
+          <div class="tip" id="84">
+            <strong>Signature:</strong> x:&#39;T -&gt; Fuser<br />
+                          <strong>Type parameters:</strong> 'T                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Grammar/GrammarTypes.fs#L153-153" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/CSharp/CSharpBindings.fs#L91-91" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>When the parser encounters this action for a given symbol, the input text is accepted as correct and parsing ends.</p>
+          <p>Creates a  that always returns a constant value.</p>
 
 
         </td>
@@ -77,19 +77,19 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '125', 125)" onmouseover="showTip(event, '125', 125)">
-            Reduce(Production)
+          <code onmouseout="hideTip(event, '85', 85)" onmouseover="showTip(event, '85', 85)">
+            Fuser.Create(idx1, idx2, idx3, f)
           </code>
-          <div class="tip" id="125">
-            <strong>Signature:</strong> Production<br />
-                                  </div>
+          <div class="tip" id="85">
+            <strong>Signature:</strong> (idx1:int * idx2:int * idx3:int * f:Func&lt;&#39;T1,&#39;T2,&#39;T3,&#39;TOutput&gt;) -&gt; Fuser<br />
+                          <strong>Type parameters:</strong> 'T1, 'T2, 'T3, 'TOutput                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Grammar/GrammarTypes.fs#L151-151" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/CSharp/CSharpBindings.fs#L114-114" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>This action indicates the parser to reduce a <a href="farkle-grammar-production.html" title="Production"><code>Production</code></a>.</p>
+          <p>Creates a  that fuses a  from three of its symbols.</p>
 
 
         </td>
@@ -97,21 +97,82 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '126', 126)" onmouseover="showTip(event, '126', 126)">
-            Shift(Indexed&lt;LALRState&gt;)
+          <code onmouseout="hideTip(event, '86', 86)" onmouseover="showTip(event, '86', 86)">
+            Fuser.Create(idx1, idx2, f)
           </code>
-          <div class="tip" id="126">
-            <strong>Signature:</strong> Indexed&lt;LALRState&gt;<br />
-                                  </div>
+          <div class="tip" id="86">
+            <strong>Signature:</strong> (idx1:int * idx2:int * f:Func&lt;&#39;T1,&#39;T2,&#39;TResult&gt;) -&gt; Fuser<br />
+                          <strong>Type parameters:</strong> 'T1, 'T2, 'TResult                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Grammar/GrammarTypes.fs#L149-149" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/CSharp/CSharpBindings.fs#L106-106" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>This action indicates the parser to shift to the specified <a href="farkle-grammar-lalrstate.html" title="LALRState"><code>LALRState</code></a>.</p>
+          <p>Creates a  that fuses a  from two of its symbols.</p>
 
 
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '87', 87)" onmouseover="showTip(event, '87', 87)">
+            Fuser.Create(idx, f)
+          </code>
+          <div class="tip" id="87">
+            <strong>Signature:</strong> (idx:int * f:Func&lt;&#39;T,&#39;TResult&gt;) -&gt; Fuser<br />
+                          <strong>Type parameters:</strong> 'T, 'TResult                      </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/CSharp/CSharpBindings.fs#L99-99" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Creates a  that fuses a  from one of its symbols.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '88', 88)" onmouseover="showTip(event, '88', 88)">
+            Fuser.CreateRaw(f)
+          </code>
+          <div class="tip" id="88">
+            <strong>Signature:</strong> (f:Func&lt;obj [],obj&gt;) -&gt; Fuser<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/CSharp/CSharpBindings.fs#L87-87" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Creates a  from a delegate that accepts an array of objects.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '89', 89)" onmouseover="showTip(event, '89', 89)">
+            Fuser.First
+          </code>
+          <div class="tip" id="89">
+            <strong>Signature:</strong> Fuser<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/CSharp/CSharpBindings.fs#L94-94" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Creates a  that returns the first symbol of the production unmodified.</p>
+
+
+              <p>CompiledName: <code>get_First</code></p>
         </td>
       </tr>
     </tbody>

@@ -31,7 +31,16 @@
       <div class="row">
         <div class="span9" id="main">
           
-<h4><a name="4-0-0" class="anchor" href="#4-0-0">4.0.0</a></h4>
+<h4><a name="5-0-0-rc-1-15-07-2019" class="anchor" href="#5-0-0-rc-1-15-07-2019">5.0.0-rc.1 - 15-07-2019</a></h4>
+<ul>
+<li>Farkle now has better C# support. Just write <code>using Farkle.CSharp;</code>, and you are good to go!</li>
+<li>Farkle now has a CLI tool helper. It can generate a grammar definition file that contains the terminal and production types for your grammar, as well as the EGT file in base-64 encoding. It can also create a skeleton source file to help you write a post-processor. What is more, it supports <em>both</em> C# and F#!</li>
+<li>Farkle now has MSBuild integration. You can auto-generate a source file describing your grammar, and not have to carry EGT files around.</li>
+<li>As always, performance was improved, especially in the EGT file reader.</li>
+<li><strong>Breaking change:</strong> In your post-processor, if you have functions like <code>take2Of production (index1, index2) count func</code>, remove the <code>count</code> parameter.</li>
+<li><strong>Breaking change:</strong> The <code>Token</code> type was moved to <code>Farkle.Parser</code> and is not needed by the <code>AST</code> type.</li>
+</ul>
+<h4><a name="4-0-0-17-01-2019" class="anchor" href="#4-0-0-17-01-2019">4.0.0 - 17-01-2019</a></h4>
 <ul>
 <li>Optimized the way Farkle handles the input stream characters by reducing copies &amp; improving performance.</li>
 <li>Removed all 3rd-party non-Microsoft dependencies.</li>
@@ -104,7 +113,8 @@
             <li><a href="/Farkle/release-notes.html">Release Notes</a></li>
 
             <li class="nav-header">Getting started</li>
-            <li><a href="/Farkle/quickstart.html">Quick Start</a></li>
+            <li><a href="/Farkle/quickstart.html">Quick Start with F#</a></li>
+            <li><a href="/Farkle/quickstart-csharp.html">Quick Start with C#</a></li>
 
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>

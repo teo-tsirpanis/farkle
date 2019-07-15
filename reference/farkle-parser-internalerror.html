@@ -40,10 +40,10 @@
     <span>Namespace: Farkle.Parser</span><br />
     </p>
 <div class="xmldoc">
-<p>An internal error. These errors are known errors a program might experience.
-They could occur by manipulating the parser internal state, which is <em>impossible</em> from the public API.
-Another possible way of manifestation is creating deliberately faulty <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a>s.
-The <code>ToString()</code> method is not overriden, because users don;t need to know about them.</p>
+<p>An internal error. These errors are known errors a parser might experience.
+An encounter of it is most certainly a library bug (or deliberately corrupted grammars).
+The user is encouraged to report it to GitHub.
+The <code>ToString()</code> method is not overriden here, because users don't need to know that many details about them.</p>
 
 </div>
   <h3>Union Cases</h3>
@@ -55,35 +55,15 @@ The <code>ToString()</code> method is not overriden, because users don;t need to
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '140', 140)" onmouseover="showTip(event, '140', 140)">
-            FuseError(Production,exn)
-          </code>
-          <div class="tip" id="140">
-            <strong>Signature:</strong> Production * exn<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L25-25" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>The post-processor had a problem fusing the tokems of a production.</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '141', 141)" onmouseover="showTip(event, '141', 141)">
+          <code onmouseout="hideTip(event, '151', 151)" onmouseover="showTip(event, '151', 151)">
             GotoNotFoundAfterReduction(...)
           </code>
-          <div class="tip" id="141">
+          <div class="tip" id="151">
             <strong>Signature:</strong> Production * LALRState<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L17-17" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Parser/ParserTypes.fs#L33-33" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -95,15 +75,15 @@ The <code>ToString()</code> method is not overriden, because users don;t need to
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '142', 142)" onmouseover="showTip(event, '142', 142)">
+          <code onmouseout="hideTip(event, '152', 152)" onmouseover="showTip(event, '152', 152)">
             LALRStackEmpty
           </code>
-          <div class="tip" id="142">
+          <div class="tip" id="152">
             <strong>Signature:</strong> <br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L19-19" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Parser/ParserTypes.fs#L35-35" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -115,35 +95,15 @@ The <code>ToString()</code> method is not overriden, because users don;t need to
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '143', 143)" onmouseover="showTip(event, '143', 143)">
-            ReductionNotFoundOnAccept
-          </code>
-          <div class="tip" id="143">
-            <strong>Signature:</strong> <br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L23-23" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>The LALR stack did not have a <code>Reduction</code> on its top when the parser accepted the input.</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '144', 144)" onmouseover="showTip(event, '144', 144)">
+          <code onmouseout="hideTip(event, '153', 153)" onmouseover="showTip(event, '153', 153)">
             ShiftOnEOF
           </code>
-          <div class="tip" id="144">
+          <div class="tip" id="153">
             <strong>Signature:</strong> <br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L21-21" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Parser/ParserTypes.fs#L37-37" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -168,7 +128,8 @@ The <code>ToString()</code> method is not overriden, because users don;t need to
             <li><a href="/Farkle/release-notes.html">Release Notes</a></li>
 
             <li class="nav-header">Getting started</li>
-            <li><a href="/Farkle/quickstart.html">Quick Start</a></li>
+            <li><a href="/Farkle/quickstart.html">Quick Start with F#</a></li>
+            <li><a href="/Farkle/quickstart-csharp.html">Quick Start with C#</a></li>
 
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>

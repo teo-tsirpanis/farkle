@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" async></script>
     <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
-    <link href="https://bootswatch.com/2/cyborg/bootstrap.min.css" rel="stylesheet" async/>
+    <link href="https://stackpath.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" integrity="sha384-4FeI0trTH/PCsLWrGCD1mScoFu9Jf2NdknFdFoJhXZFwsvzZ3Bo5sAh7+zL8Xgnd" crossorigin="anonymous">
 
     <link type="text/css" rel="stylesheet" href="/Farkle/content/style.css" />
     <script type="text/javascript" src="/Farkle/content/tips.js" async></script>
@@ -23,7 +23,6 @@
     <div class="container">
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
-          <li><a href="http://fsharp.org">fsharp.org</a></li>
           <li><a href="https://github.com/teo-tsirpanis/Farkle">github page</a></li>
         </ul>
         <h3 class="muted"><a href="/Farkle/index.html">Farkle</a></h3>
@@ -37,37 +36,40 @@
 
 <h1>LALRParser</h1>
 <p>
-
-    <span>Namespace: Farkle.Parser</span><br />
-    </p>
+  <span>Namespace: Farkle.Parser</span><br />
+  </p>
 <div class="xmldoc">
-<p>A LALR parser. It takes a <a href="farkle-token.html" title="Token"><code>Token</code></a>, and gives an <a href="farkle-parser-lalrresult.html" title="LALRResult"><code>LALRResult</code></a>.
-It is a stateful operation; the type of this state
-is abstracted from the rest of the parser.</p>
+<p>Functions to syntactically parse a series of tokens using the LALR algorithm.</p>
 
 </div>
-  <h3>Union Cases</h3>
+
+<!-- Render nested types and modules, if there are any -->
+
+  <h3>Functions and values</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Union Case</td><td>Description</td></tr>
+      <tr><td>Function or value</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '142', 142)" onmouseover="showTip(event, '142', 142)">
-            LALRParser(...)
+          <code onmouseout="hideTip(event, '51', 51)" onmouseover="showTip(event, '51', 51)">
+            parseLALR fMessage arg2 pp fToken input
           </code>
-          <div class="tip" id="142">
-            <strong>Signature:</strong> Token -&gt; LALRResult * LALRParser<br />
-                                  </div>
+          <div class="tip" id="51">
+            <strong>Signature:</strong> fMessage:(ParseMessage -&gt; unit) -&gt; Grammar -&gt; pp:PostProcessor&lt;&#39;a&gt; -&gt; fToken:(CharStream -&gt; Token option) -&gt; input:CharStream -&gt; obj<br />
+                          <strong>Type parameters:</strong> 'a                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Parser/ParserTypes.fs#L103-103" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Parser/LALRParser.fs#L25-25" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>Parses and post-processes tokens based on a  and a
+, until parsing completes.</p>
+
+
         </td>
       </tr>
     </tbody>
@@ -86,7 +88,8 @@ is abstracted from the rest of the parser.</p>
             <li><a href="/Farkle/release-notes.html">Release Notes</a></li>
 
             <li class="nav-header">Getting started</li>
-            <li><a href="/Farkle/quickstart.html">Quick Start</a></li>
+            <li><a href="/Farkle/quickstart.html">Quick Start with F#</a></li>
+            <li><a href="/Farkle/quickstart-csharp.html">Quick Start with C#</a></li>
 
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>

@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" async></script>
     <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
-    <link href="https://bootswatch.com/2/cyborg/bootstrap.min.css" rel="stylesheet" async/>
+    <link href="https://stackpath.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" integrity="sha384-4FeI0trTH/PCsLWrGCD1mScoFu9Jf2NdknFdFoJhXZFwsvzZ3Bo5sAh7+zL8Xgnd" crossorigin="anonymous">
 
     <link type="text/css" rel="stylesheet" href="/Farkle/content/style.css" />
     <script type="text/javascript" src="/Farkle/content/tips.js" async></script>
@@ -23,7 +23,6 @@
     <div class="container">
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
-          <li><a href="http://fsharp.org">fsharp.org</a></li>
           <li><a href="https://github.com/teo-tsirpanis/Farkle">github page</a></li>
         </ul>
         <h3 class="muted"><a href="/Farkle/index.html">Farkle</a></h3>
@@ -37,8 +36,7 @@
 
 <h1>Result</h1>
 <p>
-  <span>Namespace: Farkle</span><br />
-  <span>Parent Module: <a href="farkle-common.html">Common</a></span>
+  <span>Namespace: Farkle.Common</span><br />
         <span>
           Attributes:<br />
 [&lt;AutoOpen&gt;]<br />
@@ -51,25 +49,6 @@
 </div>
 
 <!-- Render nested types and modules, if there are any -->
-  <h2>Nested types and modules</h2>
-  <div>
-      <table class="table table-bordered type-list">
-    <thead>
-      <tr><td>Type</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-common-result-eitherbuilder.html">EitherBuilder</a>
-          </td>
-          <td class="xmldoc">
-          
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
 
   <h3>Functions and values</h3>
   <table class="table table-bordered member-list">
@@ -80,15 +59,34 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '24', 24)" onmouseover="showTip(event, '24', 24)">
-            ( &gt;&gt;= ) m f
+          <code onmouseout="hideTip(event, '40', 40)" onmouseover="showTip(event, '40', 40)">
+            ( &lt;*&gt; ) f m
           </code>
-          <div class="tip" id="24">
-            <strong>Signature:</strong> m:Result&lt;&#39;a,&#39;b&gt; -&gt; f:(&#39;a -&gt; Result&lt;&#39;c,&#39;b&gt;) -&gt; Result&lt;&#39;c,&#39;b&gt;<br />
-                          <strong>Type parameters:</strong> 'a, 'b, 'c                      </div>
+          <div class="tip" id="40">
+            <strong>Signature:</strong> f:Result&lt;(&#39;?9213 -&gt; &#39;?9214),&#39;?9215&gt; -&gt; m:Result&lt;&#39;?9213,&#39;?9215&gt; -&gt; Result&lt;&#39;?9214,&#39;?9215&gt;<br />
+                          <strong>Type parameters:</strong> '?9213, '?9214, '?9215                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/Common.fs#L159-159" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Utilities/Common.fs#L57-57" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+              <p>CompiledName: <code>op_LessMultiplyGreater</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '41', 41)" onmouseover="showTip(event, '41', 41)">
+            ( &gt;&gt;= ) m f
+          </code>
+          <div class="tip" id="41">
+            <strong>Signature:</strong> m:Result&lt;&#39;?9209,&#39;?9210&gt; -&gt; f:(&#39;?9209 -&gt; Result&lt;&#39;?9211,&#39;?9210&gt;) -&gt; Result&lt;&#39;?9211,&#39;?9210&gt;<br />
+                          <strong>Type parameters:</strong> '?9209, '?9210, '?9211                      </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Utilities/Common.fs#L55-55" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -101,15 +99,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '25', 25)" onmouseover="showTip(event, '25', 25)">
-            apply(arg1, arg2)
+          <code onmouseout="hideTip(event, '42', 42)" onmouseover="showTip(event, '42', 42)">
+            apply f x
           </code>
-          <div class="tip" id="25">
-            <strong>Signature:</strong> (Result&lt;(&#39;?9192 -&gt; &#39;?9193),&#39;?9194&gt; * Result&lt;&#39;?9192,&#39;?9194&gt;) -&gt; Result&lt;&#39;?9193,&#39;?9194&gt;<br />
-                          <strong>Type parameters:</strong> '?9192, '?9193, '?9194                      </div>
+          <div class="tip" id="42">
+            <strong>Signature:</strong> f:Result&lt;(&#39;?9193 -&gt; &#39;?9194),&#39;?9195&gt; -&gt; x:Result&lt;&#39;?9193,&#39;?9195&gt; -&gt; Result&lt;&#39;?9194,&#39;?9195&gt;<br />
+                          <strong>Type parameters:</strong> '?9193, '?9194, '?9195                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/Common.fs#L135-135" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Utilities/Common.fs#L34-34" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -119,76 +117,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '26', 26)" onmouseover="showTip(event, '26', 26)">
-            collect(xs)
-          </code>
-          <div class="tip" id="26">
-            <strong>Signature:</strong> xs:seq&lt;Result&lt;&#39;c,&#39;d&gt;&gt; -&gt; Result&lt;&#39;c list,&#39;d&gt;<br />
-                          <strong>Type parameters:</strong> 'c, 'd                      </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/Common.fs#L163-163" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Collects a sequence of Results and accumulates their values.
-If the sequence contains an error the first reported error will be returned.</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '27', 27)" onmouseover="showTip(event, '27', 27)">
-            either
-          </code>
-          <div class="tip" id="27">
-            <strong>Signature:</strong> EitherBuilder<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/Common.fs#L205-205" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Wraps computations in an error handling computation expression.</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '28', 28)" onmouseover="showTip(event, '28', 28)">
-            fail(arg0)
-          </code>
-          <div class="tip" id="28">
-            <strong>Signature:</strong> arg0:&#39;a -&gt; Result&lt;&#39;b,&#39;a&gt;<br />
-                          <strong>Type parameters:</strong> 'a, 'b                      </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/Common.fs#L156-156" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Returns a failed <a href="farkle-common-result.html" title="Result"><code>Result</code></a>.</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '29', 29)" onmouseover="showTip(event, '29', 29)">
+          <code onmouseout="hideTip(event, '43', 43)" onmouseover="showTip(event, '43', 43)">
             failIfNone message _arg1
           </code>
-          <div class="tip" id="29">
+          <div class="tip" id="43">
             <strong>Signature:</strong> message:&#39;a -&gt; _arg1:&#39;b option -&gt; Result&lt;&#39;b,&#39;a&gt;<br />
                           <strong>Type parameters:</strong> 'a, 'b                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/Common.fs#L141-141" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Utilities/Common.fs#L40-40" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -200,19 +137,19 @@ If the sequence contains an error the first reported error will be returned.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '30', 30)" onmouseover="showTip(event, '30', 30)">
-            flatten(x)
+          <code onmouseout="hideTip(event, '44', 44)" onmouseover="showTip(event, '44', 44)">
+            isError(x)
           </code>
-          <div class="tip" id="30">
-            <strong>Signature:</strong> x:Result&lt;Result&lt;&#39;?9199,&#39;?9200&gt;,&#39;?9200&gt; -&gt; Result&lt;&#39;?9199,&#39;?9200&gt;<br />
-                          <strong>Type parameters:</strong> '?9199, '?9200                      </div>
+          <div class="tip" id="44">
+            <strong>Signature:</strong> x:Result&lt;&#39;?9206,&#39;?9207&gt; -&gt; bool<br />
+                          <strong>Type parameters:</strong> '?9206, '?9207                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/Common.fs#L147-147" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Utilities/Common.fs#L52-52" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Flattens a nested <a href="farkle-common-result.html" title="Result"><code>Result</code></a></p>
+          <p>Returns if the given <a href="farkle-common-result.html" title="Result"><code>Result</code></a> failed.</p>
 
 
         </td>
@@ -220,19 +157,19 @@ If the sequence contains an error the first reported error will be returned.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '31', 31)" onmouseover="showTip(event, '31', 31)">
-            makeOption(x)
+          <code onmouseout="hideTip(event, '45', 45)" onmouseover="showTip(event, '45', 45)">
+            isOk(x)
           </code>
-          <div class="tip" id="31">
-            <strong>Signature:</strong> x:Result&lt;&#39;?9202,&#39;?9203&gt; -&gt; &#39;?9202 option<br />
-                          <strong>Type parameters:</strong> '?9202, '?9203                      </div>
+          <div class="tip" id="45">
+            <strong>Signature:</strong> x:Result&lt;&#39;?9203,&#39;?9204&gt; -&gt; bool<br />
+                          <strong>Type parameters:</strong> '?9203, '?9204                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/Common.fs#L150-150" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Utilities/Common.fs#L49-49" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Converts a <a href="farkle-common-result.html" title="Result"><code>Result</code></a> to an <code>option</code>.</p>
+          <p>Returns if the given <a href="farkle-common-result.html" title="Result"><code>Result</code></a> succeeded.</p>
 
 
         </td>
@@ -240,15 +177,15 @@ If the sequence contains an error the first reported error will be returned.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '32', 32)" onmouseover="showTip(event, '32', 32)">
+          <code onmouseout="hideTip(event, '46', 46)" onmouseover="showTip(event, '46', 46)">
             returnOrFail(result)
           </code>
-          <div class="tip" id="32">
-            <strong>Signature:</strong> result:Result&lt;&#39;a,&#39;b&gt; -&gt; &#39;a<br />
-                          <strong>Type parameters:</strong> 'a, 'b                      </div>
+          <div class="tip" id="46">
+            <strong>Signature:</strong> result:Result&lt;&#39;?9200,&#39;?9201&gt; -&gt; &#39;?9200<br />
+                          <strong>Type parameters:</strong> '?9200, '?9201                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/Common.fs#L153-153" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Utilities/Common.fs#L46-46" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -260,15 +197,15 @@ If the sequence contains an error the first reported error will be returned.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '33', 33)" onmouseover="showTip(event, '33', 33)">
+          <code onmouseout="hideTip(event, '47', 47)" onmouseover="showTip(event, '47', 47)">
             tee fOk fError _arg1
           </code>
-          <div class="tip" id="33">
-            <strong>Signature:</strong> fOk:(&#39;a -&gt; &#39;b) -&gt; fError:(&#39;c -&gt; &#39;b) -&gt; _arg1:Result&lt;&#39;a,&#39;c&gt; -&gt; &#39;b<br />
-                          <strong>Type parameters:</strong> 'a, 'b, 'c                      </div>
+          <div class="tip" id="47">
+            <strong>Signature:</strong> fOk:(&#39;?9189 -&gt; &#39;?9190) -&gt; fError:(&#39;?9191 -&gt; &#39;?9190) -&gt; _arg1:Result&lt;&#39;?9189,&#39;?9191&gt; -&gt; &#39;?9190<br />
+                          <strong>Type parameters:</strong> '?9189, '?9190, '?9191                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/Utilities/Common.fs#L130-130" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Utilities/Common.fs#L29-29" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -291,7 +228,8 @@ If the sequence contains an error the first reported error will be returned.</p>
             <li><a href="/Farkle/release-notes.html">Release Notes</a></li>
 
             <li class="nav-header">Getting started</li>
-            <li><a href="/Farkle/quickstart.html">Quick Start</a></li>
+            <li><a href="/Farkle/quickstart.html">Quick Start with F#</a></li>
+            <li><a href="/Farkle/quickstart-csharp.html">Quick Start with C#</a></li>
 
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>

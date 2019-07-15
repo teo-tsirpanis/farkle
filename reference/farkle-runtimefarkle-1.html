@@ -41,14 +41,13 @@
             <span>
             Attributes: <br />
 [&lt;NoComparison&gt;]<br />
-[&lt;NoEquality&gt;]<br />
+[&lt;ReferenceEquality&gt;]<br />
             
         </span>
 </p>
 <div class="xmldoc">
 <p>A reusable parser and post-processor, created for a specific grammar, and returning
-a specific type of object that best describes an expression of the language of this grammar.
-This is the highest-level API, and the easiest-to-use one.</p>
+a specific type of object that best describes an expression of the language of this grammar.</p>
 
 </div>
   <h3>Record Fields</h3>
@@ -60,15 +59,15 @@ This is the highest-level API, and the easiest-to-use one.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '74', 74)" onmouseover="showTip(event, '74', 74)">
+          <code onmouseout="hideTip(event, '79', 79)" onmouseover="showTip(event, '79', 79)">
             Grammar
           </code>
-          <div class="tip" id="74">
+          <div class="tip" id="79">
             <strong>Signature:</strong> Result&lt;Grammar,FarkleError&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/RuntimeFarkle.fs#L38-38" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/RuntimeFarkle.fs#L33-33" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -78,19 +77,90 @@ This is the highest-level API, and the easiest-to-use one.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '75', 75)" onmouseover="showTip(event, '75', 75)">
+          <code onmouseout="hideTip(event, '80', 80)" onmouseover="showTip(event, '80', 80)">
             PostProcessor
           </code>
-          <div class="tip" id="75">
+          <div class="tip" id="80">
             <strong>Signature:</strong> PostProcessor&lt;&#39;TResult&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle/RuntimeFarkle.fs#L39-39" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/RuntimeFarkle.fs#L34-34" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Static members</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Static member</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '81', 81)" onmouseover="showTip(event, '81', 81)">
+            RuntimeFarkle.Create(...)
+          </code>
+          <div class="tip" id="81">
+            <strong>Signature:</strong> (fileName:string * postProcessor:PostProcessor&lt;&#39;?8142&gt;) -&gt; RuntimeFarkle&lt;&#39;?8142&gt;<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/RuntimeFarkle.fs#L43-43" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Creates a  from the given
+EGT file and .</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '82', 82)" onmouseover="showTip(event, '82', 82)">
+            RuntimeFarkle.Create(...)
+          </code>
+          <div class="tip" id="82">
+            <strong>Signature:</strong> (grammar:Grammar * postProcessor:PostProcessor&lt;&#39;?8139&gt;) -&gt; RuntimeFarkle&lt;&#39;?8139&gt;<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/RuntimeFarkle.fs#L39-39" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Creates a  from the given
+and .</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '83', 83)" onmouseover="showTip(event, '83', 83)">
+            RuntimeFarkle.CreateFromBase64String(...)
+          </code>
+          <div class="tip" id="83">
+            <strong>Signature:</strong> (str:string * postProcessor:PostProcessor&lt;&#39;?8145&gt;) -&gt; RuntimeFarkle&lt;&#39;?8145&gt;<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/RuntimeFarkle.fs#L50-50" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Creates a  from the given
+EGT file encoded in Base64 and .</p>
+
+
         </td>
       </tr>
     </tbody>
@@ -109,7 +179,8 @@ This is the highest-level API, and the easiest-to-use one.</p>
             <li><a href="/Farkle/release-notes.html">Release Notes</a></li>
 
             <li class="nav-header">Getting started</li>
-            <li><a href="/Farkle/quickstart.html">Quick Start</a></li>
+            <li><a href="/Farkle/quickstart.html">Quick Start with F#</a></li>
+            <li><a href="/Farkle/quickstart-csharp.html">Quick Start with C#</a></li>
 
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>

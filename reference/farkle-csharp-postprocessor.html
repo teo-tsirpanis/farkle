@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>LALRAction - Farkle</title>
+    <title>PostProcessor - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -34,42 +34,43 @@
 
 
 
-<h1>LALRAction</h1>
+<h1>PostProcessor</h1>
 <p>
 
-    <span>Namespace: Farkle.Grammar</span><br />
+    <span>Namespace: Farkle.CSharp</span><br />
             <span>
             Attributes: <br />
-[&lt;RequireQualifiedAccess&gt;]<br />
+[&lt;AbstractClass&gt;]<br />
+[&lt;Sealed&gt;]<br />
             
         </span>
 </p>
 <div class="xmldoc">
-<p>An action to be taken by the LALR parser according to the given <a href="farkle-grammar-terminal.html" title="Terminal"><code>Terminal</code></a>.</p>
+<p>A helper class with methods to create a .</p>
 
 </div>
-  <h3>Union Cases</h3>
+  <h3>Static members</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Union Case</td><td>Description</td></tr>
+      <tr><td>Static member</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '124', 124)" onmouseover="showTip(event, '124', 124)">
-            Accept
+          <code onmouseout="hideTip(event, '90', 90)" onmouseover="showTip(event, '90', 90)">
+            PostProcessor.Create(...)
           </code>
-          <div class="tip" id="124">
-            <strong>Signature:</strong> <br />
-                                  </div>
+          <div class="tip" id="90">
+            <strong>Signature:</strong> (fTransform:CharStreamCallback&lt;uint32&gt; * fGetFuser:Func&lt;uint32,Fuser&gt;) -&gt; PP&lt;&#39;TResult&gt;<br />
+                          <strong>Type parameters:</strong> 'TResult                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Grammar/GrammarTypes.fs#L153-153" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/CSharp/CSharpBindings.fs#L127-127" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>When the parser encounters this action for a given symbol, the input text is accepted as correct and parsing ends.</p>
+          <p>Creates a  from the given transformers and fusers.</p>
 
 
         </td>
@@ -77,41 +78,22 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '125', 125)" onmouseover="showTip(event, '125', 125)">
-            Reduce(Production)
+          <code onmouseout="hideTip(event, '91', 91)" onmouseover="showTip(event, '91', 91)">
+            PostProcessor.SyntaxChecker
           </code>
-          <div class="tip" id="125">
-            <strong>Signature:</strong> Production<br />
+          <div class="tip" id="91">
+            <strong>Signature:</strong> PP&lt;obj&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Grammar/GrammarTypes.fs#L151-151" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/CSharp/CSharpBindings.fs#L139-139" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>This action indicates the parser to reduce a <a href="farkle-grammar-production.html" title="Production"><code>Production</code></a>.</p>
+          <p>A  that just checks if the given string is valid.</p>
 
 
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '126', 126)" onmouseover="showTip(event, '126', 126)">
-            Shift(Indexed&lt;LALRState&gt;)
-          </code>
-          <div class="tip" id="126">
-            <strong>Signature:</strong> Indexed&lt;LALRState&gt;<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Grammar/GrammarTypes.fs#L149-149" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>This action indicates the parser to shift to the specified <a href="farkle-grammar-lalrstate.html" title="LALRState"><code>LALRState</code></a>.</p>
-
-
+              <p>CompiledName: <code>get_SyntaxChecker</code></p>
         </td>
       </tr>
     </tbody>

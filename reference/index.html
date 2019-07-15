@@ -47,7 +47,7 @@
             <a href="farkle-ast.html">AST</a>
           </td>
           <td class="xmldoc">
-          <p>An Abstract Syntax Tree that describes the output of a parser.</p>
+          <p>A domain-ignorant Abstract Syntax Tree that describes the output of a parser.</p>
 
 
           </td>
@@ -78,19 +78,7 @@
           </td>
           <td class="xmldoc">
           <p>A reusable parser and post-processor, created for a specific grammar, and returning
-a specific type of object that best describes an expression of the language of this grammar.
-This is the highest-level API, and the easiest-to-use one.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-token.html">Token</a>
-          </td>
-          <td class="xmldoc">
-          <p>A token is an instance of a <a href="farkle-grammar-legacy-symbol.html" title="Symbol"><code>Symbol</code></a>.
-Tokens carry parsed data, as well as their position within the text file.</p>
+a specific type of object that best describes an expression of the language of this grammar.</p>
 
 
           </td>
@@ -128,6 +116,37 @@ Tokens carry parsed data, as well as their position within the text file.</p>
           </td>
           <td class="xmldoc">
           <p>Functions to create and use <a href="farkle-runtimefarkle.html" title="RuntimeFarkle"><code>RuntimeFarkle</code></a>s.</p>
+
+
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </div>
+  <h2>Farkle.CSharp Namespace</h2>
+    <div>
+      <table class="table table-bordered type-list">
+    <thead>
+      <tr><td>Type</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-csharp-fuser.html">Fuser</a>
+          </td>
+          <td class="xmldoc">
+          <p>An object that contains a function to convert a  to an arbitrary object.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-csharp-postprocessor.html">PostProcessor</a>
+          </td>
+          <td class="xmldoc">
+          <p>A helper class with methods to create a .</p>
 
 
           </td>
@@ -199,23 +218,12 @@ It can also double as a set, when the value type is a unit.</p>
         </tr>
         <tr>
           <td class="type-name">
-            <a href="farkle-collections-safearray-1.html">SafeArray<'a></a>
-          </td>
-          <td class="xmldoc">
-          <p>An immutable array that exhibits good random access performance and safe index access.
-It intentionally lacks methods such as <code>map</code> and <code>filter</code>. This type should be at the final stage of data manipulation.
-It is advised to work with sequences before, just until the end.
-Safe random access is faciliated through <a href="farkle-collections-indexed.html" title="Indexed"><code>Indexed</code></a> objects.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
             <a href="farkle-collections-statetable-1.html">StateTable<'a></a>
           </td>
           <td class="xmldoc">
-          
+          <p>A <a href="farkle-collections-safearray.html" title="SafeArray"><code>SafeArray</code></a> of some "states", along with an initial one.</p>
+
+
           </td>
         </tr>
     </tbody>
@@ -238,20 +246,12 @@ They are not thread-safe.</p>
         </tr>
         <tr>
           <td class="module-name">
-            <a href="farkle-collections-listmodule.html">List</a>
-          </td>
-          <td class="xmldoc">
-          <p>Functions to work with the standard F# <code>list</code>.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="module-name">
             <a href="farkle-collections-rangemap.html">RangeMap</a>
           </td>
           <td class="xmldoc">
-          
+          <p>Functions to create and use <a href="farkle-collections-rangemap.html" title="RangeMap"><code>RangeMap</code></a>s.</p>
+
+
           </td>
         </tr>
         <tr>
@@ -260,6 +260,27 @@ They are not thread-safe.</p>
           </td>
           <td class="xmldoc">
           <p>Functions to work with <a href="farkle-collections-safearray.html" title="SafeArray"><code>SafeArray</code></a>s.</p>
+
+
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </div>
+  <h2>Farkle.Common Namespace</h2>
+    <div>
+      <table class="table table-bordered module-list">
+    <thead>
+      <tr><td>Module</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-common-result.html">Result</a>
+          </td>
+          <td class="xmldoc">
+          <p>Functions to work with the <code>FSharp.Core.Result</code> type.</p>
 
 
           </td>
@@ -396,7 +417,7 @@ An example of a noise symbol would be a source code comment.</p>
             <a href="farkle-grammar-nonterminal.html">Nonterminal</a>
           </td>
           <td class="xmldoc">
-          <p>A symbol which is produced by a concatenation of other <code>LALRSymbol</code>s, as the LALR parser dictates.</p>
+          <p>A symbol which is produced by a concatenation of other <a href="farkle-grammar-terminal.html" title="Terminal"><code>Terminal</code></a>s and <a href="farkle-grammar-nonterminal.html" title="Nonterminal"><code>Nonterminal</code></a>s, as the LALR parser dictates.</p>
 
 
           </td>
@@ -406,7 +427,18 @@ An example of a noise symbol would be a source code comment.</p>
             <a href="farkle-grammar-production.html">Production</a>
           </td>
           <td class="xmldoc">
-          <p>An array of <code>LALRSymbol</code>s that can produce a specific <a href="farkle-grammar-nonterminal.html" title="Nonterminal"><code>Nonterminal</code></a>.</p>
+          <p>A sequence of <a href="farkle-grammar-terminal.html" title="Terminal"><code>Terminal</code></a>s and <a href="farkle-grammar-nonterminal.html" title="Nonterminal"><code>Nonterminal</code></a>s that can produce a specific <a href="farkle-grammar-nonterminal.html" title="Nonterminal"><code>Nonterminal</code></a>.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-grammar-symbols.html">Symbols</a>
+          </td>
+          <td class="xmldoc">
+          <p>A type containing all symbols of a grammar, grouped by kind.
+Group start and end symbols can be found at the group table.</p>
 
 
           </td>
@@ -485,10 +517,10 @@ An example of a noise symbol would be a source code comment.</p>
             <a href="farkle-parser-internalerror.html">InternalError</a>
           </td>
           <td class="xmldoc">
-          <p>An internal error. These errors are known errors a program might experience.
-They could occur by manipulating the parser internal state, which is <em>impossible</em> from the public API.
-Another possible way of manifestation is creating deliberately faulty <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a>s.
-The <code>ToString()</code> method is not overriden, because users don;t need to know about them.</p>
+          <p>An internal error. These errors are known errors a parser might experience.
+An encounter of it is most certainly a library bug (or deliberately corrupted grammars).
+The user is encouraged to report it to GitHub.
+The <code>ToString()</code> method is not overriden here, because users don't need to know that many details about them.</p>
 
 
           </td>
@@ -499,6 +531,17 @@ The <code>ToString()</code> method is not overriden, because users don;t need to
           </td>
           <td class="xmldoc">
           <p>A log message that contains a position it was encountered.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-parser-parseerror.html">ParseError</a>
+          </td>
+          <td class="xmldoc">
+          <p>An exception to be thrown when parsing goes wrong.
+It is thrown by the <code>Parser</code> and <a href="farkle-parser-tokenizer.html" title="Tokenizer"><code>Tokenizer</code></a> APIs, and caught by the <a href="farkle-runtimefarkle.html" title="RuntimeFarkle"><code>RuntimeFarkle</code></a>.</p>
 
 
           </td>
@@ -523,6 +566,17 @@ The <code>ToString()</code> method is not overriden, because users don;t need to
 
           </td>
         </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-parser-token.html">Token</a>
+          </td>
+          <td class="xmldoc">
+          <p>A token is an instance of a <a href="farkle-grammar-terminal.html" title="Terminal"><code>Terminal</code></a>.
+Tokens carry post-processed terminals, as well as their position within the text file.</p>
+
+
+          </td>
+        </tr>
     </tbody>
   </table>
   <table class="table table-bordered module-list">
@@ -532,7 +586,7 @@ The <code>ToString()</code> method is not overriden, because users don;t need to
     <tbody>
         <tr>
           <td class="module-name">
-            <a href="farkle-parser-lalrparsermodule.html">LALRParser</a>
+            <a href="farkle-parser-lalrparser.html">LALRParser</a>
           </td>
           <td class="xmldoc">
           <p>Functions to syntactically parse a series of tokens using the LALR algorithm.</p>
@@ -542,7 +596,7 @@ The <code>ToString()</code> method is not overriden, because users don;t need to
         </tr>
         <tr>
           <td class="module-name">
-            <a href="farkle-parser-tokenizermodule.html">Tokenizer</a>
+            <a href="farkle-parser-tokenizer.html">Tokenizer</a>
           </td>
           <td class="xmldoc">
           <p>Functions to tokenize <code>CharStreams</code>.</p>
@@ -563,11 +617,11 @@ The <code>ToString()</code> method is not overriden, because users don;t need to
     <tbody>
         <tr>
           <td class="type-name">
-            <a href="farkle-postprocessor-fuser.html">Fuser</a>
+            <a href="farkle-postprocessor-fsharpfuser.html">Fuser</a>
           </td>
           <td class="xmldoc">
-          <p>This type contains the logic to combine multiple symbols of one production into one arbitrary object.
-These symbols are either transformed by a <a href="farkle-postprocessor-transformer.html" title="Transformer"><code>Transformer</code></a> if they are terminals,
+          <p>This type contains the logic to "fuse" the multiple symbols of a production into an arbitrary object.
+These symbols are either transformed by a <a href="farkle-postprocessor-fsharptransformer.html" title="Transformer"><code>Transformer</code></a> if they are terminals,
 or, if they are productions, are the products of previous fusers.</p>
 
 
@@ -575,10 +629,21 @@ or, if they are productions, are the products of previous fusers.</p>
         </tr>
         <tr>
           <td class="type-name">
-            <a href="farkle-postprocessor-transformer.html">Transformer</a>
+            <a href="farkle-postprocessor-fusernotfound.html">FuserNotFound</a>
           </td>
           <td class="xmldoc">
-          <p>This type contains the logic to transform <em>one</em> terminal symbol to an arbitrary object.</p>
+          <p>An exception that gets thrown when a post-processor does not find the appropriate <code>Fuser</code> for a production.
+This means that the post-processor is not properly configured.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-postprocessor-fsharptransformer.html">Transformer</a>
+          </td>
+          <td class="xmldoc">
+          <p>This type contains the logic to transform one terminal symbol to an arbitrary object.</p>
 
 
           </td>
@@ -595,7 +660,7 @@ or, if they are productions, are the products of previous fusers.</p>
             <a href="farkle-postprocessor-fusermodule.html">Fuser</a>
           </td>
           <td class="xmldoc">
-          <p>Functions to create <a href="farkle-postprocessor-fuser.html" title="Fuser"><code>Fuser</code></a>s.</p>
+          <p>Functions to create <code>Fuser</code>s.</p>
 
 
           </td>
@@ -605,7 +670,7 @@ or, if they are productions, are the products of previous fusers.</p>
             <a href="farkle-postprocessor-postprocessor.html">PostProcessor</a>
           </td>
           <td class="xmldoc">
-          <p>Functions to create <a href="farkle-postprocessor-postprocessor.html" title="PostProcessor"><code>PostProcessor</code></a>s, as well as some ready to use.</p>
+          <p>Functions to create <code>PostProcessor</code>s, as well as some ready to use.</p>
 
 
           </td>
@@ -615,7 +680,7 @@ or, if they are productions, are the products of previous fusers.</p>
             <a href="farkle-postprocessor-transformermodule.html">Transformer</a>
           </td>
           <td class="xmldoc">
-          <p>Functions to create <a href="farkle-postprocessor-transformer.html" title="Transformer"><code>Transformer</code></a>s.</p>
+          <p>Functions to create <a href="farkle-postprocessor-fsharptransformer.html" title="Transformer"><code>Transformer</code></a>s.</p>
 
 
           </td>
@@ -638,7 +703,8 @@ or, if they are productions, are the products of previous fusers.</p>
             <li><a href="/Farkle/release-notes.html">Release Notes</a></li>
 
             <li class="nav-header">Getting started</li>
-            <li><a href="/Farkle/quickstart.html">Quick Start</a></li>
+            <li><a href="/Farkle/quickstart.html">Quick Start with F#</a></li>
+            <li><a href="/Farkle/quickstart-csharp.html">Quick Start with C#</a></li>
 
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>

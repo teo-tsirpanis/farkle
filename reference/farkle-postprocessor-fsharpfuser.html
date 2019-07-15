@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>LALRAction - Farkle</title>
+    <title>Fuser - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -34,84 +34,44 @@
 
 
 
-<h1>LALRAction</h1>
+<h1>Fuser</h1>
 <p>
 
-    <span>Namespace: Farkle.Grammar</span><br />
+    <span>Namespace: Farkle.PostProcessor</span><br />
             <span>
             Attributes: <br />
-[&lt;RequireQualifiedAccess&gt;]<br />
+[&lt;CompiledName(&quot;FSharpFuser&quot;)&gt;]<br />
             
         </span>
 </p>
 <div class="xmldoc">
-<p>An action to be taken by the LALR parser according to the given <a href="farkle-grammar-terminal.html" title="Terminal"><code>Terminal</code></a>.</p>
+<p>This type contains the logic to "fuse" the multiple symbols of a production into an arbitrary object.
+These symbols are either transformed by a <a href="farkle-postprocessor-fsharptransformer.html" title="Transformer"><code>Transformer</code></a> if they are terminals,
+or, if they are productions, are the products of previous fusers.</p>
 
 </div>
-  <h3>Union Cases</h3>
+  <h3>Static members</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Union Case</td><td>Description</td></tr>
+      <tr><td>Static member</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '124', 124)" onmouseover="showTip(event, '124', 124)">
-            Accept
+          <code onmouseout="hideTip(event, '173', 173)" onmouseover="showTip(event, '173', 173)">
+            Fuser.Create prod f
           </code>
-          <div class="tip" id="124">
-            <strong>Signature:</strong> <br />
+          <div class="tip" id="173">
+            <strong>Signature:</strong> prod:uint32 -&gt; (f:(obj [] -&gt; obj)) -&gt; Fuser<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Grammar/GrammarTypes.fs#L153-153" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/PostProcessor/Fuser.fs#L14-14" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>When the parser encounters this action for a given symbol, the input text is accepted as correct and parsing ends.</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '125', 125)" onmouseover="showTip(event, '125', 125)">
-            Reduce(Production)
-          </code>
-          <div class="tip" id="125">
-            <strong>Signature:</strong> Production<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Grammar/GrammarTypes.fs#L151-151" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>This action indicates the parser to reduce a <a href="farkle-grammar-production.html" title="Production"><code>Production</code></a>.</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '126', 126)" onmouseover="showTip(event, '126', 126)">
-            Shift(Indexed&lt;LALRState&gt;)
-          </code>
-          <div class="tip" id="126">
-            <strong>Signature:</strong> Indexed&lt;LALRState&gt;<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/ba1e1d/src/Farkle/Grammar/GrammarTypes.fs#L149-149" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>This action indicates the parser to shift to the specified <a href="farkle-grammar-lalrstate.html" title="LALRState"><code>LALRState</code></a>.</p>
-
-
+          
         </td>
       </tr>
     </tbody>
