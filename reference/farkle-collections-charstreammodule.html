@@ -55,15 +55,36 @@ They are not thread-safe.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '15', 15)" onmouseover="showTip(event, '15', 15)">
-            consume doUnpin cs arg3
+          <code onmouseout="hideTip(event, '13', 13)" onmouseover="showTip(event, '13', 13)">
+            concatSpans span1 span2
           </code>
-          <div class="tip" id="15">
-            <strong>Signature:</strong> doUnpin:bool -&gt; cs:CharStream -&gt; CharSpan -&gt; unit<br />
+          <div class="tip" id="13">
+            <strong>Signature:</strong> span1:CharSpan -&gt; span2:CharSpan -&gt; CharSpan<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/24eb6b/src/Farkle/Utilities/CharStream.fs#L196-196" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/cc7d97/src/Farkle/Utilities/CharStream.fs#L235-235" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Creates a new <a href="farkle-collections-charspan.html" title="CharSpan"><code>CharSpan</code></a> from the union of two adjacent spans, i.e.
+that starts at the first's start, and ends at the second's end.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '14', 14)" onmouseover="showTip(event, '14', 14)">
+            consume doUnpin cs span
+          </code>
+          <div class="tip" id="14">
+            <strong>Signature:</strong> doUnpin:bool -&gt; cs:CharStream -&gt; span:CharSpan -&gt; unit<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/cc7d97/src/Farkle/Utilities/CharStream.fs#L257-257" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -78,15 +99,15 @@ Optionally, the characters before the span can be marked to be released from mem
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '16', 16)" onmouseover="showTip(event, '16', 16)">
+          <code onmouseout="hideTip(event, '15', 15)" onmouseover="showTip(event, '15', 15)">
             consumeOne doUnpin cs
           </code>
-          <div class="tip" id="16">
+          <div class="tip" id="15">
             <strong>Signature:</strong> doUnpin:bool -&gt; cs:CharStream -&gt; unit<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/24eb6b/src/Farkle/Utilities/CharStream.fs#L184-184" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/cc7d97/src/Farkle/Utilities/CharStream.fs#L245-245" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -101,15 +122,15 @@ Optionally, this character and all before it can be marked to be released from m
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '17', 17)" onmouseover="showTip(event, '17', 17)">
-            extendSpanByOne cs arg2
+          <code onmouseout="hideTip(event, '16', 16)" onmouseover="showTip(event, '16', 16)">
+            extendSpanByOne cs span
           </code>
-          <div class="tip" id="17">
-            <strong>Signature:</strong> cs:CharStream -&gt; CharSpan -&gt; CharSpan<br />
+          <div class="tip" id="16">
+            <strong>Signature:</strong> cs:CharStream -&gt; span:CharSpan -&gt; CharSpan<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/24eb6b/src/Farkle/Utilities/CharStream.fs#L166-166" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/cc7d97/src/Farkle/Utilities/CharStream.fs#L227-227" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -122,36 +143,15 @@ A <a href="farkle-collections-charstream.html" title="CharStream"><code>CharStre
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '18', 18)" onmouseover="showTip(event, '18', 18)">
-            extendSpans arg1 arg2
-          </code>
-          <div class="tip" id="18">
-            <strong>Signature:</strong> CharSpan -&gt; CharSpan -&gt; CharSpan<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/24eb6b/src/Farkle/Utilities/CharStream.fs#L174-174" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Creates a new <a href="farkle-collections-charspan.html" title="CharSpan"><code>CharSpan</code></a> from two continuous spans, i.e. that starts at the first's start, and ends at the second's end.
-Returns <code>None</code> if they were not continuous.</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '19', 19)" onmouseover="showTip(event, '19', 19)">
+          <code onmouseout="hideTip(event, '17', 17)" onmouseover="showTip(event, '17', 17)">
             getCurrentIndex(cs)
           </code>
-          <div class="tip" id="19">
+          <div class="tip" id="17">
             <strong>Signature:</strong> cs:CharStream -&gt; CharStreamIndex<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/24eb6b/src/Farkle/Utilities/CharStream.fs#L123-123" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/cc7d97/src/Farkle/Utilities/CharStream.fs#L206-206" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -163,15 +163,15 @@ Returns <code>None</code> if they were not continuous.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '20', 20)" onmouseover="showTip(event, '20', 20)">
+          <code onmouseout="hideTip(event, '18', 18)" onmouseover="showTip(event, '18', 18)">
             ofReadOnlyMemory(mem)
           </code>
-          <div class="tip" id="20">
+          <div class="tip" id="18">
             <strong>Signature:</strong> mem:(type) -&gt; CharStream<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/24eb6b/src/Farkle/Utilities/CharStream.fs#L241-241" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/cc7d97/src/Farkle/Utilities/CharStream.fs#L302-302" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -183,15 +183,15 @@ Returns <code>None</code> if they were not continuous.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '21', 21)" onmouseover="showTip(event, '21', 21)">
+          <code onmouseout="hideTip(event, '19', 19)" onmouseover="showTip(event, '19', 19)">
             ofString(x)
           </code>
-          <div class="tip" id="21">
+          <div class="tip" id="19">
             <strong>Signature:</strong> x:string -&gt; CharStream<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/24eb6b/src/Farkle/Utilities/CharStream.fs#L244-244" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/cc7d97/src/Farkle/Utilities/CharStream.fs#L307-307" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -203,15 +203,15 @@ Returns <code>None</code> if they were not continuous.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '22', 22)" onmouseover="showTip(event, '22', 22)">
+          <code onmouseout="hideTip(event, '20', 20)" onmouseover="showTip(event, '20', 20)">
             ofTextReader(textReader)
           </code>
-          <div class="tip" id="22">
+          <div class="tip" id="20">
             <strong>Signature:</strong> textReader:TextReader -&gt; CharStream<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/24eb6b/src/Farkle/Utilities/CharStream.fs#L271-271" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/cc7d97/src/Farkle/Utilities/CharStream.fs#L329-329" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -224,15 +224,15 @@ It must be disposed afterwards.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '23', 23)" onmouseover="showTip(event, '23', 23)">
+          <code onmouseout="hideTip(event, '21', 21)" onmouseover="showTip(event, '21', 21)">
             ofTextReaderEx bufferSize textReader
           </code>
-          <div class="tip" id="23">
+          <div class="tip" id="21">
             <strong>Signature:</strong> bufferSize:int -&gt; textReader:TextReader -&gt; CharStream<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/24eb6b/src/Farkle/Utilities/CharStream.fs#L255-255" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/cc7d97/src/Farkle/Utilities/CharStream.fs#L318-318" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -249,15 +249,15 @@ Also, the character stream must be disposed afterwards.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '24', 24)" onmouseover="showTip(event, '24', 24)">
-            pinSpan arg1 arg2
+          <code onmouseout="hideTip(event, '22', 22)" onmouseover="showTip(event, '22', 22)">
+            pinSpan cs arg2
           </code>
-          <div class="tip" id="24">
-            <strong>Signature:</strong> CharStream -&gt; CharStreamIndex -&gt; CharSpan<br />
+          <div class="tip" id="22">
+            <strong>Signature:</strong> cs:CharStream -&gt; CharStreamIndex -&gt; CharSpan<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/24eb6b/src/Farkle/Utilities/CharStream.fs#L162-162" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/cc7d97/src/Farkle/Utilities/CharStream.fs#L218-218" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -270,15 +270,15 @@ On the dynamic block character stream, it ensures that the characters in the spa
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '25', 25)" onmouseover="showTip(event, '25', 25)">
+          <code onmouseout="hideTip(event, '23', 23)" onmouseover="showTip(event, '23', 23)">
             readChar cs c idx
           </code>
-          <div class="tip" id="25">
+          <div class="tip" id="23">
             <strong>Signature:</strong> cs:CharStream -&gt; c:outref&lt;char&gt; -&gt; idx:byref&lt;CharStreamIndex&gt; -&gt; bool<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/24eb6b/src/Farkle/Utilities/CharStream.fs#L127-127" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/cc7d97/src/Farkle/Utilities/CharStream.fs#L210-210" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -291,15 +291,15 @@ Otherwise, returns <code>false</code>.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '26', 26)" onmouseover="showTip(event, '26', 26)">
+          <code onmouseout="hideTip(event, '24', 24)" onmouseover="showTip(event, '24', 24)">
             unpinSpanAndGenerate(...)
           </code>
-          <div class="tip" id="26">
+          <div class="tip" id="24">
             <strong>Signature:</strong> symbol:&#39;symbol -&gt; fPostProcess:CharStreamCallback&lt;&#39;symbol&gt; -&gt; cs:CharStream -&gt; CharSpan -&gt; obj<br />
                           <strong>Type parameters:</strong> 'symbol                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/24eb6b/src/Farkle/Utilities/CharStream.fs#L205-205" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/cc7d97/src/Farkle/Utilities/CharStream.fs#L267-267" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -312,15 +312,15 @@ After that call, the characters at and before the span might be freed from memor
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '27', 27)" onmouseover="showTip(event, '27', 27)">
+          <code onmouseout="hideTip(event, '25', 25)" onmouseover="showTip(event, '25', 25)">
             unpinSpanAndGenerateString
           </code>
-          <div class="tip" id="27">
+          <div class="tip" id="25">
             <strong>Signature:</strong> CharStream -&gt; CharSpan -&gt; string<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/24eb6b/src/Farkle/Utilities/CharStream.fs#L221-221" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/cc7d97/src/Farkle/Utilities/CharStream.fs#L280-280" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -352,6 +352,7 @@ It is recommended to use the <code>unpinSpanAndGenerate</code> function to avoid
 
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
+            <li><a href="/Farkle/templates.html">Templating Reference</a></li>
           </ul>
         </div>
       </div>

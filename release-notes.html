@@ -31,6 +31,12 @@
       <div class="row">
         <div class="span9" id="main">
           
+<h4><a name="5-0-0-rc-7-10-08-2019" class="anchor" href="#5-0-0-rc-7-10-08-2019">5.0.0-rc.7 - 10-08-2019</a></h4>
+<ul>
+<li>Speed-up the tokenizer by using an array that handles ASCII characters.</li>
+<li>Remove <code>Grammar.StartSymbol</code>, as it was unreliable, and useless to Farkle.</li>
+<li>Remove the <code>OutputDirectorySuffix</code> metadata introduced in 5.0.0-rc.5. Generated source files by Farkle.Tools.MSBuild are <em>always</em> added in the same directory as the project.</li>
+</ul>
 <h4><a name="5-0-0-rc-6-22-07-2019" class="anchor" href="#5-0-0-rc-6-22-07-2019">5.0.0-rc.6 - 22-07-2019</a></h4>
 <ul>
 <li>Fix a breaking error in Farkle.Tools.MSBuild.</li>
@@ -53,7 +59,7 @@
 </ul>
 <h4><a name="5-0-0-rc-2-17-07-2019" class="anchor" href="#5-0-0-rc-2-17-07-2019">5.0.0-rc.2 - 17-07-2019</a></h4>
 <ul>
-<li>The CLI tool generate post-processor skeletons by default.</li>
+<li>The CLI tool generates post-processor skeletons by default.</li>
 <li>The CLI tool can automatically find the EGT file to process (if there is only one in the current directory), and the language (if there are C# or F# projects in the current directory).</li>
 <li>Fixed a bug where generated source files would sometimes have duplicate production names in their enumerated type. - <a href="https://github.com/teo-tsirpanis/Farkle/issues/7">#7</a></li>
 </ul>
@@ -144,6 +150,7 @@
 
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
+            <li><a href="/Farkle/templates.html">Templating Reference</a></li>
           </ul>
         </div>
       </div>

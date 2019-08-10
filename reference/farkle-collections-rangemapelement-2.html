@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>LALRState - Farkle</title>
+    <title>RangeMapElement<'key, 'a> - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -34,13 +34,20 @@
 
 
 
-<h1>LALRState</h1>
+<h1>RangeMapElement<'key, 'a></h1>
 <p>
 
-    <span>Namespace: Farkle.Grammar</span><br />
-    </p>
+    <span>Namespace: Farkle.Collections</span><br />
+            <span>
+            Attributes: <br />
+[&lt;Struct&gt;]<br />
+[&lt;CustomComparison&gt;]<br />
+[&lt;StructuralEquality&gt;]<br />
+            
+        </span>
+</p>
 <div class="xmldoc">
-<p>A LALR state. Many of them define the parsing logic of a <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a>.</p>
+<p>Αn closed intereval whose elements are assigned a value .</p>
 
 </div>
   <h3>Record Fields</h3>
@@ -52,19 +59,19 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '130', 130)" onmouseover="showTip(event, '130', 130)">
-            Actions
+          <code onmouseout="hideTip(event, '101', 101)" onmouseover="showTip(event, '101', 101)">
+            KeyFrom
           </code>
-          <div class="tip" id="130">
-            <strong>Signature:</strong> (type)<br />
+          <div class="tip" id="101">
+            <strong>Signature:</strong> &#39;key<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/cc7d97/src/Farkle/Grammar/GrammarTypes.fs#L165-165" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/cc7d97/src/Farkle/Utilities/RangeMap.fs#L15-15" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>The available next <a href="farkle-grammar-lalraction.html" title="LALRAction"><code>LALRAction</code></a>s of the state, depending on the next <a href="farkle-grammar-terminal.html" title="Terminal"><code>Terminal</code></a> encountered.</p>
+          <p>The start of the intereval.</p>
 
 
         </td>
@@ -72,19 +79,19 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '131', 131)" onmouseover="showTip(event, '131', 131)">
-            EOFAction
+          <code onmouseout="hideTip(event, '102', 102)" onmouseover="showTip(event, '102', 102)">
+            KeyTo
           </code>
-          <div class="tip" id="131">
-            <strong>Signature:</strong> LALRAction option<br />
+          <div class="tip" id="102">
+            <strong>Signature:</strong> &#39;key<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/cc7d97/src/Farkle/Grammar/GrammarTypes.fs#L167-167" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/cc7d97/src/Farkle/Utilities/RangeMap.fs#L17-17" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>The available <a href="farkle-grammar-lalraction.html" title="LALRAction"><code>LALRAction</code></a> to be taken if input ends.</p>
+          <p>The end of the intereval.</p>
 
 
         </td>
@@ -92,40 +99,19 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '132', 132)" onmouseover="showTip(event, '132', 132)">
-            GotoActions
+          <code onmouseout="hideTip(event, '103', 103)" onmouseover="showTip(event, '103', 103)">
+            Value
           </code>
-          <div class="tip" id="132">
-            <strong>Signature:</strong> (type)<br />
+          <div class="tip" id="103">
+            <strong>Signature:</strong> &#39;a<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/cc7d97/src/Farkle/Grammar/GrammarTypes.fs#L170-170" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/cc7d97/src/Farkle/Utilities/RangeMap.fs#L19-19" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>The available GOTO actions of the state.
-These actions are used when a production is reduced and the parser jumps to the state that represents the shifted nonterminal.</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '133', 133)" onmouseover="showTip(event, '133', 133)">
-            Index
-          </code>
-          <div class="tip" id="133">
-            <strong>Signature:</strong> uint32<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/cc7d97/src/Farkle/Grammar/GrammarTypes.fs#L163-163" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>The index of the state.</p>
+          <p>The corresponding value that gets assigned to the elements of the intereval.</p>
 
 
         </td>
