@@ -391,7 +391,7 @@
 <div class="tip" id="fs40">val ofSeq : transformers:seq&lt;Transformer&gt; -&gt; fusers:seq&lt;Fuser&gt; -&gt; PostProcessor&lt;&#39;result&gt;</div>
 <div class="tip" id="fs41">Multiple items<br />val int : value:&#39;T -&gt; int (requires member op_Explicit)<br /><br />--------------------<br />type int = int32<br /><br />--------------------<br />type int&lt;&#39;Measure&gt; = int</div>
 <div class="tip" id="fs42">val myMarvelousRuntimeFarkle : RuntimeFarkle&lt;int&gt;</div>
-<div class="tip" id="fs43">Multiple items<br />module RuntimeFarkle<br /><br />from Farkle<br /><br />--------------------<br />type RuntimeFarkle&lt;&#39;TResult&gt; =<br />&#160;&#160;private {Grammar: Result&lt;Grammar,FarkleError&gt;;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;PostProcessor: PostProcessor&lt;&#39;TResult&gt;;}<br />&#160;&#160;&#160;&#160;static member Create : fileName:string * postProcessor:PostProcessor&lt;&#39;a1&gt; -&gt; RuntimeFarkle&lt;&#39;a1&gt;<br />&#160;&#160;&#160;&#160;static member Create : grammar:Grammar * postProcessor:PostProcessor&lt;&#39;a1&gt; -&gt; RuntimeFarkle&lt;&#39;a1&gt;<br />&#160;&#160;&#160;&#160;static member CreateFromBase64String : str:string * postProcessor:PostProcessor&lt;&#39;a1&gt; -&gt; RuntimeFarkle&lt;&#39;a1&gt;</div>
+<div class="tip" id="fs43">Multiple items<br />module RuntimeFarkle<br /><br />from Farkle<br /><br />--------------------<br />type RuntimeFarkle&lt;&#39;TResult&gt; =<br />&#160;&#160;private {Grammar: Result&lt;Grammar,FarkleError&gt;;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;PostProcessor: PostProcessor&lt;&#39;TResult&gt;;}<br />&#160;&#160;&#160;&#160;member TryGetGrammar : unit -&gt; Result&lt;Grammar,FarkleError&gt;<br />&#160;&#160;&#160;&#160;static member Create : fileName:string * postProcessor:PostProcessor&lt;&#39;a1&gt; -&gt; RuntimeFarkle&lt;&#39;a1&gt;<br />&#160;&#160;&#160;&#160;static member Create : grammar:Grammar * postProcessor:PostProcessor&lt;&#39;a1&gt; -&gt; RuntimeFarkle&lt;&#39;a1&gt;<br />&#160;&#160;&#160;&#160;static member CreateFromBase64String : str:string * postProcessor:PostProcessor&lt;&#39;a1&gt; -&gt; RuntimeFarkle&lt;&#39;a1&gt;</div>
 <div class="tip" id="fs44">val ofBase64String : postProcessor:PostProcessor&lt;&#39;a&gt; -&gt; x:string -&gt; RuntimeFarkle&lt;&#39;a&gt;</div>
 <div class="tip" id="fs45">Multiple items<br />namespace Farkle.Grammar<br /><br />--------------------<br />module Grammar<br /><br />from Quickstart</div>
 <div class="tip" id="fs46">namespace System.IO</div>
@@ -438,6 +438,7 @@
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
+            <li><a href="/Farkle/gold-parser-missing features.html">Missing Features from GOLD Parser</a></li>
           </ul>
         </div>
       </div>
