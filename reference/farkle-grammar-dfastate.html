@@ -40,7 +40,7 @@
     <span>Namespace: Farkle.Grammar</span><br />
             <span>
             Attributes: <br />
-[&lt;RequireQualifiedAccess&gt;]<br />
+[&lt;DebuggerDisplay(&quot;{Index}&quot;)&gt;]<br />
             
         </span>
 </p>
@@ -49,28 +49,28 @@
 It consists of edges that the tokenizer follows, depending on the character it encounters.</p>
 
 </div>
-  <h3>Union Cases</h3>
+  <h3>Record Fields</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Union Case</td><td>Description</td></tr>
+      <tr><td>Record Field</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '113', 113)" onmouseover="showTip(event, '113', 113)">
-            Accept(index,DFASymbol,DFAEdges)
+          <code onmouseout="hideTip(event, '423', 423)" onmouseover="showTip(event, '423', 423)">
+            AcceptSymbol
           </code>
-          <div class="tip" id="113">
-            <strong>Signature:</strong> uint32 * DFASymbol * DFAEdges<br />
+          <div class="tip" id="423">
+            <strong>Signature:</strong> DFASymbol option<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/2ecc66/src/Farkle/Grammar/GrammarTypes.fs#L140-140" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/955bc3/src/Farkle/Grammar/GrammarTypes.fs#L182-182" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>This state accepts a symbol. If the state graph cannot be further walked, the included <code>Symbol</code> is returned.</p>
+          <p>Whether this state accepts a symbol or not.</p>
 
 
         </td>
@@ -78,68 +78,41 @@ It consists of edges that the tokenizer follows, depending on the character it e
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '114', 114)" onmouseover="showTip(event, '114', 114)">
-            Continue(index,DFAEdges)
+          <code onmouseout="hideTip(event, '424', 424)" onmouseover="showTip(event, '424', 424)">
+            Edges
           </code>
-          <div class="tip" id="114">
-            <strong>Signature:</strong> uint32 * DFAEdges<br />
+          <div class="tip" id="424">
+            <strong>Signature:</strong> RangeMap&lt;char,uint32&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/2ecc66/src/Farkle/Grammar/GrammarTypes.fs#L138-138" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/955bc3/src/Farkle/Grammar/GrammarTypes.fs#L180-180" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>This state does not accept a symbol. If the state graph cannot be further walked and
-an accepting state has not been found, tokenizing fails.</p>
+          <p>The edges of the state, that match a character to a next state, using a custom data structure.</p>
 
 
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <h3>Instance members</h3>
-  <table class="table table-bordered member-list">
-    <thead>
-      <tr><td>Instance member</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '115', 115)" onmouseover="showTip(event, '115', 115)">
-            x.Edges
-          </code>
-          <div class="tip" id="115">
-            <strong>Signature:</strong> DFAEdges<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/2ecc66/src/Farkle/Grammar/GrammarTypes.fs#L141-141" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-              <p>CompiledName: <code>get_Edges</code></p>
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '116', 116)" onmouseover="showTip(event, '116', 116)">
-            x.Index
+          <code onmouseout="hideTip(event, '425', 425)" onmouseover="showTip(event, '425', 425)">
+            Index
           </code>
-          <div class="tip" id="116">
+          <div class="tip" id="425">
             <strong>Signature:</strong> uint32<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/2ecc66/src/Farkle/Grammar/GrammarTypes.fs#L142-142" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/955bc3/src/Farkle/Grammar/GrammarTypes.fs#L178-178" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
-              <p>CompiledName: <code>get_Index</code></p>
+          <p>The index of the state in the DFA state table.</p>
+
+
         </td>
       </tr>
     </tbody>
@@ -164,7 +137,7 @@ an accepting state has not been found, tokenizing fails.</p>
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
-            <li><a href="/Farkle/gold-parser-missing features.html">Missing Features from GOLD Parser</a></li>
+            <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>
         </div>
       </div>

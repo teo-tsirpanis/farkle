@@ -31,6 +31,12 @@
       <div class="row">
         <div class="span9" id="main">
           
+<h4><a name="5-1-0" class="anchor" href="#5-1-0">5.1.0</a></h4>
+<ul>
+<li><strong>It happened. Farkle can create grammars without the need of GOLD Parser. Farkle is now a parsing library on its own.</strong></li>
+<li>Move the <code>CharStream</code> type in the <code>Farkle.IO</code> namespace.</li>
+<li>Add methods to parse text from .NET <code>TextReader</code>s. They should be preferred over parsing .NET <code>Stream</code>s because the latter are supposed to contain binary data, not text.</li>
+</ul>
 <h4><a name="5-0-1-21-08-2019" class="anchor" href="#5-0-1-21-08-2019">5.0.1 - 21-08-2019</a></h4>
 <ul>
 <li>Fix a bug where comments in input text would sometimes crash the parser.</li>
@@ -38,7 +44,7 @@
 </ul>
 <h4><a name="5-0-0-13-08-2019" class="anchor" href="#5-0-0-13-08-2019">5.0.0 - 13-08-2019</a></h4>
 <ul>
-<li>Fix a bug where the tokenizer would errorneously report an EOF instead of a lexical error. - <a href="https://github.com/teo-tsirpanis/Farkle/issues/8">#8</a></li>
+<li>Fix a bug where the tokenizer would erroneously report an EOF instead of a lexical error. - <a href="https://github.com/teo-tsirpanis/Farkle/issues/8">#8</a></li>
 <li>Add <code>CharStream.TryLoadFirstCharacter</code>. With this method, you can check whether the input of a character stream has ended, and safely access <code>CharStream.FirstCharacter</code>.</li>
 <li>Bring back <code>Grammar.StartSymbol</code>, but implement it correctly this time.</li>
 <li>Write more tests and documentation.</li>
@@ -83,6 +89,10 @@
 <li>As always, performance was improved, especially in the EGT file reader.</li>
 <li><strong>Breaking change:</strong> In your post-processor, if you have functions like <code>take2Of production (index1, index2) count func</code>, remove the <code>count</code> parameter.</li>
 <li><strong>Breaking change:</strong> The <code>Token</code> type was moved to <code>Farkle.Parser</code> and is not needed by the <code>AST</code> type.</li>
+</ul>
+<h4><a name="4-0-2-21-08-2019" class="anchor" href="#4-0-2-21-08-2019">4.0.2 - 21-08-2019</a></h4>
+<ul>
+<li>Fix a bug where comments in input text would sometimes crash the parser.</li>
 </ul>
 <h4><a name="4-0-1-11-08-2019" class="anchor" href="#4-0-1-11-08-2019">4.0.1 - 11-08-2019</a></h4>
 <ul>
@@ -167,7 +177,7 @@
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
-            <li><a href="/Farkle/gold-parser-missing features.html">Missing Features from GOLD Parser</a></li>
+            <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>
         </div>
       </div>

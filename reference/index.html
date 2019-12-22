@@ -114,6 +114,281 @@ a specific type of object that best describes an expression of the language of t
   </table>
 
     </div>
+  <h2>Farkle.Builder Namespace</h2>
+    <div>
+      <table class="table table-bordered type-list">
+    <thead>
+      <tr><td>Type</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-builderror.html">BuildError</a>
+          </td>
+          <td class="xmldoc">
+          <p>An error the builder encountered.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-comment.html">Comment</a>
+          </td>
+          <td class="xmldoc">
+          <p>A type of source code comment. As everybody might know,
+comments are the text fragments that are ignored by the parser.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-designtimefarkle.html">DesigntimeFarkle</a>
+          </td>
+          <td class="xmldoc">
+          <p>The base, untyped interface of .</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-designtimefarkle-1.html">DesigntimeFarkle<'T></a>
+          </td>
+          <td class="xmldoc">
+          <p>An object representing a grammar created by Farkle.Builder.
+It can be converted to a .</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-grammardefinition.html">GrammarDefinition</a>
+          </td>
+          <td class="xmldoc">
+          <p>A grammar type with some more information that is needed by the builder.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-grammarmetadata.html">GrammarMetadata</a>
+          </td>
+          <td class="xmldoc">
+          <p>The information about a grammar that cannot be expressed
+by its terminals and nonterminals.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-lalrconflict.html">LALRConflict</a>
+          </td>
+          <td class="xmldoc">
+          <p>An LALR conflict.
+It arises when the parser can take different
+actions when encountering a <code>Terminal</code> or the end.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-lalrconflicttype.html">LALRConflictType</a>
+          </td>
+          <td class="xmldoc">
+          <p>The type of an LALR conflict.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-nonterminal-1.html">Nonterminal<'T></a>
+          </td>
+          <td class="xmldoc">
+          <p>A nonterminal symbol. It is made of s.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-predefinedset.html">PredefinedSet</a>
+          </td>
+          <td class="xmldoc">
+          <p>A commonly used set of characters.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-production-1.html">Production<'T></a>
+          </td>
+          <td class="xmldoc">
+          <p>A production. Productions are parts of s.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-regex.html">Regex</a>
+          </td>
+          <td class="xmldoc">
+          <p>A regular expression that is used to specify a tokenizer symbol.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-terminal.html">Terminal</a>
+          </td>
+          <td class="xmldoc">
+          <p>A helper static class to create terminals.</p>
+
+
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  <table class="table table-bordered module-list">
+    <thead>
+      <tr><td>Module</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-builder-dfabuild.html">DFABuild</a>
+          </td>
+          <td class="xmldoc">
+          <p>Functions to generate Deterministic Finite Automata from <a href="farkle-builder-regex.html" title="Regex"><code>Regex</code></a>es.
+The algorithm is a modified edition of the one found at §3.9.5 in
+"Compilers: Principles, Techniques and Tools" by Aho, Lam, Sethi &amp; Ullman.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-builder-designtimefarklemodule.html">DesigntimeFarkle</a>
+          </td>
+          <td class="xmldoc">
+          <p>Functions to manipulate <a href="farkle-builder-designtimefarkle.html" title="DesigntimeFarkle"><code>DesigntimeFarkle</code></a>s.
+Keep in mind that only the metadata of the <em>topmost</em>
+designtime Farkle matter. Any other metadata changes will be disregarded.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-builder-designtimefarklebuild.html">DesigntimeFarkleBuild</a>
+          </td>
+          <td class="xmldoc">
+          <p>Functions to create <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a>s
+and <code>PostProcessor</code>s from <a href="farkle-builder-designtimefarkle.html" title="DesigntimeFarkle"><code>DesigntimeFarkle</code></a>s.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-builder-designtimefarkleoperators.html">DesigntimeFarkleOperators</a>
+          </td>
+          <td class="xmldoc">
+          <p>F# operators to easily work with productions and their builders.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-builder-lalrbuild.html">LALRBuild</a>
+          </td>
+          <td class="xmldoc">
+          
+          </td>
+        </tr>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-builder-predefinedsets.html">PredefinedSets</a>
+          </td>
+          <td class="xmldoc">
+          <p>Some common character sets that were imported from GOLD Parser.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-builder-regexmodule.html">Regex</a>
+          </td>
+          <td class="xmldoc">
+          <p>F#-friendly membrs of the <a href="farkle-builder-regex.html" title="Regex"><code>Regex</code></a> class.
+Please consult the members of the <a href="farkle-builder-regex.html" title="Regex"><code>Regex</code></a> class for documentation.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-builder-regexoperators.html">RegexOperators</a>
+          </td>
+          <td class="xmldoc">
+          <p>F# operators to easily manipulate <a href="farkle-builder-regex.html" title="Regex"><code>Regex</code></a>es.</p>
+
+
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </div>
+  <h2>Farkle.Builder.Untyped Namespace</h2>
+    <div>
+      <table class="table table-bordered type-list">
+    <thead>
+      <tr><td>Type</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-untyped-nonterminal.html">Nonterminal</a>
+          </td>
+          <td class="xmldoc">
+          <p>A nonterminal that does not have an associated type.</p>
+
+
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  <table class="table table-bordered module-list">
+    <thead>
+      <tr><td>Module</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-builder-untyped-designtimefarkleuntypedoperators.html">DesigntimeFarkleUntypedOperators</a>
+          </td>
+          <td class="xmldoc">
+          <p>F# operators to easily work with untyped <a href="farkle-builder-designtimefarkle.html" title="DesigntimeFarkle"><code>DesigntimeFarkle</code></a>s.</p>
+
+
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </div>
   <h2>Farkle.CSharp Namespace</h2>
     <div>
       <table class="table table-bordered type-list">
@@ -121,6 +396,16 @@ a specific type of object that best describes an expression of the language of t
       <tr><td>Type</td><td>Description</td></tr>
     </thead>
     <tbody>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-csharp-designtimefarkleextensions.html">DesigntimeFarkleExtensions</a>
+          </td>
+          <td class="xmldoc">
+          <p>Extension methods for the  type.</p>
+
+
+          </td>
+        </tr>
         <tr>
           <td class="type-name">
             <a href="farkle-csharp-fuser.html">Fuser</a>
@@ -133,10 +418,30 @@ a specific type of object that best describes an expression of the language of t
         </tr>
         <tr>
           <td class="type-name">
+            <a href="farkle-csharp-nonterminal.html">Nonterminal</a>
+          </td>
+          <td class="xmldoc">
+          <p>A helper static class to create nonterminals.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
             <a href="farkle-csharp-postprocessor.html">PostProcessor</a>
           </td>
           <td class="xmldoc">
           <p>A helper class with methods to create a .</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-csharp-productionbuilderextensions.html">ProductionBuilderExtensions</a>
+          </td>
+          <td class="xmldoc">
+          <p>Extension methods to create production builders.</p>
 
 
           </td>
@@ -154,53 +459,10 @@ a specific type of object that best describes an expression of the language of t
     <tbody>
         <tr>
           <td class="type-name">
-            <a href="farkle-collections-charspan.html">CharSpan</a>
-          </td>
-          <td class="xmldoc">
-          <p>An continuous range of characters that is
-stored by its starting position and ending index.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-collections-charstream.html">CharStream</a>
-          </td>
-          <td class="xmldoc">
-          <p>A data structure that supports efficient and copy-free access to a read-only sequence of characters.
-It is not thread-safe.
-Also, if you create a character stream from a <code>TextReader</code>, you must dispose it afterwards.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-collections-charstreamindex.html">CharStreamIndex</a>
-          </td>
-          <td class="xmldoc">
-          <p>A type pointing to a character in a character stream.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
             <a href="farkle-collections-rangemapelement-2.html">RangeMapElement<'key, 'a></a>
           </td>
           <td class="xmldoc">
           <p>Αn closed intereval whose elements are assigned a value .</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-collections-statetable-1.html">StateTable<'a></a>
-          </td>
-          <td class="xmldoc">
-          <p>A <code>SafeArray</code> of some "states", along with an initial one.</p>
 
 
           </td>
@@ -212,17 +474,6 @@ Also, if you create a character stream from a <code>TextReader</code>, you must 
       <tr><td>Module</td><td>Description</td></tr>
     </thead>
     <tbody>
-        <tr>
-          <td class="module-name">
-            <a href="farkle-collections-charstreammodule.html">CharStream</a>
-          </td>
-          <td class="xmldoc">
-          <p>Functions to create and work with <a href="farkle-collections-charstream.html" title="CharStream"><code>CharStream</code></a>s.
-They are not thread-safe.</p>
-
-
-          </td>
-        </tr>
         <tr>
           <td class="module-name">
             <a href="farkle-collections-rangemap.html">RangeMap</a>
@@ -239,7 +490,24 @@ They are not thread-safe.</p>
     </div>
   <h2>Farkle.Common Namespace</h2>
     <div>
-      <table class="table table-bordered module-list">
+      <table class="table table-bordered type-list">
+    <thead>
+      <tr><td>Type</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-common-setonce-1.html">SetOnce<'T></a>
+          </td>
+          <td class="xmldoc">
+          <p>A reference type whose value can only be set once.</p>
+
+
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  <table class="table table-bordered module-list">
     <thead>
       <tr><td>Module</td><td>Description</td></tr>
     </thead>
@@ -345,7 +613,7 @@ However, it is not limited to "noise", but can be used for any content.</p>
             <a href="farkle-grammar-lalraction.html">LALRAction</a>
           </td>
           <td class="xmldoc">
-          <p>An action to be taken by the LALR parser according to the given <a href="farkle-grammar-terminal.html" title="Terminal"><code>Terminal</code></a>.</p>
+          <p>An action to be taken by the LALR parser according to the given <code>Terminal</code>.</p>
 
 
           </td>
@@ -356,6 +624,16 @@ However, it is not limited to "noise", but can be used for any content.</p>
           </td>
           <td class="xmldoc">
           <p>A LALR state. Many of them define the parsing logic of a <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a>.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-grammar-lalrsymbol.html">LALRSymbol</a>
+          </td>
+          <td class="xmldoc">
+          <p>A symbol that is relevant to the LALR parser.</p>
 
 
           </td>
@@ -376,7 +654,19 @@ An example of a noise symbol would be a source code comment.</p>
             <a href="farkle-grammar-nonterminal.html">Nonterminal</a>
           </td>
           <td class="xmldoc">
-          <p>A symbol which is produced by a concatenation of other <a href="farkle-grammar-terminal.html" title="Terminal"><code>Terminal</code></a>s and <a href="farkle-grammar-nonterminal.html" title="Nonterminal"><code>Nonterminal</code></a>s, as the LALR parser dictates.</p>
+          <p>A symbol which is produced by a concatenation of other <code>Terminal</code>s and <code>Nonterminal</code>s, as the LALR parser dictates.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-grammar-optimizedoperations.html">OptimizedOperations</a>
+          </td>
+          <td class="xmldoc">
+          <p>An object that provides optimized functions for some common operations on Grammars.
+These functions require some computationally expensive pre-processing, which is
+performed only once, at the creation of this object.</p>
 
 
           </td>
@@ -386,7 +676,7 @@ An example of a noise symbol would be a source code comment.</p>
             <a href="farkle-grammar-production.html">Production</a>
           </td>
           <td class="xmldoc">
-          <p>A sequence of <a href="farkle-grammar-terminal.html" title="Terminal"><code>Terminal</code></a>s and <a href="farkle-grammar-nonterminal.html" title="Nonterminal"><code>Nonterminal</code></a>s that can produce a specific <a href="farkle-grammar-nonterminal.html" title="Nonterminal"><code>Nonterminal</code></a>.</p>
+          <p>A sequence of <code>Terminal</code>s and <code>Nonterminal</code>s that can produce a specific <code>Nonterminal</code>.</p>
 
 
           </td>
@@ -408,6 +698,23 @@ Group start and end symbols can be found at the group table.</p>
           </td>
           <td class="xmldoc">
           <p>A symbol which is produced through a DFA, and is significant for the grammar.</p>
+
+
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  <table class="table table-bordered module-list">
+    <thead>
+      <tr><td>Module</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-grammar-dfasymbolmodule.html">DFASymbol</a>
+          </td>
+          <td class="xmldoc">
+          <p>Functions to work with <a href="farkle-grammar-dfasymbol.html" title="DFASymbol"><code>DFASymbol</code></a>s.</p>
 
 
           </td>
@@ -446,6 +753,56 @@ Group start and end symbols can be found at the group table.</p>
           </td>
           <td class="xmldoc">
           <p>Functions to read EGT files to make a grammar.</p>
+
+
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </div>
+  <h2>Farkle.IO Namespace</h2>
+    <div>
+      <table class="table table-bordered type-list">
+    <thead>
+      <tr><td>Type</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-io-charspan.html">CharSpan</a>
+          </td>
+          <td class="xmldoc">
+          <p>An continuous range of characters that is
+stored by its starting position and ending index.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-io-charstreamindex.html">CharStreamIndex</a>
+          </td>
+          <td class="xmldoc">
+          <p>A type pointing to a character in a character stream.</p>
+
+
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  <table class="table table-bordered module-list">
+    <thead>
+      <tr><td>Module</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-io-charstreammodule.html">CharStream</a>
+          </td>
+          <td class="xmldoc">
+          <p>Functions to create and work with <a href="farkle-io-charstream.html" title="CharStream"><code>CharStream</code></a>s.
+They are not thread-safe.</p>
 
 
           </td>
@@ -530,7 +887,7 @@ It is thrown by the <code>Parser</code> and <a href="farkle-parser-tokenizer.htm
             <a href="farkle-parser-token.html">Token</a>
           </td>
           <td class="xmldoc">
-          <p>A token is an instance of a <a href="farkle-grammar-terminal.html" title="Terminal"><code>Terminal</code></a>.
+          <p>A token is an instance of a <code>Terminal</code>.
 Tokens carry post-processed terminals, as well as their position within the text file.</p>
 
 
@@ -668,7 +1025,7 @@ This means that the post-processor is not properly configured.</p>
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
-            <li><a href="/Farkle/gold-parser-missing features.html">Missing Features from GOLD Parser</a></li>
+            <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>
         </div>
       </div>
