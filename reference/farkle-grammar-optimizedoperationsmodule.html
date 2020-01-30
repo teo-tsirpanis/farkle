@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Noise - Farkle</title>
+    <title>OptimizedOperations - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -34,67 +34,63 @@
 
 
 
-<h1>Noise</h1>
+<h1>OptimizedOperations</h1>
 <p>
-
-    <span>Namespace: Farkle.Grammar</span><br />
-    </p>
+  <span>Namespace: Farkle.Grammar</span><br />
+  </p>
 <div class="xmldoc">
-<p>A symbol which is produced through a DFA, but is not significant for the grammar and is discarded.
-An example of a noise symbol would be a source code comment.</p>
+<p>Functions to create <a href="farkle-grammar-optimizedoperations.html" title="OptimizedOperations"><code>OptimizedOperations</code></a> objects from <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a>s.</p>
 
 </div>
-  <h3>Union Cases</h3>
+
+<!-- Render nested types and modules, if there are any -->
+
+  <h3>Functions and values</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Union Case</td><td>Description</td></tr>
+      <tr><td>Function or value</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '469', 469)" onmouseover="showTip(event, '469', 469)">
-            Noise(name)
+          <code onmouseout="hideTip(event, '270', 270)" onmouseover="showTip(event, '270', 270)">
+            optimized(grammar)
           </code>
-          <div class="tip" id="469">
-            <strong>Signature:</strong> string<br />
+          <div class="tip" id="270">
+            <strong>Signature:</strong> grammar:Grammar -&gt; OptimizedOperations<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/685fdf/src/Farkle/Grammar/GrammarTypes.fs#L96-96" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/685fdf/src/Farkle/Grammar/OptimizedOperations.fs#L119-119" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>Creates an <a href="farkle-grammar-optimizedoperations.html" title="OptimizedOperations"><code>OptimizedOperations</code></a> object that performs
+its operations faster, but after some pre-processing that uses more memory.</p>
+
+
         </td>
       </tr>
-    </tbody>
-  </table>
-  <h3>Instance members</h3>
-  <table class="table table-bordered member-list">
-    <thead>
-      <tr><td>Instance member</td><td>Description</td></tr>
-    </thead>
-    <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '470', 470)" onmouseover="showTip(event, '470', 470)">
-            x.Name
+          <code onmouseout="hideTip(event, '271', 271)" onmouseover="showTip(event, '271', 271)">
+            unoptimized(grammar)
           </code>
-          <div class="tip" id="470">
-            <strong>Signature:</strong> string<br />
+          <div class="tip" id="271">
+            <strong>Signature:</strong> grammar:Grammar -&gt; OptimizedOperations<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/685fdf/src/Farkle/Grammar/GrammarTypes.fs#L99-99" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/685fdf/src/Farkle/Grammar/OptimizedOperations.fs#L127-127" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>The symbol's name.</p>
+          <p>Creates an <a href="farkle-grammar-optimizedoperations.html" title="OptimizedOperations"><code>OptimizedOperations</code></a> that performs
+its operations in the default way without any pre-processing.</p>
 
 
-              <p>CompiledName: <code>get_Name</code></p>
         </td>
       </tr>
     </tbody>

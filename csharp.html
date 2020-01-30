@@ -2,9 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Noise - Farkle</title>
+    <title>Using Farkle from C#
+</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content=""/>
+    <meta name="description" content="A modern and easy-to-use parser library for F#"/>
     <meta name="author" content="Theodore Tsirpanis"/>
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
@@ -31,74 +32,81 @@
       <div class="row">
         <div class="span9" id="main">
           
+<h1><a name="Using-Farkle-from-C" class="anchor" href="#Using-Farkle-from-C">Using Farkle from C#</a></h1>
+<p>Farkle is a library written in F#, but supporting the much more used C# is a valuable feature. Because these two languages are quite different, there is a more idiomatic API for C# users. In this tutorial, we will assume that you have read <a href="quickstart.html">the F# quickstart guide</a>.</p>
+<blockquote>
+<p>The API described here is available in F# as well.</p>
+</blockquote>
+<h2><a name="Building-grammars" class="anchor" href="#Building-grammars">Building grammars</a></h2>
+<p>F# programs using Farkle use an operator-ladden API to compose designtime Farkles. Because C# does not support custom operators, we can instead use a different API based on extension methods.</p>
+<h3><a name="Creating-regexes" class="anchor" href="#Creating-regexes">Creating regexes</a></h3>
+<p>Regular expressions are created using <a href="reference/farkle-builder-regex.html">members of the <code>Regex</code> class</a>, which is well documented. Predefined sets are in the <code>PredefinedSets</code> class.</p>
+<h3><a name="Cerating-amp-building-designtime-Farkles" class="anchor" href="#Cerating-amp-building-designtime-Farkles">Cerating &amp; building designtime Farkles</a></h3>
+<p>The following table highlights the differences between the F# and C# designtime Farkle API.</p>
+<table>
+<thead>
+<tr class="header">
+<th><p>F#</p></th>
+<th><p>C#</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><code>terminal "X" (T (fun _ x -&gt; x.ToString())) r</code></p></td>
+<td><p><code>Terminal.Create("X", (position, data) =&gt; data.ToString(), r)</code></p></td>
+</tr>
+<tr class="even">
+<td><p><code>"S" ||= [p1; p2]</code></p></td>
+<td><p><code>Nonterminal.Create("S", p1, p2)</code></p></td>
+</tr>
+<tr class="odd">
+<td><p><code>!@ x</code></p></td>
+<td><p><code>x.Extended()</code></p></td>
+</tr>
+<tr class="even">
+<td><p><code>!% x</code></p></td>
+<td><p><code>x.Appended()</code></p></td>
+</tr>
+<tr class="odd">
+<td><p><code>!&amp; "literal"</code></p></td>
+<td><p><code>"literal".Appended()</code></p></td>
+</tr>
+<tr class="even">
+<td><p><code>empty</code></p></td>
+<td><p><code>ProductionBuilder.Empty</code></p></td>
+</tr>
+<tr class="odd">
+<td><p><code>newline</code></p></td>
+<td><p><code>Terminal.NewLine</code></p></td>
+</tr>
+<tr class="even">
+<td><p><code>x .&gt;&gt; y</code></p></td>
+<td><p><code>x.Append(y)</code></p></td>
+</tr>
+<tr class="odd">
+<td><p><code>x .&gt;&gt;. y</code></p></td>
+<td><p><code>x.Extend(y)</code></p></td>
+</tr>
+<tr class="even">
+<td><p><code>x =&gt; (fun x -&gt; MyFunc x)</code></p></td>
+<td><p><code>x.Finish(x =&gt; MyFunc(x))</code></p></td>
+</tr>
+<tr class="odd">
+<td><p><code>x =% 0</code></p></td>
+<td><p><code>x.FinishConstant(0)</code></p></td>
+</tr>
+<tr class="even">
+<td><p><code>RuntimeFarkle.build x</code></p></td>
+<td><p><code>x.Build()</code></p></td>
+</tr>
+</tbody>
+</table>
 
+<h3><a name="Customizing-designtime-Farkles" class="anchor" href="#Customizing-designtime-Farkles">Customizing designtime Farkles</a></h3>
+<p>To customize things like the case-sensitivity of designtime Farkles, there are some <a href="reference/farkle-designtimefarkleextensions.html">extension methods for designtime Farkles</a>.</p>
+<h2><a name="Parsing" class="anchor" href="#Parsing">Parsing</a></h2>
+<p>To parse text, there are some <a href="reference/farkle-runtimefarkleextensions.html">extension methods for runtime Farkles</a>.</p>
 
-
-<h1>Noise</h1>
-<p>
-
-    <span>Namespace: Farkle.Grammar</span><br />
-    </p>
-<div class="xmldoc">
-<p>A symbol which is produced through a DFA, but is not significant for the grammar and is discarded.
-An example of a noise symbol would be a source code comment.</p>
-
-</div>
-  <h3>Union Cases</h3>
-  <table class="table table-bordered member-list">
-    <thead>
-      <tr><td>Union Case</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '469', 469)" onmouseover="showTip(event, '469', 469)">
-            Noise(name)
-          </code>
-          <div class="tip" id="469">
-            <strong>Signature:</strong> string<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/685fdf/src/Farkle/Grammar/GrammarTypes.fs#L96-96" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <h3>Instance members</h3>
-  <table class="table table-bordered member-list">
-    <thead>
-      <tr><td>Instance member</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '470', 470)" onmouseover="showTip(event, '470', 470)">
-            x.Name
-          </code>
-          <div class="tip" id="470">
-            <strong>Signature:</strong> string<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/685fdf/src/Farkle/Grammar/GrammarTypes.fs#L99-99" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>The symbol's name.</p>
-
-
-              <p>CompiledName: <code>get_Name</code></p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
 
         </div>
         <div class="span3">

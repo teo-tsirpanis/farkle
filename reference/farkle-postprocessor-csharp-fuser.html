@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>GrammarDefinition - Farkle</title>
+    <title>Fuser - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -34,187 +34,145 @@
 
 
 
-<h1>GrammarDefinition</h1>
+<h1>Fuser</h1>
 <p>
 
-    <span>Namespace: Farkle.Builder</span><br />
+    <span>Namespace: Farkle.PostProcessor.CSharp</span><br />
             <span>
             Attributes: <br />
-[&lt;NoComparison&gt;]<br />
-[&lt;ReferenceEquality&gt;]<br />
+[&lt;Sealed&gt;]<br />
             
         </span>
 </p>
 <div class="xmldoc">
-<p>A grammar type with some more information that is needed by the builder.</p>
+<p>An object that contains a function to convert a  to an arbitrary object.</p>
 
 </div>
-  <h3>Record Fields</h3>
+  <h3>Static members</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Record Field</td><td>Description</td></tr>
+      <tr><td>Static member</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '362', 362)" onmouseover="showTip(event, '362', 362)">
-            DFASymbols
+          <code onmouseout="hideTip(event, '515', 515)" onmouseover="showTip(event, '515', 515)">
+            Fuser.Constant(x)
           </code>
-          <div class="tip" id="362">
-            <strong>Signature:</strong> (Regex * DFASymbol) list<br />
-                                  </div>
+          <div class="tip" id="515">
+            <strong>Signature:</strong> x:&#39;T -&gt; Fuser<br />
+                          <strong>Type parameters:</strong> 'T                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/685fdf/src/Farkle/Builder/DesigntimeFarkleBuild.fs#L26-26" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/685fdf/src/Farkle/CSharp/PostProcessorExtensions.fs#L25-25" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>Creates a  that always returns a constant value.</p>
+
+
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '363', 363)" onmouseover="showTip(event, '363', 363)">
-            Fusers
+          <code onmouseout="hideTip(event, '516', 516)" onmouseover="showTip(event, '516', 516)">
+            Fuser.Create(idx1, idx2, idx3, f)
           </code>
-          <div class="tip" id="363">
-            <strong>Signature:</strong> (type)<br />
-                                  </div>
+          <div class="tip" id="516">
+            <strong>Signature:</strong> (idx1:int * idx2:int * idx3:int * f:Func&lt;&#39;T1,&#39;T2,&#39;T3,&#39;TOutput&gt;) -&gt; Fuser<br />
+                          <strong>Type parameters:</strong> 'T1, 'T2, 'T3, 'TOutput                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/685fdf/src/Farkle/Builder/DesigntimeFarkleBuild.fs#L29-29" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/685fdf/src/Farkle/CSharp/PostProcessorExtensions.fs#L48-48" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>Creates a  that fuses a  from three of its symbols.</p>
+
+
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '364', 364)" onmouseover="showTip(event, '364', 364)">
-            Groups
+          <code onmouseout="hideTip(event, '517', 517)" onmouseover="showTip(event, '517', 517)">
+            Fuser.Create(idx1, idx2, f)
           </code>
-          <div class="tip" id="364">
-            <strong>Signature:</strong> (type)<br />
-                                  </div>
+          <div class="tip" id="517">
+            <strong>Signature:</strong> (idx1:int * idx2:int * f:Func&lt;&#39;T1,&#39;T2,&#39;TResult&gt;) -&gt; Fuser<br />
+                          <strong>Type parameters:</strong> 'T1, 'T2, 'TResult                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/685fdf/src/Farkle/Builder/DesigntimeFarkleBuild.fs#L24-24" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/685fdf/src/Farkle/CSharp/PostProcessorExtensions.fs#L40-40" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>Creates a  that fuses a  from two of its symbols.</p>
+
+
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '365', 365)" onmouseover="showTip(event, '365', 365)">
-            Metadata
+          <code onmouseout="hideTip(event, '518', 518)" onmouseover="showTip(event, '518', 518)">
+            Fuser.Create(idx, f)
           </code>
-          <div class="tip" id="365">
-            <strong>Signature:</strong> GrammarMetadata<br />
-                                  </div>
+          <div class="tip" id="518">
+            <strong>Signature:</strong> (idx:int * f:Func&lt;&#39;T,&#39;TResult&gt;) -&gt; Fuser<br />
+                          <strong>Type parameters:</strong> 'T, 'TResult                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/685fdf/src/Farkle/Builder/DesigntimeFarkleBuild.fs#L19-19" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/685fdf/src/Farkle/CSharp/PostProcessorExtensions.fs#L33-33" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>Creates a  that fuses a  from one of its symbols.</p>
+
+
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '366', 366)" onmouseover="showTip(event, '366', 366)">
-            Productions
+          <code onmouseout="hideTip(event, '519', 519)" onmouseover="showTip(event, '519', 519)">
+            Fuser.CreateRaw(f)
           </code>
-          <div class="tip" id="366">
-            <strong>Signature:</strong> (type)<br />
+          <div class="tip" id="519">
+            <strong>Signature:</strong> (f:Func&lt;obj [],obj&gt;) -&gt; Fuser<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/685fdf/src/Farkle/Builder/DesigntimeFarkleBuild.fs#L23-23" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/685fdf/src/Farkle/CSharp/PostProcessorExtensions.fs#L21-21" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>Creates a  from a delegate that accepts an array of objects.</p>
+
+
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '367', 367)" onmouseover="showTip(event, '367', 367)">
-            Properties
+          <code onmouseout="hideTip(event, '520', 520)" onmouseover="showTip(event, '520', 520)">
+            Fuser.First
           </code>
-          <div class="tip" id="367">
-            <strong>Signature:</strong> (type)<br />
+          <div class="tip" id="520">
+            <strong>Signature:</strong> Fuser<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/685fdf/src/Farkle/Builder/DesigntimeFarkleBuild.fs#L20-20" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/685fdf/src/Farkle/CSharp/PostProcessorExtensions.fs#L28-28" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
+          <p>Creates a  that returns the first symbol of the production unmodified.</p>
 
-          <code onmouseout="hideTip(event, '368', 368)" onmouseover="showTip(event, '368', 368)">
-            StartSymbol
-          </code>
-          <div class="tip" id="368">
-            <strong>Signature:</strong> Nonterminal<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/685fdf/src/Farkle/Builder/DesigntimeFarkleBuild.fs#L21-21" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
 
-          <code onmouseout="hideTip(event, '369', 369)" onmouseover="showTip(event, '369', 369)">
-            Symbols
-          </code>
-          <div class="tip" id="369">
-            <strong>Signature:</strong> Symbols<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/685fdf/src/Farkle/Builder/DesigntimeFarkleBuild.fs#L22-22" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '370', 370)" onmouseover="showTip(event, '370', 370)">
-            Transformers
-          </code>
-          <div class="tip" id="370">
-            <strong>Signature:</strong> (type)<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/685fdf/src/Farkle/Builder/DesigntimeFarkleBuild.fs#L28-28" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
+              <p>CompiledName: <code>get_First</code></p>
         </td>
       </tr>
     </tbody>

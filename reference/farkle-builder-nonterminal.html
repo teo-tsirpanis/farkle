@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Noise - Farkle</title>
+    <title>Nonterminal - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -34,67 +34,61 @@
 
 
 
-<h1>Noise</h1>
+<h1>Nonterminal</h1>
 <p>
 
-    <span>Namespace: Farkle.Grammar</span><br />
-    </p>
+    <span>Namespace: Farkle.Builder</span><br />
+            <span>
+            Attributes: <br />
+[&lt;AbstractClass&gt;]<br />
+[&lt;Sealed&gt;]<br />
+            
+        </span>
+</p>
 <div class="xmldoc">
-<p>A symbol which is produced through a DFA, but is not significant for the grammar and is discarded.
-An example of a noise symbol would be a source code comment.</p>
+<p>A helper static class to create nonterminals.</p>
 
 </div>
-  <h3>Union Cases</h3>
+  <h3>Static members</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Union Case</td><td>Description</td></tr>
+      <tr><td>Static member</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '469', 469)" onmouseover="showTip(event, '469', 469)">
-            Noise(name)
+          <code onmouseout="hideTip(event, '384', 384)" onmouseover="showTip(event, '384', 384)">
+            Nonterminal.Create(...)
           </code>
-          <div class="tip" id="469">
-            <strong>Signature:</strong> string<br />
-                                  </div>
+          <div class="tip" id="384">
+            <strong>Signature:</strong> (name:string * firstProduction:Production&lt;&#39;?8199&gt; * productions:Production&lt;&#39;?8199&gt; []) -&gt; DesigntimeFarkle&lt;&#39;?8199&gt;<br />
+                          <strong>Type parameters:</strong> '?8199                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/685fdf/src/Farkle/Grammar/GrammarTypes.fs#L96-96" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/685fdf/src/Farkle/CSharp/DesigntimeFarkleExtensions.fs#L20-20" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           
         </td>
       </tr>
-    </tbody>
-  </table>
-  <h3>Instance members</h3>
-  <table class="table table-bordered member-list">
-    <thead>
-      <tr><td>Instance member</td><td>Description</td></tr>
-    </thead>
-    <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '470', 470)" onmouseover="showTip(event, '470', 470)">
-            x.Name
+          <code onmouseout="hideTip(event, '385', 385)" onmouseover="showTip(event, '385', 385)">
+            Nonterminal.Create(name)
           </code>
-          <div class="tip" id="470">
-            <strong>Signature:</strong> string<br />
-                                  </div>
+          <div class="tip" id="385">
+            <strong>Signature:</strong> name:string -&gt; Nonterminal&lt;&#39;?8197&gt;<br />
+                          <strong>Type parameters:</strong> '?8197                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/685fdf/src/Farkle/Grammar/GrammarTypes.fs#L99-99" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/685fdf/src/Farkle/CSharp/DesigntimeFarkleExtensions.fs#L18-18" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>The symbol's name.</p>
-
-
-              <p>CompiledName: <code>get_Name</code></p>
+          
         </td>
       </tr>
     </tbody>

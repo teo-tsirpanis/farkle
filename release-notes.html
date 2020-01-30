@@ -31,11 +31,16 @@
       <div class="row">
         <div class="span9" id="main">
           
-<h4><a name="5-1-0" class="anchor" href="#5-1-0">5.1.0</a></h4>
+<h4><a name="5-1-0-31-01-2019" class="anchor" href="#5-1-0-31-01-2019">5.1.0 - 31-01-2019</a></h4>
 <ul>
-<li><strong>It happened. Farkle can create grammars without the need of GOLD Parser. Farkle is now a parsing library on its own.</strong></li>
+<li>It happened. Farkle can create grammars without the need of GOLD Parser. <strong>Farkle is now a parsing library on its own.</strong></li>
 <li>Move the <code>CharStream</code> type in the <code>Farkle.IO</code> namespace.</li>
 <li>Add methods to parse text from .NET <code>TextReader</code>s. They should be preferred over parsing .NET <code>Stream</code>s because the latter are supposed to contain binary data, not text.</li>
+<li>The <code>Farkle.CSharp</code> namespace is no longer required. C# users just have to use <code>Farkle</code> to get their extension methods, unless they are writing their own post-processors for GOLD Parser grammars, where they have to use <code>Farkle.PostProcessor.CSharp</code>.</li>
+<li><strong>Breaking change:</strong> Farkle.Tools.MSBuild was upgraded to .NET Core 3.1. Nothing significant changed though, which means those who still use .NET Core 2.1 can stay in a previous version.</li>
+<li><strong>Breaking change:</strong> Reading grammars from EGT files now raises an exception. <a href="https://github.com/teo-tsirpanis/Farkle/commit/84b96ccc85753e4deebffcf561cc89edb1e252bc">Rationale</a></li>
+<li><strong>Breaking change:</strong> Some utility functions that had nothing to do with parsing were either removed or made internal.</li>
+<li><strong>Breaking change:</strong> Internal errors of the parser (in the unfortunate case they happen) throw an exception. In the next release, exceptions in a transformer or fuser will not be caught either.</li>
 </ul>
 <h4><a name="5-0-1-21-08-2019" class="anchor" href="#5-0-1-21-08-2019">5.0.1 - 21-08-2019</a></h4>
 <ul>
@@ -172,7 +177,7 @@
 
             <li class="nav-header">Getting started</li>
             <li><a href="/Farkle/quickstart.html">Quick Start with F#</a></li>
-            <li><a href="/Farkle/quickstart-csharp.html">Quick Start with C#</a></li>
+            <li><a href="/Farkle/csharp.html">Using Farkle with C#</a></li>
 
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
