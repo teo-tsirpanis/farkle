@@ -31,7 +31,14 @@
       <div class="row">
         <div class="span9" id="main">
           
-<h4><a name="5-1-0-31-01-2019" class="anchor" href="#5-1-0-31-01-2019">5.1.0 - 31-01-2019</a></h4>
+<h4><a name="5-2-0-09-02-2020" class="anchor" href="#5-2-0-09-02-2020">5.2.0 - 09-02-2020</a></h4>
+<ul>
+<li>The types <code>DesigntimeFarkle&lt;TResult&gt;</code> and <code>PostProcessor&lt;TResult&gt;</code> are covariant. The change was made possible by <a href="https://github.com/teo-tsirpanis/Covarsky">Covarsky</a>, a tool written for this purpose.</li>
+<li>Added a function called <code>Regex.allButChars</code> (<code>Regex.NotOneOf</code> for C#) that creates regexes accepting all characters except certain ones.</li>
+<li>User code exceptions during post-processing are not captured anymore.</li>
+<li>Farkle.Tools.MSBuild works with all .NET Core SDK versions after 2.0.</li>
+</ul>
+<h4><a name="5-1-0-31-01-2020" class="anchor" href="#5-1-0-31-01-2020">5.1.0 - 31-01-2020</a></h4>
 <ul>
 <li>It happened. Farkle can create grammars without the need of GOLD Parser. <strong>Farkle is now a parsing library on its own.</strong></li>
 <li>Move the <code>CharStream</code> type in the <code>Farkle.IO</code> namespace.</li>

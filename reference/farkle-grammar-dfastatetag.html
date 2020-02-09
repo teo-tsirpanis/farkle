@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>SetOnce<'T> - Farkle</title>
+    <title>DFAStateTag - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -34,53 +34,39 @@
 
 
 
-<h1>SetOnce<'T></h1>
+<h1>DFAStateTag</h1>
 <p>
 
-    <span>Namespace: Farkle.Common</span><br />
-    </p>
+    <span>Namespace: Farkle.Grammar</span><br />
+            <span>
+            Attributes: <br />
+[&lt;Struct&gt;]<br />
+            
+        </span>
+</p>
 <div class="xmldoc">
-<p>A reference type whose value can only be set once.</p>
+<p>An object representing a DFA state or its absence.
+It is returned from optimized operations.</p>
 
 </div>
-  <h3>Record Fields</h3>
+  <h3>Union Cases</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Record Field</td><td>Description</td></tr>
+      <tr><td>Union Case</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '434', 434)" onmouseover="showTip(event, '434', 434)">
-            _IsSet
+          <code onmouseout="hideTip(event, '447', 447)" onmouseover="showTip(event, '447', 447)">
+            DFAStateTag(int)
           </code>
-          <div class="tip" id="434">
+          <div class="tip" id="447">
             <strong>Signature:</strong> int<br />
-              <strong>Modifiers:</strong> mutable<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Common.fs#L28-28" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '435', 435)" onmouseover="showTip(event, '435', 435)">
-            _Value
-          </code>
-          <div class="tip" id="435">
-            <strong>Signature:</strong> &#39;T<br />
-              <strong>Modifiers:</strong> mutable<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Common.fs#L29-29" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Grammar/OptimizedOperations.fs#L15-15" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -98,64 +84,65 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '436', 436)" onmouseover="showTip(event, '436', 436)">
-            x.IsSet
+          <code onmouseout="hideTip(event, '448', 448)" onmouseover="showTip(event, '448', 448)">
+            x.IsError
           </code>
-          <div class="tip" id="436">
+          <div class="tip" id="448">
             <strong>Signature:</strong> bool<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Common.fs#L42-42" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Grammar/OptimizedOperations.fs#L31-31" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Returns whether this <code>SetOnce</code> has a value set.</p>
+          <p>Whether this <a href="farkle-grammar-dfastatetag.html" title="DFAStateTag"><code>DFAStateTag</code></a> represents a failed operation.</p>
 
 
-              <p>CompiledName: <code>get_IsSet</code></p>
+              <p>CompiledName: <code>get_IsError</code></p>
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '437', 437)" onmouseover="showTip(event, '437', 437)">
-            x.TrySet(v)
+          <code onmouseout="hideTip(event, '449', 449)" onmouseover="showTip(event, '449', 449)">
+            x.IsOk
           </code>
-          <div class="tip" id="437">
-            <strong>Signature:</strong> v:&#39;T -&gt; bool<br />
+          <div class="tip" id="449">
+            <strong>Signature:</strong> bool<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Common.fs#L35-35" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Grammar/OptimizedOperations.fs#L29-29" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Tries to set this <code>SetOnce</code>'s value to an object.
-Returns whether the value was changed.
-This method is thread-safe.</p>
+          <p>Whether this <a href="farkle-grammar-dfastatetag.html" title="DFAStateTag"><code>DFAStateTag</code></a> represents a successful operation.</p>
 
 
+              <p>CompiledName: <code>get_IsOk</code></p>
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '438', 438)" onmouseover="showTip(event, '438', 438)">
-            x.ValueOrDefault(def)
+          <code onmouseout="hideTip(event, '450', 450)" onmouseover="showTip(event, '450', 450)">
+            x.Value
           </code>
-          <div class="tip" id="438">
-            <strong>Signature:</strong> def:&#39;T -&gt; &#39;T<br />
+          <div class="tip" id="450">
+            <strong>Signature:</strong> int<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Common.fs#L44-44" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Grammar/OptimizedOperations.fs#L27-27" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Returns the <code>SetOnce</code>'s value - if it is set - or the given object otherwise.</p>
+          <p>The state number of this <a href="farkle-grammar-dfastatetag.html" title="DFAStateTag"><code>DFAStateTag</code></a>, or
+a negative number.</p>
 
 
+              <p>CompiledName: <code>get_Value</code></p>
         </td>
       </tr>
     </tbody>
@@ -169,40 +156,58 @@ This method is thread-safe.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '439', 439)" onmouseover="showTip(event, '439', 439)">
-            SetOnce.Create(x)
+          <code onmouseout="hideTip(event, '451', 451)" onmouseover="showTip(event, '451', 451)">
+            DFAStateTag.Error
           </code>
-          <div class="tip" id="439">
-            <strong>Signature:</strong> x:&#39;?11827 -&gt; SetOnce&lt;&#39;?11827&gt;<br />
+          <div class="tip" id="451">
+            <strong>Signature:</strong> DFAStateTag<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Common.fs#L55-55" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Grammar/OptimizedOperations.fs#L20-20" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Creates a <code>SetOnce</code> object whose value is already set and cannot be changed.</p>
+          <p>A failed <a href="farkle-grammar-dfastatetag.html" title="DFAStateTag"><code>DFAStateTag</code></a>.</p>
 
 
+              <p>CompiledName: <code>get_Error</code></p>
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '440', 440)" onmouseover="showTip(event, '440', 440)">
-            SetOnce.Create()
+          <code onmouseout="hideTip(event, '452', 452)" onmouseover="showTip(event, '452', 452)">
+            DFAStateTag.FromOption(x)
           </code>
-          <div class="tip" id="440">
-            <strong>Signature:</strong> unit -&gt; SetOnce&lt;&#39;b&gt;<br />
+          <div class="tip" id="452">
+            <strong>Signature:</strong> (x:uint32 option) -&gt; DFAStateTag<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Common.fs#L50-50" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Grammar/OptimizedOperations.fs#L21-21" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Creates a <code>SetOnce</code> object whose value can be set at a later time.
-(try to guess how many times)</p>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '453', 453)" onmouseover="showTip(event, '453', 453)">
+            DFAStateTag.Ok(x)
+          </code>
+          <div class="tip" id="453">
+            <strong>Signature:</strong> x:uint32 -&gt; DFAStateTag<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Grammar/OptimizedOperations.fs#L18-18" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Creates a successful <a href="farkle-grammar-dfastatetag.html" title="DFAStateTag"><code>DFAStateTag</code></a>.</p>
 
 
         </td>

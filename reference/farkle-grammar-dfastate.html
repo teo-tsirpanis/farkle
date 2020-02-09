@@ -66,7 +66,7 @@ It consists of edges that the tokenizer follows, depending on the character it e
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/472422/src/Farkle/Grammar/GrammarTypes.fs#L182-182" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Grammar/GrammarTypes.fs#L185-185" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -79,18 +79,19 @@ It consists of edges that the tokenizer follows, depending on the character it e
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '444', 444)" onmouseover="showTip(event, '444', 444)">
-            Edges
+            AnythingElse
           </code>
           <div class="tip" id="444">
-            <strong>Signature:</strong> RangeMap&lt;char,uint32&gt;<br />
+            <strong>Signature:</strong> uint32 option<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/472422/src/Farkle/Grammar/GrammarTypes.fs#L180-180" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Grammar/GrammarTypes.fs#L188-188" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>The edges of the state, that match a character to a next state, using a custom data structure.</p>
+          <p>The state to maybe go to (or fail) in
+case the character had no matching edge.</p>
 
 
         </td>
@@ -99,14 +100,37 @@ It consists of edges that the tokenizer follows, depending on the character it e
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '445', 445)" onmouseover="showTip(event, '445', 445)">
-            Index
+            Edges
           </code>
           <div class="tip" id="445">
+            <strong>Signature:</strong> RangeMap&lt;char,uint32 option&gt;<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Grammar/GrammarTypes.fs#L183-183" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>The edges of the state, that match a character to a
+next state, using a custom data structure. A character
+can be set to explicitly fail, prohibiting the use of
+<code>AnythingElse</code>.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '446', 446)" onmouseover="showTip(event, '446', 446)">
+            Index
+          </code>
+          <div class="tip" id="446">
             <strong>Signature:</strong> uint32<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/472422/src/Farkle/Grammar/GrammarTypes.fs#L178-178" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Grammar/GrammarTypes.fs#L178-178" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>

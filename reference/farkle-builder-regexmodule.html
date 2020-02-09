@@ -56,32 +56,34 @@ Please consult the members of the <a href="farkle-builder-regex.html" title="Reg
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '231', 231)" onmouseover="showTip(event, '231', 231)">
-            atLeast num x
+            allButChars(str)
           </code>
           <div class="tip" id="231">
-            <strong>Signature:</strong> num:int -&gt; x:Regex -&gt; Regex<br />
+            <strong>Signature:</strong> str:seq&lt;char&gt; -&gt; Regex<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/472422/src/Farkle/Builder/Regex.fs#L164-164" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Builder/Regex.fs#L190-190" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>An alias for <code>Regex.NotOneOf</code>.</p>
+
+
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '232', 232)" onmouseover="showTip(event, '232', 232)">
-            between from upTo x
+            atLeast num x
           </code>
           <div class="tip" id="232">
-            <strong>Signature:</strong> from:int -&gt; upTo:int -&gt; x:Regex -&gt; Regex<br />
+            <strong>Signature:</strong> num:int -&gt; x:Regex -&gt; Regex<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/472422/src/Farkle/Builder/Regex.fs#L162-162" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Builder/Regex.fs#L205-205" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -92,14 +94,32 @@ Please consult the members of the <a href="farkle-builder-regex.html" title="Reg
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '233', 233)" onmouseover="showTip(event, '233', 233)">
-            char(c)
+            between from upTo x
           </code>
           <div class="tip" id="233">
+            <strong>Signature:</strong> from:int -&gt; upTo:int -&gt; x:Regex -&gt; Regex<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Builder/Regex.fs#L203-203" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '234', 234)" onmouseover="showTip(event, '234', 234)">
+            char(c)
+          </code>
+          <div class="tip" id="234">
             <strong>Signature:</strong> c:char -&gt; Regex<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/472422/src/Farkle/Builder/Regex.fs#L146-146" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Builder/Regex.fs#L184-184" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -111,15 +131,15 @@ Please consult the members of the <a href="farkle-builder-regex.html" title="Reg
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '234', 234)" onmouseover="showTip(event, '234', 234)">
+          <code onmouseout="hideTip(event, '235', 235)" onmouseover="showTip(event, '235', 235)">
             chars(str)
           </code>
-          <div class="tip" id="234">
+          <div class="tip" id="235">
             <strong>Signature:</strong> str:seq&lt;char&gt; -&gt; Regex<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/472422/src/Farkle/Builder/Regex.fs#L149-149" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Builder/Regex.fs#L187-187" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -131,33 +151,15 @@ Please consult the members of the <a href="farkle-builder-regex.html" title="Reg
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '235', 235)" onmouseover="showTip(event, '235', 235)">
-            choice(xs)
-          </code>
-          <div class="tip" id="235">
-            <strong>Signature:</strong> xs:seq&lt;Regex&gt; -&gt; Regex<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/472422/src/Farkle/Builder/Regex.fs#L156-156" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
           <code onmouseout="hideTip(event, '236', 236)" onmouseover="showTip(event, '236', 236)">
-            concat(xs)
+            choice(xs)
           </code>
           <div class="tip" id="236">
             <strong>Signature:</strong> xs:seq&lt;Regex&gt; -&gt; Regex<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/472422/src/Farkle/Builder/Regex.fs#L154-154" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Builder/Regex.fs#L197-197" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -168,14 +170,14 @@ Please consult the members of the <a href="farkle-builder-regex.html" title="Reg
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '237', 237)" onmouseover="showTip(event, '237', 237)">
-            optional(x)
+            concat(xs)
           </code>
           <div class="tip" id="237">
-            <strong>Signature:</strong> x:Regex -&gt; Regex<br />
+            <strong>Signature:</strong> xs:seq&lt;Regex&gt; -&gt; Regex<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/472422/src/Farkle/Builder/Regex.fs#L160-160" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Builder/Regex.fs#L195-195" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -186,14 +188,14 @@ Please consult the members of the <a href="farkle-builder-regex.html" title="Reg
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '238', 238)" onmouseover="showTip(event, '238', 238)">
-            repeat num x
+            optional(x)
           </code>
           <div class="tip" id="238">
-            <strong>Signature:</strong> num:int -&gt; x:Regex -&gt; Regex<br />
+            <strong>Signature:</strong> x:Regex -&gt; Regex<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/472422/src/Farkle/Builder/Regex.fs#L158-158" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Builder/Regex.fs#L201-201" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -204,14 +206,32 @@ Please consult the members of the <a href="farkle-builder-regex.html" title="Reg
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '239', 239)" onmouseover="showTip(event, '239', 239)">
-            star(x)
+            repeat num x
           </code>
           <div class="tip" id="239">
+            <strong>Signature:</strong> num:int -&gt; x:Regex -&gt; Regex<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Builder/Regex.fs#L199-199" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '240', 240)" onmouseover="showTip(event, '240', 240)">
+            star(x)
+          </code>
+          <div class="tip" id="240">
             <strong>Signature:</strong> x:Regex -&gt; Regex<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/472422/src/Farkle/Builder/Regex.fs#L168-168" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Builder/Regex.fs#L209-209" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -224,15 +244,15 @@ The name alludes to the Kleene Star.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '240', 240)" onmouseover="showTip(event, '240', 240)">
+          <code onmouseout="hideTip(event, '241', 241)" onmouseover="showTip(event, '241', 241)">
             string(str)
           </code>
-          <div class="tip" id="240">
+          <div class="tip" id="241">
             <strong>Signature:</strong> str:string -&gt; Regex<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/472422/src/Farkle/Builder/Regex.fs#L152-152" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/d88f68/src/Farkle/Builder/Regex.fs#L193-193" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
