@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>DesigntimeFarkle - Farkle</title>
+    <title>PostProcessor<'T> - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -34,13 +34,14 @@
 
 
 
-<h1>DesigntimeFarkle</h1>
+<h1>PostProcessor<'T></h1>
 <p>
 
-    <span>Namespace: Farkle.Builder</span><br />
+    <span>Namespace: Farkle.PostProcessor</span><br />
     </p>
 <div class="xmldoc">
-<p>The base untyped interface of .</p>
+<p>Post-processors convert strings of a grammar into more
+meaningful types for the library that uses the parser.</p>
 
 </div>
   <h3>Instance members</h3>
@@ -52,45 +53,22 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '346', 346)" onmouseover="showTip(event, '346', 346)">
-            x.Metadata
+          <code onmouseout="hideTip(event, '516', 516)" onmouseover="showTip(event, '516', 516)">
+            x.Fuse(arg1, arg2)
           </code>
-          <div class="tip" id="346">
-            <strong>Signature:</strong> GrammarMetadata<br />
+          <div class="tip" id="516">
+            <strong>Signature:</strong> (Production * obj []) -&gt; obj<br />
               <strong>Modifiers:</strong> abstract<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/dd82c7/src/Farkle/Builder/DesigntimeFarkle.fs#L72-72" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/dd82c7/src/Farkle/PostProcessor/PostProcessor.fs#L24-24" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>The associated  object.</p>
+          <p>Fuses the many members of a  into one arbitrary object.</p>
 
 
-              <p>CompiledName: <code>get_Metadata</code></p>
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '347', 347)" onmouseover="showTip(event, '347', 347)">
-            x.Name
-          </code>
-          <div class="tip" id="347">
-            <strong>Signature:</strong> string<br />
-              <strong>Modifiers:</strong> abstract<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/dd82c7/src/Farkle/Builder/DesigntimeFarkle.fs#L70-70" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>The name of the starting symbol.</p>
-
-
-              <p>CompiledName: <code>get_Name</code></p>
         </td>
       </tr>
     </tbody>
