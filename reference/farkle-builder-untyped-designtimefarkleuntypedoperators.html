@@ -9,7 +9,7 @@
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" async></script>
-    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" integrity="sha384-4FeI0trTH/PCsLWrGCD1mScoFu9Jf2NdknFdFoJhXZFwsvzZ3Bo5sAh7+zL8Xgnd" crossorigin="anonymous">
 
     <link type="text/css" rel="stylesheet" href="/Farkle/content/style.css" />
@@ -60,15 +60,23 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '257', 257)" onmouseover="showTip(event, '257', 257)">
+          <code onmouseout="hideTip(event, '260', 260)" onmouseover="showTip(event, '260', 260)">
             ( ||= ) name members
           </code>
-          <div class="tip" id="257">
+          <div class="tip" id="260">
             <strong>Signature:</strong> name:string -&gt; members:ProductionBuilder list -&gt; DesigntimeFarkle<br />
-                                  </div>
+                                    <span>
+            <strong>Attributes:</strong><br />
+[&lt;Obsolete(&quot;Open Farkle.Builder and use the |||= operator.&quot;)&gt;]<br />
+          </span>
+          </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/DesigntimeFarkle.Untyped.fs#L96-96" class="github-link">
+              <div class="alert alert-warning">
+              <strong>WARNING: </strong> This API is obsolete
+              <p>Open Farkle.Builder and use the |||= operator.</p>
+              </div> 
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/DesigntimeFarkle.Untyped.fs#L101-101" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -82,15 +90,23 @@ a nonterminal with the given name and productions.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '258', 258)" onmouseover="showTip(event, '258', 258)">
+          <code onmouseout="hideTip(event, '261', 261)" onmouseover="showTip(event, '261', 261)">
             nonterminal(name)
           </code>
-          <div class="tip" id="258">
+          <div class="tip" id="261">
             <strong>Signature:</strong> name:string -&gt; Nonterminal<br />
-                                  </div>
+                                    <span>
+            <strong>Attributes:</strong><br />
+[&lt;Obsolete(&quot;Open Farkle.Builder and use nonterminalU.&quot;)&gt;]<br />
+          </span>
+          </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/DesigntimeFarkle.Untyped.fs#L92-92" class="github-link">
+              <div class="alert alert-warning">
+              <strong>WARNING: </strong> This API is obsolete
+              <p>Open Farkle.Builder and use nonterminalU.</p>
+              </div> 
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/DesigntimeFarkle.Untyped.fs#L96-96" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -102,15 +118,23 @@ a nonterminal with the given name and productions.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '259', 259)" onmouseover="showTip(event, '259', 259)">
+          <code onmouseout="hideTip(event, '262', 262)" onmouseover="showTip(event, '262', 262)">
             terminal name regex
           </code>
-          <div class="tip" id="259">
+          <div class="tip" id="262">
             <strong>Signature:</strong> name:string -&gt; regex:Regex -&gt; DesigntimeFarkle<br />
-                                  </div>
+                                    <span>
+            <strong>Attributes:</strong><br />
+[&lt;Obsolete(&quot;Open Farkle.Builder and use terminalU.&quot;)&gt;]<br />
+          </span>
+          </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/DesigntimeFarkle.Untyped.fs#L89-89" class="github-link">
+              <div class="alert alert-warning">
+              <strong>WARNING: </strong> This API is obsolete
+              <p>Open Farkle.Builder and use terminalU.</p>
+              </div> 
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/DesigntimeFarkle.Untyped.fs#L92-92" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -141,6 +165,7 @@ a nonterminal with the given name and productions.</p>
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
+            <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
             <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>
         </div>

@@ -2,14 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Position - Farkle</title>
+    <title>DFAStateTag - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" async></script>
-    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" integrity="sha384-4FeI0trTH/PCsLWrGCD1mScoFu9Jf2NdknFdFoJhXZFwsvzZ3Bo5sAh7+zL8Xgnd" crossorigin="anonymous">
 
     <link type="text/css" rel="stylesheet" href="/Farkle/content/style.css" />
@@ -34,10 +34,10 @@
 
 
 
-<h1>Position</h1>
+<h1>DFAStateTag</h1>
 <p>
 
-    <span>Namespace: Farkle</span><br />
+    <span>Namespace: Farkle.Parser</span><br />
             <span>
             Attributes: <br />
 [&lt;Struct&gt;]<br />
@@ -45,77 +45,10 @@
         </span>
 </p>
 <div class="xmldoc">
-<p>A point in 2D space with integer coordinates, suitable for the position of a character in a text.</p>
+<p>An object representing a DFA state or its absence.
+It is returned from optimized operations.</p>
 
 </div>
-  <h3>Record Fields</h3>
-  <table class="table table-bordered member-list">
-    <thead>
-      <tr><td>Record Field</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '311', 311)" onmouseover="showTip(event, '311', 311)">
-            Column
-          </code>
-          <div class="tip" id="311">
-            <strong>Signature:</strong> uint64<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Position.fs#L14-14" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>The position's column.</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '312', 312)" onmouseover="showTip(event, '312', 312)">
-            Index
-          </code>
-          <div class="tip" id="312">
-            <strong>Signature:</strong> uint64<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Position.fs#L16-16" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>The position's character index.</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '313', 313)" onmouseover="showTip(event, '313', 313)">
-            Line
-          </code>
-          <div class="tip" id="313">
-            <strong>Signature:</strong> uint64<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Position.fs#L12-12" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>The position's line.</p>
-
-
-        </td>
-      </tr>
-    </tbody>
-  </table>
   <h3>Instance members</h3>
   <table class="table table-bordered member-list">
     <thead>
@@ -125,23 +58,65 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '314', 314)" onmouseover="showTip(event, '314', 314)">
-            x.Advance(c)
+          <code onmouseout="hideTip(event, '493', 493)" onmouseover="showTip(event, '493', 493)">
+            x.IsError
           </code>
-          <div class="tip" id="314">
-            <strong>Signature:</strong> c:char -&gt; Position<br />
+          <div class="tip" id="493">
+            <strong>Signature:</strong> bool<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Position.fs#L34-34" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Parser/OptimizedOperations.fs#L32-32" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Changes the position according to the given character.
-It always increases the index by one, but it takes newlines into account to
-change the line and column accordingly.</p>
+          <p>Whether this <a href="farkle-parser-dfastatetag.html" title="DFAStateTag"><code>DFAStateTag</code></a> represents a failed operation.</p>
 
 
+              <p>CompiledName: <code>get_IsError</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '494', 494)" onmouseover="showTip(event, '494', 494)">
+            x.IsOk
+          </code>
+          <div class="tip" id="494">
+            <strong>Signature:</strong> bool<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Parser/OptimizedOperations.fs#L30-30" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Whether this <a href="farkle-parser-dfastatetag.html" title="DFAStateTag"><code>DFAStateTag</code></a> represents a successful operation.</p>
+
+
+              <p>CompiledName: <code>get_IsOk</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '495', 495)" onmouseover="showTip(event, '495', 495)">
+            x.Value
+          </code>
+          <div class="tip" id="495">
+            <strong>Signature:</strong> int<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Parser/OptimizedOperations.fs#L28-28" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>The state number of this <a href="farkle-parser-dfastatetag.html" title="DFAStateTag"><code>DFAStateTag</code></a>, or
+a negative number.</p>
+
+
+              <p>CompiledName: <code>get_Value</code></p>
         </td>
       </tr>
     </tbody>
@@ -155,40 +130,41 @@ change the line and column accordingly.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '315', 315)" onmouseover="showTip(event, '315', 315)">
-            Position.Create line column index
+          <code onmouseout="hideTip(event, '496', 496)" onmouseover="showTip(event, '496', 496)">
+            DFAStateTag.Error
           </code>
-          <div class="tip" id="315">
-            <strong>Signature:</strong> line:uint64 -&gt; column:uint64 -&gt; index:uint64 -&gt; Position<br />
+          <div class="tip" id="496">
+            <strong>Signature:</strong> DFAStateTag<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Position.fs#L19-19" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Parser/OptimizedOperations.fs#L21-21" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>A failed <a href="farkle-parser-dfastatetag.html" title="DFAStateTag"><code>DFAStateTag</code></a>.</p>
+
+
+              <p>CompiledName: <code>get_Error</code></p>
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '316', 316)" onmouseover="showTip(event, '316', 316)">
-            Position.Initial
+          <code onmouseout="hideTip(event, '497', 497)" onmouseover="showTip(event, '497', 497)">
+            DFAStateTag.InitialState
           </code>
-          <div class="tip" id="316">
-            <strong>Signature:</strong> Position<br />
+          <div class="tip" id="497">
+            <strong>Signature:</strong> DFAStateTag<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Position.fs#L42-42" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Parser/OptimizedOperations.fs#L19-19" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>A <a href="farkle-position.html" title="Position"><code>Position</code></a> that points to the start.</p>
-
-
-              <p>CompiledName: <code>get_Initial</code></p>
+          
+              <p>CompiledName: <code>get_InitialState</code></p>
         </td>
       </tr>
     </tbody>
@@ -213,6 +189,7 @@ change the line and column accordingly.</p>
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
+            <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
             <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>
         </div>

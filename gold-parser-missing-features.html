@@ -10,7 +10,7 @@
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" async></script>
-    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" integrity="sha384-4FeI0trTH/PCsLWrGCD1mScoFu9Jf2NdknFdFoJhXZFwsvzZ3Bo5sAh7+zL8Xgnd" crossorigin="anonymous">
 
     <link type="text/css" rel="stylesheet" href="/Farkle/content/style.css" />
@@ -67,9 +67,9 @@
 <p>When you write the code to parse this grammar, you will create an <code>IndentStart</code> token every time you see that the indentation at the beginning has increased, and the other way around with <code>IndentEnd</code>.</p>
 <p>Unfortunately, Farkle does not support virtual terminals. It's architecture does not allow you to generate tokens from a place different than the tokenizer.</p>
 <p>However, as I was typing the above paragraph, I remembered something. Farkle's parser and tokenizer are completely decoupled, which allows you to write your own tokenizer which hooks into the real one.</p>
-<p>Unfortunately, as I was trying to write a custom tokenizer for this grammar, i realized that it was extremely hard to make it correctly work. Farkle was not designed with virtual terminals in mind, yet I understand that this is an important feature to have. It <em>is</em>, <strong>theoretically</strong> possible to do it, but practically cubersome. If you have any solution to this problem, you can send it in a pull request and I would be happy to see it.</p>
+<p>Unfortunately, as I was trying to write a custom tokenizer for this grammar, I realized that it was extremely hard to make it correctly work. Farkle was not designed with virtual terminals in mind, yet I understand that this is an important feature to have. It <em>is</em>, <strong>theoretically</strong> possible to do it, but practically cumbersome. If you have any solution to this problem, you can send it in a pull request and I would be happy to see it.</p>
 <h2><a name="Group-End-Symbols-in-Productions" class="anchor" href="#Group-End-Symbols-in-Productions">Group End Symbols in Productions</a></h2>
-<p>The next GOLD Parser feature that is supported by Farkle is quite the bizzare one. But let's see an example first in another little grammar:</p>
+<p>The next GOLD Parser feature that is supported by Farkle is quite the bizarre one. But let's see an example first in another little grammar:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -94,10 +94,10 @@
 </code></pre></td>
 </tr>
 </table>
-<p>Instead of the comment start symbol, we 've got a comment <em>end</em> symbol. Surprisingly, GOLD Parser would now build the grammar without a problem. And when we parse the string <code>*/</code>, the tokenizer would be able to recignize it - if we are outside of a comment of course - and will happily parse it. Hooray!</p>
+<p>Instead of the comment start symbol, we 've got a comment <em>end</em> symbol. Surprisingly, GOLD Parser would now build the grammar without a problem. And when we parse the string <code>*/</code>, the tokenizer would be able to recognize it - if we are outside of a comment of course - and will happily parse it. Hooray!</p>
 <p>But Farkle, unfortunately, is not feeling the same. Historically, all GOLD Parser engines had one object type called symbol. This symbol, could be a terminal, a nonterminal, a noise symbol, a group starting symbol, a group ending symbol, and other things that did not make any sense. For example, the lexical error was represented by actual tokens that had a special symbol on their own, and so did the end of input.</p>
 <p>While this approach was kept things simple, it was extremely type-unsafe. It allowed for example tokenizers to produce nonterminals, which does not happen in reality.</p>
-<p>That's why Farkle took a much more strongly-typed approach starting from version 4.0.0, when the grammar types were rewritten from scratch without any inspiration from other GOLD Parser engines. After that, a tokenizer can <em>only</em> output a terminal, a noise symbol and a group start/end symbol. Similary, productions are <em>only</em> made of a nonterminal head symbol and a handle of terminals and nonterminals, a transformer can be declared only for terminals, and so on. Any EGT file that tried to do something else was considered invalid. This change was definitely the best option, and paved the way for much safer and expressive code.</p>
+<p>That's why Farkle took a much more strongly-typed approach starting from version 4.0.0, when the grammar types were rewritten from scratch without any inspiration from other GOLD Parser engines. After that, a tokenizer can <em>only</em> output a terminal, a noise symbol and a group start/end symbol. Similarly, productions are <em>only</em> made of a nonterminal head symbol and a handle of terminals and nonterminals, a transformer can be declared only for terminals, and so on. Any EGT file that tried to do something else was considered invalid. This change was definitely the best option, and paved the way for much safer and expressive code.</p>
 <p>Now, as I have said before, starting from Farkle 4.0.0, a production's handle is made of a list of terminals and nonterminals. Allowing group end symbols in this closed group would significantly alter Farkle's architecture and would pose some new problems, like whether to make transformers support group end symbols as well. And allowing them would seem asymmetrical, given that group start symbols are understandably not allowed.</p>
 <p>In the end, group end symbols are confined to their ascribed fate: to end groups. Any EGT file that has productions with group end symbols will be considered invalid, and a special error will be generated to explain this unfortunate situation.</p>
 <hr />
@@ -124,6 +124,7 @@
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
+            <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
             <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>
         </div>

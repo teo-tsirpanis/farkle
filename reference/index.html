@@ -9,7 +9,7 @@
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" async></script>
-    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" integrity="sha384-4FeI0trTH/PCsLWrGCD1mScoFu9Jf2NdknFdFoJhXZFwsvzZ3Bo5sAh7+zL8Xgnd" crossorigin="anonymous">
 
     <link type="text/css" rel="stylesheet" href="/Farkle/content/style.css" />
@@ -58,16 +58,6 @@
           </td>
           <td class="xmldoc">
           <p>A type signifying an error during the parsing process.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-position.html">Position</a>
-          </td>
-          <td class="xmldoc">
-          <p>A point in 2D space with integer coordinates, suitable for the position of a character in a text.</p>
 
 
           </td>
@@ -196,6 +186,22 @@ by its terminals and nonterminals.</p>
         </tr>
         <tr>
           <td class="type-name">
+            <a href="farkle-builder-group.html">Group</a>
+          </td>
+          <td class="xmldoc">
+          <p>A helper static class to create groups. In Farkle (and GOLD parser),
+groups are used to define lexical elements that start and
+end with specified literals, and contain arbitrary characters.
+Groups are a tokenizer's construct, and their content is
+considered to be a terminal by the parser.
+Comments are essentially groups, but this class is concerned
+about groups that have significant content.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
             <a href="farkle-builder-lalrconflict.html">LALRConflict</a>
           </td>
           <td class="xmldoc">
@@ -310,7 +316,7 @@ The algorithm is a modified edition of the one found at §3.9.5 in
             <a href="farkle-builder-designtimefarklemodule.html">DesigntimeFarkle</a>
           </td>
           <td class="xmldoc">
-          <p>Functions to manipulate <a href="farkle-builder-designtimefarkle.html" title="DesigntimeFarkle"><code>DesigntimeFarkle</code></a>s.
+          <p>Functions to set metadata for designtime Farkles.
 Keep in mind that only the metadata of the <em>topmost</em>
 designtime Farkle matter. Any other metadata changes will be disregarded.</p>
 
@@ -333,7 +339,7 @@ and <code>PostProcessor</code>s from <a href="farkle-builder-designtimefarkle.ht
             <a href="farkle-builder-designtimefarkleoperators.html">DesigntimeFarkleOperators</a>
           </td>
           <td class="xmldoc">
-          <p>F# operators to easily work with productions and their builders.</p>
+          <p>F# operators to easily work with designtime Farkles and production builders.</p>
 
 
           </td>
@@ -432,7 +438,25 @@ are commonly used in many grammars.</p>
     </div>
   <h2>Farkle.Collections Namespace</h2>
     <div>
-      <table class="table table-bordered module-list">
+      <table class="table table-bordered type-list">
+    <thead>
+      <tr><td>Type</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-collections-rangemap-2.html">RangeMap<'key, 'a></a>
+          </td>
+          <td class="xmldoc">
+          <p>A map data structure that works best when a continuous range of keys is assigned the same value.
+It can also double as a set, when the value type is a unit.</p>
+
+
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  <table class="table table-bordered module-list">
     <thead>
       <tr><td>Module</td><td>Description</td></tr>
     </thead>
@@ -496,17 +520,6 @@ are commonly used in many grammars.</p>
           <td class="xmldoc">
           <p>A DFA state. It defines the logic that produces tokens out of strings.
 It consists of edges that the tokenizer follows, depending on the character it encounters.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-grammar-dfastatetag.html">DFAStateTag</a>
-          </td>
-          <td class="xmldoc">
-          <p>An object representing a DFA state or its absence.
-It is returned from optimized operations.</p>
 
 
           </td>
@@ -612,18 +625,6 @@ An example of a noise symbol would be a source code comment.</p>
           </td>
           <td class="xmldoc">
           <p>A symbol which is produced by a concatenation of other <code>Terminal</code>s and <code>Nonterminal</code>s, as the LALR parser dictates.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-grammar-optimizedoperations.html">OptimizedOperations</a>
-          </td>
-          <td class="xmldoc">
-          <p>An object that provides optimized functions for some common operations on Grammars.
-These functions require some computationally expensive pre-processing, which is
-performed only once, at the creation of this object.</p>
 
 
           </td>
@@ -768,6 +769,17 @@ They are not thread-safe.</p>
     <tbody>
         <tr>
           <td class="type-name">
+            <a href="farkle-parser-dfastatetag.html">DFAStateTag</a>
+          </td>
+          <td class="xmldoc">
+          <p>An object representing a DFA state or its absence.
+It is returned from optimized operations.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
             <a href="farkle-parser-expectedsymbol.html">ExpectedSymbol</a>
           </td>
           <td class="xmldoc">
@@ -782,6 +794,18 @@ They are not thread-safe.</p>
           </td>
           <td class="xmldoc">
           <p>A log message that contains a position it was encountered.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-parser-optimizedoperations.html">OptimizedOperations</a>
+          </td>
+          <td class="xmldoc">
+          <p>An object that provides optimized functions for some common operations on Grammars.
+These functions require some computationally expensive pre-processing, which is
+performed only once, at the creation of this object.</p>
 
 
           </td>
@@ -999,6 +1023,7 @@ meaningful types for the library that uses the parser.</p>
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
+            <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
             <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>
         </div>

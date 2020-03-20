@@ -9,7 +9,7 @@
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" async></script>
-    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" integrity="sha384-4FeI0trTH/PCsLWrGCD1mScoFu9Jf2NdknFdFoJhXZFwsvzZ3Bo5sAh7+zL8Xgnd" crossorigin="anonymous">
 
     <link type="text/css" rel="stylesheet" href="/Farkle/content/style.css" />
@@ -99,15 +99,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '50', 50)" onmouseover="showTip(event, '50', 50)">
+          <code onmouseout="hideTip(event, '53', 53)" onmouseover="showTip(event, '53', 53)">
             buildProductionsToLALRStates(...)
           </code>
-          <div class="tip" id="50">
+          <div class="tip" id="53">
             <strong>Signature:</strong> startSymbol:Nonterminal -&gt; productions:(type) -&gt; Result&lt;(type),BuildError&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/LALRBuild.fs#L332-332" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/LALRBuild.fs#L332-332" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -121,15 +121,15 @@ Having a symbol with an index of <code>UInt32.MaxValue</code> will cause an exce
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '51', 51)" onmouseover="showTip(event, '51', 51)">
+          <code onmouseout="hideTip(event, '54', 54)" onmouseover="showTip(event, '54', 54)">
             closure1(...)
           </code>
-          <div class="tip" id="51">
+          <div class="tip" id="54">
             <strong>Signature:</strong> fGetAllProductions:(Nonterminal -&gt; Set&lt;Production&gt;) -&gt; fGetFirstSet:(Nonterminal -&gt; Set&lt;Terminal option&gt;) -&gt; xs:seq&lt;LR0Item * Set&lt;LookaheadSymbol&gt;&gt; -&gt; LR1Item list<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/LALRBuild.fs#L177-177" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/LALRBuild.fs#L177-177" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -143,15 +143,15 @@ A function to get the FIRST set and the productons of a <code>Nonterminal</code>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '52', 52)" onmouseover="showTip(event, '52', 52)">
+          <code onmouseout="hideTip(event, '55', 55)" onmouseover="showTip(event, '55', 55)">
             computeFirstSetMap(productions)
           </code>
-          <div class="tip" id="52">
+          <div class="tip" id="55">
             <strong>Signature:</strong> productions:seq&lt;Production&gt; -&gt; Map&lt;Nonterminal,Set&lt;Terminal option&gt;&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/LALRBuild.fs#L123-123" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/LALRBuild.fs#L123-123" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -164,15 +164,15 @@ A <code>None</code> in the set of a nonterminal is the empty symbol, AKA Epsilon
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '53', 53)" onmouseover="showTip(event, '53', 53)">
+          <code onmouseout="hideTip(event, '56', 56)" onmouseover="showTip(event, '56', 56)">
             computeLookaheadItems(...)
           </code>
-          <div class="tip" id="53">
+          <div class="tip" id="56">
             <strong>Signature:</strong> fGetAllProductions:(Nonterminal -&gt; Set&lt;Production&gt;) -&gt; fGetFirstSet:(Nonterminal -&gt; Set&lt;Terminal option&gt;) -&gt; hashTerminal:LookaheadSymbol -&gt; itemSets:(type) -&gt; Map&lt;(LR0Item * int),Set&lt;LookaheadSymbol&gt;&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/LALRBuild.fs#L202-202" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/LALRBuild.fs#L202-202" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -186,15 +186,15 @@ requires a special <code>Terminal</code> which <strong>must not</strong> already
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '54', 54)" onmouseover="showTip(event, '54', 54)">
+          <code onmouseout="hideTip(event, '57', 57)" onmouseover="showTip(event, '57', 57)">
             createLALRStates(...)
           </code>
-          <div class="tip" id="54">
+          <div class="tip" id="57">
             <strong>Signature:</strong> fGetAllProductions:(Nonterminal -&gt; Set&lt;Production&gt;) -&gt; fGetFirstSet:(Nonterminal -&gt; Set&lt;Terminal option&gt;) -&gt; fResolveConflict:(uint32 -&gt; Terminal option -&gt; LALRAction -&gt; LALRAction -&gt; LALRAction) -&gt; startSymbol:Nonterminal -&gt; itemSets:seq&lt;LR0ItemSet&gt; -&gt; lookaheadTables:Map&lt;(LR0Item * int),Set&lt;LookaheadSymbol&gt;&gt; -&gt; (type)<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/LALRBuild.fs#L242-242" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/LALRBuild.fs#L242-242" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -206,15 +206,15 @@ requires a special <code>Terminal</code> which <strong>must not</strong> already
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '55', 55)" onmouseover="showTip(event, '55', 55)">
+          <code onmouseout="hideTip(event, '58', 58)" onmouseover="showTip(event, '58', 58)">
             createLR0KernelItems(...)
           </code>
-          <div class="tip" id="55">
+          <div class="tip" id="58">
             <strong>Signature:</strong> fGetAllProductions:(Nonterminal -&gt; Set&lt;Production&gt;) -&gt; startSymbol:Nonterminal -&gt; (type)<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/LALRBuild.fs#L68-68" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/LALRBuild.fs#L68-68" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -228,15 +228,15 @@ a nonterminal and the start symbol are required.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '56', 56)" onmouseover="showTip(event, '56', 56)">
+          <code onmouseout="hideTip(event, '59', 59)" onmouseover="showTip(event, '59', 59)">
             getFirstSetOfSequence(...)
           </code>
-          <div class="tip" id="56">
+          <div class="tip" id="59">
             <strong>Signature:</strong> fGetFirstSet:(Nonterminal -&gt; Set&lt;Terminal option&gt;) -&gt; lookahead:Set&lt;LookaheadSymbol&gt; -&gt; xs:seq&lt;LALRSymbol&gt; -&gt; Set&lt;LookaheadSymbol&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/LALRBuild.fs#L162-162" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/LALRBuild.fs#L162-162" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -270,6 +270,7 @@ A function to get the FIRST set of each <code>Nonterminal</code> is required.</p
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
+            <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
             <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>
         </div>

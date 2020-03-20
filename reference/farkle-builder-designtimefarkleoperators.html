@@ -9,7 +9,7 @@
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" async></script>
-    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" integrity="sha384-4FeI0trTH/PCsLWrGCD1mScoFu9Jf2NdknFdFoJhXZFwsvzZ3Bo5sAh7+zL8Xgnd" crossorigin="anonymous">
 
     <link type="text/css" rel="stylesheet" href="/Farkle/content/style.css" />
@@ -45,7 +45,7 @@
       </span>
 </p>
 <div class="xmldoc">
-<p>F# operators to easily work with productions and their builders.</p>
+<p>F# operators to easily work with designtime Farkles and production builders.</p>
 
 </div>
 
@@ -68,7 +68,7 @@
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L63-63" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L155-155" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -90,7 +90,7 @@ This function is useful to start building a <a href="farkle-grammar-production.h
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L66-66" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L158-158" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -111,7 +111,7 @@ This function is useful to start building a <a href="farkle-grammar-production.h
                           <strong>Type parameters:</strong> 'T                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L70-70" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L162-162" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -133,7 +133,7 @@ This function is useful to start building a <a href="farkle-grammar-production.h
                           <strong>Type parameters:</strong> ^TBuilder, ^TDesigntimeFarkle                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L44-44" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L136-136" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -154,7 +154,7 @@ This function is useful to start building a <a href="farkle-grammar-production.h
                           <strong>Type parameters:</strong> ^TBuilder, 'T, ^TBuilderResult                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L48-48" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L140-140" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -168,14 +168,33 @@ This function is useful to start building a <a href="farkle-grammar-production.h
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '33', 33)" onmouseover="showTip(event, '33', 33)">
-            ( ||= ) name members
+            ( |||= ) name members
           </code>
           <div class="tip" id="33">
-            <strong>Signature:</strong> name:string -&gt; members:Production&lt;&#39;b&gt; list -&gt; DesigntimeFarkle&lt;&#39;b&gt;<br />
-                          <strong>Type parameters:</strong> 'b                      </div>
+            <strong>Signature:</strong> name:string -&gt; members:ProductionBuilder list -&gt; DesigntimeFarkle<br />
+                                  </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L33-33" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L129-129" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+              <p>CompiledName: <code>op_BarBarBarEquals</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '34', 34)" onmouseover="showTip(event, '34', 34)">
+            ( ||= ) name members
+          </code>
+          <div class="tip" id="34">
+            <strong>Signature:</strong> name:string -&gt; members:Production&lt;&#39;a&gt; list -&gt; DesigntimeFarkle&lt;&#39;a&gt;<br />
+                          <strong>Type parameters:</strong> 'a                      </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L122-122" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -189,15 +208,15 @@ a nonterminal with the given name and productions.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '34', 34)" onmouseover="showTip(event, '34', 34)">
+          <code onmouseout="hideTip(event, '35', 35)" onmouseover="showTip(event, '35', 35)">
             ( |&gt;&gt; ) df f
           </code>
-          <div class="tip" id="34">
+          <div class="tip" id="35">
             <strong>Signature:</strong> df:DesigntimeFarkle&lt;&#39;a&gt; -&gt; f:(&#39;a -&gt; &#39;b) -&gt; DesigntimeFarkle&lt;&#39;b&gt;<br />
                           <strong>Type parameters:</strong> 'a, 'b                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L83-83" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L175-175" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -211,15 +230,15 @@ the output of the given one with the given function.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '35', 35)" onmouseover="showTip(event, '35', 35)">
+          <code onmouseout="hideTip(event, '36', 36)" onmouseover="showTip(event, '36', 36)">
             ( =% ) pb x
           </code>
-          <div class="tip" id="35">
+          <div class="tip" id="36">
             <strong>Signature:</strong> pb:ProductionBuilder -&gt; x:&#39;T -&gt; Production&lt;&#39;T&gt;<br />
                           <strong>Type parameters:</strong> 'T                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L56-56" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L148-148" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -232,15 +251,15 @@ the output of the given one with the given function.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '36', 36)" onmouseover="showTip(event, '36', 36)">
+          <code onmouseout="hideTip(event, '37', 37)" onmouseover="showTip(event, '37', 37)">
             ( =&gt; ) pb f
           </code>
-          <div class="tip" id="36">
+          <div class="tip" id="37">
             <strong>Signature:</strong> pb:^TBuilder -&gt; f:^TFunction -&gt; Production&lt;&#39;T&gt;<br />
                           <strong>Type parameters:</strong> ^TBuilder, ^TFunction, 'T                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L52-52" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L144-144" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -253,39 +272,19 @@ the output of the given one with the given function.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '37', 37)" onmouseover="showTip(event, '37', 37)">
+          <code onmouseout="hideTip(event, '38', 38)" onmouseover="showTip(event, '38', 38)">
             empty
           </code>
-          <div class="tip" id="37">
+          <div class="tip" id="38">
             <strong>Signature:</strong> ProductionBuilder<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L59-59" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L151-151" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>A production builder with no members.</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '38', 38)" onmouseover="showTip(event, '38', 38)">
-            literal(str)
-          </code>
-          <div class="tip" id="38">
-            <strong>Signature:</strong> str:string -&gt; DesigntimeFarkle<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L18-18" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Creates an untyped <a href="farkle-builder-designtimefarkle.html" title="DesigntimeFarkle"><code>DesigntimeFarkle</code></a> that recognizes a literal string</p>
+          <p>An alias for <code>ProductionBuilder.Empty</code>.</p>
 
 
         </td>
@@ -294,14 +293,34 @@ the output of the given one with the given function.</p>
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '39', 39)" onmouseover="showTip(event, '39', 39)">
-            many(df)
+            literal(str)
           </code>
           <div class="tip" id="39">
-            <strong>Signature:</strong> df:DesigntimeFarkle&lt;&#39;?9497&gt; -&gt; DesigntimeFarkle&lt;&#39;?9497 list&gt;<br />
-                          <strong>Type parameters:</strong> '?9497                      </div>
+            <strong>Signature:</strong> str:string -&gt; DesigntimeFarkle<br />
+                                  </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L89-89" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L105-105" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>An alias for the <code>Terminal.NewLine</code> function.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '40', 40)" onmouseover="showTip(event, '40', 40)">
+            many(df)
+          </code>
+          <div class="tip" id="40">
+            <strong>Signature:</strong> df:DesigntimeFarkle&lt;&#39;?9519&gt; -&gt; DesigntimeFarkle&lt;&#39;?9519 list&gt;<br />
+                          <strong>Type parameters:</strong> '?9519                      </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L181-181" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -314,15 +333,15 @@ occurrences of the given one and returns them in a list.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '40', 40)" onmouseover="showTip(event, '40', 40)">
+          <code onmouseout="hideTip(event, '41', 41)" onmouseover="showTip(event, '41', 41)">
             many1(df)
           </code>
-          <div class="tip" id="40">
-            <strong>Signature:</strong> df:DesigntimeFarkle&lt;&#39;?9499&gt; -&gt; DesigntimeFarkle&lt;&#39;?9499 list&gt;<br />
-                          <strong>Type parameters:</strong> '?9499                      </div>
+          <div class="tip" id="41">
+            <strong>Signature:</strong> df:DesigntimeFarkle&lt;&#39;?9521&gt; -&gt; DesigntimeFarkle&lt;&#39;?9521 list&gt;<br />
+                          <strong>Type parameters:</strong> '?9521                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L102-102" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L194-194" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -334,15 +353,15 @@ occurrences of the given one and returns them in a list.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '41', 41)" onmouseover="showTip(event, '41', 41)">
+          <code onmouseout="hideTip(event, '42', 42)" onmouseover="showTip(event, '42', 42)">
             manyCollection(df)
           </code>
-          <div class="tip" id="41">
+          <div class="tip" id="42">
             <strong>Signature:</strong> df:DesigntimeFarkle&lt;&#39;T&gt; -&gt; DesigntimeFarkle&lt;&#39;TCollection&gt;<br />
                           <strong>Type parameters:</strong> 'T, 'TCollection                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L108-108" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L200-200" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -352,15 +371,15 @@ occurrences of the given one and returns them in a list.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '42', 42)" onmouseover="showTip(event, '42', 42)">
+          <code onmouseout="hideTip(event, '43', 43)" onmouseover="showTip(event, '43', 43)">
             manyCollection1(df)
           </code>
-          <div class="tip" id="42">
+          <div class="tip" id="43">
             <strong>Signature:</strong> df:DesigntimeFarkle&lt;&#39;T&gt; -&gt; DesigntimeFarkle&lt;&#39;TCollection&gt;<br />
                           <strong>Type parameters:</strong> 'T, 'TCollection                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L119-119" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L211-211" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -372,15 +391,15 @@ occurrences of the given one and returns them in a list.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '43', 43)" onmouseover="showTip(event, '43', 43)">
+          <code onmouseout="hideTip(event, '44', 44)" onmouseover="showTip(event, '44', 44)">
             mapEx label f df
           </code>
-          <div class="tip" id="43">
-            <strong>Signature:</strong> label:string -&gt; f:(&#39;?9491 -&gt; &#39;?9492) -&gt; df:DesigntimeFarkle&lt;&#39;?9491&gt; -&gt; DesigntimeFarkle&lt;&#39;?9492&gt;<br />
-                          <strong>Type parameters:</strong> '?9491, '?9492                      </div>
+          <div class="tip" id="44">
+            <strong>Signature:</strong> label:string -&gt; f:(&#39;?9513 -&gt; &#39;?9514) -&gt; df:DesigntimeFarkle&lt;&#39;?9513&gt; -&gt; DesigntimeFarkle&lt;&#39;?9514&gt;<br />
+                          <strong>Type parameters:</strong> '?9513, '?9514                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L78-78" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L170-170" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -393,15 +412,15 @@ name to the resulting <code>DesigntimeFarkle&lt;T&gt;</code>.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '44', 44)" onmouseover="showTip(event, '44', 44)">
+          <code onmouseout="hideTip(event, '45', 45)" onmouseover="showTip(event, '45', 45)">
             newline
           </code>
-          <div class="tip" id="44">
+          <div class="tip" id="45">
             <strong>Signature:</strong> DesigntimeFarkle<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L21-21" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L108-108" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -413,21 +432,21 @@ name to the resulting <code>DesigntimeFarkle&lt;T&gt;</code>.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '45', 45)" onmouseover="showTip(event, '45', 45)">
+          <code onmouseout="hideTip(event, '46', 46)" onmouseover="showTip(event, '46', 46)">
             nonterminal(name)
           </code>
-          <div class="tip" id="45">
-            <strong>Signature:</strong> name:string -&gt; Nonterminal&lt;&#39;b&gt;<br />
-                          <strong>Type parameters:</strong> 'b                      </div>
+          <div class="tip" id="46">
+            <strong>Signature:</strong> name:string -&gt; Nonterminal&lt;&#39;a&gt;<br />
+                          <strong>Type parameters:</strong> 'a                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L26-26" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L113-113" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           <p>Creates a <code>Nonterminal</code> whose productions must be
-set with <code>SetProductions</code>, or it will raise an
-error. Useful for recursive productions.</p>
+later set with <code>SetProductions</code>, or it will raise an
+error on building. Useful for recursive productions.</p>
 
 
         </td>
@@ -435,15 +454,37 @@ error. Useful for recursive productions.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '46', 46)" onmouseover="showTip(event, '46', 46)">
-            opt(df)
+          <code onmouseout="hideTip(event, '47', 47)" onmouseover="showTip(event, '47', 47)">
+            nonterminalU(name)
           </code>
-          <div class="tip" id="46">
-            <strong>Signature:</strong> df:DesigntimeFarkle&lt;&#39;?9511&gt; -&gt; DesigntimeFarkle&lt;&#39;?9511 option&gt;<br />
-                          <strong>Type parameters:</strong> '?9511                      </div>
+          <div class="tip" id="47">
+            <strong>Signature:</strong> name:string -&gt; Nonterminal<br />
+                                  </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L144-144" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L118-118" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Creates an <code>Untyped.Nonterminal</code> whose productions must be
+later set with <code>SetProductions</code>, or it will raise an
+error on building. Useful for recursive productions.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '48', 48)" onmouseover="showTip(event, '48', 48)">
+            opt(df)
+          </code>
+          <div class="tip" id="48">
+            <strong>Signature:</strong> df:DesigntimeFarkle&lt;&#39;?9533&gt; -&gt; DesigntimeFarkle&lt;&#39;?9533 option&gt;<br />
+                          <strong>Type parameters:</strong> '?9533                      </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L236-236" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -457,15 +498,15 @@ value is <code>None</code>.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '47', 47)" onmouseover="showTip(event, '47', 47)">
+          <code onmouseout="hideTip(event, '49', 49)" onmouseover="showTip(event, '49', 49)">
             sepBy sep df
           </code>
-          <div class="tip" id="47">
-            <strong>Signature:</strong> sep:DesigntimeFarkle -&gt; df:DesigntimeFarkle&lt;&#39;?9509&gt; -&gt; DesigntimeFarkle&lt;&#39;?9509 list&gt;<br />
-                          <strong>Type parameters:</strong> '?9509                      </div>
+          <div class="tip" id="49">
+            <strong>Signature:</strong> sep:DesigntimeFarkle -&gt; df:DesigntimeFarkle&lt;&#39;?9531&gt; -&gt; DesigntimeFarkle&lt;&#39;?9531 list&gt;<br />
+                          <strong>Type parameters:</strong> '?9531                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L134-134" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L226-226" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -478,15 +519,15 @@ many occurences of <code>df</code> separated by <code>sep</code>.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '48', 48)" onmouseover="showTip(event, '48', 48)">
+          <code onmouseout="hideTip(event, '50', 50)" onmouseover="showTip(event, '50', 50)">
             sepBy1 sep df
           </code>
-          <div class="tip" id="48">
-            <strong>Signature:</strong> sep:DesigntimeFarkle -&gt; df:DesigntimeFarkle&lt;&#39;?9507&gt; -&gt; DesigntimeFarkle&lt;&#39;?9507 list&gt;<br />
-                          <strong>Type parameters:</strong> '?9507                      </div>
+          <div class="tip" id="50">
+            <strong>Signature:</strong> sep:DesigntimeFarkle -&gt; df:DesigntimeFarkle&lt;&#39;?9529&gt; -&gt; DesigntimeFarkle&lt;&#39;?9529 list&gt;<br />
+                          <strong>Type parameters:</strong> '?9529                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L124-124" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L216-216" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -498,20 +539,42 @@ many occurences of <code>df</code> separated by <code>sep</code>.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '49', 49)" onmouseover="showTip(event, '49', 49)">
+          <code onmouseout="hideTip(event, '51', 51)" onmouseover="showTip(event, '51', 51)">
             terminal name fTransform regex
           </code>
-          <div class="tip" id="49">
+          <div class="tip" id="51">
             <strong>Signature:</strong> name:string -&gt; fTransform:T&lt;&#39;a&gt; -&gt; regex:Regex -&gt; DesigntimeFarkle&lt;&#39;a&gt;<br />
                           <strong>Type parameters:</strong> 'a                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/81ad36/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L15-15" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L97-97" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           <p>Creates a terminal with the given name, specified by the given <a href="farkle-builder-regex.html" title="Regex"><code>Regex</code></a>.
-Its content will be post-processed by the given <code>T</code> delegate.</p>
+Its content will be post-processed by the given <a href="farkle-builder-t.html" title="T"><code>T</code></a> delegate.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '52', 52)" onmouseover="showTip(event, '52', 52)">
+            terminalU name regex
+          </code>
+          <div class="tip" id="52">
+            <strong>Signature:</strong> name:string -&gt; regex:Regex -&gt; DesigntimeFarkle<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L102-102" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Creates a terminal with the given name,
+specified by the given <a href="farkle-builder-regex.html" title="Regex"><code>Regex</code></a>,
+but not returning anything.</p>
 
 
         </td>
@@ -538,6 +601,7 @@ Its content will be post-processed by the given <code>T</code> delegate.</p>
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
+            <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
             <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>
         </div>

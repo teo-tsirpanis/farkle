@@ -10,7 +10,7 @@
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" async></script>
-    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" integrity="sha384-4FeI0trTH/PCsLWrGCD1mScoFu9Jf2NdknFdFoJhXZFwsvzZ3Bo5sAh7+zL8Xgnd" crossorigin="anonymous">
 
     <link type="text/css" rel="stylesheet" href="/Farkle/content/style.css" />
@@ -44,6 +44,9 @@
 <p>10: By the way, Farkle means: "FArkle Recognizes Known Languages Easily".</p>
 <p>20: And "FArkle" means: (GOTO 10).</p>
 <p>30: I guess you can't read this line.</p>
+<blockquote>
+<p>The original idea was to name the designtime Farkles simply <em>Farkles</em>, but having a type named <code>Farkle.Farkle</code> would create lots of confusion and compile errors.</p>
+</blockquote>
 <h2><a name="Designing-our-grammar" class="anchor" href="#Designing-our-grammar">Designing our grammar</a></h2>
 <p>We want to design a grammar that represents a mathematical expressions on floating-point numbers. The supported operations will be addition, subtraction, multiplication, division, and unary negation. The operator precedence has to be honored, as well as parentheses.</p>
 <p>A similar grammar but on the integers, can be found <a href="https://github.com/teo-tsirpanis/Farkle/blob/2ecc66d6b7b43a1b52b889aec78e865c0c5cf325/sample/Farkle.JSON.FSharp/SimpleMaths.fs#L68">here</a></p>
@@ -256,7 +259,7 @@
 <p>The magic lies within the <code>nonterminal</code> function. With this function, we create a nonterminal with a name, but we can set its production <em>later</em> with the <code>SetProductions</code> method. We can only once set them, all together. Calling the method again will be ignored.</p>
 <p>The nonterminals are of type <code>Nonterminal&lt;float&gt;</code>, but implement <code>DesigntimeFarkle&lt;float&gt;</code>; it's actually an interface.</p>
 <blockquote>
-<p><strong>Warning:</strong> Despite designtime Farkles being interfaces, implementing it on your code is not allowed and will throw an exception if used.</p>
+<p><strong>Warning:</strong> Despite designtime Farkles being interfaces, implementing it on your code is not allowed and will throw an exception if done.</p>
 </blockquote>
 <h2><a name="Building-our-grammar" class="anchor" href="#Building-our-grammar">Building our grammar</a></h2>
 <p>With our nonterminals being ready, it's time to create a runtime Farkle that can parse mathematical expressions. The builder uses the LALR algorithm to create parser tables for our parser. It also creates a post-processor that will handle the parsed numbers.</p>
@@ -377,12 +380,12 @@
 <div class="tip" id="fs26">val multExp : Nonterminal&lt;float&gt;</div>
 <div class="tip" id="fs27">val negateExp : Nonterminal&lt;float&gt;</div>
 <div class="tip" id="fs28">val value : Nonterminal&lt;float&gt;</div>
-<div class="tip" id="fs29">val nonterminal : name:string -&gt; Nonterminal&lt;&#39;b&gt;</div>
+<div class="tip" id="fs29">val nonterminal : name:string -&gt; Nonterminal&lt;&#39;a&gt;</div>
 <div class="tip" id="fs30">val expression : DesigntimeFarkle&lt;float&gt;</div>
 <div class="tip" id="fs31">val id : x:&#39;T -&gt; &#39;T</div>
 <div class="tip" id="fs32">member Nonterminal.SetProductions : firstProd:Production&lt;&#39;T&gt; * [&lt;System.ParamArray&gt;] prods:Production&lt;&#39;T&gt; [] -&gt; unit</div>
 <div class="tip" id="fs33">val myMarvelousRuntimeFarkle : RuntimeFarkle&lt;float&gt;</div>
-<div class="tip" id="fs34">Multiple items<br />module RuntimeFarkle<br /><br />from Farkle<br /><br />--------------------<br />type RuntimeFarkle&lt;&#39;TResult&gt; =<br />&#160;&#160;private {Grammar: Result&lt;(Grammar * OptimizedOperations),BuildError&gt;;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;PostProcessor: PostProcessor&lt;&#39;TResult&gt;;}<br />&#160;&#160;&#160;&#160;member TryGetGrammar : unit -&gt; Result&lt;Grammar,BuildError&gt;<br />&#160;&#160;&#160;&#160;static member Create : fileName:string * postProcessor:PostProcessor&lt;&#39;a1&gt; -&gt; RuntimeFarkle&lt;&#39;a1&gt;<br />&#160;&#160;&#160;&#160;static member Create : grammar:Grammar * postProcessor:PostProcessor&lt;&#39;a1&gt; -&gt; RuntimeFarkle&lt;&#39;a1&gt;<br />&#160;&#160;&#160;&#160;static member CreateFromBase64String : str:string * postProcessor:PostProcessor&lt;&#39;a1&gt; -&gt; RuntimeFarkle&lt;&#39;a1&gt;<br />&#160;&#160;&#160;&#160;static member private CreateMaybe : postProcessor:PostProcessor&lt;&#39;a1&gt; -&gt; grammarMaybe:Result&lt;Grammar,BuildError&gt; -&gt; RuntimeFarkle&lt;&#39;a1&gt;</div>
+<div class="tip" id="fs34">Multiple items<br />module RuntimeFarkle<br /><br />from Farkle<br /><br />--------------------<br />type RuntimeFarkle&lt;&#39;TResult&gt; =<br />&#160;&#160;private {Grammar: Result&lt;(Grammar * OptimizedOperations),BuildError&gt;;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;PostProcessor: PostProcessor&lt;&#39;TResult&gt;;}<br />&#160;&#160;&#160;&#160;member GetBuildErrorMessage : unit -&gt; string<br />&#160;&#160;&#160;&#160;member GetGrammar : unit -&gt; Grammar<br />&#160;&#160;&#160;&#160;member IsBuildSuccessful : bool<br />&#160;&#160;&#160;&#160;static member Create : fileName:string * postProcessor:PostProcessor&lt;&#39;a1&gt; -&gt; RuntimeFarkle&lt;&#39;a1&gt;<br />&#160;&#160;&#160;&#160;static member Create : grammar:Grammar * postProcessor:PostProcessor&lt;&#39;a1&gt; -&gt; RuntimeFarkle&lt;&#39;a1&gt;<br />&#160;&#160;&#160;&#160;static member CreateFromBase64String : str:string * postProcessor:PostProcessor&lt;&#39;a1&gt; -&gt; RuntimeFarkle&lt;&#39;a1&gt;<br />&#160;&#160;&#160;&#160;static member private CreateMaybe : postProcessor:PostProcessor&lt;&#39;a1&gt; -&gt; grammarMaybe:Result&lt;Grammar,BuildError&gt; -&gt; RuntimeFarkle&lt;&#39;a1&gt;</div>
 <div class="tip" id="fs35">val build : df:DesigntimeFarkle&lt;&#39;a&gt; -&gt; RuntimeFarkle&lt;&#39;a&gt;</div>
 <div class="tip" id="fs36">namespace System.IO</div>
 <div class="tip" id="fs37">val parse : rf:RuntimeFarkle&lt;&#39;a&gt; -&gt; x:string -&gt; Result&lt;&#39;a,FarkleError&gt;</div>
@@ -428,6 +431,7 @@
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
+            <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
             <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>
         </div>
