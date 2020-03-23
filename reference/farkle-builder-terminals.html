@@ -72,12 +72,12 @@ are commonly used in many grammars.</p>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/Terminals.fs#L131-131" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/Builder/Terminals.fs#L150-150" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           <p>Creates a designtime Farkle that parses and returns
-a single-precision floating-point number. The number
+a signed decimal floating-point number. The number
 is expected to be written in scientific notation, with
 the decimal point symbol being the dot.</p>
 
@@ -100,12 +100,12 @@ the decimal point symbol being the dot.</p>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/Terminals.fs#L124-124" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/Builder/Terminals.fs#L143-143" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           <p>Creates a designtime Farkle that parses and returns
-a single-precision floating-point number. The number
+a signed double-precision floating-point number. The number
 is expected to be written in scientific notation, with
 the decimal point symbol being the dot. Special values
 such as NaN or infinity are not recognized.</p>
@@ -129,12 +129,12 @@ such as NaN or infinity are not recognized.</p>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/Terminals.fs#L116-116" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/Builder/Terminals.fs#L135-135" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           <p>Creates a designtime Farkle that parses and returns
-a single-precision floating-point number. The number
+a signed single-precision floating-point number. The number
 is expected to be written in scientific notation, with
 the decimal point symbol being the dot. Special values
 such as NaN or infinity are not recognized.</p>
@@ -147,19 +147,45 @@ such as NaN or infinity are not recognized.</p>
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '250', 250)" onmouseover="showTip(event, '250', 250)">
-            Terminals.genericSigned(name)
+            Terminals.genericReal allowSign name
           </code>
           <div class="tip" id="250">
+            <strong>Signature:</strong> allowSign:bool -&gt; name:string -&gt; DesigntimeFarkle&lt;^TReal&gt;<br />
+                          <strong>Type parameters:</strong> ^TReal                        <span>
+            <strong>Attributes:</strong><br />
+[&lt;CompiledName(&quot;FSharpOnlyGenericReal&quot;)&gt;]<br />
+[&lt;RequiresExplicitTypeArguments&gt;]<br />
+[&lt;NoDynamicInvocation&gt;]<br />
+          </span>
+          </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/Builder/Terminals.fs#L117-117" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+              <p>CompiledName: <code>FSharpOnlyGenericReal</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '251', 251)" onmouseover="showTip(event, '251', 251)">
+            Terminals.genericSigned(name)
+          </code>
+          <div class="tip" id="251">
             <strong>Signature:</strong> name:string -&gt; DesigntimeFarkle&lt;^TInt&gt;<br />
                           <strong>Type parameters:</strong> ^TInt                        <span>
             <strong>Attributes:</strong><br />
 [&lt;CompiledName(&quot;FSharpOnlyGenericSigned&quot;)&gt;]<br />
 [&lt;RequiresExplicitTypeArguments&gt;]<br />
+[&lt;NoDynamicInvocation&gt;]<br />
           </span>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/Terminals.fs#L56-56" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/Builder/Terminals.fs#L58-58" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -170,20 +196,21 @@ such as NaN or infinity are not recognized.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '251', 251)" onmouseover="showTip(event, '251', 251)">
+          <code onmouseout="hideTip(event, '252', 252)" onmouseover="showTip(event, '252', 252)">
             Terminals.genericUnsigned(name)
           </code>
-          <div class="tip" id="251">
+          <div class="tip" id="252">
             <strong>Signature:</strong> name:string -&gt; DesigntimeFarkle&lt;^TInt&gt;<br />
                           <strong>Type parameters:</strong> ^TInt                        <span>
             <strong>Attributes:</strong><br />
 [&lt;CompiledName(&quot;FSharpOnlyGenericUnsigned&quot;)&gt;]<br />
 [&lt;RequiresExplicitTypeArguments&gt;]<br />
+[&lt;NoDynamicInvocation&gt;]<br />
           </span>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/Terminals.fs#L39-39" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/Builder/Terminals.fs#L40-40" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -194,10 +221,10 @@ such as NaN or infinity are not recognized.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '252', 252)" onmouseover="showTip(event, '252', 252)">
+          <code onmouseout="hideTip(event, '253', 253)" onmouseover="showTip(event, '253', 253)">
             Terminals.int(name)
           </code>
-          <div class="tip" id="252">
+          <div class="tip" id="253">
             <strong>Signature:</strong> name:string -&gt; DesigntimeFarkle&lt;int&gt;<br />
                                     <span>
             <strong>Attributes:</strong><br />
@@ -206,7 +233,7 @@ such as NaN or infinity are not recognized.</p>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/Terminals.fs#L66-66" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/Builder/Terminals.fs#L68-68" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -220,10 +247,10 @@ signed 32-bit signed integer. No bounds checking is performed.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '253', 253)" onmouseover="showTip(event, '253', 253)">
+          <code onmouseout="hideTip(event, '254', 254)" onmouseover="showTip(event, '254', 254)">
             Terminals.int64(name)
           </code>
-          <div class="tip" id="253">
+          <div class="tip" id="254">
             <strong>Signature:</strong> name:string -&gt; DesigntimeFarkle&lt;int64&gt;<br />
                                     <span>
             <strong>Attributes:</strong><br />
@@ -232,7 +259,7 @@ signed 32-bit signed integer. No bounds checking is performed.</p>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/Terminals.fs#L71-71" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/Builder/Terminals.fs#L73-73" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -246,15 +273,19 @@ signed 64-bit signed integer. No bounds checking is performed.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '254', 254)" onmouseover="showTip(event, '254', 254)">
-            Terminals.signedRegex
+          <code onmouseout="hideTip(event, '255', 255)" onmouseover="showTip(event, '255', 255)">
+            Terminals.signedIntRegex
           </code>
-          <div class="tip" id="254">
+          <div class="tip" id="255">
             <strong>Signature:</strong> Regex<br />
-                                  </div>
+                                    <span>
+            <strong>Attributes:</strong><br />
+[&lt;CompiledName(&quot;SignedIntRegex&quot;)&gt;]<br />
+          </span>
+          </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/Terminals.fs#L49-49" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/Builder/Terminals.fs#L51-51" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -263,15 +294,42 @@ that might be prefixed with a minus sign "-".
 Leading zeros are accepted.</p>
 
 
+              <p>CompiledName: <code>SignedIntRegex</code></p>
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '255', 255)" onmouseover="showTip(event, '255', 255)">
+          <code onmouseout="hideTip(event, '256', 256)" onmouseover="showTip(event, '256', 256)">
+            Terminals.signedRealRegex
+          </code>
+          <div class="tip" id="256">
+            <strong>Signature:</strong> Regex<br />
+                                    <span>
+            <strong>Attributes:</strong><br />
+[&lt;CompiledName(&quot;SignedRealRegex&quot;)&gt;]<br />
+          </span>
+          </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/Builder/Terminals.fs#L111-111" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Like <code>unsignedRealRegex</code>, but with an optional
+sign in the beginning being allowed.</p>
+
+
+              <p>CompiledName: <code>SignedRealRegex</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '257', 257)" onmouseover="showTip(event, '257', 257)">
             Terminals.string delim name
           </code>
-          <div class="tip" id="255">
+          <div class="tip" id="257">
             <strong>Signature:</strong> delim:char -&gt; name:string -&gt; DesigntimeFarkle&lt;string&gt;<br />
                                     <span>
             <strong>Attributes:</strong><br />
@@ -280,7 +338,7 @@ Leading zeros are accepted.</p>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/Terminals.fs#L207-207" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/Builder/Terminals.fs#L226-226" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -293,10 +351,10 @@ Leading zeros are accepted.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '256', 256)" onmouseover="showTip(event, '256', 256)">
+          <code onmouseout="hideTip(event, '258', 258)" onmouseover="showTip(event, '258', 258)">
             Terminals.stringEx(...)
           </code>
-          <div class="tip" id="256">
+          <div class="tip" id="258">
             <strong>Signature:</strong> escapeChars:seq&lt;char&gt; -&gt; allowEscapeUnicode:bool -&gt; multiline:bool -&gt; delim:char -&gt; name:string -&gt; DesigntimeFarkle&lt;string&gt;<br />
                                     <span>
             <strong>Attributes:</strong><br />
@@ -305,7 +363,7 @@ Leading zeros are accepted.</p>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/Terminals.fs#L176-176" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/Builder/Terminals.fs#L195-195" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -319,10 +377,10 @@ string. It supports escaping with a backslash "\".</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '257', 257)" onmouseover="showTip(event, '257', 257)">
+          <code onmouseout="hideTip(event, '259', 259)" onmouseover="showTip(event, '259', 259)">
             Terminals.uint32(name)
           </code>
-          <div class="tip" id="257">
+          <div class="tip" id="259">
             <strong>Signature:</strong> name:string -&gt; DesigntimeFarkle&lt;uint32&gt;<br />
                                     <span>
             <strong>Attributes:</strong><br />
@@ -331,7 +389,7 @@ string. It supports escaping with a backslash "\".</p>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/Terminals.fs#L76-76" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/Builder/Terminals.fs#L78-78" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -345,10 +403,10 @@ signed 32-bit unsigned integer. No bounds checking is performed.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '258', 258)" onmouseover="showTip(event, '258', 258)">
+          <code onmouseout="hideTip(event, '260', 260)" onmouseover="showTip(event, '260', 260)">
             Terminals.uint64(name)
           </code>
-          <div class="tip" id="258">
+          <div class="tip" id="260">
             <strong>Signature:</strong> name:string -&gt; DesigntimeFarkle&lt;uint64&gt;<br />
                                     <span>
             <strong>Attributes:</strong><br />
@@ -357,7 +415,7 @@ signed 32-bit unsigned integer. No bounds checking is performed.</p>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/Terminals.fs#L81-81" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/Builder/Terminals.fs#L83-83" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -371,15 +429,19 @@ signed 64-bit unsigned integer. No bounds checking is performed.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '259', 259)" onmouseover="showTip(event, '259', 259)">
-            Terminals.unsignedRegex
+          <code onmouseout="hideTip(event, '261', 261)" onmouseover="showTip(event, '261', 261)">
+            Terminals.unsignedIntRegex
           </code>
-          <div class="tip" id="259">
+          <div class="tip" id="261">
             <strong>Signature:</strong> Regex<br />
-                                  </div>
+                                    <span>
+            <strong>Attributes:</strong><br />
+[&lt;CompiledName(&quot;UnsignedIntRegex&quot;)&gt;]<br />
+          </span>
+          </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fc8773/src/Farkle/Builder/Terminals.fs#L33-33" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/Builder/Terminals.fs#L34-34" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -387,6 +449,36 @@ signed 64-bit unsigned integer. No bounds checking is performed.</p>
 Leading zeros are accepted.</p>
 
 
+              <p>CompiledName: <code>UnsignedIntRegex</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '262', 262)" onmouseover="showTip(event, '262', 262)">
+            Terminals.unsignedRealRegex
+          </code>
+          <div class="tip" id="262">
+            <strong>Signature:</strong> Regex<br />
+                                    <span>
+            <strong>Attributes:</strong><br />
+[&lt;CompiledName(&quot;UnsignedRealRegex&quot;)&gt;]<br />
+          </span>
+          </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/Builder/Terminals.fs#L91-91" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>A <a href="farkle-builder-regex.html" title="Regex"><code>Regex</code></a> that recognizes an unsigned real number.
+The number is expected to be written in scientific
+notation, with the decimal point symbol being the dot.
+Numbers before or after the dot are optional, but they
+must exist in at least one of the two places.</p>
+
+
+              <p>CompiledName: <code>UnsignedRealRegex</code></p>
         </td>
       </tr>
     </tbody>
