@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>EGTFileException - Farkle</title>
+    <title>PostProcessor<'T> - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -34,39 +34,41 @@
 
 
 
-<h1>EGTFileException</h1>
+<h1>PostProcessor<'T></h1>
 <p>
 
-    <span>Namespace: Farkle.Grammar.GOLDParser</span><br />
+    <span>Namespace: Farkle</span><br />
     </p>
 <div class="xmldoc">
-<p>An exception that gets thrown when
-reading an EGT file goes wrong.</p>
+<p>Post-processors convert strings of a grammar into more
+meaningful types for the library that uses the parser.</p>
 
 </div>
-  <h3>Constructors</h3>
+  <h3>Instance members</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Constructor</td><td>Description</td></tr>
+      <tr><td>Instance member</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '492', 492)" onmouseover="showTip(event, '492', 492)">
-            new(msg)
+          <code onmouseout="hideTip(event, '305', 305)" onmouseover="showTip(event, '305', 305)">
+            x.Fuse(arg1, arg2)
           </code>
-          <div class="tip" id="492">
-            <strong>Signature:</strong> msg:string -&gt; EGTFileException<br />
+          <div class="tip" id="305">
+            <strong>Signature:</strong> (Production * obj []) -&gt; obj<br />
+              <strong>Modifiers:</strong> abstract<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/Grammar/EGTReader.fs#L14-14" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/PostProcessor.fs#L23-23" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
-              <p>CompiledName: <code>.ctor</code></p>
+          <p>Fuses the many members of a  into one arbitrary object.</p>
+
+
         </td>
       </tr>
     </tbody>
@@ -91,6 +93,7 @@ reading an EGT file goes wrong.</p>
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
+            <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
             <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>

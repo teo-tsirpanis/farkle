@@ -54,10 +54,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '3', 3)" onmouseover="showTip(event, '3', 3)">
+          <code onmouseout="hideTip(event, '5', 5)" onmouseover="showTip(event, '5', 5)">
             build(df)
           </code>
-          <div class="tip" id="3">
+          <div class="tip" id="5">
             <strong>Signature:</strong> df:DesigntimeFarkle&lt;&#39;a&gt; -&gt; RuntimeFarkle&lt;&#39;a&gt;<br />
                           <strong>Type parameters:</strong> 'a                        <span>
             <strong>Attributes:</strong><br />
@@ -66,13 +66,15 @@
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/RuntimeFarkle.fs#L135-135" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/RuntimeFarkle.fs#L155-155" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           <p>Creates a <a href="farkle-runtimefarkle.html" title="RuntimeFarkle"><code>RuntimeFarkle</code></a> from the given <code>DesigntimeFarkle&lt;T&gt;</code>.
 In case there is a problem with the grammar,
-the <a href="farkle-runtimefarkle.html" title="RuntimeFarkle"><code>RuntimeFarkle</code></a> will fail every time it is used.</p>
+the <a href="farkle-runtimefarkle.html" title="RuntimeFarkle"><code>RuntimeFarkle</code></a> will fail every time it is used.
+If the designtime Farkle is marked for precompilation and a suitable
+precompiled grammar is found, building it again will be avoided.</p>
 
 
               <p>CompiledName: <code>Build</code></p>
@@ -81,10 +83,10 @@ the <a href="farkle-runtimefarkle.html" title="RuntimeFarkle"><code>RuntimeFarkl
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '4', 4)" onmouseover="showTip(event, '4', 4)">
+          <code onmouseout="hideTip(event, '6', 6)" onmouseover="showTip(event, '6', 6)">
             buildUntyped(df)
           </code>
-          <div class="tip" id="4">
+          <div class="tip" id="6">
             <strong>Signature:</strong> df:DesigntimeFarkle -&gt; RuntimeFarkle&lt;unit&gt;<br />
                                     <span>
             <strong>Attributes:</strong><br />
@@ -93,12 +95,12 @@ the <a href="farkle-runtimefarkle.html" title="RuntimeFarkle"><code>RuntimeFarkl
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/RuntimeFarkle.fs#L142-142" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/RuntimeFarkle.fs#L163-163" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Creates a syntax-checking <a href="farkle-runtimefarkle.html" title="RuntimeFarkle"><code>RuntimeFarkle</code></a> from an
-untyped <a href="farkle-builder-designtimefarkle.html" title="DesigntimeFarkle"><code>DesigntimeFarkle</code></a>.</p>
+          <p>Creates a syntax-checking <a href="farkle-runtimefarkle.html" title="RuntimeFarkle"><code>RuntimeFarkle</code></a>
+from an untyped <a href="farkle-builder-designtimefarkle.html" title="DesigntimeFarkle"><code>DesigntimeFarkle</code></a>.</p>
 
 
               <p>CompiledName: <code>BuildUntyped</code></p>
@@ -107,10 +109,10 @@ untyped <a href="farkle-builder-designtimefarkle.html" title="DesigntimeFarkle">
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '5', 5)" onmouseover="showTip(event, '5', 5)">
+          <code onmouseout="hideTip(event, '7', 7)" onmouseover="showTip(event, '7', 7)">
             changePostProcessor pp rf
           </code>
-          <div class="tip" id="5">
+          <div class="tip" id="7">
             <strong>Signature:</strong> pp:PostProcessor&lt;&#39;a&gt; -&gt; rf:RuntimeFarkle&lt;&#39;b&gt; -&gt; RuntimeFarkle&lt;&#39;a&gt;<br />
                           <strong>Type parameters:</strong> 'a, 'b                        <span>
             <strong>Attributes:</strong><br />
@@ -119,7 +121,7 @@ untyped <a href="farkle-builder-designtimefarkle.html" title="DesigntimeFarkle">
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/RuntimeFarkle.fs#L105-105" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/RuntimeFarkle.fs#L123-123" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -132,19 +134,19 @@ untyped <a href="farkle-builder-designtimefarkle.html" title="DesigntimeFarkle">
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '6', 6)" onmouseover="showTip(event, '6', 6)">
+          <code onmouseout="hideTip(event, '8', 8)" onmouseover="showTip(event, '8', 8)">
             create postProcessor grammar
           </code>
-          <div class="tip" id="6">
-            <strong>Signature:</strong> postProcessor:PostProcessor&lt;&#39;?11109&gt; -&gt; grammar:Grammar -&gt; RuntimeFarkle&lt;&#39;?11109&gt;<br />
-                          <strong>Type parameters:</strong> '?11109                        <span>
+          <div class="tip" id="8">
+            <strong>Signature:</strong> postProcessor:PostProcessor&lt;&#39;?11004&gt; -&gt; grammar:Grammar -&gt; RuntimeFarkle&lt;&#39;?11004&gt;<br />
+                          <strong>Type parameters:</strong> '?11004                        <span>
             <strong>Attributes:</strong><br />
 [&lt;CompiledName(&quot;Create&quot;)&gt;]<br />
           </span>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/RuntimeFarkle.fs#L112-112" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/RuntimeFarkle.fs#L130-130" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -157,19 +159,54 @@ untyped <a href="farkle-builder-designtimefarkle.html" title="DesigntimeFarkle">
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '7', 7)" onmouseover="showTip(event, '7', 7)">
+          <code onmouseout="hideTip(event, '9', 9)" onmouseover="showTip(event, '9', 9)">
+            markForPrecompile(df)
+          </code>
+          <div class="tip" id="9">
+            <strong>Signature:</strong> df:DesigntimeFarkle&lt;&#39;?11013&gt; -&gt; DesigntimeFarkle&lt;&#39;?11013&gt;<br />
+                          <strong>Type parameters:</strong> '?11013                        <span>
+            <strong>Attributes:</strong><br />
+[&lt;CompiledName(&quot;MarkForPrecompile&quot;)&gt;]<br />
+[&lt;MethodImpl(8)&gt;]<br />
+          </span>
+          </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/RuntimeFarkle.fs#L179-179" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Marks the given designtime as available to have its grammar
+precompiled ahead of time. Besides performance improvements,
+precompiling a grammar reports any errors at compile-time
+instead of when a string is going to be parsed.
+For this function to have effect, it has to be applied to the
+topmost designtime Farkle that is stored in a read-only static
+field (like a let-cound value in a module). Untyped designtime
+Farkles can use DesigntimeFarkle.cast and then cast back to
+the untyped designtime Farkle. This function also has to be
+called directly from user code.</p>
+
+
+              <p>CompiledName: <code>MarkForPrecompile</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '10', 10)" onmouseover="showTip(event, '10', 10)">
             ofBase64String postProcessor x
           </code>
-          <div class="tip" id="7">
-            <strong>Signature:</strong> postProcessor:PostProcessor&lt;&#39;?11113&gt; -&gt; x:string -&gt; RuntimeFarkle&lt;&#39;?11113&gt;<br />
-                          <strong>Type parameters:</strong> '?11113                        <span>
+          <div class="tip" id="10">
+            <strong>Signature:</strong> postProcessor:PostProcessor&lt;&#39;?11008&gt; -&gt; x:string -&gt; RuntimeFarkle&lt;&#39;?11008&gt;<br />
+                          <strong>Type parameters:</strong> '?11008                        <span>
             <strong>Attributes:</strong><br />
 [&lt;CompiledName(&quot;CreateFromBase64String&quot;)&gt;]<br />
           </span>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/RuntimeFarkle.fs#L128-128" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/RuntimeFarkle.fs#L146-146" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -185,19 +222,19 @@ an exception will be raised.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '8', 8)" onmouseover="showTip(event, '8', 8)">
+          <code onmouseout="hideTip(event, '11', 11)" onmouseover="showTip(event, '11', 11)">
             ofEGTFile postProcessor fileName
           </code>
-          <div class="tip" id="8">
-            <strong>Signature:</strong> postProcessor:PostProcessor&lt;&#39;?11111&gt; -&gt; fileName:string -&gt; RuntimeFarkle&lt;&#39;?11111&gt;<br />
-                          <strong>Type parameters:</strong> '?11111                        <span>
+          <div class="tip" id="11">
+            <strong>Signature:</strong> postProcessor:PostProcessor&lt;&#39;?11006&gt; -&gt; fileName:string -&gt; RuntimeFarkle&lt;&#39;?11006&gt;<br />
+                          <strong>Type parameters:</strong> '?11006                        <span>
             <strong>Attributes:</strong><br />
 [&lt;CompiledName(&quot;CreateFromFile&quot;)&gt;]<br />
           </span>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/RuntimeFarkle.fs#L120-120" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/RuntimeFarkle.fs#L138-138" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -213,19 +250,19 @@ an exception will be raised.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '9', 9)" onmouseover="showTip(event, '9', 9)">
+          <code onmouseout="hideTip(event, '12', 12)" onmouseover="showTip(event, '12', 12)">
             parse rf x
           </code>
-          <div class="tip" id="9">
-            <strong>Signature:</strong> rf:RuntimeFarkle&lt;&#39;?11130&gt; -&gt; x:string -&gt; Result&lt;&#39;?11130,FarkleError&gt;<br />
-                          <strong>Type parameters:</strong> '?11130                        <span>
+          <div class="tip" id="12">
+            <strong>Signature:</strong> rf:RuntimeFarkle&lt;&#39;?11028&gt; -&gt; x:string -&gt; Result&lt;&#39;?11028,FarkleError&gt;<br />
+                          <strong>Type parameters:</strong> '?11028                        <span>
             <strong>Attributes:</strong><br />
 [&lt;CompiledName(&quot;Parse&quot;)&gt;]<br />
           </span>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/RuntimeFarkle.fs#L205-205" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/RuntimeFarkle.fs#L247-247" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -238,10 +275,10 @@ an exception will be raised.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '10', 10)" onmouseover="showTip(event, '10', 10)">
+          <code onmouseout="hideTip(event, '13', 13)" onmouseover="showTip(event, '13', 13)">
             parseChars rf fMessage input
           </code>
-          <div class="tip" id="10">
+          <div class="tip" id="13">
             <strong>Signature:</strong> rf:RuntimeFarkle&lt;&#39;TResult&gt; -&gt; fMessage:(ParseMessage -&gt; unit) -&gt; input:CharStream -&gt; Result&lt;&#39;TResult,FarkleError&gt;<br />
                           <strong>Type parameters:</strong> 'TResult                        <span>
             <strong>Attributes:</strong><br />
@@ -250,7 +287,7 @@ an exception will be raised.</p>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/RuntimeFarkle.fs#L151-151" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/RuntimeFarkle.fs#L193-193" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -264,10 +301,10 @@ This function also accepts a custom parse message handler.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '11', 11)" onmouseover="showTip(event, '11', 11)">
+          <code onmouseout="hideTip(event, '14', 14)" onmouseover="showTip(event, '14', 14)">
             parseFile rf fMessage inputFile
           </code>
-          <div class="tip" id="11">
+          <div class="tip" id="14">
             <strong>Signature:</strong> rf:RuntimeFarkle&lt;&#39;a&gt; -&gt; fMessage:(ParseMessage -&gt; unit) -&gt; inputFile:string -&gt; Result&lt;&#39;a,FarkleError&gt;<br />
                           <strong>Type parameters:</strong> 'a                        <span>
             <strong>Attributes:</strong><br />
@@ -276,7 +313,7 @@ This function also accepts a custom parse message handler.</p>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/RuntimeFarkle.fs#L197-197" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/RuntimeFarkle.fs#L239-239" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -290,10 +327,10 @@ This function also accepts a custom parse message handler.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '12', 12)" onmouseover="showTip(event, '12', 12)">
+          <code onmouseout="hideTip(event, '15', 15)" onmouseover="showTip(event, '15', 15)">
             parseMemory rf fMessage input
           </code>
-          <div class="tip" id="12">
+          <div class="tip" id="15">
             <strong>Signature:</strong> rf:RuntimeFarkle&lt;&#39;a&gt; -&gt; fMessage:(ParseMessage -&gt; unit) -&gt; input:(type) -&gt; Result&lt;&#39;a,FarkleError&gt;<br />
                           <strong>Type parameters:</strong> 'a                        <span>
             <strong>Attributes:</strong><br />
@@ -302,7 +339,7 @@ This function also accepts a custom parse message handler.</p>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/RuntimeFarkle.fs#L164-164" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/RuntimeFarkle.fs#L206-206" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -316,10 +353,10 @@ This function also accepts a custom parse message handler.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '13', 13)" onmouseover="showTip(event, '13', 13)">
+          <code onmouseout="hideTip(event, '16', 16)" onmouseover="showTip(event, '16', 16)">
             parseStream(...)
           </code>
-          <div class="tip" id="13">
+          <div class="tip" id="16">
             <strong>Signature:</strong> rf:RuntimeFarkle&lt;&#39;a&gt; -&gt; fMessage:(ParseMessage -&gt; unit) -&gt; doLazyLoad:bool -&gt; encoding:Encoding -&gt; inputStream:Stream -&gt; Result&lt;&#39;a,FarkleError&gt;<br />
                           <strong>Type parameters:</strong> 'a                        <span>
             <strong>Attributes:</strong><br />
@@ -333,7 +370,7 @@ This function also accepts a custom parse message handler.</p>
               <strong>WARNING: </strong> This API is obsolete
               <p>Streams are supposed to contain binary data; not text. Use parseTextReader instead.</p>
               </div> 
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/RuntimeFarkle.fs#L179-179" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/RuntimeFarkle.fs#L221-221" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -349,10 +386,10 @@ This function also accepts a custom parse message handler.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '14', 14)" onmouseover="showTip(event, '14', 14)">
+          <code onmouseout="hideTip(event, '17', 17)" onmouseover="showTip(event, '17', 17)">
             parseString rf fMessage inputString
           </code>
-          <div class="tip" id="14">
+          <div class="tip" id="17">
             <strong>Signature:</strong> rf:RuntimeFarkle&lt;&#39;a&gt; -&gt; fMessage:(ParseMessage -&gt; unit) -&gt; inputString:string -&gt; Result&lt;&#39;a,FarkleError&gt;<br />
                           <strong>Type parameters:</strong> 'a                        <span>
             <strong>Attributes:</strong><br />
@@ -361,7 +398,7 @@ This function also accepts a custom parse message handler.</p>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/RuntimeFarkle.fs#L170-170" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/RuntimeFarkle.fs#L212-212" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -375,10 +412,10 @@ This function also accepts a custom parse message handler.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '15', 15)" onmouseover="showTip(event, '15', 15)">
+          <code onmouseout="hideTip(event, '18', 18)" onmouseover="showTip(event, '18', 18)">
             parseTextReader rf fMessage textReader
           </code>
-          <div class="tip" id="15">
+          <div class="tip" id="18">
             <strong>Signature:</strong> rf:RuntimeFarkle&lt;&#39;a&gt; -&gt; fMessage:(ParseMessage -&gt; unit) -&gt; textReader:TextReader -&gt; Result&lt;&#39;a,FarkleError&gt;<br />
                           <strong>Type parameters:</strong> 'a                        <span>
             <strong>Attributes:</strong><br />
@@ -387,7 +424,7 @@ This function also accepts a custom parse message handler.</p>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/RuntimeFarkle.fs#L190-190" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/RuntimeFarkle.fs#L232-232" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -420,6 +457,7 @@ This function also accepts a custom parse message handler.</p>
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
+            <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
             <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>PostProcessor - Farkle</title>
+    <title>PostProcessors - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -34,12 +34,12 @@
 
 
 
-<h1>PostProcessor</h1>
+<h1>PostProcessors</h1>
 <p>
-  <span>Namespace: Farkle.PostProcessor</span><br />
+  <span>Namespace: Farkle</span><br />
   </p>
 <div class="xmldoc">
-<p>Functions to create <code>PostProcessor</code>s, as well as some ready to use.</p>
+<p>Some <code>PostProcessor</code>s, reusable and ready to use.</p>
 
 </div>
 
@@ -54,59 +54,44 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '304', 304)" onmouseover="showTip(event, '304', 304)">
+          <code onmouseout="hideTip(event, '3', 3)" onmouseover="showTip(event, '3', 3)">
             ast
           </code>
-          <div class="tip" id="304">
+          <div class="tip" id="3">
             <strong>Signature:</strong> PostProcessor&lt;AST&gt;<br />
-                                  </div>
+                                    <span>
+            <strong>Attributes:</strong><br />
+[&lt;CompiledName(&quot;AST&quot;)&gt;]<br />
+          </span>
+          </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/PostProcessor/PostProcessor.fs#L38-38" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/RuntimeFarkle.fs#L113-113" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           <p>This post-processor creates a domain-ignorant <a href="farkle-ast.html" title="AST"><code>AST</code></a>.</p>
 
 
+              <p>CompiledName: <code>AST</code></p>
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '305', 305)" onmouseover="showTip(event, '305', 305)">
-            ofSeq transformers fusers
+          <code onmouseout="hideTip(event, '4', 4)" onmouseover="showTip(event, '4', 4)">
+            syntaxCheck
           </code>
-          <div class="tip" id="305">
-            <strong>Signature:</strong> transformers:seq&lt;Transformer&gt; -&gt; fusers:seq&lt;Fuser&gt; -&gt; PostProcessor&lt;&#39;result&gt;<br />
-                          <strong>Type parameters:</strong> 'result                        <span>
+          <div class="tip" id="4">
+            <strong>Signature:</strong> PostProcessor&lt;unit&gt;<br />
+                                    <span>
             <strong>Attributes:</strong><br />
-[&lt;RequiresExplicitTypeArguments&gt;]<br />
+[&lt;CompiledName(&quot;SyntacChecker&quot;)&gt;]<br />
           </span>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/PostProcessor/PostProcessor.fs#L45-45" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Creates a <code>PostProcessor</code> from the given sequences of <a href="farkle-postprocessor-fsharptransformer.html" title="Transformer"><code>Transformer</code></a>s, and <code>Fuser</code>s.</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '306', 306)" onmouseover="showTip(event, '306', 306)">
-            syntaxCheck
-          </code>
-          <div class="tip" id="306">
-            <strong>Signature:</strong> PostProcessor&lt;unit&gt;<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/PostProcessor/PostProcessor.fs#L32-32" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/RuntimeFarkle.fs#L106-106" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -114,6 +99,7 @@
 It is useful for checking the syntax of a string with respect to a grammar.</p>
 
 
+              <p>CompiledName: <code>SyntacChecker</code></p>
         </td>
       </tr>
     </tbody>
@@ -138,6 +124,7 @@ It is useful for checking the syntax of a string with respect to a grammar.</p>
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
+            <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
             <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>

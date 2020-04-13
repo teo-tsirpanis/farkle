@@ -64,6 +64,17 @@
         </tr>
         <tr>
           <td class="type-name">
+            <a href="farkle-postprocessor-1.html">PostProcessor<'T></a>
+          </td>
+          <td class="xmldoc">
+          <p>Post-processors convert strings of a grammar into more
+meaningful types for the library that uses the parser.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
             <a href="farkle-runtimefarkle-1.html">RuntimeFarkle<'TResult></a>
           </td>
           <td class="xmldoc">
@@ -86,6 +97,16 @@ a specific type of object that best describes an expression of the language of t
           </td>
           <td class="xmldoc">
           <p>Functions to work with <a href="farkle-ast.html" title="AST"><code>AST</code></a>s.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-postprocessors.html">PostProcessors</a>
+          </td>
+          <td class="xmldoc">
+          <p>Some <code>PostProcessor</code>s, reusable and ready to use.</p>
 
 
           </td>
@@ -317,7 +338,7 @@ The algorithm is a modified edition of the one found at §3.9.5 in
           </td>
           <td class="xmldoc">
           <p>Functions to set metadata for designtime Farkles.
-Keep in mind that only the metadata of the <em>topmost</em>
+Keep in mind that apart from renames, only the metadata of the <em>topmost</em>
 designtime Farkle matter. Any other metadata changes will be disregarded.</p>
 
 
@@ -438,25 +459,7 @@ are commonly used in many grammars.</p>
     </div>
   <h2>Farkle.Collections Namespace</h2>
     <div>
-      <table class="table table-bordered type-list">
-    <thead>
-      <tr><td>Type</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-collections-rangemap-2.html">RangeMap<'key, 'a></a>
-          </td>
-          <td class="xmldoc">
-          <p>A map data structure that works best when a continuous range of keys is assigned the same value.
-It can also double as a set, when the value type is a unit.</p>
-
-
-          </td>
-        </tr>
-    </tbody>
-  </table>
-  <table class="table table-bordered module-list">
+      <table class="table table-bordered module-list">
     <thead>
       <tr><td>Module</td><td>Description</td></tr>
     </thead>
@@ -677,11 +680,26 @@ Group start and end symbols can be found at the group table.</p>
 
           </td>
         </tr>
+        <tr>
+          <td class="module-name">
+            <a href="farkle-grammar-egt.html">EGT</a>
+          </td>
+          <td class="xmldoc">
+          <p>Functions to read and write grammars from EGT files.
+Grammars can be read either from GOLD Parser's Enhanced
+Grammar Tables (version 5.0) or from Farkle's EGTneo format.
+EGTneo (new encoding option) is a file format designed for Farkle that
+is more compact and easier to read. GOLD Parser cannot read EGTneo files.
+Grammars can only be written in EGTneo format.</p>
+
+
+          </td>
+        </tr>
     </tbody>
   </table>
 
     </div>
-  <h2>Farkle.Grammar.GOLDParser Namespace</h2>
+  <h2>Farkle.Grammar.EGTFile Namespace</h2>
     <div>
       <table class="table table-bordered type-list">
     <thead>
@@ -690,7 +708,7 @@ Group start and end symbols can be found at the group table.</p>
     <tbody>
         <tr>
           <td class="type-name">
-            <a href="farkle-grammar-goldparser-egtfileexception.html">EGTFileException</a>
+            <a href="farkle-grammar-egtfile-egtfileexception.html">EGTFileException</a>
           </td>
           <td class="xmldoc">
           <p>An exception that gets thrown when
@@ -699,19 +717,12 @@ reading an EGT file goes wrong.</p>
 
           </td>
         </tr>
-    </tbody>
-  </table>
-  <table class="table table-bordered module-list">
-    <thead>
-      <tr><td>Module</td><td>Description</td></tr>
-    </thead>
-    <tbody>
         <tr>
-          <td class="module-name">
-            <a href="farkle-grammar-goldparser-egt.html">EGT</a>
+          <td class="type-name">
+            <a href="farkle-grammar-egtfile-entry.html">Entry</a>
           </td>
           <td class="xmldoc">
-          <p>Functions to read EGT files to make a grammar.</p>
+          <p>An entry of an EGT file.</p>
 
 
           </td>
@@ -883,126 +894,6 @@ Tokens carry post-processed terminals, as well as their position within the text
   </table>
 
     </div>
-  <h2>Farkle.PostProcessor Namespace</h2>
-    <div>
-      <table class="table table-bordered type-list">
-    <thead>
-      <tr><td>Type</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-postprocessor-fsharpfuser.html">Fuser</a>
-          </td>
-          <td class="xmldoc">
-          <p>This type contains the logic to "fuse" the multiple symbols of a production into an arbitrary object.
-These symbols are either transformed by a <a href="farkle-postprocessor-fsharptransformer.html" title="Transformer"><code>Transformer</code></a> if they are terminals,
-or, if they are productions, are the products of previous fusers.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-postprocessor-postprocessor-1.html">PostProcessor<'T></a>
-          </td>
-          <td class="xmldoc">
-          <p>Post-processors convert strings of a grammar into more
-meaningful types for the library that uses the parser.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-postprocessor-fsharptransformer.html">Transformer</a>
-          </td>
-          <td class="xmldoc">
-          <p>This type contains the logic to transform one terminal symbol to an arbitrary object.</p>
-
-
-          </td>
-        </tr>
-    </tbody>
-  </table>
-  <table class="table table-bordered module-list">
-    <thead>
-      <tr><td>Module</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td class="module-name">
-            <a href="farkle-postprocessor-fusermodule.html">Fuser</a>
-          </td>
-          <td class="xmldoc">
-          <p>Functions to create <code>Fuser</code>s.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="module-name">
-            <a href="farkle-postprocessor-postprocessor.html">PostProcessor</a>
-          </td>
-          <td class="xmldoc">
-          <p>Functions to create <code>PostProcessor</code>s, as well as some ready to use.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="module-name">
-            <a href="farkle-postprocessor-transformermodule.html">Transformer</a>
-          </td>
-          <td class="xmldoc">
-          <p>Functions to create <a href="farkle-postprocessor-fsharptransformer.html" title="Transformer"><code>Transformer</code></a>s.</p>
-
-
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-    </div>
-  <h2>Farkle.PostProcessor.CSharp Namespace</h2>
-    <div>
-      <table class="table table-bordered type-list">
-    <thead>
-      <tr><td>Type</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-postprocessor-csharp-fuser.html">Fuser</a>
-          </td>
-          <td class="xmldoc">
-          <p>An object that contains a function to convert a  to an arbitrary object.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-postprocessor-csharp-pp-1.html">PP<'a></a>
-          </td>
-          <td class="xmldoc">
-          
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-postprocessor-csharp-postprocessor.html">PostProcessor</a>
-          </td>
-          <td class="xmldoc">
-          <p>A helper class with methods to create a .</p>
-
-
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-    </div>
 
         </div>
         <div class="span3">
@@ -1023,6 +914,7 @@ meaningful types for the library that uses the parser.</p>
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
+            <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
             <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>

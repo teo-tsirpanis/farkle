@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Fuser - Farkle</title>
+    <title>EGT - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -34,44 +34,126 @@
 
 
 
-<h1>Fuser</h1>
+<h1>EGT</h1>
 <p>
-
-    <span>Namespace: Farkle.PostProcessor</span><br />
-            <span>
-            Attributes: <br />
-[&lt;CompiledName(&quot;FSharpFuser&quot;)&gt;]<br />
-            
-        </span>
-</p>
+  <span>Namespace: Farkle.Grammar</span><br />
+  </p>
 <div class="xmldoc">
-<p>This type contains the logic to "fuse" the multiple symbols of a production into an arbitrary object.
-These symbols are either transformed by a <a href="farkle-postprocessor-fsharptransformer.html" title="Transformer"><code>Transformer</code></a> if they are terminals,
-or, if they are productions, are the products of previous fusers.</p>
+<p>Functions to read and write grammars from EGT files.
+Grammars can be read either from GOLD Parser's Enhanced
+Grammar Tables (version 5.0) or from Farkle's EGTneo format.
+EGTneo (new encoding option) is a file format designed for Farkle that
+is more compact and easier to read. GOLD Parser cannot read EGTneo files.
+Grammars can only be written in EGTneo format.</p>
 
 </div>
-  <h3>Static members</h3>
+
+<!-- Render nested types and modules, if there are any -->
+
+  <h3>Functions and values</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Static member</td><td>Description</td></tr>
+      <tr><td>Function or value</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '526', 526)" onmouseover="showTip(event, '526', 526)">
-            Fuser.Create prod f
+          <code onmouseout="hideTip(event, '282', 282)" onmouseover="showTip(event, '282', 282)">
+            ofBase64String(str)
           </code>
-          <div class="tip" id="526">
-            <strong>Signature:</strong> prod:uint32 -&gt; (f:(obj [] -&gt; obj)) -&gt; Fuser<br />
-                                  </div>
+          <div class="tip" id="282">
+            <strong>Signature:</strong> str:string -&gt; Grammar<br />
+                                    <span>
+            <strong>Attributes:</strong><br />
+[&lt;CompiledName(&quot;ReadFromBase64String&quot;)&gt;]<br />
+          </span>
+          </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/PostProcessor/Fuser.fs#L14-14" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Grammar/EGT.fs#L39-39" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>Reads a <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a> from a Base64-encoded string.</p>
+
+
+              <p>CompiledName: <code>ReadFromBase64String</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '283', 283)" onmouseover="showTip(event, '283', 283)">
+            ofFile(path)
+          </code>
+          <div class="tip" id="283">
+            <strong>Signature:</strong> path:string -&gt; Grammar<br />
+                                    <span>
+            <strong>Attributes:</strong><br />
+[&lt;CompiledName(&quot;ReadFromFile&quot;)&gt;]<br />
+          </span>
+          </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Grammar/EGT.fs#L46-46" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Reads an EGT file from the file system and returns a <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a>.</p>
+
+
+              <p>CompiledName: <code>ReadFromFile</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '284', 284)" onmouseover="showTip(event, '284', 284)">
+            ofStream(stream)
+          </code>
+          <div class="tip" id="284">
+            <strong>Signature:</strong> stream:Stream -&gt; Grammar<br />
+                                    <span>
+            <strong>Attributes:</strong><br />
+[&lt;CompiledName(&quot;ReadFromStream&quot;)&gt;]<br />
+          </span>
+          </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Grammar/EGT.fs#L26-26" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Reads a <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a> from a stream.</p>
+
+
+              <p>CompiledName: <code>ReadFromStream</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '285', 285)" onmouseover="showTip(event, '285', 285)">
+            toStreamNeo stream grammar
+          </code>
+          <div class="tip" id="285">
+            <strong>Signature:</strong> stream:Stream -&gt; grammar:Grammar -&gt; unit<br />
+                                    <span>
+            <strong>Attributes:</strong><br />
+[&lt;CompiledName(&quot;WriteToStreamNeo&quot;)&gt;]<br />
+          </span>
+          </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Grammar/EGT.fs#L52-52" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Writes the given <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a> to a stream in the EGTneo format.</p>
+
+
+              <p>CompiledName: <code>WriteToStreamNeo</code></p>
         </td>
       </tr>
     </tbody>
@@ -96,6 +178,7 @@ or, if they are productions, are the products of previous fusers.</p>
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
+            <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
             <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>

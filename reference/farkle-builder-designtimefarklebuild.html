@@ -55,10 +55,10 @@ and <code>PostProcessor</code>s from <a href="farkle-builder-designtimefarkle.ht
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '24', 24)" onmouseover="showTip(event, '24', 24)">
+          <code onmouseout="hideTip(event, '29', 29)" onmouseover="showTip(event, '29', 29)">
             build(df)
           </code>
-          <div class="tip" id="24">
+          <div class="tip" id="29">
             <strong>Signature:</strong> df:DesigntimeFarkle&lt;&#39;TOutput&gt; -&gt; Result&lt;Grammar,BuildError&gt; * PostProcessor&lt;&#39;TOutput&gt;<br />
                           <strong>Type parameters:</strong> 'TOutput                        <span>
             <strong>Attributes:</strong><br />
@@ -67,13 +67,14 @@ and <code>PostProcessor</code>s from <a href="farkle-builder-designtimefarkle.ht
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/Builder/DesigntimeFarkleBuild.fs#L383-383" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Builder/DesigntimeFarkleBuild.fs#L372-372" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Creates a <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a> and a <code>PostProcessor</code>
-from a typed <a href="farkle-builder-designtimefarkle.html" title="DesigntimeFarkle"><code>DesigntimeFarkle</code></a>.
-The construction of the grammar may fail.</p>
+          <p>Creates a <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a> and a <code>PostProcessor</code> from a typed <a href="farkle-builder-designtimefarkle.html" title="DesigntimeFarkle"><code>DesigntimeFarkle</code></a>.
+The construction of the grammar may fail. In this case, the output of the
+post-processor is indeterminate. Using this function (and all others in this
+mudule) will always build a new grammar, even if a precompiled one is available.</p>
 
 
               <p>CompiledName: <code>Build</code></p>
@@ -82,10 +83,10 @@ The construction of the grammar may fail.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '25', 25)" onmouseover="showTip(event, '25', 25)">
+          <code onmouseout="hideTip(event, '30', 30)" onmouseover="showTip(event, '30', 30)">
             buildGrammarOnly(dg)
           </code>
-          <div class="tip" id="25">
+          <div class="tip" id="30">
             <strong>Signature:</strong> dg:GrammarDefinition -&gt; Result&lt;Grammar,BuildError&gt;<br />
                                     <span>
             <strong>Attributes:</strong><br />
@@ -94,7 +95,7 @@ The construction of the grammar may fail.</p>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/Builder/DesigntimeFarkleBuild.fs#L354-354" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Builder/DesigntimeFarkleBuild.fs#L342-342" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -107,10 +108,10 @@ The construction of the grammar may fail.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '26', 26)" onmouseover="showTip(event, '26', 26)">
+          <code onmouseout="hideTip(event, '31', 31)" onmouseover="showTip(event, '31', 31)">
             buildPostProcessorOnly(df)
           </code>
-          <div class="tip" id="26">
+          <div class="tip" id="31">
             <strong>Signature:</strong> df:DesigntimeFarkle&lt;&#39;TOutput&gt; -&gt; PostProcessor&lt;&#39;TOutput&gt;<br />
                           <strong>Type parameters:</strong> 'TOutput                        <span>
             <strong>Attributes:</strong><br />
@@ -119,7 +120,7 @@ The construction of the grammar may fail.</p>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/Builder/DesigntimeFarkleBuild.fs#L394-394" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Builder/DesigntimeFarkleBuild.fs#L383-383" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -135,10 +136,10 @@ having many designtime Farkles with an identical grammar but different post-proc
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '27', 27)" onmouseover="showTip(event, '27', 27)">
+          <code onmouseout="hideTip(event, '32', 32)" onmouseover="showTip(event, '32', 32)">
             createGrammarDefinition(df)
           </code>
-          <div class="tip" id="27">
+          <div class="tip" id="32">
             <strong>Signature:</strong> df:DesigntimeFarkle -&gt; GrammarDefinition<br />
                                     <span>
             <strong>Attributes:</strong><br />
@@ -147,7 +148,7 @@ having many designtime Farkles with an identical grammar but different post-proc
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/22bae5/src/Farkle/Builder/DesigntimeFarkleBuild.fs#L71-71" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Builder/DesigntimeFarkleBuild.fs#L72-72" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -179,6 +180,7 @@ having many designtime Farkles with an identical grammar but different post-proc
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
+            <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
             <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>

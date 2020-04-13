@@ -31,6 +31,13 @@
       <div class="row">
         <div class="span9" id="main">
           
+<h4><a name="6-0-0-alpha-1-13-04-2020" class="anchor" href="#6-0-0-alpha-1-13-04-2020">6.0.0-alpha.1 - 13-04-2020</a></h4>
+<ul>
+<li><strong>Breaking change:</strong> Removed the legacy API for creating runtime Farkles from EGT files (the API with the transformers and fusers). EGT files are still supported (for now), but users are strongly urged to rewrite their grammars using <code>Farkle.Builder</code>, or implement the <code>PostProcessor</code> interface themselves (not recommended).</li>
+<li><strong>Breaking change:</strong> The <code>PostProcessor</code> type was moved to the root <code>Farkle</code> namespace. Some reusable post-processors were moved to the new <code>Farkle.PostProcessors</code> module.</li>
+<li>Farkle can now build grammars at compile-time. See more in <a href="https://teo-tsirpanis.github.io/Farkle/the-precompiler.html.">https://teo-tsirpanis.github.io/Farkle/the-precompiler.html.</a></li>
+<li>Added a function to rename designtime Farkles; it might be useful for better diagnostic messages.</li>
+</ul>
 <h4><a name="5-4-1-23-03-2020" class="anchor" href="#5-4-1-23-03-2020">5.4.1 - 23-03-2020</a></h4>
 <ul>
 <li>Refactor some designtime Farkle functions (like <code>many1</code>) to use less nonterminals.</li>
@@ -209,6 +216,7 @@
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
+            <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
             <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>
