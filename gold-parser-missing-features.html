@@ -31,12 +31,11 @@
       <hr />
       <div class="row">
         <div class="span9" id="main">
-          
-<h1><a name="Missing-Features-from-GOLD-Parser" class="anchor" href="#Missing-Features-from-GOLD-Parser">Missing Features from GOLD Parser</a></h1>
+          <h1><a name="Missing-Features-from-GOLD-Parser" class="anchor" href="#Missing-Features-from-GOLD-Parser">Missing Features from GOLD Parser</a></h1>
 <p>When Farkle started being developed, it was an engine for GOLD Parser, as it still is. However, as it evolved, its architecture started diverging from the other engines. As a consequence, some of the lesser used and known things that GOLD Parser allowed are not allowed in Farkle. In this document, we are going to take a look at these things, and what to do about them.</p>
 <p>So, are we ready? Let's do this!</p>
 <h2><a name="Virtual-Terminals" class="anchor" href="#Virtual-Terminals">Virtual Terminals</a></h2>
-<p>When GOLD Parser's version 2.2 was released, back in 2004, one of its new features was the so-called "Virtual Terminals". So, what are these? A virtual terminal is a terminal that does not come from the engine's tokenizer, but from the user code that interacts with the engine. A connon use for virtual terminals is a parser for a language like Python. As you might have known, Python does not use keywords to define blocks of code, but instead uses indentation; the so-called "off-side rule". With virtual terminals, you could have written a grammar like this one:</p>
+<p>When GOLD Parser's version 2.2 was released, back in 2004, one of its new features was the so-called "Virtual Terminals". So, what are these? A virtual terminal is a terminal that does not come from the engine's tokenizer, but from the user code that interacts with the engine. A common use for virtual terminals is a parser for a language like Python. As you might have known, Python does not use keywords to define blocks of code, but instead uses indentation; the so-called "off-side rule". With virtual terminals, you could have written a grammar like this one:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
 <span class="l"> 2: </span>
 <span class="l"> 3: </span>
@@ -112,10 +111,11 @@
             <li class="nav-header">Farkle</li>
             <li><a href="/Farkle/index.html">Home page</a></li>
             <li class="divider"></li>
-            <li><a href="http://nuget.org/packages/Farkle">Get Library via NuGet</a></li>
+            <li><a href="https://nuget.org/packages/Farkle">Get Library via NuGet</a></li>
             <li><a href="https://github.com/teo-tsirpanis/Farkle">Source Code on GitHub</a></li>
             <li><a href="/Farkle/license.html">License</a></li>
             <li><a href="/Farkle/release-notes.html">Release Notes</a></li>
+            <li><a href="/Farkle/choosing-a-parser.html">Choosing a parser: Farkle vs alternatives</a></li>
 
             <li class="nav-header">Getting started</li>
             <li><a href="/Farkle/quickstart.html">Quick Start with F#</a></li>
@@ -124,6 +124,7 @@
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
+            <li><a href="/Farkle/string-regexes.html">String regex reference</a></li>
             <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
             <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>

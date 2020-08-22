@@ -31,16 +31,15 @@
       <hr />
       <div class="row">
         <div class="span9" id="main">
-          
-<h1><a name="Using-Farkle-from-C" class="anchor" href="#Using-Farkle-from-C">Using Farkle from C#</a></h1>
-<p>Farkle is a library written in F#, but supporting the much more used C# is a valuable feature. Because these two languages are quite different, there is a more idiomatic API for C# users. In this tutorial, we will assume that you have read <a href="quickstart.html">the F# quickstart guide</a>.</p>
+          <h1><a name="Using-Farkle-from-C" class="anchor" href="#Using-Farkle-from-C">Using Farkle from C#</a></h1>
+<p>Farkle is a library written in F#, but supporting the much more used C# is a valuable feature. Because these two languages are quite different, there is a more idiomatic API for C# users. In this tutorial, we will assume that you have read [the F# quickstart guide][fsharp].</p>
 <blockquote>
 <p>The API described here is available in F# as well.</p>
 </blockquote>
 <h2><a name="Building-grammars" class="anchor" href="#Building-grammars">Building grammars</a></h2>
-<p>F# programs using Farkle use an operator-ladden API to compose designtime Farkles. Because C# does not support custom operators, we can instead use a different API based on extension methods.</p>
+<p>F# programs using Farkle use an operator-laden API to compose designtime Farkles. Because C# does not support custom operators, we can instead use a different API based on extension methods.</p>
 <h3><a name="Creating-regexes" class="anchor" href="#Creating-regexes">Creating regexes</a></h3>
-<p>Regular expressions are created using <a href="reference/farkle-builder-regex.html">members of the <code>Regex</code> class</a>, which is well documented. Predefined sets are in the <code>PredefinedSets</code> class.</p>
+<p>Regular expressions are created using [members of the <code>Regex</code> class][regex], which is well documented. Predefined sets are in the <code>PredefinedSets</code> class.</p>
 <h3><a name="Cerating-amp-building-designtime-Farkles" class="anchor" href="#Cerating-amp-building-designtime-Farkles">Cerating &amp; building designtime Farkles</a></h3>
 <p>The following table highlights the differences between the F# and C# designtime Farkle API.</p>
 <table>
@@ -106,8 +105,37 @@
 <p>To customize things like the case-sensitivity of designtime Farkles, there are some extension methods for them that reside in the <code>Farkle</code> namespace.</p>
 <h2><a name="Parsing" class="anchor" href="#Parsing">Parsing</a></h2>
 <p>To parse text, there are some extension methods for runtime Farkles that reside in the <code>Farkle</code> namespace.</p>
-<hr />
-<p>So, I hope you enjoyed this little guide. If you did, don't forget to give Farkle a try, and maybe you feel especially sharp today, and want to hit the star button as well. I hope that all of you have a wonderful day, and to see you soon. Goodbye!</p>
+<p>These functions return an F# result type that can nevertheless be used from C# like this:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
+<span class="l"> 2: </span>
+<span class="l"> 3: </span>
+<span class="l"> 4: </span>
+<span class="l"> 5: </span>
+<span class="l"> 6: </span>
+<span class="l"> 7: </span>
+<span class="l"> 8: </span>
+<span class="l"> 9: </span>
+<span class="l">10: </span>
+<span class="l">11: </span>
+<span class="l">12: </span>
+<span class="l">13: </span>
+<span class="l">14: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="csharp"><span class="k">var</span> designtime <span class="o">=</span> <span class="c">/*...*/</span>;
+<span class="k">var</span> runtime <span class="o">=</span> designtime.Build();
+<span class="k">var</span> result <span class="o">=</span> runtime.Parse(<span class="s">"foobar"</span>);
+
+<span class="k">if</span> (result.IsOk)
+    Console.WriteLine(<span class="s">"Success. Result: {0}"</span>, result.OkValue);
+<span class="k">else</span>
+    Console.WriteLine(<span class="s">"Failure. Error message: {0}"</span>, result.ErrorValue);
+<span class="o">-</span><span class="o">-</span><span class="o">-</span>
+
+So, I hope you enjoyed <span class="k">this</span> little guide. If you did, don't forget to give Farkle a <span class="k">try</span>, and maybe you feel especially sharp today, and want to hit the star button <span class="k">as</span> well. I hope that all of you have a wonderful day, and to see you soon. Goodbye!
+
+[fsharp]<span class="o">:</span> quickstart.html
+[regex]<span class="o">:</span> reference/farkle-builder-regex.html
+</code></pre></td></tr></table>
 
 
         </div>
@@ -117,10 +145,11 @@
             <li class="nav-header">Farkle</li>
             <li><a href="/Farkle/index.html">Home page</a></li>
             <li class="divider"></li>
-            <li><a href="http://nuget.org/packages/Farkle">Get Library via NuGet</a></li>
+            <li><a href="https://nuget.org/packages/Farkle">Get Library via NuGet</a></li>
             <li><a href="https://github.com/teo-tsirpanis/Farkle">Source Code on GitHub</a></li>
             <li><a href="/Farkle/license.html">License</a></li>
             <li><a href="/Farkle/release-notes.html">Release Notes</a></li>
+            <li><a href="/Farkle/choosing-a-parser.html">Choosing a parser: Farkle vs alternatives</a></li>
 
             <li class="nav-header">Getting started</li>
             <li><a href="/Farkle/quickstart.html">Quick Start with F#</a></li>
@@ -129,6 +158,7 @@
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
+            <li><a href="/Farkle/string-regexes.html">String regex reference</a></li>
             <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
             <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>

@@ -32,63 +32,16 @@
         <div class="span9" id="main">
           
 
-
-
 <h1>LALRBuild</h1>
 <p>
   <span>Namespace: Farkle.Builder</span><br />
   </p>
 <div class="xmldoc">
+<p>Functions to generate LALR state tables from a grammar.</p>
+
 </div>
 
 <!-- Render nested types and modules, if there are any -->
-  <h2>Nested types and modules</h2>
-  <div>
-      <table class="table table-bordered type-list">
-    <thead>
-      <tr><td>Type</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-builder-lalrbuild-lr0item.html">LR0Item</a>
-          </td>
-          <td class="xmldoc">
-          
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-builder-lalrbuild-lr0itemset.html">LR0ItemSet</a>
-          </td>
-          <td class="xmldoc">
-          
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-builder-lalrbuild-lr1item.html">LR1Item</a>
-          </td>
-          <td class="xmldoc">
-          <p>An LR(1) item. It's essentially an LR(0) item with a set of lookahead symbols.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-builder-lalrbuild-lookaheadsymbol.html">LookaheadSymbol</a>
-          </td>
-          <td class="xmldoc">
-          <p>A special type which represents the lookahead symbol.</p>
-
-
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
 
   <h3>Functions and values</h3>
   <table class="table table-bordered member-list">
@@ -98,16 +51,15 @@
     <tbody>
       <tr>
         <td class="member-name">
-
-          <code onmouseout="hideTip(event, '58', 58)" onmouseover="showTip(event, '58', 58)">
+          <code onmouseout="hideTip(event, '59', 59)" onmouseover="showTip(event, '59', 59)">
             buildProductionsToLALRStates(...)
           </code>
-          <div class="tip" id="58">
-            <strong>Signature:</strong> startSymbol:Nonterminal -&gt; productions:(type) -&gt; Result&lt;(type),BuildError&gt;<br />
+          <div class="tip" id="59">
+            <strong>Signature:</strong> startSymbol:Nonterminal -&gt; terminals:ImmutableArray&lt;Terminal&gt; -&gt; nonterminals:ImmutableArray&lt;Nonterminal&gt; -&gt; productions:ImmutableArray&lt;Production&gt; -&gt; Result&lt;ImmutableArray&lt;LALRState&gt;,BuildError&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Builder/LALRBuild.fs#L332-332" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Builder/LALRBuild.fs#L261-261" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -120,81 +72,75 @@ Having a symbol with an index of <code>UInt32.MaxValue</code> will cause an exce
       </tr>
       <tr>
         <td class="member-name">
-
-          <code onmouseout="hideTip(event, '59', 59)" onmouseover="showTip(event, '59', 59)">
-            closure1(...)
+          <code onmouseout="hideTip(event, '60', 60)" onmouseover="showTip(event, '60', 60)">
+            closure1 fGetAllProductions firstSets xs
           </code>
-          <div class="tip" id="59">
-            <strong>Signature:</strong> fGetAllProductions:(Nonterminal -&gt; Set&lt;Production&gt;) -&gt; fGetFirstSet:(Nonterminal -&gt; Set&lt;Terminal option&gt;) -&gt; xs:seq&lt;LR0Item * Set&lt;LookaheadSymbol&gt;&gt; -&gt; LR1Item list<br />
+          <div class="tip" id="60">
+            <strong>Signature:</strong> fGetAllProductions:(Nonterminal -&gt; Set&lt;Production&gt;) -&gt; firstSets:FirstSets -&gt; xs:seq&lt;LR0Item * LookaheadSet&gt; -&gt; LR1Item list<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Builder/LALRBuild.fs#L177-177" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Builder/LALRBuild.fs#L135-135" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           <p>Computes the LR(1) CLOSURE function of a single LR(1) item, which
-is made of the given <a href="farkle-builder-lalrbuild-lr0item.html" title="LR0Item"><code>LR0Item</code></a> and the given set of lookahead <code>Terminal</code>s.
-A function to get the FIRST set and the productons of a <code>Nonterminal</code> is required.</p>
+is made of the given <a href="farkle-builder-lalrbuildtypes-lr0item.html" title="LR0Item"><code>LR0Item</code></a> and the given set of lookahead <code>Terminal</code>s.
+A function to get the FIRST set and the productions of a <code>Nonterminal</code> is required.</p>
 
 
         </td>
       </tr>
       <tr>
         <td class="member-name">
-
-          <code onmouseout="hideTip(event, '60', 60)" onmouseover="showTip(event, '60', 60)">
-            computeFirstSetMap(productions)
-          </code>
-          <div class="tip" id="60">
-            <strong>Signature:</strong> productions:seq&lt;Production&gt; -&gt; Map&lt;Nonterminal,Set&lt;Terminal option&gt;&gt;<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Builder/LALRBuild.fs#L123-123" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Computes the FIRST set of the <code>Nonterminal</code>s of the given sequence of <a href="farkle-grammar-production.html" title="Production"><code>Production</code></a>s.
-A <code>None</code> in the set of a nonterminal is the empty symbol, AKA Epsilon, or ε.</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
           <code onmouseout="hideTip(event, '61', 61)" onmouseover="showTip(event, '61', 61)">
-            computeLookaheadItems(...)
+            computeFirstSetMap(...)
           </code>
           <div class="tip" id="61">
-            <strong>Signature:</strong> fGetAllProductions:(Nonterminal -&gt; Set&lt;Production&gt;) -&gt; fGetFirstSet:(Nonterminal -&gt; Set&lt;Terminal option&gt;) -&gt; hashTerminal:LookaheadSymbol -&gt; itemSets:(type) -&gt; Map&lt;(LR0Item * int),Set&lt;LookaheadSymbol&gt;&gt;<br />
+            <strong>Signature:</strong> terminals:ImmutableArray&lt;Terminal&gt; -&gt; nonterminals:ImmutableArray&lt;Nonterminal&gt; -&gt; productions:seq&lt;Production&gt; -&gt; FirstSets<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Builder/LALRBuild.fs#L202-202" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Builder/LALRBuild.fs#L75-75" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Computes the lookahead symbols for the given <a href="farkle-builder-lalrbuild-lr0itemset.html" title="LR0ItemSet"><code>LR0ItemSet</code></a>s.
-In addition to the usual dependencies, this function also
-requires a special <code>Terminal</code> which <strong>must not</strong> already exist in the grammar.</p>
+          <p>Computes the FIRST set of the <code>Nonterminal</code>s
+of the given sequence of <a href="farkle-grammar-production.html" title="Production"><code>Production</code></a>s.</p>
 
 
         </td>
       </tr>
       <tr>
         <td class="member-name">
-
           <code onmouseout="hideTip(event, '62', 62)" onmouseover="showTip(event, '62', 62)">
-            createLALRStates(...)
+            computeLookaheadItems(...)
           </code>
           <div class="tip" id="62">
-            <strong>Signature:</strong> fGetAllProductions:(Nonterminal -&gt; Set&lt;Production&gt;) -&gt; fGetFirstSet:(Nonterminal -&gt; Set&lt;Terminal option&gt;) -&gt; fResolveConflict:(uint32 -&gt; Terminal option -&gt; LALRAction -&gt; LALRAction -&gt; LALRAction) -&gt; startSymbol:Nonterminal -&gt; itemSets:seq&lt;LR0ItemSet&gt; -&gt; lookaheadTables:Map&lt;(LR0Item * int),Set&lt;LookaheadSymbol&gt;&gt; -&gt; (type)<br />
+            <strong>Signature:</strong> fGetAllProductions:(Nonterminal -&gt; Set&lt;Production&gt;) -&gt; firstSets:FirstSets -&gt; itemSets:ResizeArray&lt;LR0ItemSet&gt; -&gt; LookaheadSetDictionary&lt;LR0Item * int&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Builder/LALRBuild.fs#L242-242" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Builder/LALRBuild.fs#L156-156" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Computes the lookahead symbols for the given <a href="farkle-builder-lalrbuildtypes-lr0itemset.html" title="LR0ItemSet"><code>LR0ItemSet</code></a>s.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '63', 63)" onmouseover="showTip(event, '63', 63)">
+            createLALRStates(...)
+          </code>
+          <div class="tip" id="63">
+            <strong>Signature:</strong> fGetAllProductions:(Nonterminal -&gt; Set&lt;Production&gt;) -&gt; firstSets:FirstSets -&gt; fResolveConflict:(uint32 -&gt; Terminal option -&gt; LALRAction -&gt; LALRAction -&gt; LALRAction) -&gt; startSymbol:Nonterminal -&gt; itemSets:ResizeArray&lt;LR0ItemSet&gt; -&gt; lookaheadTables:LookaheadItemsTable -&gt; ImmutableArray&lt;LALRState&gt;<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Builder/LALRBuild.fs#L191-191" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -205,16 +151,15 @@ requires a special <code>Terminal</code> which <strong>must not</strong> already
       </tr>
       <tr>
         <td class="member-name">
-
-          <code onmouseout="hideTip(event, '63', 63)" onmouseover="showTip(event, '63', 63)">
+          <code onmouseout="hideTip(event, '64', 64)" onmouseover="showTip(event, '64', 64)">
             createLR0KernelItems(...)
           </code>
-          <div class="tip" id="63">
-            <strong>Signature:</strong> fGetAllProductions:(Nonterminal -&gt; Set&lt;Production&gt;) -&gt; startSymbol:Nonterminal -&gt; (type)<br />
+          <div class="tip" id="64">
+            <strong>Signature:</strong> fGetAllProductions:(Nonterminal -&gt; Set&lt;Production&gt;) -&gt; startSymbol:Nonterminal -&gt; ResizeArray&lt;LR0ItemSet&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Builder/LALRBuild.fs#L68-68" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Builder/LALRBuild.fs#L21-21" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -227,23 +172,21 @@ a nonterminal and the start symbol are required.</p>
       </tr>
       <tr>
         <td class="member-name">
-
-          <code onmouseout="hideTip(event, '64', 64)" onmouseover="showTip(event, '64', 64)">
+          <code onmouseout="hideTip(event, '65', 65)" onmouseover="showTip(event, '65', 65)">
             getFirstSetOfSequence(...)
           </code>
-          <div class="tip" id="64">
-            <strong>Signature:</strong> fGetFirstSet:(Nonterminal -&gt; Set&lt;Terminal option&gt;) -&gt; lookahead:Set&lt;LookaheadSymbol&gt; -&gt; xs:seq&lt;LALRSymbol&gt; -&gt; Set&lt;LookaheadSymbol&gt;<br />
+          <div class="tip" id="65">
+            <strong>Signature:</strong> firstSets:FirstSets -&gt; lookahead:LookaheadSet -&gt; xs:seq&lt;LALRSymbol&gt; -&gt; LookaheadSet<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Builder/LALRBuild.fs#L162-162" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Builder/LALRBuild.fs#L116-116" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           <p>Returns the FIRST set of the given sequence of <a href="farkle-grammar-lalrsymbol.html" title="LALRSymbol"><code>LALRSymbol</code></a>s.
 If all the symbols contain the empty symbol in their FIRST set,
-the terminals in <code>lookahead</code> are included in the result.
-A function to get the FIRST set of each <code>Nonterminal</code> is required.</p>
+the terminals in <code>lookahead</code> are included in the result.</p>
 
 
         </td>
@@ -258,10 +201,11 @@ A function to get the FIRST set of each <code>Nonterminal</code> is required.</p
             <li class="nav-header">Farkle</li>
             <li><a href="/Farkle/index.html">Home page</a></li>
             <li class="divider"></li>
-            <li><a href="http://nuget.org/packages/Farkle">Get Library via NuGet</a></li>
+            <li><a href="https://nuget.org/packages/Farkle">Get Library via NuGet</a></li>
             <li><a href="https://github.com/teo-tsirpanis/Farkle">Source Code on GitHub</a></li>
             <li><a href="/Farkle/license.html">License</a></li>
             <li><a href="/Farkle/release-notes.html">Release Notes</a></li>
+            <li><a href="/Farkle/choosing-a-parser.html">Choosing a parser: Farkle vs alternatives</a></li>
 
             <li class="nav-header">Getting started</li>
             <li><a href="/Farkle/quickstart.html">Quick Start with F#</a></li>
@@ -270,6 +214,7 @@ A function to get the FIRST set of each <code>Nonterminal</code> is required.</p
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
+            <li><a href="/Farkle/string-regexes.html">String regex reference</a></li>
             <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
             <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>

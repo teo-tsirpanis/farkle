@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>LR0Item - Farkle</title>
+    <title>ProductionBuilder - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -32,56 +32,47 @@
         <div class="span9" id="main">
           
 
-
-
-<h1>LR0Item</h1>
+<h1>ProductionBuilder</h1>
 <p>
 
     <span>Namespace: Farkle.Builder</span><br />
-        <span>Parent Module: <a href="farkle-builder-lalrbuild.html">LALRBuild</a></span><br />
-    </p>
+            <span>
+            Attributes: <br />
+[&lt;Sealed&gt;]<br />
+            
+        </span>
+</p>
 <div class="xmldoc">
+<p>The base, untyped class of the production builders.</p>
+
 </div>
-  <h3>Record Fields</h3>
+  <h3>Constructors</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Record Field</td><td>Description</td></tr>
+      <tr><td>Constructor</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
-
-          <code onmouseout="hideTip(event, '315', 315)" onmouseover="showTip(event, '315', 315)">
-            DotPosition
+          <code onmouseout="hideTip(event, '412', 412)" onmouseover="showTip(event, '412', 412)">
+            new(members)
           </code>
-          <div class="tip" id="315">
-            <strong>Signature:</strong> int<br />
+          <div class="tip" id="412">
+            <strong>Signature:</strong> (members:obj []) -&gt; ProductionBuilder<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Builder/LALRBuild.fs#L16-16" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Builder/ProductionBuilders.fs#L36-36" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
+          <p>Creates a production builder whose members are the given objects.
+The objects must be either strings or characters (where they will be
+interpreted as literals), or designtime Farkles. Passing an object of
+different type will raise an exception.</p>
 
-          <code onmouseout="hideTip(event, '316', 316)" onmouseover="showTip(event, '316', 316)">
-            Production
-          </code>
-          <div class="tip" id="316">
-            <strong>Signature:</strong> Production<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Builder/LALRBuild.fs#L15-15" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
+
+              <p>CompiledName: <code>.ctor</code></p>
         </td>
       </tr>
     </tbody>
@@ -94,16 +85,15 @@
     <tbody>
       <tr>
         <td class="member-name">
-
-          <code onmouseout="hideTip(event, '317', 317)" onmouseover="showTip(event, '317', 317)">
-            x.AdvanceDot()
+          <code onmouseout="hideTip(event, '413', 413)" onmouseover="showTip(event, '413', 413)">
+            x.Append(lit)
           </code>
-          <div class="tip" id="317">
-            <strong>Signature:</strong> unit -&gt; LR0Item<br />
+          <div class="tip" id="413">
+            <strong>Signature:</strong> lit:string -&gt; ProductionBuilder<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Builder/LALRBuild.fs#L22-22" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Builder/ProductionBuilders.fs#L51-51" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -112,40 +102,110 @@
       </tr>
       <tr>
         <td class="member-name">
-
-          <code onmouseout="hideTip(event, '318', 318)" onmouseover="showTip(event, '318', 318)">
-            x.CurrentSymbol
+          <code onmouseout="hideTip(event, '414', 414)" onmouseover="showTip(event, '414', 414)">
+            x.Append(sym)
           </code>
-          <div class="tip" id="318">
-            <strong>Signature:</strong> LALRSymbol<br />
+          <div class="tip" id="414">
+            <strong>Signature:</strong> sym:DesigntimeFarkle -&gt; ProductionBuilder<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Builder/LALRBuild.fs#L21-21" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Builder/ProductionBuilders.fs#L50-50" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           
-              <p>CompiledName: <code>get_CurrentSymbol</code></p>
         </td>
       </tr>
       <tr>
         <td class="member-name">
-
-          <code onmouseout="hideTip(event, '319', 319)" onmouseover="showTip(event, '319', 319)">
-            x.IsAtEnd
+          <code onmouseout="hideTip(event, '415', 415)" onmouseover="showTip(event, '415', 415)">
+            x.Extend(df)
           </code>
-          <div class="tip" id="319">
-            <strong>Signature:</strong> bool<br />
-                                  </div>
+          <div class="tip" id="415">
+            <strong>Signature:</strong> df:DesigntimeFarkle&lt;&#39;T1&gt; -&gt; ProductionBuilder&lt;&#39;T1&gt;<br />
+                          <strong>Type parameters:</strong> 'T1                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Builder/LALRBuild.fs#L20-20" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Builder/ProductionBuilders.fs#L52-52" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           
-              <p>CompiledName: <code>get_IsAtEnd</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '416', 416)" onmouseover="showTip(event, '416', 416)">
+            x.Finish(f)
+          </code>
+          <div class="tip" id="416">
+            <strong>Signature:</strong> f:Func&lt;&#39;?7995&gt; -&gt; Production&lt;&#39;?7995&gt;<br />
+                          <strong>Type parameters:</strong> '?7995                      </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Builder/ProductionBuilders.fs#L67-67" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '417', 417)" onmouseover="showTip(event, '417', 417)">
+            x.FinishConstant(v)
+          </code>
+          <div class="tip" id="417">
+            <strong>Signature:</strong> v:&#39;a -&gt; Production&lt;&#39;a&gt;<br />
+                          <strong>Type parameters:</strong> 'a                      </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Builder/ProductionBuilders.fs#L70-70" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Creates a  that
+always returns a constant value.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '418', 418)" onmouseover="showTip(event, '418', 418)">
+            x.FinishFSharp(fFuseThunk)
+          </code>
+          <div class="tip" id="418">
+            <strong>Signature:</strong> (fFuseThunk:(unit -&gt; &#39;?7993)) -&gt; Production&lt;&#39;?7993&gt;<br />
+                          <strong>Type parameters:</strong> '?7993                      </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Builder/ProductionBuilders.fs#L66-66" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '419', 419)" onmouseover="showTip(event, '419', 419)">
+            x.FinishRaw(fFuseRaw)
+          </code>
+          <div class="tip" id="419">
+            <strong>Signature:</strong> (fFuseRaw:(obj [] -&gt; &#39;TOutput)) -&gt; Production&lt;&#39;TOutput&gt;<br />
+                          <strong>Type parameters:</strong> 'TOutput                      </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Builder/ProductionBuilders.fs#L62-62" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Like Finish, but the given function accepts
+an array of all the production's members as objects.</p>
+
+
         </td>
       </tr>
     </tbody>
@@ -158,20 +218,22 @@
     <tbody>
       <tr>
         <td class="member-name">
-
-          <code onmouseout="hideTip(event, '320', 320)" onmouseover="showTip(event, '320', 320)">
-            LR0Item.Create(prod)
+          <code onmouseout="hideTip(event, '420', 420)" onmouseover="showTip(event, '420', 420)">
+            ProductionBuilder.Empty
           </code>
-          <div class="tip" id="320">
-            <strong>Signature:</strong> prod:Production -&gt; LR0Item<br />
+          <div class="tip" id="420">
+            <strong>Signature:</strong> ProductionBuilder<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Builder/LALRBuild.fs#L19-19" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Builder/ProductionBuilders.fs#L49-49" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>A production builder with no members.</p>
+
+
+              <p>CompiledName: <code>get_Empty</code></p>
         </td>
       </tr>
     </tbody>
@@ -184,10 +246,11 @@
             <li class="nav-header">Farkle</li>
             <li><a href="/Farkle/index.html">Home page</a></li>
             <li class="divider"></li>
-            <li><a href="http://nuget.org/packages/Farkle">Get Library via NuGet</a></li>
+            <li><a href="https://nuget.org/packages/Farkle">Get Library via NuGet</a></li>
             <li><a href="https://github.com/teo-tsirpanis/Farkle">Source Code on GitHub</a></li>
             <li><a href="/Farkle/license.html">License</a></li>
             <li><a href="/Farkle/release-notes.html">Release Notes</a></li>
+            <li><a href="/Farkle/choosing-a-parser.html">Choosing a parser: Farkle vs alternatives</a></li>
 
             <li class="nav-header">Getting started</li>
             <li><a href="/Farkle/quickstart.html">Quick Start with F#</a></li>
@@ -196,6 +259,7 @@
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
+            <li><a href="/Farkle/string-regexes.html">String regex reference</a></li>
             <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
             <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>

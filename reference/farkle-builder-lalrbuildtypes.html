@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>LookaheadSymbol - Farkle</title>
+    <title>LALRBuildTypes - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -32,70 +32,90 @@
         <div class="span9" id="main">
           
 
-
-
-<h1>LookaheadSymbol</h1>
+<h1>LALRBuildTypes</h1>
 <p>
-
-    <span>Namespace: Farkle.Builder</span><br />
-        <span>Parent Module: <a href="farkle-builder-lalrbuild.html">LALRBuild</a></span><br />
-    </p>
+  <span>Namespace: Farkle.Builder</span><br />
+  </p>
 <div class="xmldoc">
-<p>A special type which represents the lookahead symbol.</p>
-
 </div>
-  <h3>Union Cases</h3>
-  <table class="table table-bordered member-list">
+
+<!-- Render nested types and modules, if there are any -->
+  <h2>Nested types and modules</h2>
+  <div>
+      <table class="table table-bordered type-list">
     <thead>
-      <tr><td>Union Case</td><td>Description</td></tr>
+      <tr><td>Type</td><td>Description</td></tr>
     </thead>
     <tbody>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '327', 327)" onmouseover="showTip(event, '327', 327)">
-            End
-          </code>
-          <div class="tip" id="327">
-            <strong>Signature:</strong> <br />
-                                    <span>
-            <strong>Attributes:</strong><br />
-[&lt;CompilationRepresentation(8)&gt;]<br />
-          </span>
-          </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Builder/LALRBuild.fs#L50-50" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>The lookahead symbol is the EOF, AKA $.</p>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-lalrbuildtypes-closure1table.html">Closure1Table</a>
+          </td>
+          <td class="xmldoc">
+          
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-lalrbuildtypes-firstsets.html">FirstSets</a>
+          </td>
+          <td class="xmldoc">
+          <p>A data structure that holds the FIRST set of the nonterminals of a grammar.</p>
 
 
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-lalrbuildtypes-lr0item.html">LR0Item</a>
+          </td>
+          <td class="xmldoc">
+          
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-lalrbuildtypes-lr0itemset.html">LR0ItemSet</a>
+          </td>
+          <td class="xmldoc">
+          
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-lalrbuildtypes-lr1item.html">LR1Item</a>
+          </td>
+          <td class="xmldoc">
+          <p>An LR(1) item. It's essentially an LR(0) item with a set of lookahead symbols.</p>
 
-          <code onmouseout="hideTip(event, '328', 328)" onmouseover="showTip(event, '328', 328)">
-            Terminal(Terminal)
-          </code>
-          <div class="tip" id="328">
-            <strong>Signature:</strong> Terminal<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Builder/LALRBuild.fs#L48-48" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>The lookahead symbol is a <code>Terminal</code>.</p>
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-lalrbuildtypes-lookaheaditemstable.html">LookaheadItemsTable</a>
+          </td>
+          <td class="xmldoc">
+          
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-lalrbuildtypes-lookaheadsetdictionary-1.html">LookaheadSetDictionary<'key></a>
+          </td>
+          <td class="xmldoc">
+          <p>An associative data structures with
+arbitrary keys and values as lookahead sets.
+Modification methods also copy special symbols.</p>
 
 
-        </td>
-      </tr>
+          </td>
+        </tr>
     </tbody>
   </table>
+
+  </div>
+
 
         </div>
         <div class="span3">
@@ -104,10 +124,11 @@
             <li class="nav-header">Farkle</li>
             <li><a href="/Farkle/index.html">Home page</a></li>
             <li class="divider"></li>
-            <li><a href="http://nuget.org/packages/Farkle">Get Library via NuGet</a></li>
+            <li><a href="https://nuget.org/packages/Farkle">Get Library via NuGet</a></li>
             <li><a href="https://github.com/teo-tsirpanis/Farkle">Source Code on GitHub</a></li>
             <li><a href="/Farkle/license.html">License</a></li>
             <li><a href="/Farkle/release-notes.html">Release Notes</a></li>
+            <li><a href="/Farkle/choosing-a-parser.html">Choosing a parser: Farkle vs alternatives</a></li>
 
             <li class="nav-header">Getting started</li>
             <li><a href="/Farkle/quickstart.html">Quick Start with F#</a></li>
@@ -116,6 +137,7 @@
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
+            <li><a href="/Farkle/string-regexes.html">String regex reference</a></li>
             <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
             <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>

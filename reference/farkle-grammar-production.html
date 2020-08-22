@@ -32,13 +32,17 @@
         <div class="span9" id="main">
           
 
-
-
 <h1>Production</h1>
 <p>
 
     <span>Namespace: Farkle.Grammar</span><br />
-    </p>
+            <span>
+            Attributes: <br />
+[&lt;CustomEquality&gt;]<br />
+[&lt;CustomComparison&gt;]<br />
+            
+        </span>
+</p>
 <div class="xmldoc">
 <p>A sequence of <code>Terminal</code>s and <code>Nonterminal</code>s that can produce a specific <code>Nonterminal</code>.</p>
 
@@ -51,16 +55,15 @@
     <tbody>
       <tr>
         <td class="member-name">
-
-          <code onmouseout="hideTip(event, '476', 476)" onmouseover="showTip(event, '476', 476)">
+          <code onmouseout="hideTip(event, '520', 520)" onmouseover="showTip(event, '520', 520)">
             Handle
           </code>
-          <div class="tip" id="476">
-            <strong>Signature:</strong> (type)<br />
+          <div class="tip" id="520">
+            <strong>Signature:</strong> ImmutableArray&lt;LALRSymbol&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Grammar/GrammarTypes.fs#L211-211" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Grammar/GrammarTypes.fs#L209-209" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -71,16 +74,15 @@
       </tr>
       <tr>
         <td class="member-name">
-
-          <code onmouseout="hideTip(event, '477', 477)" onmouseover="showTip(event, '477', 477)">
+          <code onmouseout="hideTip(event, '521', 521)" onmouseover="showTip(event, '521', 521)">
             Head
           </code>
-          <div class="tip" id="477">
+          <div class="tip" id="521">
             <strong>Signature:</strong> Nonterminal<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Grammar/GrammarTypes.fs#L209-209" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Grammar/GrammarTypes.fs#L207-207" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -91,22 +93,64 @@
       </tr>
       <tr>
         <td class="member-name">
-
-          <code onmouseout="hideTip(event, '478', 478)" onmouseover="showTip(event, '478', 478)">
+          <code onmouseout="hideTip(event, '522', 522)" onmouseover="showTip(event, '522', 522)">
             Index
           </code>
-          <div class="tip" id="478">
+          <div class="tip" id="522">
             <strong>Signature:</strong> uint32<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Grammar/GrammarTypes.fs#L205-205" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Grammar/GrammarTypes.fs#L203-203" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>The index of the production.</p>
+          <p>The index of the production. Productions
+with the same index are considered equal.</p>
 
 
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Instance members</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Instance member</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '523', 523)" onmouseover="showTip(event, '523', 523)">
+            x.CompareTo(x&#39;)
+          </code>
+          <div class="tip" id="523">
+            <strong>Signature:</strong> x&#39;:Production -&gt; int<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Grammar/GrammarTypes.fs#L219-219" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '524', 524)" onmouseover="showTip(event, '524', 524)">
+            x.Equals(x&#39;)
+          </code>
+          <div class="tip" id="524">
+            <strong>Signature:</strong> x&#39;:Production -&gt; bool<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Grammar/GrammarTypes.fs#L218-218" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
         </td>
       </tr>
     </tbody>
@@ -119,10 +163,11 @@
             <li class="nav-header">Farkle</li>
             <li><a href="/Farkle/index.html">Home page</a></li>
             <li class="divider"></li>
-            <li><a href="http://nuget.org/packages/Farkle">Get Library via NuGet</a></li>
+            <li><a href="https://nuget.org/packages/Farkle">Get Library via NuGet</a></li>
             <li><a href="https://github.com/teo-tsirpanis/Farkle">Source Code on GitHub</a></li>
             <li><a href="/Farkle/license.html">License</a></li>
             <li><a href="/Farkle/release-notes.html">Release Notes</a></li>
+            <li><a href="/Farkle/choosing-a-parser.html">Choosing a parser: Farkle vs alternatives</a></li>
 
             <li class="nav-header">Getting started</li>
             <li><a href="/Farkle/quickstart.html">Quick Start with F#</a></li>
@@ -131,6 +176,7 @@
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
+            <li><a href="/Farkle/string-regexes.html">String regex reference</a></li>
             <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
             <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>

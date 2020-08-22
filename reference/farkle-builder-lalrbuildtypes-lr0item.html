@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>CharSpan - Farkle</title>
+    <title>LR0Item - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -32,22 +32,13 @@
         <div class="span9" id="main">
           
 
-
-
-<h1>CharSpan</h1>
+<h1>LR0Item</h1>
 <p>
 
-    <span>Namespace: Farkle.IO</span><br />
-            <span>
-            Attributes: <br />
-[&lt;Struct&gt;]<br />
-            
-        </span>
-</p>
+    <span>Namespace: Farkle.Builder</span><br />
+        <span>Parent Module: <a href="farkle-builder-lalrbuildtypes.html">LALRBuildTypes</a></span><br />
+    </p>
 <div class="xmldoc">
-<p>An continuous range of characters that is
-stored by its starting position and ending index.</p>
-
 </div>
   <h3>Record Fields</h3>
   <table class="table table-bordered member-list">
@@ -57,16 +48,15 @@ stored by its starting position and ending index.</p>
     <tbody>
       <tr>
         <td class="member-name">
-
-          <code onmouseout="hideTip(event, '487', 487)" onmouseover="showTip(event, '487', 487)">
-            IndexTo
+          <code onmouseout="hideTip(event, '321', 321)" onmouseover="showTip(event, '321', 321)">
+            DotPosition
           </code>
-          <div class="tip" id="487">
-            <strong>Signature:</strong> uint64<br />
+          <div class="tip" id="321">
+            <strong>Signature:</strong> int<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/CharStream.fs#L27-27" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Builder/LALRBuildTypes.fs#L16-16" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -75,16 +65,15 @@ stored by its starting position and ending index.</p>
       </tr>
       <tr>
         <td class="member-name">
-
-          <code onmouseout="hideTip(event, '488', 488)" onmouseover="showTip(event, '488', 488)">
-            StartingPosition
+          <code onmouseout="hideTip(event, '322', 322)" onmouseover="showTip(event, '322', 322)">
+            Production
           </code>
-          <div class="tip" id="488">
-            <strong>Signature:</strong> Position<br />
+          <div class="tip" id="322">
+            <strong>Signature:</strong> Production<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/CharStream.fs#L26-26" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Builder/LALRBuildTypes.fs#L15-15" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -101,23 +90,80 @@ stored by its starting position and ending index.</p>
     <tbody>
       <tr>
         <td class="member-name">
-
-          <code onmouseout="hideTip(event, '489', 489)" onmouseover="showTip(event, '489', 489)">
-            x.Length
+          <code onmouseout="hideTip(event, '323', 323)" onmouseover="showTip(event, '323', 323)">
+            x.AdvanceDot()
           </code>
-          <div class="tip" id="489">
-            <strong>Signature:</strong> int<br />
+          <div class="tip" id="323">
+            <strong>Signature:</strong> unit -&gt; LR0Item<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/CharStream.fs#L31-31" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Builder/LALRBuildTypes.fs#L22-22" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>The length of the span. It can never be zero.</p>
-
-
-              <p>CompiledName: <code>get_Length</code></p>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '324', 324)" onmouseover="showTip(event, '324', 324)">
+            x.CurrentSymbol
+          </code>
+          <div class="tip" id="324">
+            <strong>Signature:</strong> LALRSymbol<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Builder/LALRBuildTypes.fs#L21-21" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+              <p>CompiledName: <code>get_CurrentSymbol</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '325', 325)" onmouseover="showTip(event, '325', 325)">
+            x.IsAtEnd
+          </code>
+          <div class="tip" id="325">
+            <strong>Signature:</strong> bool<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Builder/LALRBuildTypes.fs#L20-20" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+              <p>CompiledName: <code>get_IsAtEnd</code></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Static members</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Static member</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '326', 326)" onmouseover="showTip(event, '326', 326)">
+            LR0Item.Create(prod)
+          </code>
+          <div class="tip" id="326">
+            <strong>Signature:</strong> prod:Production -&gt; LR0Item<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Builder/LALRBuildTypes.fs#L19-19" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
         </td>
       </tr>
     </tbody>
@@ -130,10 +176,11 @@ stored by its starting position and ending index.</p>
             <li class="nav-header">Farkle</li>
             <li><a href="/Farkle/index.html">Home page</a></li>
             <li class="divider"></li>
-            <li><a href="http://nuget.org/packages/Farkle">Get Library via NuGet</a></li>
+            <li><a href="https://nuget.org/packages/Farkle">Get Library via NuGet</a></li>
             <li><a href="https://github.com/teo-tsirpanis/Farkle">Source Code on GitHub</a></li>
             <li><a href="/Farkle/license.html">License</a></li>
             <li><a href="/Farkle/release-notes.html">Release Notes</a></li>
+            <li><a href="/Farkle/choosing-a-parser.html">Choosing a parser: Farkle vs alternatives</a></li>
 
             <li class="nav-header">Getting started</li>
             <li><a href="/Farkle/quickstart.html">Quick Start with F#</a></li>
@@ -142,6 +189,7 @@ stored by its starting position and ending index.</p>
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
+            <li><a href="/Farkle/string-regexes.html">String regex reference</a></li>
             <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
             <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>

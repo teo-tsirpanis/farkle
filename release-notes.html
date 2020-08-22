@@ -30,7 +30,13 @@
       <hr />
       <div class="row">
         <div class="span9" id="main">
-          
+          <h4><a name="6-0-0-alpha-2-23-08-2020" class="anchor" href="#6-0-0-alpha-2-23-08-2020">6.0.0-alpha.2 - 23-08-2020</a></h4>
+<ul>
+<li>Farkle supports creating regexes from strings. See more in <a href="https://teo-tsirpanis.github.io/Farkle/string-regexes.html.">https://teo-tsirpanis.github.io/Farkle/string-regexes.html.</a></li>
+<li>The parser, the builder and the EGT(neo) reader became faster once again.</li>
+<li>The precompiler does not crash when used from .NET Standard libraries.</li>
+<li><strong>Breaking change:</strong> The <code>CharStream</code> API became internal. A new one will be published in the next release.</li>
+</ul>
 <h4><a name="6-0-0-alpha-1-13-04-2020" class="anchor" href="#6-0-0-alpha-1-13-04-2020">6.0.0-alpha.1 - 13-04-2020</a></h4>
 <ul>
 <li><strong>Breaking change:</strong> Removed the legacy API for creating runtime Farkles from EGT files (the API with the transformers and fusers). EGT files are still supported (for now), but users are strongly urged to rewrite their grammars using <code>Farkle.Builder</code>, or implement the <code>PostProcessor</code> interface themselves (not recommended).</li>
@@ -72,7 +78,7 @@
 <li>Add methods to parse text from .NET <code>TextReader</code>s. They should be preferred over parsing .NET <code>Stream</code>s because the latter are supposed to contain binary data, not text.</li>
 <li>The <code>Farkle.CSharp</code> namespace is no longer required. C# users just have to use <code>Farkle</code> to get their extension methods, unless they are writing their own post-processors for GOLD Parser grammars, where they have to use <code>Farkle.PostProcessor.CSharp</code>.</li>
 <li><strong>Breaking change:</strong> Farkle.Tools.MSBuild was upgraded to .NET Core 3.1. Nothing significant changed though, which means those who still use .NET Core 2.1 can stay in a previous version.</li>
-<li><strong>Breaking change:</strong> Reading grammars from EGT files now raises an exception. <a href="https://github.com/teo-tsirpanis/Farkle/commit/84b96ccc85753e4deebffcf561cc89edb1e252bc">Rationale</a></li>
+<li><strong>Breaking change:</strong> Reading grammars from EGT files now raises an exception.</li>
 <li><strong>Breaking change:</strong> Some utility functions that had nothing to do with parsing were either removed or made internal.</li>
 <li><strong>Breaking change:</strong> Internal errors of the parser (in the unfortunate case they happen) throw an exception. In the next release, exceptions in a transformer or fuser will not be caught either.</li>
 </ul>
@@ -144,7 +150,7 @@
 </ul>
 <h4><a name="3-1-0-alpha003-10-10-2018" class="anchor" href="#3-1-0-alpha003-10-10-2018">3.1.0-alpha003 - 10-10-2018</a></h4>
 <ul>
-<li>The <code>GOLDParser</code> API was replaced in favor of the <code>RuntimeFarkle</code> type. This means that the parsing and post-procssing operations are unified.</li>
+<li>The <code>GOLDParser</code> API was replaced in favor of the <code>RuntimeFarkle</code> type. This means that the parsing and post-processing operations are unified.</li>
 <li>The code became cleaner and faster yet again, with a notable optimization in the tokenizer.</li>
 <li>This release coincided with the author's birthday. 🎂</li>
 </ul>
@@ -204,10 +210,11 @@
             <li class="nav-header">Farkle</li>
             <li><a href="/Farkle/index.html">Home page</a></li>
             <li class="divider"></li>
-            <li><a href="http://nuget.org/packages/Farkle">Get Library via NuGet</a></li>
+            <li><a href="https://nuget.org/packages/Farkle">Get Library via NuGet</a></li>
             <li><a href="https://github.com/teo-tsirpanis/Farkle">Source Code on GitHub</a></li>
             <li><a href="/Farkle/license.html">License</a></li>
             <li><a href="/Farkle/release-notes.html">Release Notes</a></li>
+            <li><a href="/Farkle/choosing-a-parser.html">Choosing a parser: Farkle vs alternatives</a></li>
 
             <li class="nav-header">Getting started</li>
             <li><a href="/Farkle/quickstart.html">Quick Start with F#</a></li>
@@ -216,6 +223,7 @@
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
+            <li><a href="/Farkle/string-regexes.html">String regex reference</a></li>
             <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
             <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>

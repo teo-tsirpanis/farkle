@@ -31,8 +31,7 @@
       <hr />
       <div class="row">
         <div class="span9" id="main">
-          
-<h1><a name="Templating-Reference" class="anchor" href="#Templating-Reference">Templating Reference</a></h1>
+          <h1><a name="Templating-Reference" class="anchor" href="#Templating-Reference">Templating Reference</a></h1>
 <p>As you might have seen in the previous tutorials, Farkle comes with a helpful command line tool to help you create source code files of your grammar. Here I will tell you how this tool works, and how to extend this tool even further for your own needs.</p>
 <blockquote>
 <p>Before we begin, this reference document is quite advanced, and most of what is says will not be useful to the 90% of the users of Farkle.</p>
@@ -41,17 +40,17 @@
 <hr />
 <p>To create these beautiful source files, Farkle uses <a href="https://github.com/lunet-io/scriban">Scriban</a>. Scriban is a library that generates text templates. To achieve this, it uses a surprisingly simple, yet incredibly powerful templating language which I recommend you to learn from <a href="https://github.com/lunet-io/scriban/blob/master/doc/language.md">the official documentation</a>. Once you 've learned it, let's see how Farkle integrates with it.</p>
 <hr />
-<p>To integrate with Scriban, external libraries like Farkle expose certain veriables and functions to Scriban templates. The variables exposed by Farkle are the following:</p>
+<p>To integrate with Scriban, external libraries like Farkle expose certain variables and functions to Scriban templates. The variables exposed by Farkle are the following:</p>
 <ul>
 <li><p><code>file_extension</code>: If you did not specify the file name of the generated file, it will have the same name as your grammar file, with the extension changed to the value of this variable. It is good practice to change it from the default <code>.out.txt</code>. For example, if Farkle gets ported to Pascal, you'd better write <code>{{ file_extension = ".pas" }}</code> at the beginning of the template for this language.</p></li>
 <li>
 <p><code>farkle</code>: An object containing information about Farkle itself.</p>
 <ul>
-<li><p><code>farkle.version</code>: The version of the tool used to grnerate the template.</p></li>
+<li><p><code>farkle.version</code>: The version of the tool used to generate the template.</p></li>
 </ul>
 </li>
 <li>
-<p><code>grammar</code>: An objct describing the grammar that was given. It is not a full-blown object of type <code>Farkle.Grammar.Gramamr</code>, but a cut-down object, because of <a href="https://github.com/lunet-io/scriban/issues/151">problems of Scriban</a>. If you want extra functionality to this object, fell free to open an issue.</p>
+<p><code>grammar</code>: An object describing the grammar that was given. It is not a full-blown object of type <code>Farkle.Grammar.Gramamr</code>, but a cut-down object, because of <a href="https://github.com/lunet-io/scriban/issues/151">problems of Scriban</a>. If you want extra functionality to this object, fell free to open an issue.</p>
 <ul>
 <li><p><code>grammar.properties</code>: A key-value pair of the grammar's metadata. See more at the <a href="http://www.goldparser.org/doc/grammars/define-properties.htm">documentation of GOLD Parser</a>.</p></li>
 <li><p><code>grammar.symbols.terminals</code>: An array of the terminal symbols of the grammar.</p></li>
@@ -89,10 +88,11 @@
             <li class="nav-header">Farkle</li>
             <li><a href="/Farkle/index.html">Home page</a></li>
             <li class="divider"></li>
-            <li><a href="http://nuget.org/packages/Farkle">Get Library via NuGet</a></li>
+            <li><a href="https://nuget.org/packages/Farkle">Get Library via NuGet</a></li>
             <li><a href="https://github.com/teo-tsirpanis/Farkle">Source Code on GitHub</a></li>
             <li><a href="/Farkle/license.html">License</a></li>
             <li><a href="/Farkle/release-notes.html">Release Notes</a></li>
+            <li><a href="/Farkle/choosing-a-parser.html">Choosing a parser: Farkle vs alternatives</a></li>
 
             <li class="nav-header">Getting started</li>
             <li><a href="/Farkle/quickstart.html">Quick Start with F#</a></li>
@@ -101,6 +101,7 @@
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
+            <li><a href="/Farkle/string-regexes.html">String regex reference</a></li>
             <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
             <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>

@@ -32,14 +32,20 @@
         <div class="span9" id="main">
           
 
-
-
 <h1>RangeMap</h1>
 <p>
   <span>Namespace: Farkle.Collections</span><br />
-  </p>
+        <span>
+          Attributes:<br />
+[&lt;CompiledName(&quot;RangeMapInternalUtils&quot;)&gt;]<br />
+          
+      </span>
+</p>
 <div class="xmldoc">
-<p>Functions to create and use <a href="farkle-collections-rangemap.html" title="RangeMap"><code>RangeMap</code></a>s.</p>
+<p>Additional functions to create and export range maps to sequences.
+They are public due to compiler limitations.
+Their use is not recommended by user code and they might be
+removed or altered between non-major releases.</p>
 
 </div>
 
@@ -53,143 +59,15 @@
     <tbody>
       <tr>
         <td class="member-name">
-
-          <code onmouseout="hideTip(event, '271', 271)" onmouseover="showTip(event, '271', 271)">
-            containsKey k x
-          </code>
-          <div class="tip" id="271">
-            <strong>Signature:</strong> k:&#39;?11654 -&gt; x:RangeMap&lt;&#39;?11654,&#39;?11655&gt; -&gt; bool<br />
-                          <strong>Type parameters:</strong> '?11654, '?11655                        <span>
-            <strong>Attributes:</strong><br />
-[&lt;CompiledName(&quot;ContainsKey&quot;)&gt;]<br />
-          </span>
-          </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Collections/RangeMap.fs#L70-70" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Checks if the given <a href="farkle-collections-rangemap.html" title="RangeMap"><code>RangeMap</code></a> contains the given element.</p>
-
-
-              <p>CompiledName: <code>ContainsKey</code></p>
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '272', 272)" onmouseover="showTip(event, '272', 272)">
-            empty
-          </code>
-          <div class="tip" id="272">
-            <strong>Signature:</strong> RangeMap&lt;&#39;key,&#39;a&gt;<br />
-                          <strong>Type parameters:</strong> 'key, 'a                        <span>
-            <strong>Attributes:</strong><br />
-[&lt;CompiledName(&quot;Empty&quot;)&gt;]<br />
-          </span>
-          </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Collections/RangeMap.fs#L37-37" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>An empty <a href="farkle-collections-rangemap.html" title="RangeMap"><code>RangeMap</code></a>.</p>
-
-
-              <p>CompiledName: <code>Empty</code></p>
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '273', 273)" onmouseover="showTip(event, '273', 273)">
-            isEmpty(arg1)
-          </code>
-          <div class="tip" id="273">
-            <strong>Signature:</strong> RangeMap&lt;&#39;?11657,&#39;?11658&gt; -&gt; bool<br />
-                          <strong>Type parameters:</strong> '?11657, '?11658                        <span>
-            <strong>Attributes:</strong><br />
-[&lt;CompiledName(&quot;IsEmpty&quot;)&gt;]<br />
-          </span>
-          </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Collections/RangeMap.fs#L74-74" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Checks if the given <a href="farkle-collections-rangemap.html" title="RangeMap"><code>RangeMap</code></a> is empty.</p>
-
-
-              <p>CompiledName: <code>IsEmpty</code></p>
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
           <code onmouseout="hideTip(event, '274', 274)" onmouseover="showTip(event, '274', 274)">
-            map f arg2
+            ofGroupedRanges(xs)
           </code>
           <div class="tip" id="274">
-            <strong>Signature:</strong> f:(&#39;?11650 -&gt; &#39;?11651) -&gt; RangeMap&lt;&#39;?11652,&#39;?11650&gt; -&gt; RangeMap&lt;&#39;?11652,&#39;?11651&gt;<br />
-                          <strong>Type parameters:</strong> '?11650, '?11651, '?11652                        <span>
-            <strong>Attributes:</strong><br />
-[&lt;CompiledName(&quot;Map&quot;)&gt;]<br />
-          </span>
-          </div>
+            <strong>Signature:</strong> xs:seq&lt;&#39;b * &#39;d&gt; -&gt; RangeMap&lt;&#39;c,&#39;d&gt;<br />
+                          <strong>Type parameters:</strong> 'b, 'c, 'd                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Collections/RangeMap.fs#L63-63" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Applies a function to each of the items of a <a href="farkle-collections-rangemap.html" title="RangeMap"><code>RangeMap</code></a>.</p>
-
-
-              <p>CompiledName: <code>Map</code></p>
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '275', 275)" onmouseover="showTip(event, '275', 275)">
-            ofRanges(pairs)
-          </code>
-          <div class="tip" id="275">
-            <strong>Signature:</strong> pairs:(&#39;b * &#39;d) [] -&gt; RangeMap&lt;&#39;c,&#39;d&gt; option<br />
-                          <strong>Type parameters:</strong> 'b, 'c, 'd                        <span>
-            <strong>Attributes:</strong><br />
-[&lt;CompiledName(&quot;CreateFromRanges&quot;)&gt;]<br />
-          </span>
-          </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Collections/RangeMap.fs#L96-96" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Creates a <a href="farkle-collections-rangemap.html" title="RangeMap"><code>RangeMap</code></a> from an array of a range of keys and their corresponding value.
-The ranges are inclusive.
-The function may return <code>None</code> if some ranges overlap.</p>
-
-
-              <p>CompiledName: <code>CreateFromRanges</code></p>
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '276', 276)" onmouseover="showTip(event, '276', 276)">
-            ofSeq(xs)
-          </code>
-          <div class="tip" id="276">
-            <strong>Signature:</strong> xs:seq&lt;KeyValuePair&lt;^a,&#39;c&gt;&gt; -&gt; RangeMap&lt;^a,&#39;c&gt;<br />
-                          <strong>Type parameters:</strong> ^a, ^b, 'c                      </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Collections/RangeMap.fs#L129-129" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Collections/RangeMap.fs#L117-117" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -198,85 +76,47 @@ The function may return <code>None</code> if some ranges overlap.</p>
       </tr>
       <tr>
         <td class="member-name">
-
-          <code onmouseout="hideTip(event, '277', 277)" onmouseover="showTip(event, '277', 277)">
-            ofSeqEx fSuccessor xs
+          <code onmouseout="hideTip(event, '275', 275)" onmouseover="showTip(event, '275', 275)">
+            ofSeqEx(xs)
           </code>
-          <div class="tip" id="277">
-            <strong>Signature:</strong> fSuccessor:(&#39;?11667 -&gt; &#39;?11667) -&gt; xs:seq&lt;KeyValuePair&lt;&#39;?11667,&#39;?11668&gt;&gt; -&gt; RangeMap&lt;&#39;?11667,&#39;?11668&gt;<br />
-                          <strong>Type parameters:</strong> '?11667, '?11668                      </div>
+          <div class="tip" id="275">
+            <strong>Signature:</strong> xs:seq&lt;KeyValuePair&lt;^b,&#39;d&gt;&gt; -&gt; RangeMap&lt;^b,&#39;d&gt;<br />
+                          <strong>Type parameters:</strong> ^b, ^c, 'd                        <span>
+            <strong>Attributes:</strong><br />
+[&lt;NoDynamicInvocation&gt;]<br />
+          </span>
+          </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Collections/RangeMap.fs#L111-111" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Collections/RangeMap.fs#L132-132" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           <p>Creates a <a href="farkle-collections-rangemap.html" title="RangeMap"><code>RangeMap</code></a> from a sequence of key-value pairs.
-The keys can be of any type that can has the notion of "one" and equality checking.
-The keys have to be sorted beforehand, or the resulting <a href="farkle-collections-rangemap.html" title="RangeMap"><code>RangeMap</code></a> will be broken.</p>
+The keys can be of any type that can has the notion of "one" and equality checking.</p>
 
 
         </td>
       </tr>
       <tr>
         <td class="member-name">
-
-          <code onmouseout="hideTip(event, '278', 278)" onmouseover="showTip(event, '278', 278)">
-            toSeq(xs)
+          <code onmouseout="hideTip(event, '276', 276)" onmouseover="showTip(event, '276', 276)">
+            toSeqEx(rm)
           </code>
-          <div class="tip" id="278">
-            <strong>Signature:</strong> xs:RangeMap&lt;^a,&#39;b&gt; -&gt; seq&lt;KeyValuePair&lt;^a,&#39;b&gt;&gt;<br />
-                          <strong>Type parameters:</strong> ^a, 'b                      </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Collections/RangeMap.fs#L138-138" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '279', 279)" onmouseover="showTip(event, '279', 279)">
-            toSeqEx fRange arg2
-          </code>
-          <div class="tip" id="279">
-            <strong>Signature:</strong> fRange:(&#39;key -&gt; &#39;key -&gt; seq&lt;&#39;key&gt;) -&gt; RangeMap&lt;&#39;key,&#39;?11675&gt; -&gt; seq&lt;KeyValuePair&lt;&#39;key,&#39;?11675&gt;&gt;<br />
-                          <strong>Type parameters:</strong> 'key, '?11675                      </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Collections/RangeMap.fs#L131-131" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '280', 280)" onmouseover="showTip(event, '280', 280)">
-            tryFind k arg2
-          </code>
-          <div class="tip" id="280">
-            <strong>Signature:</strong> k:&#39;a -&gt; RangeMap&lt;&#39;a,&#39;b&gt; -&gt; &#39;b voption<br />
-                          <strong>Type parameters:</strong> 'a, 'b                        <span>
+          <div class="tip" id="276">
+            <strong>Signature:</strong> rm:RangeMap&lt;^key,&#39;b&gt; -&gt; seq&lt;KeyValuePair&lt;^key,&#39;b&gt;&gt;<br />
+                          <strong>Type parameters:</strong> ^key, 'b                        <span>
             <strong>Attributes:</strong><br />
-[&lt;CompiledName(&quot;TryFind&quot;)&gt;]<br />
+[&lt;NoDynamicInvocation&gt;]<br />
           </span>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/0b386e/src/Farkle/Collections/RangeMap.fs#L42-42" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/a21912/src/Farkle/Collections/RangeMap.fs#L150-150" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Looks up an element in a <a href="farkle-collections-rangemap.html" title="RangeMap"><code>RangeMap</code></a>, returning its corresponding value if it exists.</p>
-
-
-              <p>CompiledName: <code>TryFind</code></p>
+          
         </td>
       </tr>
     </tbody>
@@ -289,10 +129,11 @@ The keys have to be sorted beforehand, or the resulting <a href="farkle-collecti
             <li class="nav-header">Farkle</li>
             <li><a href="/Farkle/index.html">Home page</a></li>
             <li class="divider"></li>
-            <li><a href="http://nuget.org/packages/Farkle">Get Library via NuGet</a></li>
+            <li><a href="https://nuget.org/packages/Farkle">Get Library via NuGet</a></li>
             <li><a href="https://github.com/teo-tsirpanis/Farkle">Source Code on GitHub</a></li>
             <li><a href="/Farkle/license.html">License</a></li>
             <li><a href="/Farkle/release-notes.html">Release Notes</a></li>
+            <li><a href="/Farkle/choosing-a-parser.html">Choosing a parser: Farkle vs alternatives</a></li>
 
             <li class="nav-header">Getting started</li>
             <li><a href="/Farkle/quickstart.html">Quick Start with F#</a></li>
@@ -301,6 +142,7 @@ The keys have to be sorted beforehand, or the resulting <a href="farkle-collecti
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
+            <li><a href="/Farkle/string-regexes.html">String regex reference</a></li>
             <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
             <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>

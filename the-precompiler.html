@@ -31,14 +31,13 @@
       <hr />
       <div class="row">
         <div class="span9" id="main">
-          
-<h1><a name="Farkle-s-precompiler" class="anchor" href="#Farkle-s-precompiler">Farkle's precompiler</a></h1>
-<p>Every time an app using Farkle starts, it generates the parser tables. This process takes some time, and it take even more, the app does not reuse the runtime Farkles it creates.</p>
-<p>Most apps need to parse a static grammar whose specifications never change between program executions. For example, a compiler or a JSON parser will parse text from the same language every time you use it. Farkle would spend time generating the parsing tables that do not depend on user input and will always be the same. It wouldn't hurt a program like a REST server parsing hundreds of input strings, but a compiler that parses only one file, building the grammar every time it is run would take some time, maybe more than the time spent for the parser, if the grammar is big.</p>
+          <h1><a name="Farkle-s-precompiler" class="anchor" href="#Farkle-s-precompiler">Farkle's precompiler</a></h1>
+<p>Every time an app using Farkle starts, it generates the parser tables. This process takes some time, and it take even more, if the app does not reuse the runtime Farkles it creates.</p>
+<p>Most apps need to parse a static grammar whose specifications never change between program executions. For example, a compiler or a JSON parser will parse text from the same language every time you use it. Farkle would spend time generating the parsing tables that do not depend on user input and will always be the same. It wouldn't hurt a program like a REST server parsing hundreds of input strings, but for a compiler that parses only one file, building the grammar every time it is run would take some time, maybe more than the time spent for the parser, if the grammar is big.</p>
 <p>What is more, Farkle does not report any grammar error (such as an LALR conflict) until it's too late: text was attempted to be parsed with a faulty grammar. Wouldn't it be better if these errors were caught earlier in the app's life cycle?</p>
 <p>One of Farkle's new features that came with version 6 is called <em>the precompiler</em>. The precompiler addresses this inherent limitation of how Farkle works with grammars. Instead of generating it every time, the grammar's parser tables are built ahead of time and stored in the program's assembly, when it gets compiled. This significantly boosts the program's startup time by orders of magnitude.</p>
 <h2><a name="How-to-use-it" class="anchor" href="#How-to-use-it">How to use it</a></h2>
-<p>Using the precompiler is a very easy procedure and does not differ very much from regularly using Farkle.</p>
+<p>Using the precompiler is surprisingly simple and does not differ very much from regularly using Farkle.</p>
 <h3><a name="Preparing-the-your-code" class="anchor" href="#Preparing-the-your-code">Preparing the your code</a></h3>
 <p>Let's say you have a very complicated designtime Farkle that you want its grammar to be precompiled. The first thing to do is to use the <code>RuntimeFarkle.markForPrecompile</code> function. Here's an example in both F# and C#:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
@@ -107,7 +106,8 @@
 <ul>
 <li><p>The designtime Farkle must be declared in a <code>static readonly</code> <em>field</em> (not property). For F#, a let-bound value in a module is equivalent, but it <strong>must not</strong> be mutable.</p></li>
 <li>The designtime Farkle's field can be of any visibility (public, internal, private, it doesn't matter). It will be detected even in nested types. Just remember the rule above.</li>
-<li><p>The <code>markForPrecompile</code> function must be the absolute last function to be applied in the designtime Farkle. If you don't apply it to the starting symbol, or applied any other function on top of it, Farkle will not precompile the designtime Farkle, but it will still be perfectly functional.</p></li>
+<li>The designtime Farkle's field name must not start with an underscore. Because the precompiler will evaluate all designtime Farkles that satisfy the rule above, prepending an underscore to the field's name is an easy way to tell the precompiler to not touch it.</li>
+<li><p>The <code>markForPrecompile</code> function must be the absolute last function to be applied in the designtime Farkle.</p></li>
 <li><p>The <code>markForPrecompile</code> function must be called in the assembly the designtime Farkle was created and should better not used from inside another function.</p></li>
 </ul>
 <p>Say you have the following function in assembly A:</p>
@@ -136,14 +136,14 @@
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="csharp"><span class="k">public</span> <span class="k">class</span> MyLanguage {
     <span class="c">// This will work.</span>
-    <span class="k">public</span> <span class="k">static</span> <span class="k">readonly</span> DesigntimeFarkle Foo <span class="o">=</span> MySimpleDesigntimeFarkle.MarkForPrecompile();
+    <span class="k">public</span> <span class="k">static</span> <span class="k">readonly</span> DesigntimeFarkle Foo <span class="o">=</span> MyUntypedDesigntimeFarkle.Cast().MarkForPrecompile();
     <span class="c">// But not this.</span>
-    <span class="k">public</span> <span class="k">static</span> <span class="k">readonly</span> <span class="k">object</span> Foo <span class="o">=</span> MyComplicatedDesigntimeFarkle.MarkForPrecompile();
+    <span class="k">public</span> <span class="k">static</span> <span class="k">readonly</span> <span class="k">object</span> Bar <span class="o">=</span> MyComplicatedDesigntimeFarkle.MarkForPrecompile();
 }
 </code></pre></td></tr></table>
 <ul>
 <li><p>All precompilable designtime Farkles within an assembly must have different names, or an error will be raised during precompiling. That's actually why the <code>DesigntimeFarkle.rename</code> function was created.</p></li>
-<li>Multiple references to the same precompilable designtime Farkle do not pose a problem. The following example will work:</li>
+<li>Multiple references to the same precompilable designtime Farkle do not pose a problem and will be precompiled once. The following example will work:</li>
 </ul>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
@@ -153,6 +153,9 @@
 </code></pre></td>
 </tr>
 </table>
+<blockquote>
+<p><strong>Note</strong>: If any of the rules above is violated, building your app will not fail (unless a name collision was detected which will always fail the build), the designtime Farkle will not be precompiled but will be otherwise perfectly functional.</p>
+</blockquote>
 <h3><a name="Preparing-your-project" class="anchor" href="#Preparing-your-project">Preparing your project</a></h3>
 <p>With our designtime Farkles being ready to be precompiled, it's time to prepare our project files. Add a reference to <a href="https://www.nuget.org/packages/Farkle.Tools.MSBuild">the <code>Farkle.Tools.MSBuild</code> package</a> like that:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
@@ -170,8 +173,8 @@
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="xml"><span class="c">&lt;!-- The following properties are optional. --&gt;</span>
 <span class="k">&lt;</span><span class="i">PropertyGroup</span><span class="k">&gt;</span>
-    <span class="c">&lt;!-- Set it to false to disable the precompiler. Your app</span>
-<span class="c">    will still work, but without the performance boost the precompiler offers. --&gt;</span>
+    <span class="c">&lt;!-- Set it to false to disable the precompiler. Your app will still</span>
+<span class="c">    work, but without the initial performance boost the precompiler offers. --&gt;</span>
     <span class="k">&lt;</span><span class="i">FarkleEnablePrecompiler</span><span class="k">&gt;</span>false<span class="k">&lt;/</span><span class="i">FarkleEnablePrecompiler</span><span class="k">&gt;</span>
     <span class="c">&lt;!-- If it is true, grammar errors will raise a warning</span>
 <span class="c">    instead of an error and not fail the entire build. --&gt;</span>
@@ -185,9 +188,12 @@
 <h2><a name="Some-final-notes" class="anchor" href="#Some-final-notes">Some final notes</a></h2>
 <h3><a name="Beware-of-non-determinism" class="anchor" href="#Beware-of-non-determinism">Beware of non-determinism</a></h3>
 <p>Farkle's precompiler was made for grammars that are static, that's the reason it only works on static readonly fields: once you created it in your code, you cannot change it. Otherwise, what good would the precompiler be?</p>
-<p>You can always call a non-deterministic function like <code>DateTime.Now()</code> that will make your designtime Farkle parse integers in the hexadecimal format in your birthday, and in the decimal format in all other days. If you build your app on your birthday, it will produce bizarre results on all the other days, and if you build it on a day other than your birthday, it will work every time, except of your birthday (the worst birthday present) <strong>Just don't do it.</strong> Farkle cannot be made to detect such things, and you are not getting any smarter by doing it.</p>
+<p>You can always call a non-deterministic function like <code>DateTime.Now()</code> that will make your designtime Farkle parse integers in the hexadecimal format in your birthday, and in the decimal format in all other days. If you build your app on your birthday, it will produce bizarre results on all the other days, and if you build it on a day other than your birthday, it will work every time, except of your birthday (the worst birthday present). <strong>Just don't do it.</strong> Farkle cannot be made to detect such things, and you are not getting any smarter by doing it.</p>
 <h3><a name="Building-from-an-IDE" class="anchor" href="#Building-from-an-IDE">Building from an IDE</a></h3>
-<p>And last but not least, the precompiler will not work when running a .NET Framework-based edition of MSBuild. This includes building from IDEs such as Visual Studio. The recommended way to build an app that uses the precompiler is through <code>dotnet build</code> and its friends. This <em>doesn't mean</em> that the precompiler won't work on .NET Framework assemblies; you have to use the new project format and build with the .NET Core SDK; it will normally work.</p>
+<p>And last but not least, the precompiler will not work when running a .NET Framework-based edition of MSBuild. This includes building from IDEs such as Visual Studio. The recommended way to build an app that uses the precompiler is through <code>dotnet build</code> and its friends. This doesn't mean that the precompiler won't work on .NET Framework assemblies; you have to use the new project format and build with the .NET Core SDK; it will normally work.</p>
+<blockquote>
+<p><strong>Note</strong>: Precompiling a .NET Framework assembly will load it to the .NET Core-based precompiler. While it sometimes works due to a compatibility shim, don't hold your breath that it will always work and you'd better not precompile designtime Farkles in assemblies that use .NET Framework-only features. It might work, it might fail, who knows? And why are you still using the .NET Framework?</p>
+</blockquote>
 <p>Rider however can use the precompiler with a simple workaround. Open its settings, go to "Build, Execution, Deployment", "Toolset and Build", "Use MSBuild version", and select an MSBuild executable from the .NET Core SDK (it typically has a <code>.dll</code> extension).</p>
 <p><img src="img/rider_msbuild_workaround.png" alt="The Settings window in JetBrains Rider" /></p>
 <hr />
@@ -203,10 +209,11 @@
             <li class="nav-header">Farkle</li>
             <li><a href="/Farkle/index.html">Home page</a></li>
             <li class="divider"></li>
-            <li><a href="http://nuget.org/packages/Farkle">Get Library via NuGet</a></li>
+            <li><a href="https://nuget.org/packages/Farkle">Get Library via NuGet</a></li>
             <li><a href="https://github.com/teo-tsirpanis/Farkle">Source Code on GitHub</a></li>
             <li><a href="/Farkle/license.html">License</a></li>
             <li><a href="/Farkle/release-notes.html">Release Notes</a></li>
+            <li><a href="/Farkle/choosing-a-parser.html">Choosing a parser: Farkle vs alternatives</a></li>
 
             <li class="nav-header">Getting started</li>
             <li><a href="/Farkle/quickstart.html">Quick Start with F#</a></li>
@@ -215,6 +222,7 @@
             <li class="nav-header">Documentation</li>
             <li><a href="/Farkle/reference/index.html">API Reference</a></li>
             <li><a href="/Farkle/templates.html">Templating Reference</a></li>
+            <li><a href="/Farkle/string-regexes.html">String regex reference</a></li>
             <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
             <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
