@@ -98,7 +98,7 @@
 <p>In F#, we use the <code>terminalU</code> function (guess what the U stands for), and in C# we just omit the delegate (it would have otherwise appeared between the name and the regex).</p>
 <p>As you might have seen, the terminal is of type <code>DesigntimeFarkle</code>, without a generic parameter at the end. This means it can be normally used from other grammars (even typed), but it cannot be the significant member of a production. You can write for example <code>!@ W .&gt;&gt; X</code> (or <code>W.Extended().Append(X)</code> in C#), but not <code>!@ W .&gt;&gt;. X</code> (or <code>W.Extended().Extend(X)</code>).</p>
 <blockquote>
-<p>If you don't remember how to use an API from C#, [this guide][csharp.html] can help you.</p>
+<p>If you don't remember how to use an API from C#, <a href="csharp.html">this guide</a> can help you.</p>
 </blockquote>
 <p>The nonterminals use a slightly different approach. Let's see how we would write the nonterminal that recognizes the balanced parentheses:</p>
 <p><strong>F#:</strong></p>
@@ -230,7 +230,7 @@ RuntimeFarkle&lt;Unit&gt; SyntaxCheck <span class="o">=</span> Runtime.ChangePos
 <p>Actually, the post-processor used in both the F# and the C# example is the same object too. Post-processors are <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/covariance-contravariance/">covariant</a> like designtime Farkles, because they are interfaces. Runtime Farkles on the other hand are classes and therefore not variant at all.</p>
 </blockquote>
 <hr />
-<p>Farkle has more APIs for various little features that would make this document too lengthy. Fortunately, <a href="reference.html">they are well-documented in this site</a>, as well as while you code.</p>
+<p>Farkle has more APIs for various little features that would make this document too lengthy. Fortunately, <a href="reference/index.html">they are well-documented in this site</a>, as well as while you code.</p>
 <p>So, I hope you enjoyed this little guide. If you did, don't forget to give Farkle a try, and maybe you feel especially untyped today, and want to hit the star button as well. I hope that all of you have a wonderful day, and to see you soon. Goodbye!</p>
 
 <div class="tip" id="fs1">Multiple items<br />val int : value:&#39;T -&gt; int (requires member op_Explicit)<br /><br />--------------------<br />type int = int32<br /><br />--------------------<br />type int&lt;&#39;Measure&gt; = int</div>

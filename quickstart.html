@@ -87,7 +87,7 @@
 </table>
 <p><code>Number</code> is an object implementing <code>IEnumerable&lt;char&gt;</code> which is called a <em>predefined set</em>. <a href="http://goldparser.org/doc/grammars/predefined-sets.htm">A list of all predefined sets</a> can be found at the documentation of GOLD Parser, the project that inspired Farkle.</p>
 <blockquote>
-<p><strong>Note:</strong> A future release will allow creating regexes from strings.</p>
+<p><strong>Note:</strong> <a href="string-regexes.html">You can also create <code>Regex</code>es from strings.</a></p>
 </blockquote>
 <p>With our regex being ready, we will create the terminal this way:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
@@ -147,10 +147,8 @@
 </blockquote>
 <p>The <code>=&gt;</code> operator finishes a production with a function that decides what to do with its members that we marked as significant. In the first case, we added the numbers, and in the second, we subtracted them. So, depending on the text, <code>_justTwoNumbers</code> would return either the sum, or the difference of them. Obviously, all productions of a nonterminal have to return the same type.</p>
 <p>In the third case, we defined an empty production using <code>empty</code> (what a coincidence!) We used <code>empty =% 0.</code> instead of writing <code>empty =&gt; (fun () -&gt; 0.)</code>.</p>
-<blockquote>
-<p><strong>Note:</strong> An unfinished production is called a <em>production builder</em>. You can mark up to 16 significant members in a production builder.
-<strong>Note:</strong> You can't pass an empty list in the right hand of the <code>||=</code> operator, or the grammar will be invalid.</p>
-</blockquote>
+<p>An unfinished production is called a <em>production builder</em>. You can mark up to 16 significant members in a production builder.</p>
+<p>You can pass an empty list in the right hand of the <code>||=</code> operator but the grammar will fail to be built. A nonterminal must always have at least one production.</p>
 <h3><a name="Writing-more-complex-nonterminals" class="anchor" href="#Writing-more-complex-nonterminals">Writing more complex nonterminals</a></h3>
 <p>Now, our complete calculator grammar would look like this:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
@@ -258,7 +256,7 @@
 <p>The magic lies within the <code>nonterminal</code> function. With this function, we create a nonterminal with a name, but we can set its production <em>later</em> with the <code>SetProductions</code> method. We can only once set them, all together. Calling the method again will be ignored.</p>
 <p>The nonterminals are of type <code>Nonterminal&lt;float&gt;</code>, but implement <code>DesigntimeFarkle&lt;float&gt;</code>; it's actually an interface.</p>
 <blockquote>
-<p><strong>Warning:</strong> Despite designtime Farkles being interfaces, implementing it on your code is not allowed and will throw an exception if done.</p>
+<p><strong>Warning:</strong> Despite designtime Farkles being interfaces, implementing it on your code is not allowed and will throw an exception if a custom designtime Farkle implementation is somehow passed to the Farkle library.</p>
 </blockquote>
 <h2><a name="Building-our-grammar" class="anchor" href="#Building-our-grammar">Building our grammar</a></h2>
 <p>With our nonterminals being ready, it's time to create a runtime Farkle that can parse mathematical expressions. The builder uses the LALR algorithm to create parser tables for our parser. It also creates a post-processor that will handle the parsed numbers.</p>
@@ -334,14 +332,12 @@
 <span class="l">6: </span>
 <span class="l">7: </span>
 <span class="l">8: </span>
-<span class="l">9: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs53', 128)" onmouseover="showTip(event, 'fs53', 128)" class="id">_customized</span> <span class="o">=</span>
     <span onmouseout="hideTip(event, 'fs32', 129)" onmouseover="showTip(event, 'fs32', 129)" class="id">expression</span>
     <span class="c">// You can add as many types of block or line comments as you want.</span>
     <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs54', 130)" onmouseover="showTip(event, 'fs54', 130)" class="m">DesigntimeFarkle</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs55', 131)" onmouseover="showTip(event, 'fs55', 131)" class="id">addBlockComment</span> <span class="s">&quot;/*&quot;</span> <span class="s">&quot;*/&quot;</span>
     <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs54', 132)" onmouseover="showTip(event, 'fs54', 132)" class="m">DesigntimeFarkle</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs56', 133)" onmouseover="showTip(event, 'fs56', 133)" class="id">addLineComment</span> <span class="s">&quot;//&quot;</span>
-    <span class="c">// Obviously, only the last change matters.</span>
     <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs54', 134)" onmouseover="showTip(event, 'fs54', 134)" class="m">DesigntimeFarkle</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs57', 135)" onmouseover="showTip(event, 'fs57', 135)" class="id">caseSensitive</span> <span class="k">true</span>
     <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs54', 136)" onmouseover="showTip(event, 'fs54', 136)" class="m">DesigntimeFarkle</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs58', 137)" onmouseover="showTip(event, 'fs58', 137)" class="id">autoWhitespace</span> <span class="k">false</span>
     <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs54', 138)" onmouseover="showTip(event, 'fs54', 138)" class="m">DesigntimeFarkle</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs59', 139)" onmouseover="showTip(event, 'fs59', 139)" class="id">addNoiseSymbol</span> <span class="s">&quot;Letters&quot;</span> <span class="pn">(</span><span onmouseout="hideTip(event, 'fs7', 140)" onmouseover="showTip(event, 'fs7', 140)" class="fn">chars</span> <span onmouseout="hideTip(event, 'fs60', 141)" onmouseover="showTip(event, 'fs60', 141)" class="id">AllLetters</span><span class="pn">)</span>
