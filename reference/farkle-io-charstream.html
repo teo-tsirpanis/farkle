@@ -39,72 +39,75 @@
     </p>
 <div class="xmldoc">
 <p>A data structure that supports efficient access to a
-read-only sequence of characters. It is not thread-safe.
-And disposing it also disposes the underlying text reader (if exists).</p>
+read-only sequence of characters. It is not thread-safe.</p>
 
 </div>
-  <h3>Record Fields</h3>
+  <h3>Constructors</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Record Field</td><td>Description</td></tr>
+      <tr><td>Constructor</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '533', 533)" onmouseover="showTip(event, '533', 533)">
-            _CurrentPosition
+          <code onmouseout="hideTip(event, '556', 556)" onmouseover="showTip(event, '556', 556)">
+            new(reader, leaveOpen, bufferSize)
           </code>
-          <div class="tip" id="533">
-            <strong>Signature:</strong> Position<br />
-              <strong>Modifiers:</strong> mutable<br />
+          <div class="tip" id="556">
+            <strong>Signature:</strong> (reader:TextReader * leaveOpen:bool * bufferSize:int) -&gt; CharStream<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/b62d18/src/Farkle/CharStream.fs#L140-140" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/CharStream.fs#L151-151" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>Creates a  that lazily reads
+its characters from a .</p>
+
+
+              <p>CompiledName: <code>.ctor</code></p>
         </td>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '534', 534)" onmouseover="showTip(event, '534', 534)">
-            Source
+          <code onmouseout="hideTip(event, '557', 557)" onmouseover="showTip(event, '557', 557)">
+            new(str)
           </code>
-          <div class="tip" id="534">
-            <strong>Signature:</strong> CharStreamSource<br />
+          <div class="tip" id="557">
+            <strong>Signature:</strong> str:string -&gt; CharStream<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/b62d18/src/Farkle/CharStream.fs#L136-136" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/CharStream.fs#L141-141" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>The stream's source.</p>
+          <p>Creates a  from a string.</p>
 
 
+              <p>CompiledName: <code>.ctor</code></p>
         </td>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '535', 535)" onmouseover="showTip(event, '535', 535)">
-            StartingIndex
+          <code onmouseout="hideTip(event, '558', 558)" onmouseover="showTip(event, '558', 558)">
+            new(mem)
           </code>
-          <div class="tip" id="535">
-            <strong>Signature:</strong> uint64<br />
-              <strong>Modifiers:</strong> mutable<br />
+          <div class="tip" id="558">
+            <strong>Signature:</strong> mem:ReadOnlyMemory&lt;char&gt; -&gt; CharStream<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/b62d18/src/Farkle/CharStream.fs#L139-139" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/CharStream.fs#L139-139" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>The index of the first element that must be retained in memory
-because it is going to be used to generate a token.</p>
+          <p>Creates a  from a
+.</p>
 
 
+              <p>CompiledName: <code>.ctor</code></p>
         </td>
       </tr>
     </tbody>
@@ -117,20 +120,62 @@ because it is going to be used to generate a token.</p>
     <tbody>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '536', 536)" onmouseover="showTip(event, '536', 536)">
+          <code onmouseout="hideTip(event, '559', 559)" onmouseover="showTip(event, '559', 559)">
+            x.AdvanceBy(ofs)
+          </code>
+          <div class="tip" id="559">
+            <strong>Signature:</strong> ofs:int -&gt; unit<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/CharStream.fs#L189-189" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Advances the stream's current position by
+characters. This function invalidates the indices for the stream's
+and the characters might be released
+from memory.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '560', 560)" onmouseover="showTip(event, '560', 560)">
+            x.CharacterBuffer
+          </code>
+          <div class="tip" id="560">
+            <strong>Signature:</strong> ReadOnlySpan&lt;char&gt;<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/CharStream.fs#L165-165" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>A read-only span of characters that contains all
+available characters at and after the stream's current position.</p>
+
+
+              <p>CompiledName: <code>get_CharacterBuffer</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '561', 561)" onmouseover="showTip(event, '561', 561)">
             x.CurrentPosition
           </code>
-          <div class="tip" id="536">
+          <div class="tip" id="561">
             <strong>Signature:</strong> inref&lt;Position&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/b62d18/src/Farkle/CharStream.fs#L168-168" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/CharStream.fs#L160-160" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Gets the stream's current position.
-Reading the stream for a new token starts from here.</p>
+          <p>The position of the next character the stream has to read.</p>
 
 
               <p>CompiledName: <code>get_CurrentPosition</code></p>
@@ -138,88 +183,60 @@ Reading the stream for a new token starts from here.</p>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '537', 537)" onmouseover="showTip(event, '537', 537)">
-            x.LastTokenPosition
+          <code onmouseout="hideTip(event, '562', 562)" onmouseover="showTip(event, '562', 562)">
+            x.GetPositionAtOffset(ofs)
           </code>
-          <div class="tip" id="537">
-            <strong>Signature:</strong> inref&lt;Position&gt;<br />
+          <div class="tip" id="562">
+            <strong>Signature:</strong> ofs:int -&gt; Position<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/b62d18/src/Farkle/CharStream.fs#L170-170" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/CharStream.fs#L179-179" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>The starting position of the last token that was generated.</p>
-
-
-              <p>CompiledName: <code>get_LastTokenPosition</code></p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <h3>Static members</h3>
-  <table class="table table-bordered member-list">
-    <thead>
-      <tr><td>Static member</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="member-name">
-          <code onmouseout="hideTip(event, '538', 538)" onmouseover="showTip(event, '538', 538)">
-            CharStream.Create(reader, bufferSize)
-          </code>
-          <div class="tip" id="538">
-            <strong>Signature:</strong> (reader:TextReader * bufferSize:int) -&gt; CharStream<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/b62d18/src/Farkle/CharStream.fs#L161-161" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Creates a <a href="farkle-io-charstream.html" title="CharStream"><code>CharStream</code></a> that lazily reads from a <code>TextReader</code>.
-The size of the stream's internal character buffer can be optionally specified.
-<code>CharStreams</code> made from this function must be <code>Dispose</code>d.
-The <code>TextReader</code> inside must be separately disposed as well.</p>
+          <p>Returns the position of the character at
+characters after the current position.</p>
 
 
         </td>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '539', 539)" onmouseover="showTip(event, '539', 539)">
-            CharStream.Create(str)
+          <code onmouseout="hideTip(event, '563', 563)" onmouseover="showTip(event, '563', 563)">
+            x.ObjectStore
           </code>
-          <div class="tip" id="539">
-            <strong>Signature:</strong> str:string -&gt; CharStream<br />
+          <div class="tip" id="563">
+            <strong>Signature:</strong> IDictionary&lt;string,obj&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/b62d18/src/Farkle/CharStream.fs#L154-154" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/CharStream.fs#L162-162" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Creates a <a href="farkle-io-charstream.html" title="CharStream"><code>CharStream</code></a> from a string.</p>
-
-
+          
+              <p>CompiledName: <code>get_ObjectStore</code></p>
         </td>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '540', 540)" onmouseover="showTip(event, '540', 540)">
-            CharStream.Create(mem)
+          <code onmouseout="hideTip(event, '564', 564)" onmouseover="showTip(event, '564', 564)">
+            x.TryExpandPastOffset(ofs)
           </code>
-          <div class="tip" id="540">
-            <strong>Signature:</strong> mem:ReadOnlyMemory&lt;char&gt; -&gt; CharStream<br />
+          <div class="tip" id="564">
+            <strong>Signature:</strong> ofs:int -&gt; bool<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/b62d18/src/Farkle/CharStream.fs#L152-152" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/CharStream.fs#L172-172" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Creates a <a href="farkle-io-charstream.html" title="CharStream"><code>CharStream</code></a> from a <code>ReadOnlyMemory</code> of characters.</p>
+          <p>Tries to load the th character after the stream's
+current position. If it does not exist, returns false. This function invalidates
+the stream's  but keeps the indices of the new buffer
+valid.</p>
 
 
         </td>
@@ -250,7 +267,6 @@ The <code>TextReader</code> inside must be separately disposed as well.</p>
             <li><a href="/Farkle/string-regexes.html">String regex reference</a></li>
             <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
-            <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>
         </div>
       </div>

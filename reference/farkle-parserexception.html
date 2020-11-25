@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>SetOnce<'T> - Farkle</title>
+    <title>ParserException - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -32,55 +32,37 @@
         <div class="span9" id="main">
           
 
-<h1>SetOnce<'T></h1>
+<h1>ParserException</h1>
 <p>
 
-    <span>Namespace: Farkle.Common</span><br />
+    <span>Namespace: Farkle</span><br />
     </p>
 <div class="xmldoc">
-<p>A reference type whose value can only be set once.</p>
+<p>An exception thrown by Farkle's parser on a snytax or lexical error.</p>
 
 </div>
-  <h3>Record Fields</h3>
+  <h3>Constructors</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Record Field</td><td>Description</td></tr>
+      <tr><td>Constructor</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '483', 483)" onmouseover="showTip(event, '483', 483)">
-            _IsSet
+          <code onmouseout="hideTip(event, '297', 297)" onmouseover="showTip(event, '297', 297)">
+            new(error)
           </code>
-          <div class="tip" id="483">
-            <strong>Signature:</strong> int<br />
-              <strong>Modifiers:</strong> mutable<br />
+          <div class="tip" id="297">
+            <strong>Signature:</strong> error:ParserError -&gt; ParserException<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Common.fs#L13-13" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Exceptions.fs#L18-18" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-          <code onmouseout="hideTip(event, '484', 484)" onmouseover="showTip(event, '484', 484)">
-            _Value
-          </code>
-          <div class="tip" id="484">
-            <strong>Signature:</strong> &#39;T<br />
-              <strong>Modifiers:</strong> mutable<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Common.fs#L14-14" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
+              <p>CompiledName: <code>.ctor</code></p>
         </td>
       </tr>
     </tbody>
@@ -93,110 +75,23 @@
     <tbody>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '485', 485)" onmouseover="showTip(event, '485', 485)">
-            x.IsSet
+          <code onmouseout="hideTip(event, '298', 298)" onmouseover="showTip(event, '298', 298)">
+            x.Error
           </code>
-          <div class="tip" id="485">
-            <strong>Signature:</strong> bool<br />
+          <div class="tip" id="298">
+            <strong>Signature:</strong> ParserError<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Common.fs#L29-29" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Exceptions.fs#L22-22" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Returns whether this <code>SetOnce</code> has a value set.</p>
+          <p>The
+object this exception holds.</p>
 
 
-              <p>CompiledName: <code>get_IsSet</code></p>
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-          <code onmouseout="hideTip(event, '486', 486)" onmouseover="showTip(event, '486', 486)">
-            x.TrySet(v)
-          </code>
-          <div class="tip" id="486">
-            <strong>Signature:</strong> v:&#39;T -&gt; bool<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Common.fs#L21-21" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Tries to set this <code>SetOnce</code>'s value to an object.
-Returns whether the value was changed.
-This method is thread-safe, in the sense that only
-one thread will ever be able to set a value to this object.</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-          <code onmouseout="hideTip(event, '487', 487)" onmouseover="showTip(event, '487', 487)">
-            x.ValueOrDefault(def)
-          </code>
-          <div class="tip" id="487">
-            <strong>Signature:</strong> def:&#39;T -&gt; &#39;T<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Common.fs#L31-31" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Returns the <code>SetOnce</code>'s value - if it is set - or the given object otherwise.</p>
-
-
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <h3>Static members</h3>
-  <table class="table table-bordered member-list">
-    <thead>
-      <tr><td>Static member</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="member-name">
-          <code onmouseout="hideTip(event, '488', 488)" onmouseover="showTip(event, '488', 488)">
-            SetOnce.Create(x)
-          </code>
-          <div class="tip" id="488">
-            <strong>Signature:</strong> x:&#39;?11581 -&gt; SetOnce&lt;&#39;?11581&gt;<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Common.fs#L42-42" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Creates a <code>SetOnce</code> object whose value is already set and cannot be changed.</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-          <code onmouseout="hideTip(event, '489', 489)" onmouseover="showTip(event, '489', 489)">
-            SetOnce.Create()
-          </code>
-          <div class="tip" id="489">
-            <strong>Signature:</strong> unit -&gt; SetOnce&lt;&#39;a&gt;<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Common.fs#L37-37" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Creates a <code>SetOnce</code> object whose value can be set at a later time.
-(try to guess how many times)</p>
-
-
+              <p>CompiledName: <code>get_Error</code></p>
         </td>
       </tr>
     </tbody>

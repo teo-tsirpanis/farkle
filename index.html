@@ -32,32 +32,38 @@
       <div class="row">
         <div class="span9" id="main">
           <h1><a name="What-is-Farkle" class="anchor" href="#What-is-Farkle">What is Farkle?</a></h1>
-<p>Farkle is a parser library for F# and C#. It creates LALR parsers from composable objects that resemble parser combinators.</p>
-<div class="row">
-  <div class="span1"></div>
-  <div class="span6">
-    <div class="well well-small" id="nuget">
-      The Farkle library can be <a href="https://nuget.org/packages/Farkle">installed from NuGet</a>:
-      <pre>dotnet add package Farkle</pre>
-    </div>
-  </div>
-  <div class="span1"></div>
-</div>
+<p>Farkle is a text parser library for .NET, featuring the best of both worlds: <strong>LALR parser combinators</strong>. Users define the terminals and nonterminals of their grammars, what to do when each of them is encountered, and Farkle takes care of the rest.</p>
+<p>It can be <a href="https://nuget.org/packages/Farkle">installed from NuGet</a>.</p>
+<h2><a name="Features" class="anchor" href="#Features">Features</a></h2>
+<ul>
+<li><strong>Speed</strong>: Farkle is fast. Its performance is a top priority and lots of time has been invested in its optimization.</li>
+<li><strong>Language compatibility</strong>: Farkle is usable from both C# and F#, with an intuitive API for each language.</li>
+<li><strong>Fast development cycle</strong>: Unlike parser generators, Farkle does not generate any source files. Your grammars are type-safe and created entirely from code, allowing features like IntelliSense and real-time syntax error reporting.</li>
+<li><strong>Integration with MSBuild</strong>: Farkle can optionally integrate with MSBuild to enable features like <a href="the-precompiler.html">ahead-of-time grammar building</a> which drastically reduces startup times and catches grammar errors like LALR conflicts at compile time.</li>
+<li><strong>Large file support</strong>: Farkle can parse large files without entirely reading them to memory.</li>
+<li><strong>Grammar introspection</strong>: Farkle provides <a href="reference/farkle-grammar-grammar.html">APIs that allow your grammars to be inspected from code</a>.</li>
+<li>
+<strong>Wide framework support</strong>: Farkle targets .NET Standard 2.0, supporting .NET Framework 4.6.1+, .NET Core 2.0+, Xamarin, UWP and Unity.
+<!-- * __Templating__: Farkle supports [creating templated text files from grammars](templating-reference.html) using [Scriban]. -->
+</li>
+</ul>
+<p><a href="choosing-a-parser.html">Learn more</a> about Farkle's features, compared with other .NET parsers.</p>
 <h2><a name="Documentation" class="anchor" href="#Documentation">Documentation</a></h2>
 <p>The library comes with comprehensible documentation.</p>
 <ul>
 <li><p><a href="quickstart.html">Quick Start: Creating a calculator</a> to get started with writing a simple calculator in F#.</p></li>
-<li><p><a href="choosing-a-parser.html">Choosing a parser for your .NET project</a> to compare Farkle with its competition.</p></li>
 <li><p><a href="csharp.html">Using Farkle with C#</a> to learn what changes when using Farkle in a C# project.</p></li>
 <li><p><a href="reference/index.html">API Reference</a> contains automatically generated documentation for all types, modules and functions in the library.</p></li>
 </ul>
+<h2><a name="Samples" class="anchor" href="#Samples">Samples</a></h2>
+<ul>
+<li><p>A <strong>JSON parser</strong> powered by Farkle and written in both <a href="https://github.com/teo-tsirpanis/Farkle/blob/master/sample/Farkle.Samples.CSharp/JSON.cs">C#</a> and <a href="https://github.com/teo-tsirpanis/Farkle/blob/master/sample/Farkle.Samples.FSharp/JSON.fs">F#</a>.</p></li>
+<li><p>A <strong>mathematical expression parser</strong> powered by Farkle and written in <a href="https://github.com/teo-tsirpanis/Farkle/blob/master/sample/Farkle.Samples.FSharp/SimpleMaths.fs">F#</a>, also showcasing some more advanced features.</p></li>
+</ul>
 <h2><a name="Contributing-and-copyright" class="anchor" href="#Contributing-and-copyright">Contributing and copyright</a></h2>
-<p>The project is hosted on <a href="https://github.com/teo-tsirpanis/Farkle">GitHub</a> where you can <a href="https://github.com/teo-tsirpanis/Farkle/issues">report issues</a>, fork
-the project and submit pull requests. If you're adding a new public API, please also
-consider adding <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/docsrc/content">samples</a> that can be turned into a documentation.</p>
+<p>The project is hosted on <a href="https://github.com/teo-tsirpanis/Farkle">GitHub</a> where you can <a href="https://github.com/teo-tsirpanis/Farkle/issues">report issues</a>, fork the project and submit pull requests.</p>
 <p>The library is available under the MIT license, which allows modification and
-redistribution for both commercial and non-commercial purposes. For more information see the
-<a href="https://github.com/teo-tsirpanis/Farkle/blob/master/LICENSE.txt">License file</a> in the GitHub repository.</p>
+redistribution for both commercial and non-commercial purposes. For more information see the <a href="https://github.com/teo-tsirpanis/Farkle/blob/master/LICENSE.txt">License file</a> in the GitHub repository.</p>
 
 
         </div>
@@ -83,7 +89,6 @@ redistribution for both commercial and non-commercial purposes. For more informa
             <li><a href="/Farkle/string-regexes.html">String regex reference</a></li>
             <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
-            <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>
         </div>
       </div>

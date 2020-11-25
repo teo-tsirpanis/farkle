@@ -69,7 +69,7 @@
 
 <span class="k">var</span> number <span class="o">=</span> Regex.FromRegexString(<span class="s">"[+-]?\d+"</span>);
 </code></pre></td></tr></table>
-<p>These regexes are full-blown <code>Regex</code>-typed objects. They are composable, reusable and can be used anywhere instead of constructed regexes. Despite their similarity however, the language of regex strings is not the same with the language of say PCRE regexes. In this guide we will take a look at what is supported in regex strings and what isn't. So, are you ready? Let's do this!</p>
+<p>These regexes are full-blown <code>Regex</code>-typed objects. They are composable, reusable and can be used anywhere instead of constructed regexes. Despite their similarity however, the language of regex strings is not the same with the language of popular regex libraries, say PCRE. In this guide we will take a look at what is supported in regex strings and what isn't. So, are you ready? Let's do this!</p>
 <h2><a name="Supported-string-regex-constructs" class="anchor" href="#Supported-string-regex-constructs">Supported string regex constructs</a></h2>
 <h3><a name="Character-classes" class="anchor" href="#Character-classes">Character classes</a></h3>
 <p>In Farkle's string regexes, you can define character classes mostly in the same way with PCRE regexes Here's what is supported:</p>
@@ -87,7 +87,7 @@
 <h3><a name="Quantifiers" class="anchor" href="#Quantifiers">Quantifiers</a></h3>
 <p>As with PCRE regexes, quantifiers like the <code>*</code>, <code>+</code> or <code>?</code> mean "zero or more", "one or more", and "zero or one" respectively. Less known quantifiers like <code>{m,n}</code>, <code>{m,}</code> and <code>{m}</code> mean "between <code>m</code> and <code>n</code> times", "at least <code>m</code> times" and "exactly <code>m</code> times" respectively.</p>
 <h3><a name="Precedence-and-grouping" class="anchor" href="#Precedence-and-grouping">Precedence and grouping</a></h3>
-<p>The regex disjunction operator <code>|</code> takes precedence over regex concatenation, which means that <code>foo|bar</code> matches either <code>foo</code> or <code>bar</code>, not <code>fo</code>, either <code>o</code> or <code>b</code> and then <code>ar</code>. You can specify a custom operator precedence with parentheses. For example, <code>fo(o|u)</code> matches only either <code>foo</code> or <code>fou</code>.</p>
+<p>The regex disjunction operator <code>|</code> takes precedence over regex concatenation, which means that <code>foo|bar</code> matches either <code>foo</code> or <code>bar</code>, not <code>fo</code>, either <code>o</code> or <code>b</code>, and then <code>ar</code>. You can specify a custom operator precedence with parentheses. For example, <code>fo(o|u)</code> matches only either <code>foo</code> or <code>fou</code>.</p>
 <blockquote>
 <p><strong>Note</strong>: Parentheses exist only for defining operator precedence. Capturing groups is not supported.</p>
 </blockquote>
@@ -135,7 +135,6 @@
             <li><a href="/Farkle/string-regexes.html">String regex reference</a></li>
             <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
-            <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>
         </div>
       </div>

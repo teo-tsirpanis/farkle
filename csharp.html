@@ -32,14 +32,68 @@
       <div class="row">
         <div class="span9" id="main">
           <h1><a name="Using-Farkle-from-C" class="anchor" href="#Using-Farkle-from-C">Using Farkle from C#</a></h1>
-<p>Farkle is a library written in F#, but supporting the much more used C# is a valuable feature. Because these two languages are quite different, there is a more idiomatic API for C# users. In this tutorial, we will assume that you have read [the F# quickstart guide][fsharp].</p>
+<p>Farkle is a library written in F#, but supporting the much more used C# is a valuable feature. Because these two languages are quite different, there is a more idiomatic API for C# users. In this tutorial, we will assume that you have read <a href="quickstart.html">the F# quickstart guide</a>.</p>
 <blockquote>
 <p>The API described here is available in F# as well.</p>
 </blockquote>
 <h2><a name="Building-grammars" class="anchor" href="#Building-grammars">Building grammars</a></h2>
 <p>F# programs using Farkle use an operator-laden API to compose designtime Farkles. Because C# does not support custom operators, we can instead use a different API based on extension methods.</p>
 <h3><a name="Creating-regexes" class="anchor" href="#Creating-regexes">Creating regexes</a></h3>
-<p>Regular expressions are created using [members of the <code>Regex</code> class][regex], which is well documented. Predefined sets are in the <code>PredefinedSets</code> class.</p>
+<p>Regular expressions are created using <a href="reference/farkle-builder-regex.html">members of the <code>Regex</code> class</a>, which is well documented. Predefined sets are in the <a href="reference/farkle-builder-predefinedsets.html"><code>PredefinedSets</code></a> class. Let's see a comparison:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
+<span class="l"> 2: </span>
+<span class="l"> 3: </span>
+<span class="l"> 4: </span>
+<span class="l"> 5: </span>
+<span class="l"> 6: </span>
+<span class="l"> 7: </span>
+<span class="l"> 8: </span>
+<span class="l"> 9: </span>
+<span class="l">10: </span>
+<span class="l">11: </span>
+<span class="l">12: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">open</span> <span class="id">Farkle</span><span class="pn">.</span><span class="id">Builder</span>
+<span class="k">open</span> <span class="id">Farkle</span><span class="pn">.</span><span class="id">Builder</span><span class="pn">.</span><span class="id">Regex</span>
+
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="id">regex1</span> <span class="o">=</span> <span class="id">regexString</span> <span class="s">&quot;Hello+&#39; &#39;?World!*&quot;</span>
+
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="id">regex2</span> <span class="o">=</span> <span class="id">concat</span> <span class="pn">[</span>
+    <span onmouseout="hideTip(event, 'fs3', 3)" onmouseover="showTip(event, 'fs3', 3)" class="id">string</span> <span class="s">&quot;Hell&quot;</span>
+    <span onmouseout="hideTip(event, 'fs4', 4)" onmouseover="showTip(event, 'fs4', 4)" class="id">char</span> <span class="s">&#39;o&#39;</span> <span class="o">|&gt;</span> <span class="id">plus</span>
+    <span onmouseout="hideTip(event, 'fs4', 5)" onmouseover="showTip(event, 'fs4', 5)" class="id">char</span> <span class="s">&#39; &#39;</span> <span class="o">|&gt;</span> <span class="id">optional</span>
+    <span onmouseout="hideTip(event, 'fs3', 6)" onmouseover="showTip(event, 'fs3', 6)" class="id">string</span> <span class="s">&quot;World&quot;</span>
+    <span onmouseout="hideTip(event, 'fs4', 7)" onmouseover="showTip(event, 'fs4', 7)" class="id">char</span> <span class="s">&#39;!&#39;</span> <span class="o">|&gt;</span> <span class="id">star</span>
+<span class="pn">]</span>
+</code></pre></td>
+</tr>
+</table>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
+<span class="l"> 2: </span>
+<span class="l"> 3: </span>
+<span class="l"> 4: </span>
+<span class="l"> 5: </span>
+<span class="l"> 6: </span>
+<span class="l"> 7: </span>
+<span class="l"> 8: </span>
+<span class="l"> 9: </span>
+<span class="l">10: </span>
+<span class="l">11: </span>
+<span class="l">12: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="csharp"><span class="k">using</span> Farkle.Builder;
+<span class="k">using</span> <span class="k">static</span> Farkle.Builder.Regex;
+
+<span class="k">var</span> regex<span class="n">1</span> <span class="o">=</span> FromRegexString(<span class="s">"Hello+' '?World!*"</span>);
+
+<span class="k">var</span> regex<span class="n">2</span> <span class="o">=</span> Join(
+    Literal(<span class="s">"Hell"</span>),
+    Literal(<span class="s">'o'</span>).AtLeast(<span class="n">1</span>),
+    Literal(<span class="s">' '</span>).Optional(),
+    Literal(<span class="s">"World"</span>),
+    Literal(<span class="s">'!'</span>).ZeroOrMore()
+);
+</code></pre></td></tr></table>
 <h3><a name="Cerating-amp-building-designtime-Farkles" class="anchor" href="#Cerating-amp-building-designtime-Farkles">Cerating &amp; building designtime Farkles</a></h3>
 <p>The following table highlights the differences between the F# and C# designtime Farkle API.</p>
 <table>
@@ -52,7 +106,7 @@
 <tbody>
 <tr class="odd">
 <td><p><code>terminal "X" (T (fun _ x -&gt; x.ToString())) r</code></p></td>
-<td><p><code>Terminal.Create("X", (position, data) =&gt; data.ToString(), r)</code></p></td>
+<td><p><code>Terminal.Create("X", (_, x) =&gt; x.ToString(), r)</code></p></td>
 </tr>
 <tr class="even">
 <td><p><code>"S" ||= [p1; p2]</code></p></td>
@@ -102,10 +156,27 @@
 </table>
 
 <h3><a name="Customizing-designtime-Farkles" class="anchor" href="#Customizing-designtime-Farkles">Customizing designtime Farkles</a></h3>
-<p>To customize things like the case-sensitivity of designtime Farkles, there are some extension methods for them that reside in the <code>Farkle</code> namespace.</p>
+<p>To customize things like the case-sensitivity of designtime Farkles, there are some extension methods for them that reside in the <code>Farkle</code> namespace. Let's take a look at an example:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+<span class="l">7: </span>
+<span class="l">8: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="csharp"><span class="k">var</span> test <span class="o">=</span>
+    Terminals.Int<span class="n">32</span>(<span class="s">"Test"</span>)
+        .AddBlockComment(<span class="s">"/*"</span>, <span class="s">"*/"</span>)
+        .AddLineComment(<span class="s">"//"</span>)
+        .AutoWhitespace(<span class="k">false</span>)
+        .CaseSensitive(<span class="k">false</span>)
+        .MarkForPrecompile()
+        .Build();
+</code></pre></td></tr></table>
 <h2><a name="Parsing" class="anchor" href="#Parsing">Parsing</a></h2>
-<p>To parse text, there are some extension methods for runtime Farkles that reside in the <code>Farkle</code> namespace.</p>
-<p>These functions return an F# result type that can nevertheless be used from C# like this:</p>
+<p>To parse text, there are some extension methods for runtime Farkles that reside in the <code>Farkle</code> namespace. These functions return an F# result type that can nevertheless be used from C# like this:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
 <span class="l"> 2: </span>
 <span class="l"> 3: </span>
@@ -120,23 +191,39 @@
 <span class="l">12: </span>
 <span class="l">13: </span>
 <span class="l">14: </span>
+<span class="l">15: </span>
+<span class="l">16: </span>
+<span class="l">17: </span>
+<span class="l">18: </span>
+<span class="l">19: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="csharp"><span class="k">var</span> designtime <span class="o">=</span> <span class="c">/*...*/</span>;
 <span class="k">var</span> runtime <span class="o">=</span> designtime.Build();
+<span class="c">// Parsing strings.</span>
 <span class="k">var</span> result <span class="o">=</span> runtime.Parse(<span class="s">"foobar"</span>);
 
 <span class="k">if</span> (result.IsOk)
     Console.WriteLine(<span class="s">"Success. Result: {0}"</span>, result.OkValue);
 <span class="k">else</span>
     Console.WriteLine(<span class="s">"Failure. Error message: {0}"</span>, result.ErrorValue);
-<span class="o">-</span><span class="o">-</span><span class="o">-</span>
 
-So, I hope you enjoyed <span class="k">this</span> little guide. If you did, don't forget to give Farkle a <span class="k">try</span>, and maybe you feel especially sharp today, and want to hit the star button <span class="k">as</span> well. I hope that all of you have a wonderful day, and to see you soon. Goodbye!
-
-[fsharp]<span class="o">:</span> quickstart.html
-[regex]<span class="o">:</span> reference/farkle-builder-regex.html
+<span class="c">// Parsing ReadOnlyMemories</span>
+runtime.Parse(<span class="s">"foobar"</span>.AsMemory());
+<span class="c">// Parsing TextReaders</span>
+<span class="k">using</span> (<span class="k">var</span> f <span class="o">=</span> File.OpenText(<span class="s">"foobar.txt"</span>))
+{
+    runtime.Parse(f);
+}
+<span class="c">// Parsing files</span>
+runtime.ParseFile(<span class="s">"foobar.txt"</span>);
 </code></pre></td></tr></table>
+<hr />
+<p>So, I hope you enjoyed this little guide. If you did, don't forget to give Farkle a try, and maybe you feel especially sharp today, and want to hit the star button as well. I hope that all of you have a wonderful day, and to see you soon. Goodbye!</p>
 
+<div class="tip" id="fs1">val regex1 : obj</div>
+<div class="tip" id="fs2">val regex2 : obj</div>
+<div class="tip" id="fs3">Multiple items<br />val string : value:&#39;T -&gt; string<br /><br />--------------------<br />type string = System.String</div>
+<div class="tip" id="fs4">Multiple items<br />val char : value:&#39;T -&gt; char (requires member op_Explicit)<br /><br />--------------------<br />type char = System.Char</div>
 
         </div>
         <div class="span3">
@@ -161,7 +248,6 @@ So, I hope you enjoyed <span class="k">this</span> little guide. If you did, don
             <li><a href="/Farkle/string-regexes.html">String regex reference</a></li>
             <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
-            <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>
         </div>
       </div>

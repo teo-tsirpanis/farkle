@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>PostProcessor<'T> - Farkle</title>
+    <title>F<'T> - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -32,14 +32,19 @@
         <div class="span9" id="main">
           
 
-<h1>PostProcessor<'T></h1>
+<h1>F<'T></h1>
 <p>
 
-    <span>Namespace: Farkle</span><br />
-    </p>
+    <span>Namespace: Farkle.Builder</span><br />
+            <span>
+            Attributes: <br />
+[&lt;CompiledName(&quot;Fuser`1&quot;)&gt;]<br />
+            
+        </span>
+</p>
 <div class="xmldoc">
-<p>Post-processors convert strings of a grammar into more
-meaningful types for the library that uses the parser.</p>
+<p>A delegate that fuses the many members
+of a production into one arbitrary object.</p>
 
 </div>
   <h3>Instance members</h3>
@@ -50,22 +55,20 @@ meaningful types for the library that uses the parser.</p>
     <tbody>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '305', 305)" onmouseover="showTip(event, '305', 305)">
-            x.Fuse(arg1, arg2)
+          <code onmouseout="hideTip(event, '382', 382)" onmouseover="showTip(event, '382', 382)">
+            x.Invoke(members)
           </code>
-          <div class="tip" id="305">
-            <strong>Signature:</strong> (Production * ReadOnlySpan&lt;obj&gt;) -&gt; obj<br />
+          <div class="tip" id="382">
+            <strong>Signature:</strong> members:ReadOnlySpan&lt;obj&gt; -&gt; &#39;T<br />
               <strong>Modifiers:</strong> abstract<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/PostProcessor.fs#L18-18" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Builder/DesigntimeFarkle.fs#L38-38" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Fuses the many members of a  into one arbitrary object.</p>
-
-
+          
         </td>
       </tr>
     </tbody>

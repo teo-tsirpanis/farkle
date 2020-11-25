@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>DFAStateTag - Farkle</title>
+    <title>ITransformer<'sym> - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -32,19 +32,13 @@
         <div class="span9" id="main">
           
 
-<h1>DFAStateTag</h1>
+<h1>ITransformer<'sym></h1>
 <p>
 
-    <span>Namespace: Farkle.Parser</span><br />
-            <span>
-            Attributes: <br />
-[&lt;Struct&gt;]<br />
-            
-        </span>
-</p>
+    <span>Namespace: Farkle</span><br />
+    </p>
 <div class="xmldoc">
-<p>An object representing a DFA state or its absence.
-It is returned from optimized operations.</p>
+<p>The bridge between a character stream and the post-processor API.</p>
 
 </div>
   <h3>Instance members</h3>
@@ -55,109 +49,22 @@ It is returned from optimized operations.</p>
     <tbody>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '542', 542)" onmouseover="showTip(event, '542', 542)">
-            x.IsError
+          <code onmouseout="hideTip(event, '292', 292)" onmouseover="showTip(event, '292', 292)">
+            x.Transform(arg1, arg2, arg3)
           </code>
-          <div class="tip" id="542">
-            <strong>Signature:</strong> bool<br />
+          <div class="tip" id="292">
+            <strong>Signature:</strong> (&#39;sym * ITransformerContext * ReadOnlySpan&lt;char&gt;) -&gt; obj<br />
+              <strong>Modifiers:</strong> abstract<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/b62d18/src/Farkle/Parser/OptimizedOperations.fs#L32-32" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/PostProcessorAbstractions.fs#L37-37" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Whether this <a href="farkle-parser-dfastatetag.html" title="DFAStateTag"><code>DFAStateTag</code></a> represents a failed operation.</p>
+          <p>Converts a terminal into an arbitrary object.</p>
 
 
-              <p>CompiledName: <code>get_IsError</code></p>
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-          <code onmouseout="hideTip(event, '543', 543)" onmouseover="showTip(event, '543', 543)">
-            x.IsOk
-          </code>
-          <div class="tip" id="543">
-            <strong>Signature:</strong> bool<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/b62d18/src/Farkle/Parser/OptimizedOperations.fs#L30-30" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Whether this <a href="farkle-parser-dfastatetag.html" title="DFAStateTag"><code>DFAStateTag</code></a> represents a successful operation.</p>
-
-
-              <p>CompiledName: <code>get_IsOk</code></p>
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-          <code onmouseout="hideTip(event, '544', 544)" onmouseover="showTip(event, '544', 544)">
-            x.Value
-          </code>
-          <div class="tip" id="544">
-            <strong>Signature:</strong> int<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/b62d18/src/Farkle/Parser/OptimizedOperations.fs#L28-28" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>The state number of this <a href="farkle-parser-dfastatetag.html" title="DFAStateTag"><code>DFAStateTag</code></a>, or
-a negative number.</p>
-
-
-              <p>CompiledName: <code>get_Value</code></p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <h3>Static members</h3>
-  <table class="table table-bordered member-list">
-    <thead>
-      <tr><td>Static member</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="member-name">
-          <code onmouseout="hideTip(event, '545', 545)" onmouseover="showTip(event, '545', 545)">
-            DFAStateTag.Error
-          </code>
-          <div class="tip" id="545">
-            <strong>Signature:</strong> DFAStateTag<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/b62d18/src/Farkle/Parser/OptimizedOperations.fs#L21-21" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>A failed <a href="farkle-parser-dfastatetag.html" title="DFAStateTag"><code>DFAStateTag</code></a>.</p>
-
-
-              <p>CompiledName: <code>get_Error</code></p>
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-          <code onmouseout="hideTip(event, '546', 546)" onmouseover="showTip(event, '546', 546)">
-            DFAStateTag.InitialState
-          </code>
-          <div class="tip" id="546">
-            <strong>Signature:</strong> DFAStateTag<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/b62d18/src/Farkle/Parser/OptimizedOperations.fs#L19-19" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-              <p>CompiledName: <code>get_InitialState</code></p>
         </td>
       </tr>
     </tbody>
@@ -186,7 +93,6 @@ a negative number.</p>
             <li><a href="/Farkle/string-regexes.html">String regex reference</a></li>
             <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
-            <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>
         </div>
       </div>

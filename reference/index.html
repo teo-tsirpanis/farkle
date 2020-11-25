@@ -62,6 +62,59 @@
         </tr>
         <tr>
           <td class="type-name">
+            <a href="farkle-farkleexception.html">FarkleException</a>
+          </td>
+          <td class="xmldoc">
+          <p>The base class for all exceptions
+that might be thrown from Farkle.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-itransformer-1.html">ITransformer<'sym></a>
+          </td>
+          <td class="xmldoc">
+          <p>The bridge between a character stream and the post-processor API.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-itransformercontext.html">ITransformerContext</a>
+          </td>
+          <td class="xmldoc">
+          <p>A type that is passed to the transformers and
+provides additional information about the terminal being transformed.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-parserapplicationexception.html">ParserApplicationException</a>
+          </td>
+          <td class="xmldoc">
+          <p>A parsing error that did not originate from
+the parser, but from user code during post-processing.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-parserexception.html">ParserException</a>
+          </td>
+          <td class="xmldoc">
+          <p>An exception thrown by Farkle's parser on a snytax or lexical error.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
             <a href="farkle-position.html">Position</a>
           </td>
           <td class="xmldoc">
@@ -83,22 +136,21 @@ meaningful types for the library that uses the parser.</p>
         </tr>
         <tr>
           <td class="type-name">
-            <a href="farkle-runtimefarkle-1.html">RuntimeFarkle<'TResult></a>
+            <a href="farkle-postprocessorexception.html">PostProcessorException</a>
           </td>
           <td class="xmldoc">
-          <p>A reusable parser and post-processor, created for a specific grammar, and returning
-a specific type of object that best describes an expression of the language of this grammar.</p>
-
-
+          
           </td>
         </tr>
         <tr>
           <td class="type-name">
-            <a href="farkle-runtimefarkleextensions.html">RuntimeFarkleExtensions</a>
+            <a href="farkle-runtimefarkle-1.html">RuntimeFarkle<'TResult></a>
           </td>
           <td class="xmldoc">
-          <p>Extension methods to easily create and work
-with .</p>
+          <p>A reusable parser and post-processor,
+created for a specific grammar, and returning
+a specific type of object that best describes
+an expression of the language of this grammar.</p>
 
 
           </td>
@@ -125,7 +177,7 @@ with .</p>
             <a href="farkle-postprocessors.html">PostProcessors</a>
           </td>
           <td class="xmldoc">
-          <p>Some <code>PostProcessor</code>s, reusable and ready to use.</p>
+          <p>Some reusable <code>PostProcessor</code>s.</p>
 
 
           </td>
@@ -177,7 +229,7 @@ comments are the text fragments that are ignored by the parser.</p>
             <a href="farkle-builder-designtimefarkle.html">DesigntimeFarkle</a>
           </td>
           <td class="xmldoc">
-          <p>The base untyped interface of .</p>
+          <p>The base interface of .</p>
 
 
           </td>
@@ -187,8 +239,7 @@ comments are the text fragments that are ignored by the parser.</p>
             <a href="farkle-builder-designtimefarkle-1.html">DesigntimeFarkle<'T></a>
           </td>
           <td class="xmldoc">
-          <p>An object representing a grammar created by Farkle.Builder.
-It can be converted to a .</p>
+          <p>An object representing a grammar created by Farkle.Builder.</p>
 
 
           </td>
@@ -205,10 +256,22 @@ It can be converted to a .</p>
         </tr>
         <tr>
           <td class="type-name">
+            <a href="farkle-builder-fuser-1.html">F<'T></a>
+          </td>
+          <td class="xmldoc">
+          <p>A delegate that fuses the many members
+of a production into one arbitrary object.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
             <a href="farkle-builder-grammardefinition.html">GrammarDefinition</a>
           </td>
           <td class="xmldoc">
-          <p>A grammar type with some more information that is needed by the builder.</p>
+          <p>An object containing the symbols of a grammar,
+but lacking the LALR and DFA states.</p>
 
 
           </td>
@@ -284,13 +347,40 @@ actions when encountering a <code>Terminal</code> or the end.</p>
         </tr>
         <tr>
           <td class="type-name">
-            <a href="farkle-builder-parserapplicationexception.html">ParserApplicationException</a>
+            <a href="farkle-builder-precompilabledesigntimefarkle.html">PrecompilableDesigntimeFarkle</a>
           </td>
           <td class="xmldoc">
-          <p>A parsing error that did not originate from
-the parser, but from user code during post-processing.</p>
+          <p>A kind of designtime Farkle whose grammar can be precompiled ahead of time.</p>
 
 
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-precompilabledesigntimefarkle-1.html">PrecompilableDesigntimeFarkle<'T></a>
+          </td>
+          <td class="xmldoc">
+          <p>The typed edition of <a href="farkle-builder-precompilabledesigntimefarkle.html" title="PrecompilableDesigntimeFarkle"><code>PrecompilableDesigntimeFarkle</code></a>.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-precompiledgrammar.html">PrecompiledGrammar</a>
+          </td>
+          <td class="xmldoc">
+          <p>An object that represents a precompiled grammar inside an assembly.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-precompilerloaderexception.html">PrecompilerLoaderException</a>
+          </td>
+          <td class="xmldoc">
+          
           </td>
         </tr>
         <tr>
@@ -348,7 +438,8 @@ the parser, but from user code during post-processing.</p>
             <a href="farkle-builder-terminalcallback-1.html">T<'T></a>
           </td>
           <td class="xmldoc">
-          <p>A delegate that accepts the position and data of a terminal, and transforms them into an arbitrary object.</p>
+          <p>A delegate that transforms the content
+of a terminal to an arbitrary object.</p>
 
 
           </td>
@@ -547,10 +638,8 @@ are commonly used in many grammars.</p>
             <a href="farkle-collections-rangemap.html">RangeMap</a>
           </td>
           <td class="xmldoc">
-          <p>Additional functions to create and export range maps to sequences.
-They are public due to compiler limitations.
-Their use is not recommended by user code and they might be
-removed or altered between non-major releases.</p>
+          <p>This module is public due to compiler limitations.
+Do not use it; it is subject to be removed or altered at any time.</p>
 
 
           </td>
@@ -668,6 +757,20 @@ However, it is not limited to "noise", but can be used for any content.</p>
           </td>
           <td class="xmldoc">
           <p>A symbol signifying the start of a group.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-grammar-igrammarprovider.html">IGrammarProvider</a>
+          </td>
+          <td class="xmldoc">
+          <p>This interface is implemented by <see cref="Grammar"/>s and
+<see cref="RuntimeFarkle{TResult}"/>s and provides a uniform
+way to work with grammars inside runtime Farkles and grammars
+themselves, while accounting for potential build errors in an
+exception-free way.</p>
 
 
           </td>
@@ -835,18 +938,7 @@ reading an EGT file goes wrong.</p>
           </td>
           <td class="xmldoc">
           <p>A data structure that supports efficient access to a
-read-only sequence of characters. It is not thread-safe.
-And disposing it also disposes the underlying text reader (if exists).</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-io-itransformer-1.html">ITransformer<'sym></a>
-          </td>
-          <td class="xmldoc">
-          <p>The bridge between a character stream and the post-processor API.</p>
+read-only sequence of characters. It is not thread-safe.</p>
 
 
           </td>
@@ -864,43 +956,10 @@ And disposing it also disposes the underlying text reader (if exists).</p>
     <tbody>
         <tr>
           <td class="type-name">
-            <a href="farkle-parser-dfastatetag.html">DFAStateTag</a>
-          </td>
-          <td class="xmldoc">
-          <p>An object representing a DFA state or its absence.
-It is returned from optimized operations.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
             <a href="farkle-parser-expectedsymbol.html">ExpectedSymbol</a>
           </td>
           <td class="xmldoc">
           <p>A symbol that was expected at the location of a syntax error.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-parser-message-1.html">Message<'a></a>
-          </td>
-          <td class="xmldoc">
-          <p>A log message that contains a position it was encountered.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-parser-optimizedoperations.html">OptimizedOperations</a>
-          </td>
-          <td class="xmldoc">
-          <p>An object that provides optimized functions for some common operations on Grammars.
-These functions require some computationally expensive pre-processing, which is
-performed only once, at the creation of this object.</p>
 
 
           </td>
@@ -917,21 +976,10 @@ performed only once, at the creation of this object.</p>
         </tr>
         <tr>
           <td class="type-name">
-            <a href="farkle-parser-parsemessage.html">ParseMessage</a>
-          </td>
-          <td class="xmldoc">
-          <p>An action of the parser.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="type-name">
             <a href="farkle-parser-parsererror.html">ParserError</a>
           </td>
           <td class="xmldoc">
-          <p>An exception to be thrown when parsing goes wrong.
-It is thrown by the <code>Parser</code> and <a href="farkle-parser-tokenizer.html" title="Tokenizer"><code>Tokenizer</code></a> APIs, and caught by the <a href="farkle-runtimefarkle.html" title="RuntimeFarkle"><code>RuntimeFarkle</code></a>.</p>
+          <p>A log message that contains the position it was encountered.</p>
 
 
           </td>
@@ -943,6 +991,17 @@ It is thrown by the <code>Parser</code> and <a href="farkle-parser-tokenizer.htm
           <td class="xmldoc">
           <p>A token is an instance of a <code>Terminal</code>.
 Tokens carry post-processed terminals, as well as their position within the text file.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-parser-tokenizer.html">Tokenizer</a>
+          </td>
+          <td class="xmldoc">
+          <p>A class that breaks down the characters of a
+into s.</p>
 
 
           </td>
@@ -960,16 +1019,6 @@ Tokens carry post-processed terminals, as well as their position within the text
           </td>
           <td class="xmldoc">
           <p>Functions to syntactically parse a series of tokens using the LALR algorithm.</p>
-
-
-          </td>
-        </tr>
-        <tr>
-          <td class="module-name">
-            <a href="farkle-parser-tokenizer.html">Tokenizer</a>
-          </td>
-          <td class="xmldoc">
-          <p>Functions to tokenize <code>CharStreams</code>.</p>
 
 
           </td>
@@ -1002,7 +1051,6 @@ Tokens carry post-processed terminals, as well as their position within the text
             <li><a href="/Farkle/string-regexes.html">String regex reference</a></li>
             <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
-            <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>
         </div>
       </div>

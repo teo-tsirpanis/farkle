@@ -30,7 +30,25 @@
       <hr />
       <div class="row">
         <div class="span9" id="main">
-          <h4><a name="6-0-0-alpha-2-23-08-2020" class="anchor" href="#6-0-0-alpha-2-23-08-2020">6.0.0-alpha.2 - 23-08-2020</a></h4>
+          <h4><a name="6-0-0-alpha-3-25-11-2020" class="anchor" href="#6-0-0-alpha-3-25-11-2020">6.0.0-alpha.3 - 25-11-2020</a></h4>
+<ul>
+<li><strong>Breaking change:</strong> .NET Framework 4.5 is no longer supported. The library targets .NET Standard 2.0, .NET Standard 2.1 and .NET 5.</li>
+<li><strong>Breaking change:</strong> Logging parser events is no longer supported. The logging function was removed from the signatures of parser APIs.</li>
+<li><strong>Breaking change:</strong> The function <code>LALRParser.parseLALR</code> was renamed to <code>LALRParser.parse</code>.</li>
+<li><strong>Breaking change:</strong> The <code>Farkle.Parser.OptimizedOperations</code> type was made internal.</li>
+<li><strong>Breaking change:</strong> Transformers no longer take the position of a terminal, but an <code>ITransformerContext</code> type containing more information.</li>
+<li><strong>Breaking change:</strong> Farkle's exception types were refactored. They inherit from <code>FarkleException</code>.</li>
+<li><strong>Breaking change:</strong> Post-processor exceptions are wrapped inside a <code>PostProcessorException</code> and thrown to user code.</li>
+<li><strong>Breaking change:</strong> Only objects of type <code>PrecompilableDesigntimeFarkle</code> can be marked for precompilation.</li>
+<li><strong>Minor breaking change:</strong> The <code>Transformers</code> and <code>Fusers</code> properties were removed from the <code>Farkle.Builder.GrammarDefinition</code> type.</li>
+<li>Farkle will now optimize precompilable designtime Farkles using dynamic code generation. This feature is only supported on .NET Standard 2.1 if the runtime supports dynamic code compilation.</li>
+<li>An API for the <code>CharStream</code> type was published.</li>
+<li><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-precompilerinterface.html">An API for getting precompiled grammars</a> was published.</li>
+<li>The tokenizer can be extended by user code. TODO: write documentation</li>
+<li>The runtime Farkle's extension methods became regular methods.</li>
+<li>Exceptions that might occur when a precompiled grammar fails to be loaded can be suppressed with an <code>AppContext</code> switch.</li>
+</ul>
+<h4><a name="6-0-0-alpha-2-23-08-2020" class="anchor" href="#6-0-0-alpha-2-23-08-2020">6.0.0-alpha.2 - 23-08-2020</a></h4>
 <ul>
 <li>Farkle supports creating regexes from strings. See more in <a href="https://teo-tsirpanis.github.io/Farkle/string-regexes.html.">https://teo-tsirpanis.github.io/Farkle/string-regexes.html.</a></li>
 <li>The parser, the builder and the EGT(neo) reader became faster once again.</li>
@@ -226,7 +244,6 @@
             <li><a href="/Farkle/string-regexes.html">String regex reference</a></li>
             <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
-            <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>
         </div>
       </div>

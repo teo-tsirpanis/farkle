@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>ITransformer<'sym> - Farkle</title>
+    <title>Internal - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -32,39 +32,64 @@
         <div class="span9" id="main">
           
 
-<h1>ITransformer<'sym></h1>
+<h1>Internal</h1>
 <p>
-
-    <span>Namespace: Farkle.IO</span><br />
-    </p>
+  <span>Namespace: Farkle.Builder</span><br />
+  <span>Parent Module: <a href="farkle-builder-terminals.html">Terminals</a></span>
+        <span>
+          Attributes:<br />
+[&lt;EditorBrowsable(1)&gt;]<br />
+          
+      </span>
+</p>
 <div class="xmldoc">
-<p>The bridge between a character stream and the post-processor API.</p>
+<p>This module is public due to compiler limitations.
+Do not use it; it is subject to be removed or altered at any time.</p>
 
 </div>
-  <h3>Instance members</h3>
+
+<!-- Render nested types and modules, if there are any -->
+  <h2>Nested types and modules</h2>
+  <div>
+      <table class="table table-bordered type-list">
+    <thead>
+      <tr><td>Type</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-terminals-internal-characters.html">Characters</a>
+          </td>
+          <td class="xmldoc">
+          
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+  <h3>Functions and values</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Instance member</td><td>Description</td></tr>
+      <tr><td>Function or value</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '541', 541)" onmouseover="showTip(event, '541', 541)">
-            x.Transform(arg1, arg2, arg3)
+          <code onmouseout="hideTip(event, '276', 276)" onmouseover="showTip(event, '276', 276)">
+            toCharacters(x)
           </code>
-          <div class="tip" id="541">
-            <strong>Signature:</strong> (&#39;sym * Position * ReadOnlySpan&lt;char&gt;) -&gt; obj<br />
-              <strong>Modifiers:</strong> abstract<br />
+          <div class="tip" id="276">
+            <strong>Signature:</strong> x:ReadOnlySpan&lt;char&gt; -&gt; Characters<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/b62d18/src/Farkle/CharStream.fs#L21-21" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Builder/Terminals.fs#L32-32" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Converts a terminal into an arbitrary object.</p>
-
-
+          
         </td>
       </tr>
     </tbody>
@@ -93,7 +118,6 @@
             <li><a href="/Farkle/string-regexes.html">String regex reference</a></li>
             <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
-            <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>
         </div>
       </div>

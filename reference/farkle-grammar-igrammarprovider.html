@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>ParseMessage - Farkle</title>
+    <title>IGrammarProvider - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -32,100 +32,86 @@
         <div class="span9" id="main">
           
 
-<h1>ParseMessage</h1>
+<h1>IGrammarProvider</h1>
 <p>
 
-    <span>Namespace: Farkle.Parser</span><br />
-            <span>
-            Attributes: <br />
-[&lt;RequireQualifiedAccess&gt;]<br />
-            
-        </span>
-</p>
+    <span>Namespace: Farkle.Grammar</span><br />
+    </p>
 <div class="xmldoc">
-<p>An action of the parser.</p>
+<p>This interface is implemented by <see cref="Grammar"/>s and
+<see cref="RuntimeFarkle{TResult}"/>s and provides a uniform
+way to work with grammars inside runtime Farkles and grammars
+themselves, while accounting for potential build errors in an
+exception-free way.</p>
 
 </div>
-  <h3>Union Cases</h3>
+  <h3>Instance members</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Union Case</td><td>Description</td></tr>
+      <tr><td>Instance member</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '564', 564)" onmouseover="showTip(event, '564', 564)">
-            EndOfInput(Position)
+          <code onmouseout="hideTip(event, '526', 526)" onmouseover="showTip(event, '526', 526)">
+            x.GetBuildErrorMessage()
           </code>
-          <div class="tip" id="564">
-            <strong>Signature:</strong> Position<br />
+          <div class="tip" id="526">
+            <strong>Signature:</strong> unit -&gt; string<br />
+              <strong>Modifiers:</strong> abstract<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/b62d18/src/Farkle/Parser/ParserTypes.fs#L43-43" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Grammar/GrammarTypes.fs#L297-297" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Input ended.</p>
+          <p>Returns a user-friendly error message that
+describes what had gone wrong while building,
+or an empty string if building had been successful.</p>
 
 
         </td>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '565', 565)" onmouseover="showTip(event, '565', 565)">
-            Reduction(Production)
+          <code onmouseout="hideTip(event, '527', 527)" onmouseover="showTip(event, '527', 527)">
+            x.GetGrammar()
           </code>
-          <div class="tip" id="565">
-            <strong>Signature:</strong> Production<br />
+          <div class="tip" id="527">
+            <strong>Signature:</strong> unit -&gt; Grammar<br />
+              <strong>Modifiers:</strong> abstract<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/b62d18/src/Farkle/Parser/ParserTypes.fs#L47-47" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Grammar/GrammarTypes.fs#L293-293" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>A rule was reduced.</p>
+          <p>Gets the  of this provider.</p>
 
 
         </td>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '566', 566)" onmouseover="showTip(event, '566', 566)">
-            Shift(uint32)
+          <code onmouseout="hideTip(event, '528', 528)" onmouseover="showTip(event, '528', 528)">
+            x.IsBuildSuccessful
           </code>
-          <div class="tip" id="566">
-            <strong>Signature:</strong> uint32<br />
+          <div class="tip" id="528">
+            <strong>Signature:</strong> bool<br />
+              <strong>Modifiers:</strong> abstract<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/b62d18/src/Farkle/Parser/ParserTypes.fs#L49-49" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Grammar/GrammarTypes.fs#L289-289" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>The parser shifted to a different LALR state.</p>
+          <p>Whether the grammar has been successfuly built.</p>
 
 
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-          <code onmouseout="hideTip(event, '567', 567)" onmouseover="showTip(event, '567', 567)">
-            TokenRead(Token)
-          </code>
-          <div class="tip" id="567">
-            <strong>Signature:</strong> Token<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/b62d18/src/Farkle/Parser/ParserTypes.fs#L45-45" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>A token was read.</p>
-
-
+              <p>CompiledName: <code>get_IsBuildSuccessful</code></p>
         </td>
       </tr>
     </tbody>
@@ -154,7 +140,6 @@
             <li><a href="/Farkle/string-regexes.html">String regex reference</a></li>
             <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
-            <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>
         </div>
       </div>

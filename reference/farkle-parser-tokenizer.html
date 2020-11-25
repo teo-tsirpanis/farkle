@@ -34,38 +34,63 @@
 
 <h1>Tokenizer</h1>
 <p>
-  <span>Namespace: Farkle.Parser</span><br />
-  </p>
+
+    <span>Namespace: Farkle.Parser</span><br />
+    </p>
 <div class="xmldoc">
-<p>Functions to tokenize <code>CharStreams</code>.</p>
+<p>A class that breaks down the characters of a
+into s.</p>
 
 </div>
-
-<!-- Render nested types and modules, if there are any -->
-
-  <h3>Functions and values</h3>
+  <h3>Constructors</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Function or value</td><td>Description</td></tr>
+      <tr><td>Constructor</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '283', 283)" onmouseover="showTip(event, '283', 283)">
-            tokenize(...)
+          <code onmouseout="hideTip(event, '580', 580)" onmouseover="showTip(event, '580', 580)">
+            new(grammar)
           </code>
-          <div class="tip" id="283">
-            <strong>Signature:</strong> groups:ImmutableArray&lt;Group&gt; -&gt; states:ImmutableArray&lt;DFAState&gt; -&gt; oops:OptimizedOperations -&gt; fTransform:ITransformer&lt;Terminal&gt; -&gt; fMessage:(ParseMessage -&gt; unit) -&gt; input:CharStream -&gt; Token option<br />
+          <div class="tip" id="580">
+            <strong>Signature:</strong> grammar:Grammar -&gt; Tokenizer<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/b62d18/src/Farkle/Parser/Tokenizer.fs#L64-64" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Parser/Tokenizer.fs#L43-43" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Returns the next token from the current position of a <a href="farkle-io-charstream.html" title="CharStream"><code>CharStream</code></a>.
-A delegate to transform the resulting terminal is also given, as well
-as one that logs events.</p>
+          
+              <p>CompiledName: <code>.ctor</code></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Instance members</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Instance member</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '581', 581)" onmouseover="showTip(event, '581', 581)">
+            x.GetNextToken(transformer, input)
+          </code>
+          <div class="tip" id="581">
+            <strong>Signature:</strong> (transformer:ITransformer&lt;Terminal&gt; * input:CharStream) -&gt; Token option<br />
+              <strong>Modifiers:</strong> abstract<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Parser/Tokenizer.fs#L179-179" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Gets the next
+from a .</p>
 
 
         </td>
@@ -96,7 +121,6 @@ as one that logs events.</p>
             <li><a href="/Farkle/string-regexes.html">String regex reference</a></li>
             <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
-            <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>
         </div>
       </div>

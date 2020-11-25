@@ -38,31 +38,78 @@
     <span>Namespace: Farkle.Parser</span><br />
     </p>
 <div class="xmldoc">
-<p>An exception to be thrown when parsing goes wrong.
-It is thrown by the <code>Parser</code> and <a href="farkle-parser-tokenizer.html" title="Tokenizer"><code>Tokenizer</code></a> APIs, and caught by the <a href="farkle-runtimefarkle.html" title="RuntimeFarkle"><code>RuntimeFarkle</code></a>.</p>
+<p>A log message that contains the position it was encountered.</p>
 
 </div>
-  <h3>Record Fields</h3>
+  <h3>Union Cases</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Record Field</td><td>Description</td></tr>
+      <tr><td>Union Case</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '568', 568)" onmouseover="showTip(event, '568', 568)">
-            Data0
+          <code onmouseout="hideTip(event, '573', 573)" onmouseover="showTip(event, '573', 573)">
+            ParserError(Position,ParseErrorType)
           </code>
-          <div class="tip" id="568">
-            <strong>Signature:</strong> Message&lt;ParseErrorType&gt;<br />
+          <div class="tip" id="573">
+            <strong>Signature:</strong> Position * ParseErrorType<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/b62d18/src/Farkle/Parser/ParserTypes.fs#L92-92" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Parser/ParserTypes.fs#L69-69" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Instance members</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Instance member</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '574', 574)" onmouseover="showTip(event, '574', 574)">
+            x.ErrorType
+          </code>
+          <div class="tip" id="574">
+            <strong>Signature:</strong> ParseErrorType<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Parser/ParserTypes.fs#L74-74" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>The type of this parser error.</p>
+
+
+              <p>CompiledName: <code>get_ErrorType</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '575', 575)" onmouseover="showTip(event, '575', 575)">
+            x.Position
+          </code>
+          <div class="tip" id="575">
+            <strong>Signature:</strong> Position<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Parser/ParserTypes.fs#L72-72" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>The position this parser error occured.</p>
+
+
+              <p>CompiledName: <code>get_Position</code></p>
         </td>
       </tr>
     </tbody>
@@ -91,7 +138,6 @@ It is thrown by the <code>Parser</code> and <a href="farkle-parser-tokenizer.htm
             <li><a href="/Farkle/string-regexes.html">String regex reference</a></li>
             <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
-            <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>
         </div>
       </div>

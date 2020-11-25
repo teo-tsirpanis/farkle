@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>SetOnce<'T> - Farkle</title>
+    <title>ITransformerContext - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -32,59 +32,16 @@
         <div class="span9" id="main">
           
 
-<h1>SetOnce<'T></h1>
+<h1>ITransformerContext</h1>
 <p>
 
-    <span>Namespace: Farkle.Common</span><br />
+    <span>Namespace: Farkle</span><br />
     </p>
 <div class="xmldoc">
-<p>A reference type whose value can only be set once.</p>
+<p>A type that is passed to the transformers and
+provides additional information about the terminal being transformed.</p>
 
 </div>
-  <h3>Record Fields</h3>
-  <table class="table table-bordered member-list">
-    <thead>
-      <tr><td>Record Field</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="member-name">
-          <code onmouseout="hideTip(event, '483', 483)" onmouseover="showTip(event, '483', 483)">
-            _IsSet
-          </code>
-          <div class="tip" id="483">
-            <strong>Signature:</strong> int<br />
-              <strong>Modifiers:</strong> mutable<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Common.fs#L13-13" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-          <code onmouseout="hideTip(event, '484', 484)" onmouseover="showTip(event, '484', 484)">
-            _Value
-          </code>
-          <div class="tip" id="484">
-            <strong>Signature:</strong> &#39;T<br />
-              <strong>Modifiers:</strong> mutable<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Common.fs#L14-14" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-    </tbody>
-  </table>
   <h3>Instance members</h3>
   <table class="table table-bordered member-list">
     <thead>
@@ -93,110 +50,66 @@
     <tbody>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '485', 485)" onmouseover="showTip(event, '485', 485)">
-            x.IsSet
+          <code onmouseout="hideTip(event, '293', 293)" onmouseover="showTip(event, '293', 293)">
+            x.EndPosition
           </code>
-          <div class="tip" id="485">
-            <strong>Signature:</strong> bool<br />
+          <div class="tip" id="293">
+            <strong>Signature:</strong> inref&lt;Position&gt;<br />
+              <strong>Modifiers:</strong> abstract<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Common.fs#L29-29" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/PostProcessorAbstractions.fs#L27-27" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Returns whether this <code>SetOnce</code> has a value set.</p>
+          <p>The position of the last character of the token.</p>
 
 
-              <p>CompiledName: <code>get_IsSet</code></p>
+              <p>CompiledName: <code>get_EndPosition</code></p>
         </td>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '486', 486)" onmouseover="showTip(event, '486', 486)">
-            x.TrySet(v)
+          <code onmouseout="hideTip(event, '294', 294)" onmouseover="showTip(event, '294', 294)">
+            x.ObjectStore
           </code>
-          <div class="tip" id="486">
-            <strong>Signature:</strong> v:&#39;T -&gt; bool<br />
+          <div class="tip" id="294">
+            <strong>Signature:</strong> IDictionary&lt;string,obj&gt;<br />
+              <strong>Modifiers:</strong> abstract<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Common.fs#L21-21" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/PostProcessorAbstractions.fs#L32-32" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Tries to set this <code>SetOnce</code>'s value to an object.
-Returns whether the value was changed.
-This method is thread-safe, in the sense that only
-one thread will ever be able to set a value to this object.</p>
+          <p>An associative collection of objects that
+can be indexed by a case-sensitive string.</p>
 
 
+              <p>CompiledName: <code>get_ObjectStore</code></p>
         </td>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '487', 487)" onmouseover="showTip(event, '487', 487)">
-            x.ValueOrDefault(def)
+          <code onmouseout="hideTip(event, '295', 295)" onmouseover="showTip(event, '295', 295)">
+            x.StartPosition
           </code>
-          <div class="tip" id="487">
-            <strong>Signature:</strong> def:&#39;T -&gt; &#39;T<br />
+          <div class="tip" id="295">
+            <strong>Signature:</strong> inref&lt;Position&gt;<br />
+              <strong>Modifiers:</strong> abstract<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Common.fs#L31-31" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/PostProcessorAbstractions.fs#L22-22" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Returns the <code>SetOnce</code>'s value - if it is set - or the given object otherwise.</p>
+          <p>The position of the first character of the token.</p>
 
 
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <h3>Static members</h3>
-  <table class="table table-bordered member-list">
-    <thead>
-      <tr><td>Static member</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="member-name">
-          <code onmouseout="hideTip(event, '488', 488)" onmouseover="showTip(event, '488', 488)">
-            SetOnce.Create(x)
-          </code>
-          <div class="tip" id="488">
-            <strong>Signature:</strong> x:&#39;?11581 -&gt; SetOnce&lt;&#39;?11581&gt;<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Common.fs#L42-42" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Creates a <code>SetOnce</code> object whose value is already set and cannot be changed.</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-          <code onmouseout="hideTip(event, '489', 489)" onmouseover="showTip(event, '489', 489)">
-            SetOnce.Create()
-          </code>
-          <div class="tip" id="489">
-            <strong>Signature:</strong> unit -&gt; SetOnce&lt;&#39;a&gt;<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Common.fs#L37-37" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Creates a <code>SetOnce</code> object whose value can be set at a later time.
-(try to guess how many times)</p>
-
-
+              <p>CompiledName: <code>get_StartPosition</code></p>
         </td>
       </tr>
     </tbody>

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Message<'a> - Farkle</title>
+    <title>PrecompiledGrammar - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -32,36 +32,108 @@
         <div class="span9" id="main">
           
 
-<h1>Message<'a></h1>
+<h1>PrecompiledGrammar</h1>
 <p>
 
-    <span>Namespace: Farkle.Parser</span><br />
+    <span>Namespace: Farkle.Builder</span><br />
     </p>
 <div class="xmldoc">
-<p>A log message that contains a position it was encountered.</p>
+<p>An object that represents a precompiled grammar inside an assembly.</p>
 
 </div>
-  <h3>Union Cases</h3>
+  <h3>Instance members</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Union Case</td><td>Description</td></tr>
+      <tr><td>Instance member</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '549', 549)" onmouseover="showTip(event, '549', 549)">
-            Message(Position,&#39;a)
+          <code onmouseout="hideTip(event, '419', 419)" onmouseover="showTip(event, '419', 419)">
+            x.Assembly
           </code>
-          <div class="tip" id="549">
-            <strong>Signature:</strong> Position * &#39;a<br />
+          <div class="tip" id="419">
+            <strong>Signature:</strong> Assembly<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/b62d18/src/Farkle/Parser/ParserTypes.fs#L86-86" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Builder/PrecompilerInterface.fs#L39-39" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>The <code>Assembly</code> that contains this precompiled grammar.</p>
+
+
+              <p>CompiledName: <code>get_Assembly</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '420', 420)" onmouseover="showTip(event, '420', 420)">
+            x.GetGrammar()
+          </code>
+          <div class="tip" id="420">
+            <strong>Signature:</strong> unit -&gt; Grammar<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Builder/PrecompilerInterface.fs#L43-43" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Gets the actual <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a> of this object.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '421', 421)" onmouseover="showTip(event, '421', 421)">
+            x.GrammarName
+          </code>
+          <div class="tip" id="421">
+            <strong>Signature:</strong> string<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Builder/PrecompilerInterface.fs#L41-41" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>The precompiled grammar's name.</p>
+
+
+              <p>CompiledName: <code>get_GrammarName</code></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Static members</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Static member</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '422', 422)" onmouseover="showTip(event, '422', 422)">
+            PrecompiledGrammar.GetAllFromAssembly(...)
+          </code>
+          <div class="tip" id="422">
+            <strong>Signature:</strong> asm:Assembly -&gt; IReadOnlyDictionary&lt;string,PrecompiledGrammar&gt;<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Builder/PrecompilerInterface.fs#L50-50" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Gets all precompiled grammars of an assembly.
+This function is safe to call from multiple threads and efficient to
+call many times with the same assembly. The cache it internally uses
+does not prevent the assembly from getting unloaded.</p>
+
+
         </td>
       </tr>
     </tbody>
@@ -90,7 +162,6 @@
             <li><a href="/Farkle/string-regexes.html">String regex reference</a></li>
             <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
             <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
-            <li><a href="/Farkle/gold-parser-missing-features.html">Missing Features from GOLD Parser</a></li>
           </ul>
         </div>
       </div>
