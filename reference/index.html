@@ -73,10 +73,11 @@ that might be thrown from Farkle.</p>
         </tr>
         <tr>
           <td class="type-name">
-            <a href="farkle-itransformer-1.html">ITransformer<'sym></a>
+            <a href="farkle-itransformer-1.html">ITransformer<'TSymbol></a>
           </td>
           <td class="xmldoc">
-          <p>The bridge between a character stream and the post-processor API.</p>
+          <p>An interface that transforms tokens from a .
+It is implemented by s.</p>
 
 
           </td>
@@ -99,6 +100,17 @@ provides additional information about the terminal being transformed.</p>
           <td class="xmldoc">
           <p>A parsing error that did not originate from
 the parser, but from user code during post-processing.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-parserapplicationexceptionwithposition.html">ParserApplicationExceptionWithPosition</a>
+          </td>
+          <td class="xmldoc">
+          <p>A descendant of
+that allows specifying the position of the error.</p>
 
 
           </td>
@@ -139,7 +151,10 @@ meaningful types for the library that uses the parser.</p>
             <a href="farkle-postprocessorexception.html">PostProcessorException</a>
           </td>
           <td class="xmldoc">
-          
+          <p>An exception thrown by Farkle when the post-processor throws
+another exception. That exception is wrapped to this one.</p>
+
+
           </td>
         </tr>
         <tr>
@@ -239,7 +254,9 @@ comments are the text fragments that are ignored by the parser.</p>
             <a href="farkle-builder-designtimefarkle-1.html">DesigntimeFarkle<'T></a>
           </td>
           <td class="xmldoc">
-          <p>An object representing a grammar created by Farkle.Builder.</p>
+          <p>An object representing a grammar symbol created by Farkle.Builder.
+It corresponds to either a standalone terminal or a nonterminal
+that contains other designtime Farkles.</p>
 
 
           </td>
@@ -305,12 +322,30 @@ creates groups that have significant content.</p>
         </tr>
         <tr>
           <td class="type-name">
+            <a href="farkle-builder-irawdelegateprovider.html">IRawDelegateProvider</a>
+          </td>
+          <td class="xmldoc">
+          
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
             <a href="farkle-builder-lalrconflict.html">LALRConflict</a>
           </td>
           <td class="xmldoc">
           <p>An LALR conflict.
 It arises when the parser can take different
 actions when encountering a <code>Terminal</code> or the end.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-lalrconflictreason.html">LALRConflictReason</a>
+          </td>
+          <td class="xmldoc">
+          <p>The reason an LALR conflict failed to be resolved.</p>
 
 
           </td>
@@ -350,7 +385,8 @@ actions when encountering a <code>Terminal</code> or the end.</p>
             <a href="farkle-builder-precompilabledesigntimefarkle.html">PrecompilableDesigntimeFarkle</a>
           </td>
           <td class="xmldoc">
-          <p>A kind of designtime Farkle whose grammar can be precompiled ahead of time.</p>
+          <p>An object holding a designtime Farkle whose
+grammar can be precompiled ahead of time.</p>
 
 
           </td>
@@ -360,7 +396,7 @@ actions when encountering a <code>Terminal</code> or the end.</p>
             <a href="farkle-builder-precompilabledesigntimefarkle-1.html">PrecompilableDesigntimeFarkle<'T></a>
           </td>
           <td class="xmldoc">
-          <p>The typed edition of <a href="farkle-builder-precompilabledesigntimefarkle.html" title="PrecompilableDesigntimeFarkle"><code>PrecompilableDesigntimeFarkle</code></a>.</p>
+          <p>The typed edition of .</p>
 
 
           </td>
@@ -377,10 +413,24 @@ actions when encountering a <code>Terminal</code> or the end.</p>
         </tr>
         <tr>
           <td class="type-name">
+            <a href="farkle-builder-precompilerextensions.html">PrecompilerExtensions</a>
+          </td>
+          <td class="xmldoc">
+          <p>Extension methods that create and build precompilable designtime Farkles.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
             <a href="farkle-builder-precompilerloaderexception.html">PrecompilerLoaderException</a>
           </td>
           <td class="xmldoc">
-          
+          <p>This exception gets thrown when Farkle fails to load a precompiled grammar.
+Such exceptions indicate bugs and should they ever occur, opening an issue
+on GitHub would be very helpful.</p>
+
+
           </td>
         </tr>
         <tr>
@@ -435,7 +485,7 @@ actions when encountering a <code>Terminal</code> or the end.</p>
         </tr>
         <tr>
           <td class="type-name">
-            <a href="farkle-builder-terminalcallback-1.html">T<'T></a>
+            <a href="farkle-builder-transformer-1.html">T<'T></a>
           </td>
           <td class="xmldoc">
           <p>A delegate that transforms the content
@@ -479,8 +529,11 @@ The algorithm is a modified edition of the one found at §3.9.5 in
           </td>
           <td class="xmldoc">
           <p>Functions to set metadata for designtime Farkles.
-Keep in mind that apart from renames, only the metadata of the <em>topmost</em>
-designtime Farkle matter. Any other metadata changes will be disregarded.</p>
+With few exceptions, these functions will have to be applied to the topmost
+designtime Farkle that will get build, or they will have no effect.
+Designime Farkles that were applied the functions of this module must not
+be used with the original designimte Farkles in the same context; only
+one grammar symbol will be created, with undefined behavior.</p>
 
 
           </td>
@@ -578,6 +631,123 @@ are commonly used in many grammars.</p>
   </table>
 
     </div>
+  <h2>Farkle.Builder.LALRConflictResolution Namespace</h2>
+    <div>
+      <table class="table table-bordered type-list">
+    <thead>
+      <tr><td>Type</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-lalrconflictresolution-conflictresolutiondecision.html">ConflictResolutionDecision</a>
+          </td>
+          <td class="xmldoc">
+          <p>The decision a  took.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-lalrconflictresolution-lalrconflictresolver.html">LALRConflictResolver</a>
+          </td>
+          <td class="xmldoc">
+          <p>An object that resolves LALR conflicts. By default
+its virtual methods fail to perform any resolution.</p>
+
+
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </div>
+  <h2>Farkle.Builder.OperatorPrecedence Namespace</h2>
+    <div>
+      <table class="table table-bordered type-list">
+    <thead>
+      <tr><td>Type</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-operatorprecedence-associativitygroup.html">AssociativityGroup</a>
+          </td>
+          <td class="xmldoc">
+          <p>A group of symbols that have the same associativity and precedence.
+This class and its descendants accept arrays of objects that correspond
+to symbols.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-operatorprecedence-associativitytype.html">AssociativityType</a>
+          </td>
+          <td class="xmldoc">
+          <p>An associativity group's type. It determines the course of action in
+case of Shift-Reduce conflicts between symbols with the same precedence.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-operatorprecedence-leftassociative.html">LeftAssociative</a>
+          </td>
+          <td class="xmldoc">
+          <p>A shortcut for creating left-associative groups.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-operatorprecedence-nonassociative.html">NonAssociative</a>
+          </td>
+          <td class="xmldoc">
+          <p>A shortcut for creating non-associative groups.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-operatorprecedence-operatorscope.html">OperatorScope</a>
+          </td>
+          <td class="xmldoc">
+          <p>A group of associativity groups sorted by precedence.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-operatorprecedence-precedenceonly.html">PrecedenceOnly</a>
+          </td>
+          <td class="xmldoc">
+          <p>A shortcut for creating associativity groups with only precedence and no associativity between them.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-builder-operatorprecedence-rightassociative.html">RightAssociative</a>
+          </td>
+          <td class="xmldoc">
+          <p>A shortcut for creating right-associative groups.</p>
+
+
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </div>
+  <h2>Farkle.Builder.ProductionBuilders Namespace</h2>
   <h2>Farkle.Builder.Untyped Namespace</h2>
     <div>
       <table class="table table-bordered type-list">
@@ -608,7 +778,7 @@ are commonly used in many grammars.</p>
     <tbody>
         <tr>
           <td class="type-name">
-            <a href="farkle-collections-rangemap-2.html">RangeMap<'key, 'a></a>
+            <a href="farkle-collections-rangemap-2.html">RangeMap<'TKey, 'TValue></a>
           </td>
           <td class="xmldoc">
           <p>An associative data structure that assigns ranges of keys to a value.</p>
@@ -618,7 +788,7 @@ are commonly used in many grammars.</p>
         </tr>
         <tr>
           <td class="type-name">
-            <a href="farkle-collections-rangemapelement-2.html">RangeMapElement<'key, 'a></a>
+            <a href="farkle-collections-rangemapelement-2.html">RangeMapElement<'TKey, 'a></a>
           </td>
           <td class="xmldoc">
           <p>Α closed interval whose elements are assigned a value.</p>
@@ -640,27 +810,6 @@ are commonly used in many grammars.</p>
           <td class="xmldoc">
           <p>This module is public due to compiler limitations.
 Do not use it; it is subject to be removed or altered at any time.</p>
-
-
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-    </div>
-  <h2>Farkle.Common Namespace</h2>
-    <div>
-      <table class="table table-bordered type-list">
-    <thead>
-      <tr><td>Type</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-common-setonce-1.html">SetOnce<'T></a>
-          </td>
-          <td class="xmldoc">
-          <p>A reference type whose value can only be set once.</p>
 
 
           </td>
@@ -729,6 +878,28 @@ It consists of edges that the tokenizer follows, depending on the character it e
         </tr>
         <tr>
           <td class="type-name">
+            <a href="farkle-grammar-grammarproperties.html">GrammarProperties</a>
+          </td>
+          <td class="xmldoc">
+          <p>Stores additional information about a grammar. The members of this
+type are purely informative and not used by Farkle's parser in any way.
+They are mostly used from the templates.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-grammar-grammarsource.html">GrammarSource</a>
+          </td>
+          <td class="xmldoc">
+          <p>Indicates where a grammar came from.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
             <a href="farkle-grammar-group.html">Group</a>
           </td>
           <td class="xmldoc">
@@ -766,8 +937,8 @@ However, it is not limited to "noise", but can be used for any content.</p>
             <a href="farkle-grammar-igrammarprovider.html">IGrammarProvider</a>
           </td>
           <td class="xmldoc">
-          <p>This interface is implemented by <see cref="Grammar"/>s and
-<see cref="RuntimeFarkle{TResult}"/>s and provides a uniform
+          <p>This interface is implemented by s and
+s and provides a uniform
 way to work with grammars inside runtime Farkles and grammars
 themselves, while accounting for potential build errors in an
 exception-free way.</p>
@@ -790,7 +961,7 @@ exception-free way.</p>
             <a href="farkle-grammar-lalrstate.html">LALRState</a>
           </td>
           <td class="xmldoc">
-          <p>A LALR state. Many of them define the parsing logic of a <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a>.</p>
+          <p>A LALR state. Together, many of them define the parsing logic of a <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a>.</p>
 
 
           </td>
@@ -821,7 +992,9 @@ An example of a noise symbol would be a source code comment.</p>
             <a href="farkle-grammar-nonterminal.html">Nonterminal</a>
           </td>
           <td class="xmldoc">
-          <p>A symbol which is produced by a concatenation of other <code>Terminal</code>s and <code>Nonterminal</code>s, as the LALR parser dictates.</p>
+          <p>A symbol which is produced by a concatenation of other <code>Terminal</code>s
+and <code>Nonterminal</code>s, as the LALR parser dictates. Nonterminals with
+the same index are considered equal.</p>
 
 
           </td>
@@ -852,7 +1025,8 @@ Group start and end symbols can be found at the group table.</p>
             <a href="farkle-grammar-terminal.html">Terminal</a>
           </td>
           <td class="xmldoc">
-          <p>A symbol which is produced through a DFA, and is significant for the grammar.</p>
+          <p>A symbol which is produced through a DFA, and is significant for the grammar.
+Terminals with the same index are considered equal.</p>
 
 
           </td>
@@ -911,16 +1085,6 @@ reading an EGT file goes wrong.</p>
 
           </td>
         </tr>
-        <tr>
-          <td class="type-name">
-            <a href="farkle-grammar-egtfile-entry.html">Entry</a>
-          </td>
-          <td class="xmldoc">
-          <p>An entry of an EGT file.</p>
-
-
-          </td>
-        </tr>
     </tbody>
   </table>
 
@@ -943,6 +1107,17 @@ read-only sequence of characters. It is not thread-safe.</p>
 
           </td>
         </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-io-charstreamerrorreportingextensions.html">CharStreamErrorReportingExtensions</a>
+          </td>
+          <td class="xmldoc">
+          <p>Extension methods to the
+type that have to do with error reporting.</p>
+
+
+          </td>
+        </tr>
     </tbody>
   </table>
 
@@ -954,6 +1129,16 @@ read-only sequence of characters. It is not thread-safe.</p>
       <tr><td>Type</td><td>Description</td></tr>
     </thead>
     <tbody>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-parser-defaulttokenizer.html">DefaultTokenizer</a>
+          </td>
+          <td class="xmldoc">
+          <p>Farkle's default tokenizer, powered by a DFA.</p>
+
+
+          </td>
+        </tr>
         <tr>
           <td class="type-name">
             <a href="farkle-parser-expectedsymbol.html">ExpectedSymbol</a>
@@ -969,7 +1154,7 @@ read-only sequence of characters. It is not thread-safe.</p>
             <a href="farkle-parser-parseerrortype.html">ParseErrorType</a>
           </td>
           <td class="xmldoc">
-          <p>An error the parser encountered.</p>
+          <p>The type of an error the parser encountered.</p>
 
 
           </td>
@@ -979,7 +1164,7 @@ read-only sequence of characters. It is not thread-safe.</p>
             <a href="farkle-parser-parsererror.html">ParserError</a>
           </td>
           <td class="xmldoc">
-          <p>A log message that contains the position it was encountered.</p>
+          <p>A parse error. It contains the position it was encountered and its type.</p>
 
 
           </td>
@@ -990,7 +1175,8 @@ read-only sequence of characters. It is not thread-safe.</p>
           </td>
           <td class="xmldoc">
           <p>A token is an instance of a <code>Terminal</code>.
-Tokens carry post-processed terminals, as well as their position within the text file.</p>
+Tokens carry post-processed terminals,
+as well as their position in the text.</p>
 
 
           </td>
@@ -1002,6 +1188,16 @@ Tokens carry post-processed terminals, as well as their position within the text
           <td class="xmldoc">
           <p>A class that breaks down the characters of a
 into s.</p>
+
+
+          </td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="farkle-parser-tokenizerfactory.html">TokenizerFactory</a>
+          </td>
+          <td class="xmldoc">
+          <p>A class that creates s.</p>
 
 
           </td>

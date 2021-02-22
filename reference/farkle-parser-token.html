@@ -39,70 +39,126 @@
     </p>
 <div class="xmldoc">
 <p>A token is an instance of a <code>Terminal</code>.
-Tokens carry post-processed terminals, as well as their position within the text file.</p>
+Tokens carry post-processed terminals,
+as well as their position in the text.</p>
 
 </div>
-  <h3>Record Fields</h3>
+  <h3>Constructors</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Record Field</td><td>Description</td></tr>
+      <tr><td>Constructor</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '576', 576)" onmouseover="showTip(event, '576', 576)">
-            Data
+          <code onmouseout="hideTip(event, '628', 628)" onmouseover="showTip(event, '628', 628)">
+            new(position, symbol, data)
           </code>
-          <div class="tip" id="576">
-            <strong>Signature:</strong> obj<br />
+          <div class="tip" id="628">
+            <strong>Signature:</strong> (position:Position * symbol:Terminal * data:obj) -&gt; Token<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Parser/ParserTypes.fs#L20-20" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Parser/ParserTypes.fs#L15-15" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>The actual content of the token.</p>
+          
+              <p>CompiledName: <code>.ctor</code></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Instance members</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Instance member</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '629', 629)" onmouseover="showTip(event, '629', 629)">
+            x.Data
+          </code>
+          <div class="tip" id="629">
+            <strong>Signature:</strong> obj<br />
+                                    <span>
+            <strong>Attributes:</strong><br />
+[&lt;Nullable(2)&gt;]<br />
+          </span>
+          </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Parser/ParserTypes.fs#L25-25" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>The object the <code>PostProcessor</code> created for this token.</p>
 
 
+              <p>CompiledName: <code>get_Data</code></p>
         </td>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '577', 577)" onmouseover="showTip(event, '577', 577)">
-            Position
+          <code onmouseout="hideTip(event, '630', 630)" onmouseover="showTip(event, '630', 630)">
+            x.IsEOF
           </code>
-          <div class="tip" id="577">
+          <div class="tip" id="630">
+            <strong>Signature:</strong> bool<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Parser/ParserTypes.fs#L29-29" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Whether the token signifies that input ended.
+When this property is set to true, the <code>Token.Symbol</code>
+and <code>Token.Data</code> properties have undefined values.</p>
+
+
+              <p>CompiledName: <code>get_IsEOF</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '631', 631)" onmouseover="showTip(event, '631', 631)">
+            x.Position
+          </code>
+          <div class="tip" id="631">
             <strong>Signature:</strong> Position<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Parser/ParserTypes.fs#L18-18" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Parser/ParserTypes.fs#L21-21" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           <p>The <a href="farkle-position.html" title="Position"><code>Position</code></a> of the token in the input string.</p>
 
 
+              <p>CompiledName: <code>get_Position</code></p>
         </td>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '578', 578)" onmouseover="showTip(event, '578', 578)">
-            Symbol
+          <code onmouseout="hideTip(event, '632', 632)" onmouseover="showTip(event, '632', 632)">
+            x.Symbol
           </code>
-          <div class="tip" id="578">
+          <div class="tip" id="632">
             <strong>Signature:</strong> Terminal<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Parser/ParserTypes.fs#L16-16" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Parser/ParserTypes.fs#L23-23" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           <p>The <code>Terminal</code> whose instance is this token.</p>
 
 
+              <p>CompiledName: <code>get_Symbol</code></p>
         </td>
       </tr>
     </tbody>
@@ -115,19 +171,19 @@ Tokens carry post-processed terminals, as well as their position within the text
     <tbody>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '579', 579)" onmouseover="showTip(event, '579', 579)">
-            Token.Create pos sym data
+          <code onmouseout="hideTip(event, '633', 633)" onmouseover="showTip(event, '633', 633)">
+            Token.CreateEOF(position)
           </code>
-          <div class="tip" id="579">
-            <strong>Signature:</strong> pos:Position -&gt; sym:Terminal -&gt; data:&#39;a -&gt; Token<br />
-                          <strong>Type parameters:</strong> 'a                      </div>
+          <div class="tip" id="633">
+            <strong>Signature:</strong> position:Position -&gt; Token<br />
+                                  </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Parser/ParserTypes.fs#L24-24" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Parser/ParserTypes.fs#L31-31" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>A shortcut for creating a token.</p>
+          <p>Creates a token that signifies the end of input at the given position.</p>
 
 
         </td>

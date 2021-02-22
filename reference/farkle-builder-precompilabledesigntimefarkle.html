@@ -38,7 +38,8 @@
     <span>Namespace: Farkle.Builder</span><br />
     </p>
 <div class="xmldoc">
-<p>A kind of designtime Farkle whose grammar can be precompiled ahead of time.</p>
+<p>An object holding a designtime Farkle whose
+grammar can be precompiled ahead of time.</p>
 
 </div>
   <h3>Instance members</h3>
@@ -49,19 +50,20 @@
     <tbody>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '415', 415)" onmouseover="showTip(event, '415', 415)">
+          <code onmouseout="hideTip(event, '439', 439)" onmouseover="showTip(event, '439', 439)">
             x.Assembly
           </code>
-          <div class="tip" id="415">
+          <div class="tip" id="439">
             <strong>Signature:</strong> Assembly<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Builder/PrecompilerInterface.fs#L67-67" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Builder/PrecompilerInterface.fs#L84-84" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>The assembly in which the designtime Farkle was declared.</p>
+          <p>The assembly from which this object was created.
+It must match the assembly that is being compiled.</p>
 
 
               <p>CompiledName: <code>get_Assembly</code></p>
@@ -69,15 +71,15 @@
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '416', 416)" onmouseover="showTip(event, '416', 416)">
+          <code onmouseout="hideTip(event, '440', 440)" onmouseover="showTip(event, '440', 440)">
             x.GrammarDefinition
           </code>
-          <div class="tip" id="416">
+          <div class="tip" id="440">
             <strong>Signature:</strong> GrammarDefinition<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Builder/PrecompilerInterface.fs#L65-65" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Builder/PrecompilerInterface.fs#L81-81" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -89,33 +91,55 @@
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '417', 417)" onmouseover="showTip(event, '417', 417)">
+          <code onmouseout="hideTip(event, '441', 441)" onmouseover="showTip(event, '441', 441)">
+            x.InnerDesigntimeFarkle
+          </code>
+          <div class="tip" id="441">
+            <strong>Signature:</strong> DesigntimeFarkle<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Builder/PrecompilerInterface.fs#L86-86" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>The designtime Farkle held by this object.</p>
+
+
+              <p>CompiledName: <code>get_InnerDesigntimeFarkle</code></p>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '442', 442)" onmouseover="showTip(event, '442', 442)">
             x.Name
           </code>
-          <div class="tip" id="417">
+          <div class="tip" id="442">
             <strong>Signature:</strong> string<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Builder/PrecompilerInterface.fs#L63-63" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Builder/PrecompilerInterface.fs#L79-79" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>The name of the designtime Farkle held by this object.</p>
+
+
               <p>CompiledName: <code>get_Name</code></p>
         </td>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '418', 418)" onmouseover="showTip(event, '418', 418)">
+          <code onmouseout="hideTip(event, '443', 443)" onmouseover="showTip(event, '443', 443)">
             x.TryGetPrecompiledGrammar()
           </code>
-          <div class="tip" id="418">
+          <div class="tip" id="443">
             <strong>Signature:</strong> unit -&gt; PrecompiledGrammar option<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Builder/PrecompilerInterface.fs#L69-69" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Builder/PrecompilerInterface.fs#L88-88" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>

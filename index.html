@@ -37,7 +37,7 @@
 <h2><a name="Features" class="anchor" href="#Features">Features</a></h2>
 <ul>
 <li><strong>Speed</strong>: Farkle is fast. Its performance is a top priority and lots of time has been invested in its optimization.</li>
-<li><strong>Language compatibility</strong>: Farkle is usable from both C# and F#, with an intuitive API for each language.</li>
+<li><strong>Language compatibility</strong>: Farkle is usable from both C# and F#, with an intuitive API for each language. <strong>It even supports C# 8.0's nullable reference types!</strong></li>
 <li><strong>Fast development cycle</strong>: Unlike parser generators, Farkle does not generate any source files. Your grammars are type-safe and created entirely from code, allowing features like IntelliSense and real-time syntax error reporting.</li>
 <li><strong>Integration with MSBuild</strong>: Farkle can optionally integrate with MSBuild to enable features like <a href="the-precompiler.html">ahead-of-time grammar building</a> which drastically reduces startup times and catches grammar errors like LALR conflicts at compile time.</li>
 <li><strong>Large file support</strong>: Farkle can parse large files without entirely reading them to memory.</li>
@@ -59,6 +59,7 @@
 <ul>
 <li><p>A <strong>JSON parser</strong> powered by Farkle and written in both <a href="https://github.com/teo-tsirpanis/Farkle/blob/master/sample/Farkle.Samples.CSharp/JSON.cs">C#</a> and <a href="https://github.com/teo-tsirpanis/Farkle/blob/master/sample/Farkle.Samples.FSharp/JSON.fs">F#</a>.</p></li>
 <li><p>A <strong>mathematical expression parser</strong> powered by Farkle and written in <a href="https://github.com/teo-tsirpanis/Farkle/blob/master/sample/Farkle.Samples.FSharp/SimpleMaths.fs">F#</a>, also showcasing some more advanced features.</p></li>
+<li><p>A simple indent-based language parser that supports virtual terminals written in <a href="https://github.com/teo-tsirpanis/Farkle/blob/master/sample/Farkle.Samples.FSharp/IndentBased.fs">F#</a>. The most advanced example; it explains how to write a custom tokenizer.</p></li>
 </ul>
 <h2><a name="Contributing-and-copyright" class="anchor" href="#Contributing-and-copyright">Contributing and copyright</a></h2>
 <p>The project is hosted on <a href="https://github.com/teo-tsirpanis/Farkle">GitHub</a> where you can <a href="https://github.com/teo-tsirpanis/Farkle/issues">report issues</a>, fork the project and submit pull requests.</p>

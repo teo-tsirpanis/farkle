@@ -51,36 +51,35 @@
     <tbody>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '61', 61)" onmouseover="showTip(event, '61', 61)">
+          <code onmouseout="hideTip(event, '70', 70)" onmouseover="showTip(event, '70', 70)">
             buildProductionsToLALRStates(...)
           </code>
-          <div class="tip" id="61">
-            <strong>Signature:</strong> startSymbol:Nonterminal -&gt; terminals:ImmutableArray&lt;Terminal&gt; -&gt; nonterminals:ImmutableArray&lt;Nonterminal&gt; -&gt; productions:ImmutableArray&lt;Production&gt; -&gt; Result&lt;ImmutableArray&lt;LALRState&gt;,BuildError&gt;<br />
+          <div class="tip" id="70">
+            <strong>Signature:</strong> resolver:LALRConflictResolver -&gt; startSymbol:Nonterminal -&gt; terminals:ImmutableArray&lt;Terminal&gt; -&gt; nonterminals:ImmutableArray&lt;Nonterminal&gt; -&gt; productions:ImmutableArray&lt;Production&gt; -&gt; Result&lt;ImmutableArray&lt;LALRState&gt;,BuildError list&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Builder/LALRBuild.fs#L261-261" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Builder/LALRBuild.fs#L283-283" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           <p>Builds an LALR parsing table from the grammar with the given
-starting symbol that contains the given <a href="farkle-grammar-production.html" title="Production"><code>Production</code></a>s.
-Having a symbol with an index of <code>UInt32.MaxValue</code> will cause an exception.</p>
+starting symbol that contains the given <a href="farkle-grammar-production.html" title="Production"><code>Production</code></a>s.</p>
 
 
         </td>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '62', 62)" onmouseover="showTip(event, '62', 62)">
+          <code onmouseout="hideTip(event, '71', 71)" onmouseover="showTip(event, '71', 71)">
             closure1 fGetAllProductions firstSets xs
           </code>
-          <div class="tip" id="62">
+          <div class="tip" id="71">
             <strong>Signature:</strong> fGetAllProductions:(Nonterminal -&gt; Set&lt;Production&gt;) -&gt; firstSets:FirstSets -&gt; xs:seq&lt;LR0Item * LookaheadSet&gt; -&gt; LR1Item list<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Builder/LALRBuild.fs#L135-135" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Builder/LALRBuild.fs#L136-136" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -93,15 +92,15 @@ A function to get the FIRST set and the productions of a <code>Nonterminal</code
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '63', 63)" onmouseover="showTip(event, '63', 63)">
+          <code onmouseout="hideTip(event, '72', 72)" onmouseover="showTip(event, '72', 72)">
             computeFirstSetMap(...)
           </code>
-          <div class="tip" id="63">
+          <div class="tip" id="72">
             <strong>Signature:</strong> terminals:ImmutableArray&lt;Terminal&gt; -&gt; nonterminals:ImmutableArray&lt;Nonterminal&gt; -&gt; productions:seq&lt;Production&gt; -&gt; FirstSets<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Builder/LALRBuild.fs#L75-75" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Builder/LALRBuild.fs#L76-76" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -113,15 +112,15 @@ of the given sequence of <a href="farkle-grammar-production.html" title="Product
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '64', 64)" onmouseover="showTip(event, '64', 64)">
+          <code onmouseout="hideTip(event, '73', 73)" onmouseover="showTip(event, '73', 73)">
             computeLookaheadItems(...)
           </code>
-          <div class="tip" id="64">
+          <div class="tip" id="73">
             <strong>Signature:</strong> fGetAllProductions:(Nonterminal -&gt; Set&lt;Production&gt;) -&gt; firstSets:FirstSets -&gt; itemSets:ResizeArray&lt;LR0ItemSet&gt; -&gt; LookaheadSetDictionary&lt;LR0Item * int&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Builder/LALRBuild.fs#L156-156" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Builder/LALRBuild.fs#L157-157" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -132,15 +131,15 @@ of the given sequence of <a href="farkle-grammar-production.html" title="Product
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '65', 65)" onmouseover="showTip(event, '65', 65)">
+          <code onmouseout="hideTip(event, '74', 74)" onmouseover="showTip(event, '74', 74)">
             createLALRStates(...)
           </code>
-          <div class="tip" id="65">
-            <strong>Signature:</strong> fGetAllProductions:(Nonterminal -&gt; Set&lt;Production&gt;) -&gt; firstSets:FirstSets -&gt; fResolveConflict:(uint32 -&gt; Terminal option -&gt; LALRAction -&gt; LALRAction -&gt; LALRAction) -&gt; startSymbol:Nonterminal -&gt; itemSets:ResizeArray&lt;LR0ItemSet&gt; -&gt; lookaheadTables:LookaheadItemsTable -&gt; ImmutableArray&lt;LALRState&gt;<br />
+          <div class="tip" id="74">
+            <strong>Signature:</strong> fGetAllProductions:(Nonterminal -&gt; Set&lt;Production&gt;) -&gt; firstSets:FirstSets -&gt; fResolveConflict:(Terminal option -&gt; LALRAction -&gt; LALRAction -&gt; ConflictResolutionDecision) -&gt; conflicts:ResizeArray&lt;BuildError&gt; -&gt; startSymbol:Nonterminal -&gt; itemSets:ResizeArray&lt;LR0ItemSet&gt; -&gt; lookaheadTables:LookaheadItemsTable -&gt; ImmutableArray&lt;LALRState&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Builder/LALRBuild.fs#L191-191" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Builder/LALRBuild.fs#L192-192" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -151,15 +150,15 @@ of the given sequence of <a href="farkle-grammar-production.html" title="Product
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '66', 66)" onmouseover="showTip(event, '66', 66)">
+          <code onmouseout="hideTip(event, '75', 75)" onmouseover="showTip(event, '75', 75)">
             createLR0KernelItems(...)
           </code>
-          <div class="tip" id="66">
+          <div class="tip" id="75">
             <strong>Signature:</strong> fGetAllProductions:(Nonterminal -&gt; Set&lt;Production&gt;) -&gt; startSymbol:Nonterminal -&gt; ResizeArray&lt;LR0ItemSet&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Builder/LALRBuild.fs#L21-21" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Builder/LALRBuild.fs#L22-22" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -172,15 +171,15 @@ a nonterminal and the start symbol are required.</p>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '67', 67)" onmouseover="showTip(event, '67', 67)">
+          <code onmouseout="hideTip(event, '76', 76)" onmouseover="showTip(event, '76', 76)">
             getFirstSetOfSequence(...)
           </code>
-          <div class="tip" id="67">
+          <div class="tip" id="76">
             <strong>Signature:</strong> firstSets:FirstSets -&gt; lookahead:LookaheadSet -&gt; xs:seq&lt;LALRSymbol&gt; -&gt; LookaheadSet<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Builder/LALRBuild.fs#L116-116" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Builder/LALRBuild.fs#L117-117" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>

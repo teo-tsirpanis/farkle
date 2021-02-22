@@ -32,39 +32,74 @@
       <div class="row">
         <div class="span9" id="main">
           <h1><a name="Templating-Reference" class="anchor" href="#Templating-Reference">Templating Reference</a></h1>
-<h2><a name="This-feature-currently-works-only-with-GOLD-Parser-grammars-from-EGT-files-A-future-version-of-Farkle-will-support-precompiled-grammars" class="anchor" href="#This-feature-currently-works-only-with-GOLD-Parser-grammars-from-EGT-files-A-future-version-of-Farkle-will-support-precompiled-grammars">This feature currently works only with GOLD Parser grammars from EGT files. A future version of Farkle will support precompiled grammars.</a></h2>
-<p>As you might have seen in the previous tutorials, Farkle comes with a helpful command line tool to help you create source code files of your grammar. Here I will tell you how this tool works, and how to extend this tool even further for your own needs.</p>
-<blockquote>
-<p>Before we begin, this reference document is quite advanced, and most of what is says will not be useful to the 90% of the users of Farkle.</p>
-</blockquote>
-<p>So, are we ready? Let's do this!</p>
-<hr />
-<p>To create these beautiful source files, Farkle uses <a href="https://github.com/lunet-io/scriban">Scriban</a>. Scriban is a library that generates text templates. To achieve this, it uses a surprisingly simple, yet incredibly powerful templating language which I recommend you to learn from <a href="https://github.com/lunet-io/scriban/blob/master/doc/language.md">the official documentation</a>. Once you 've learned it, let's see how Farkle integrates with it.</p>
-<p>To integrate with Scriban, external libraries like Farkle expose certain variables and functions to Scriban templates. The variables exposed by Farkle are the following:</p>
+<p>Farkle comes with a templating system which further helps developers work with the grammars they create. This system is a more powerful edition of both GOLD Parser's <a href="http://www.goldparser.org/doc/builder-cmd/goldwebpage.htm">"Create Webpage"</a> and <a href="http://www.goldparser.org/doc/builder-cmd/goldprog.htm">"Create Skeleton Program"</a> tools. In this guide, we will first see how to create an HTML page describing our grammar, and next we will see how to create our own templates. So, are you ready? Let's do this!</p>
+<h2><a name="Preparing-ourselves" class="anchor" href="#Preparing-ourselves">Preparing ourselves</a></h2>
+<p>Before we start, we first have to install <a href="https://nuget.org/packages/Farkle.Tools">Farkle's CLI tool from NuGet</a> by opening a command prompt and running</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="id">dotnet</span> <span class="id">tool</span> <span class="id">install</span> <span class="o">-</span><span class="id">g</span> <span class="id">Farkle</span><span class="pn">.</span><span class="id">Tools</span>
+</code></pre></td>
+</tr>
+</table>
+<h3><a name="Supported-input-types" class="anchor" href="#Supported-input-types">Supported input types</a></h3>
+<p>The CLI tool can work with grammars from three kinds of files:</p>
 <ul>
-<li><p><code>file_extension</code>: If you did not specify the file name of the generated file, it will have the same name as your grammar file, with the extension changed to the value of this variable. It is good practice to change it from the default <code>.out.txt</code>. For example, if Farkle gets ported to Pascal, you'd better write <code>{{ file_extension = ".pas" }}</code> at the beginning of the template for this language.</p></li>
+<li>GOLD Parser 5.0 Enhanced Grammar Tables files with the <code>.egt</code> extension.</li>
+<li>.NET assemblies with <a href="the-precompiler.html"><strong>precompiled</strong></a> grammars. These assemblies can target any framework and their dependencies don't have to be present. Because precompiled grammars are stored in the assembly's embedded resources, no code from them is executed.</li>
+<li>.NET projects with precompiled grammars. The projects must have already been built; Farkle does not do it by itself at the moment.</li>
+</ul>
+<p>If we don't explicitly specify an input, the CLI tool will try to find a project in the current directory. If only one is found, it will be used. Otherwise the tool will fail with an error.</p>
+<h3><a name="Dealing-with-multiple-precompiled-grammars" class="anchor" href="#Dealing-with-multiple-precompiled-grammars">Dealing with multiple precompiled grammars</a></h3>
+<p>If the assembly or project passed to the CLI tool has only one precompiled grammar, it will be automatically used. If it has more than one however, we can tell it which one to use by adding a <code>::MyGrammar</code> to the end of the input path.</p>
+<p>To see an example, if you want to pick a specific grammar from an assembly or project, you can do it by writing <code>MyAssembly.dll::MyGrammar</code> or <code>MyProject.csproj::MyGrammar</code> respectively. If the current directory has only one project and you are bored to type it, you can write <code>::MyGrammar</code>.</p>
+<p>You can see the names of all precompiled grammars with the <code>farkle list</code> command which also takes an assembly, a project, or tries to find one on its own.</p>
+<h2><a name="Creating-HTML-pages" class="anchor" href="#Creating-HTML-pages">Creating HTML pages</a></h2>
+<p>For the rest of this guide, we will assume that we have a project with a precompiled grammar next to us. Once we build it, we can create an HTML page by running <code>farkle new</code>.</p>
+<p>If everything went well, we will see a file named like <code>MyAwesomeGrammar.html</code>. It describes the grammar's syntax, its LALR states, its DFA states and more. If you are just watching, take a look at a sample <a href="JSON-generated.html">HTML file generated for a JSON grammar</a> to get a better idea.</p>
+<p>These HTML files can be customized by omitting the state tables, the CSS styling, or by adding custom content at the end if their <code>&lt;head&gt;</code>. Run <code>farkle new --help</code> to get all the available options.</p>
+<p>You can automatically generate an HTML file from your project's precompiled grammars by adding the following lines in it:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="xml"><span class="k">&lt;</span><span class="i">PropertyGroup</span><span class="k">&gt;</span>
+  <span class="k">&lt;</span><span class="i">FarkleGenerateHtml</span><span class="k">&gt;</span>true<span class="k">&lt;/</span><span class="i">FarkleGenerateHtml</span><span class="k">&gt;</span>
+<span class="k">&lt;/</span><span class="i">PropertyGroup</span><span class="k">&gt;</span>
+</code></pre></td></tr></table>
+<p>The HTML files will be generated to your project's build output directory and cannot be customized in any way. They are intended for development use; for most customizability it is recommended to use the CLI tool.</p>
+<h2><a name="Creating-your-own-templates" class="anchor" href="#Creating-your-own-templates">Creating your own templates</a></h2>
+<p>Instead of GOLD's custom and limited templating language, Farkle's templates use [Scriban], which features a much more powerful templating language. If you want to create your own templates, I recommend to first learn it from <a href="https://github.com/scriban/scriban/blob/master/doc/language.md">Scriban's official documentation</a>.</p>
+<h3><a name="Variables" class="anchor" href="#Variables">Variables</a></h3>
+<p>Farkle's templates can use the following Scriban variables:</p>
+<ul>
+<li><p><code>file_extension</code>: This variable is used to change the default extension of the output file. For example if you are creating an HTML template you would add a `{{ file_extension = ".html" }} at the beginning.</p></li>
+<li><p><code>farkle.version</code>: The version of the CLI tool.</p></li>
 <li>
-<p><code>farkle</code>: An object containing information about Farkle itself.</p>
+<p><code>grammar</code>: A Farkle <code>Grammar</code> object that represents the input grammar.</p>
 <ul>
-<li><p><code>farkle.version</code>: The version of the tool used to generate the template.</p></li>
+<li><p><code>grammar.productions_groupped</code>: A <code>System.Linq.IGrouping&lt;Nonterminal,Production&gt;</code> object that groups productions by their head nonterminal.</p></li>
 </ul>
 </li>
-<li><p><code>grammar</code>: An object of type <code>Farkle.Grammar.Grammar</code> that represents the grammar we are generating a template for. Its members are the same, but be careful of Scriban's naming conventions. For example, the <code>NoiseSymbols</code> property becomes <code>noise_symbols</code>.</p></li>
-<li><p><code>grammar_path</code>: The path to the grammar file that was given.</p></li>
-<li><p><code>namespace</code>: The namespace of the generated source file. Defaults to the grammar's name. You can change it in the command line tools with the <code>--namespace</code> option. If your template does not generate source code, you can safely ignore this variable.</p></li>
-<li><p><code>to_base_64 &lt;bool&gt;</code>: Returns the EGT file as a Base64-encoded string. If you pass <code>true</code>, it will add line breaks every 76 characters.</p></li>
-<li><p><code>fmt &lt;terminal or production&gt; &lt;case&gt; &lt;separator&gt;</code>: Formats a symbol or a production into a string. You can specify the case of the generated string (<code>upper_case</code>, <code>lower_case</code>, <code>pascal_case</code>, <code>camel_case</code>), as well as the separator between the members of the production.</p></li>
+<li><p><code>grammar_path</code>: The path to the given input file; either a grammar file or an assembly. When processing project files this variable will have the project's underlying assembly.</p></li>
+<li><p><code>properties</code>: An object that holds custom properties passed by the <code>-prop</code> CLI argument. For example, if you pass <code>-prop foo bar</code> to the CLI tool and write <code>{{ properties.foo }}</code> in your template, it will be evaluated as <code>bar</code>.</p></li>
 </ul>
-<h2><a name="Using-the-custom-template" class="anchor" href="#Using-the-custom-template">Using the custom template</a></h2>
-<p>Having written your template, it's time to use it to generate some code.</p>
-<h3><a name="Installing-Farkle-Tools" class="anchor" href="#Installing-Farkle-Tools">Installing Farkle.Tools</a></h3>
-<p>But before we continue, I haven't told you how to install Farkle.Tools. This hand-made CLI tool is available <a href="https://nuget.org/packages/Farkle.Tools">on NuGet</a> and is ready to be installed by all of you. You just need .NET Core version 3.1 or higher to be installed, and to run this command:</p>
-<p><code>dotnet tool install -g Farkle.Tools</code></p>
-<p>After you have installed the tools, you can tell them to use your template by running:</p>
-<p><code>farke new -t MyWonderfulTemplate.scriban MyMarvelousGrammar.egt</code></p>
-<p>Your file will be placed according to the previously mentioned rule. You can specify where to generate it by appending <code>-o MyFascinatingFile.txt</code> to the previous command. And of course you can see all the available commands by typing <code>farkle new --help</code>.</p>
+<p>Scriban imports all properties of Farkle's objects but changes their names. Take a look at <a href="https://github.com/teo-tsirpanis/Farkle/tree/master/src/Farkle.Tools.Shared/builtin-templates">Farkle's built-in templates</a> to get an idea how to write your own template, but keep in mind that the HTML templates use some constructs not available to custom templates, like Scriban's <code>import</code> statement and some other internal functions.</p>
+<h3><a name="Functions" class="anchor" href="#Functions">Functions</a></h3>
+<p>The templates can furthermore use the following functions:</p>
+<ul>
+<li><code>to_base_64 &lt;bool&gt;</code>: Returns the grammar file as a Base64-encoded string. If you pass <code>true</code>, it will add line breaks every 76 characters.</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> Precompiled grammars from an assembly or project are encoded in a format called EGTneo which is incompatible with GOLD Parser's EGT's format. When creating a template from an EGT file however, the <code>to_base_64</code> function will return the Base-64 representation of that file.</p>
+</blockquote>
+<ul>
+<li><p><code>group_dfa_edge &lt;dfa_state&gt;</code>: Returns an <code>IGrouping</code> object that groups the edges of a DFA state by their action.</p></li>
+<li><p><code>fmt &lt;terminal or production&gt; &lt;case&gt; &lt;separator&gt;</code>: Formats a terminal or a production to a string. You can specify the case of the generated string (<code>upper_case</code>, <code>lower_case</code>, <code>pascal_case</code>, <code>camel_case</code>), as well as the separator between the members of the production.</p></li>
+</ul>
+<h3><a name="Using-custom-templates" class="anchor" href="#Using-custom-templates">Using custom templates</a></h3>
+<p>A custom template can be rendered by writing <code>farkle new -t MyCustomTemplate.scriban</code>. Of <code>farkle new</code>'s arguments, custom templates only support <code>-prop</code>, as explained above.</p>
 <hr />
-<p>So, I hope you enjoyed this little reference. If you did, don't forget to give Farkle.Tools a try, and maybe you feel especially willing to create some templates today, and want to hit the star button as well. I hope that all of you have a wonderful day, and to see you soon. Goodbye!</p>
+<p>So, I hope you enjoyed this little guide. If you did, don't forget to give Farkle.Tools a try, and maybe you feel especially willing to create some templates today, and want to hit the star button as well. I hope that all of you have a wonderful day, and to see you soon. Goodbye!</p>
 
 
         </div>

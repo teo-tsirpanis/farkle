@@ -44,7 +44,9 @@
         </span>
 </p>
 <div class="xmldoc">
-<p>A symbol which is produced by a concatenation of other <code>Terminal</code>s and <code>Nonterminal</code>s, as the LALR parser dictates.</p>
+<p>A symbol which is produced by a concatenation of other <code>Terminal</code>s
+and <code>Nonterminal</code>s, as the LALR parser dictates. Nonterminals with
+the same index are considered equal.</p>
 
 </div>
   <h3>Union Cases</h3>
@@ -55,67 +57,19 @@
     <tbody>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '540', 540)" onmouseover="showTip(event, '540', 540)">
-            Nonterminal(index,name)
+          <code onmouseout="hideTip(event, '597', 597)" onmouseover="showTip(event, '597', 597)">
+            Nonterminal(Index,Name)
           </code>
-          <div class="tip" id="540">
+          <div class="tip" id="597">
             <strong>Signature:</strong> uint32 * string<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Grammar/GrammarTypes.fs#L70-70" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Grammar/GrammarTypes.fs#L71-71" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <h3>Instance members</h3>
-  <table class="table table-bordered member-list">
-    <thead>
-      <tr><td>Instance member</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="member-name">
-          <code onmouseout="hideTip(event, '541', 541)" onmouseover="showTip(event, '541', 541)">
-            x.Index
-          </code>
-          <div class="tip" id="541">
-            <strong>Signature:</strong> uint32<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Grammar/GrammarTypes.fs#L73-73" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>The nonterminal's index. Nonterminals with the same index are considered equal.</p>
-
-
-              <p>CompiledName: <code>get_Index</code></p>
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-          <code onmouseout="hideTip(event, '542', 542)" onmouseover="showTip(event, '542', 542)">
-            x.Name
-          </code>
-          <div class="tip" id="542">
-            <strong>Signature:</strong> string<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Grammar/GrammarTypes.fs#L75-75" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>The nonterminal's name.</p>
-
-
-              <p>CompiledName: <code>get_Name</code></p>
         </td>
       </tr>
     </tbody>

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>ITransformer<'sym> - Farkle</title>
+    <title>ITransformer<'TSymbol> - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -32,13 +32,14 @@
         <div class="span9" id="main">
           
 
-<h1>ITransformer<'sym></h1>
+<h1>ITransformer<'TSymbol></h1>
 <p>
 
     <span>Namespace: Farkle</span><br />
     </p>
 <div class="xmldoc">
-<p>The bridge between a character stream and the post-processor API.</p>
+<p>An interface that transforms tokens from a .
+It is implemented by s.</p>
 
 </div>
   <h3>Instance members</h3>
@@ -49,20 +50,20 @@
     <tbody>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '292', 292)" onmouseover="showTip(event, '292', 292)">
-            x.Transform(arg1, arg2, arg3)
+          <code onmouseout="hideTip(event, '300', 300)" onmouseover="showTip(event, '300', 300)">
+            x.Transform(symbol, context, data)
           </code>
-          <div class="tip" id="292">
-            <strong>Signature:</strong> (&#39;sym * ITransformerContext * ReadOnlySpan&lt;char&gt;) -&gt; obj<br />
+          <div class="tip" id="300">
+            <strong>Signature:</strong> (symbol:&#39;TSymbol * context:ITransformerContext * data:ReadOnlySpan&lt;char&gt;) -&gt; obj<br />
               <strong>Modifiers:</strong> abstract<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/PostProcessorAbstractions.fs#L37-37" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/PostProcessorAbstractions.fs#L40-40" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Converts a terminal into an arbitrary object.</p>
+          <p>Converts a token into an object.</p>
 
 
         </td>

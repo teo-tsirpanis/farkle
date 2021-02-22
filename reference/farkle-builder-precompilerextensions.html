@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Entry - Farkle</title>
+    <title>PrecompilerExtensions - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -32,20 +32,18 @@
         <div class="span9" id="main">
           
 
-<h1>Entry</h1>
+<h1>PrecompilerExtensions</h1>
 <p>
 
-    <span>Namespace: Farkle.Grammar.EGTFile</span><br />
+    <span>Namespace: Farkle.Builder</span><br />
             <span>
             Attributes: <br />
-[&lt;Struct&gt;]<br />
-[&lt;IsReadOnly&gt;]<br />
-[&lt;RequireQualifiedAccess&gt;]<br />
+[&lt;Extension&gt;]<br />
             
         </span>
 </p>
 <div class="xmldoc">
-<p>An entry of an EGT file.</p>
+<p>Extension methods that create and build precompilable designtime Farkles.</p>
 
 </div>
   <h3>Static members</h3>
@@ -56,19 +54,97 @@
     <tbody>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '555', 555)" onmouseover="showTip(event, '555', 555)">
-            Entry.Int(x)
+          <code onmouseout="hideTip(event, '449', 449)" onmouseover="showTip(event, '449', 449)">
+            PrecompilerExtensions.Build(df)
           </code>
-          <div class="tip" id="555">
-            <strong>Signature:</strong> x:^?11146 -&gt; Entry<br />
-                          <strong>Type parameters:</strong> ^?11146                      </div>
+          <div class="tip" id="449">
+            <strong>Signature:</strong> df:PrecompilableDesigntimeFarkle&lt;&#39;TResult&gt; -&gt; RuntimeFarkle&lt;&#39;TResult&gt;<br />
+                          <strong>Type parameters:</strong> 'TResult                        <span>
+            <strong>Attributes:</strong><br />
+[&lt;Extension&gt;]<br />
+          </span>
+          </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Grammar/EGTFile.fs#L32-32" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/CSharp/PrecompilerExtensions.fs#L47-47" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Builds a  into
+a .</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '450', 450)" onmouseover="showTip(event, '450', 450)">
+            PrecompilerExtensions.BuildUntyped(df)
+          </code>
+          <div class="tip" id="450">
+            <strong>Signature:</strong> df:PrecompilableDesigntimeFarkle -&gt; RuntimeFarkle&lt;obj&gt;<br />
+                                    <span>
+            <strong>Attributes:</strong><br />
+[&lt;Extension&gt;]<br />
+          </span>
+          </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/CSharp/PrecompilerExtensions.fs#L50-50" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '451', 451)" onmouseover="showTip(event, '451', 451)">
+            PrecompilerExtensions.MarkForPrecompile(...)
+          </code>
+          <div class="tip" id="451">
+            <strong>Signature:</strong> df:DesigntimeFarkle -&gt; PrecompilableDesigntimeFarkle<br />
+                                    <span>
+            <strong>Attributes:</strong><br />
+[&lt;Extension&gt;]<br />
+[&lt;MethodImpl(8)&gt;]<br />
+          </span>
+          </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/CSharp/PrecompilerExtensions.fs#L36-36" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Marks an untyped
+as available to have its grammar precompiled ahead of time.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '452', 452)" onmouseover="showTip(event, '452', 452)">
+            PrecompilerExtensions.MarkForPrecompile(...)
+          </code>
+          <div class="tip" id="452">
+            <strong>Signature:</strong> df:DesigntimeFarkle&lt;&#39;TResult&gt; -&gt; PrecompilableDesigntimeFarkle&lt;&#39;TResult&gt;<br />
+                          <strong>Type parameters:</strong> 'TResult                        <span>
+            <strong>Attributes:</strong><br />
+[&lt;Extension&gt;]<br />
+[&lt;MethodImpl(8)&gt;]<br />
+          </span>
+          </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/CSharp/PrecompilerExtensions.fs#L23-23" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Marks a  as available
+to have its grammar precompiled ahead of time.</p>
+
+
         </td>
       </tr>
     </tbody>

@@ -30,7 +30,22 @@
       <hr />
       <div class="row">
         <div class="span9" id="main">
-          <h4><a name="6-0-0-alpha-3-25-11-2020" class="anchor" href="#6-0-0-alpha-3-25-11-2020">6.0.0-alpha.3 - 25-11-2020</a></h4>
+          <h4><a name="6-0-0-23-02-2020" class="anchor" href="#6-0-0-23-02-2020">6.0.0 - 23-02-2020</a></h4>
+<ul>
+<li><strong>Breaking change:</strong> The functions <code>RuntimeFarkle.ofEGTFile</code> and <code>RuntimeFarkle.ofBase64String</code>as well as their corresponding <code>RuntimeFarkle</code> static methods  were removed. Users are advised to migrate away from GOLD Parser.</li>
+<li><strong>Breaking change:</strong> The <code>RuntimeFarkle.GetBuildError</code> method was replaced by <code>GetBuildErrors</code>, which returns a list of build errors.</li>
+<li><strong>Breaking change:</strong> The <code>Farkle.Grammar.Grammar.Properties</code> member now holds a strongly-typed record of informative grammar properties. Unrecognized GOLD Parser properties such as "Author", "Description" and "Version" are discarded. Existing grammar files remain compatible.</li>
+<li><strong>Breaking change:</strong> The members of Farkle's discriminated unions can no longer be accessed in F# using a method. For example, <code>let foo (x: Terminal) = printfn "%s" x.Name</code> becomes <code>let foo (Terminal(_, name)) = printfn "%s" name</code>. For C# users, duplicate properties like <code>Terminal.name</code> with a lowercase "n" were removed; they are replaced by their corresponding title-cased properties.</li>
+<li><strong>Breaking change:</strong> The members of many of Farkle's discriminated unions got meaningful names. C# code using the older names might break.</li>
+<li><strong>Breaking change:</strong> Removed support for generating legacy grammar skeleton files from MSBuild using the <code>Farkle</code> item.</li>
+<li><strong>Breaking change:</strong> The <code>Farkle.Common.SetOnce</code> type became internal.</li>
+<li>Farkle's types and methods support <a href="https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8#nullable-reference-types">C# 8.0's Nullable Reference Types</a>.</li>
+<li>Farkle supports virtual terminals -terminals that are not backed by the default tokenizer's DFA but created by custom tokenizers-, allowing for scenarios like indent-based grammars. <a href="https://github.com/teo-tsirpanis/Farkle/blob/master/sample/Farkle.Samples.FSharp/IndentBased.fs">An F# sample of an indent-based grammar</a> was published.</li>
+<li>Dynamic code generation will be applied to post-processors that are frequently used, in a fashion similar to .NET's tiered compilation, regardless of whether their designtime Farkle is precompilable.</li>
+<li>Build error reporting is improved. More build errors will be reported at the same time, without having to fix one to show the next.</li>
+<li>Stack overflows when building extremely complex designtime Farkles were either mitigated or will throw recoverable exceptions.</li>
+</ul>
+<h4><a name="6-0-0-alpha-3-25-11-2020" class="anchor" href="#6-0-0-alpha-3-25-11-2020">6.0.0-alpha.3 - 25-11-2020</a></h4>
 <ul>
 <li><strong>Breaking change:</strong> .NET Framework 4.5 is no longer supported. The library targets .NET Standard 2.0, .NET Standard 2.1 and .NET 5.</li>
 <li><strong>Breaking change:</strong> Logging parser events is no longer supported. The logging function was removed from the signatures of parser APIs.</li>
@@ -43,10 +58,10 @@
 <li><strong>Minor breaking change:</strong> The <code>Transformers</code> and <code>Fusers</code> properties were removed from the <code>Farkle.Builder.GrammarDefinition</code> type.</li>
 <li>Farkle will now optimize precompilable designtime Farkles using dynamic code generation. This feature is only supported on .NET Standard 2.1 if the runtime supports dynamic code compilation.</li>
 <li>An API for the <code>CharStream</code> type was published.</li>
-<li><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-precompilerinterface.html">An API for getting precompiled grammars</a> was published.</li>
-<li>The tokenizer can be extended by user code. TODO: write documentation</li>
+<li><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-precompiledgrammar.html">An API for getting precompiled grammars</a> was published.</li>
+<li>The tokenizer can be extended by user code.</li>
 <li>The runtime Farkle's extension methods became regular methods.</li>
-<li>Exceptions that might occur when a precompiled grammar fails to be loaded can be suppressed with an <code>AppContext</code> switch.</li>
+<li>~~Exceptions that might occur when a precompiled grammar fails to be loaded can be suppressed with an <code>AppContext</code> switch.~~ <strong>Removed in Farkle 6.0.0</strong></li>
 </ul>
 <h4><a name="6-0-0-alpha-2-23-08-2020" class="anchor" href="#6-0-0-alpha-2-23-08-2020">6.0.0-alpha.2 - 23-08-2020</a></h4>
 <ul>

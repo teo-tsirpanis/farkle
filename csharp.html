@@ -141,20 +141,97 @@
 <td><p><code>x.Extend(y)</code></p></td>
 </tr>
 <tr class="even">
+<td><p><code>x |&gt; asIs</code></p></td>
+<td><p><code>x.AsIs()</code></p></td>
+</tr>
+<tr class="odd">
 <td><p><code>x =&gt; (fun x -&gt; MyFunc x)</code></p></td>
 <td><p><code>x.Finish(x =&gt; MyFunc(x))</code></p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p><code>x =% 0</code></p></td>
 <td><p><code>x.FinishConstant(0)</code></p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p><code>RuntimeFarkle.build x</code></p></td>
 <td><p><code>x.Build()</code></p></td>
 </tr>
 </tbody>
 </table>
 
+<h3><a name="A-complete-example" class="anchor" href="#A-complete-example">A complete example</a></h3>
+<p>Let's take a look at <a href="quickstart.html#Writing-more-complex-nonterminals">the calculator we made at the quick start guide</a> written in C#:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
+<span class="l"> 2: </span>
+<span class="l"> 3: </span>
+<span class="l"> 4: </span>
+<span class="l"> 5: </span>
+<span class="l"> 6: </span>
+<span class="l"> 7: </span>
+<span class="l"> 8: </span>
+<span class="l"> 9: </span>
+<span class="l">10: </span>
+<span class="l">11: </span>
+<span class="l">12: </span>
+<span class="l">13: </span>
+<span class="l">14: </span>
+<span class="l">15: </span>
+<span class="l">16: </span>
+<span class="l">17: </span>
+<span class="l">18: </span>
+<span class="l">19: </span>
+<span class="l">20: </span>
+<span class="l">21: </span>
+<span class="l">22: </span>
+<span class="l">23: </span>
+<span class="l">24: </span>
+<span class="l">25: </span>
+<span class="l">26: </span>
+<span class="l">27: </span>
+<span class="l">28: </span>
+<span class="l">29: </span>
+<span class="l">30: </span>
+<span class="l">31: </span>
+<span class="l">32: </span>
+<span class="l">33: </span>
+<span class="l">34: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="csharp"><span class="k">using</span> System;
+<span class="k">using</span> Farkle.Builder;
+<span class="k">using</span> Farkle.Builder.OperatorPrecedence;
+
+<span class="k">public</span> <span class="k">static</span> <span class="k">class</span> SimpleMaths
+{
+    <span class="k">public</span> <span class="k">static</span> <span class="k">readonly</span> DesigntimeFarkle&lt;<span class="k">double</span>&gt; Designtime;
+    <span class="k">public</span> <span class="k">static</span> <span class="k">readonly</span> RuntimeFarkle&lt;<span class="k">double</span>&gt; Runtime;
+
+    <span class="k">static</span> SimpleMaths()
+    {
+        <span class="k">var</span> number <span class="o">=</span> Terminals.Double(<span class="s">"Number"</span>);
+
+        <span class="k">var</span> expression <span class="o">=</span> Nonterminal.Create&lt;<span class="k">double</span>&gt;(<span class="s">"Expression"</span>);
+        expression.SetProductions(
+            number.AsIs(),
+            expression.Extended().Append(<span class="s">"+"</span>).Extend(expression).Finish((x<span class="n">1</span>, x<span class="n">2</span>) <span class="o">=</span><span class="o">&gt;</span> x<span class="n">1</span> <span class="o">+</span> x<span class="n">2</span>),
+            expression.Extended().Append(<span class="s">"-"</span>).Extend(expression).Finish((x<span class="n">1</span>, x<span class="n">2</span>) <span class="o">=</span><span class="o">&gt;</span> x<span class="n">1</span> <span class="o">-</span> x<span class="n">2</span>),
+            expression.Extended().Append(<span class="s">"*"</span>).Extend(expression).Finish((x<span class="n">1</span>, x<span class="n">2</span>) <span class="o">=</span><span class="o">&gt;</span> x<span class="n">1</span> <span class="o">*</span> x<span class="n">2</span>),
+            expression.Extended().Append(<span class="s">"/"</span>).Extend(expression).Finish((x<span class="n">1</span>, x<span class="n">2</span>) <span class="o">=</span><span class="o">&gt;</span> x<span class="n">1</span> <span class="o">/</span> x<span class="n">2</span>),
+            <span class="s">"-"</span>.Appended().Extend(expression).WithPrecedence(<span class="k">out</span> <span class="k">var</span> NEG).Finish(x <span class="o">=</span><span class="o">&gt;</span> -x),
+            expression.Extended().Append(<span class="s">"^"</span>).Extend(expression).Finish(Math.Pow),
+            <span class="s">"("</span>.Appended().Extend(expression).Append(<span class="s">")"</span>).AsIs());
+
+        <span class="k">var</span> opScope <span class="o">=</span> <span class="k">new</span> OperatorScope(
+            <span class="k">new</span> LeftAssociative(<span class="s">"+"</span>, <span class="s">"-"</span>),
+            <span class="k">new</span> LeftAssociative(<span class="s">"*"</span>, <span class="s">"/"</span>),
+            <span class="k">new</span> PrecedenceOnly(NEG),
+            <span class="k">new</span> RightAssociative(<span class="s">"^"</span>));
+
+        Designtime <span class="o">=</span> expression.WithOperatorScope(opScope);
+        Runtime <span class="o">=</span> Designtime.Build();
+    }
+}
+</code></pre></td></tr></table>
+<p>Notice how we called the <code>WithPrecedence</code> method. In F# we were passing an object to the <code>prec</code> function. In C# we let the method create and return that object to us, taking advantage of C# 7.0's <code>out var</code> construct. We can still pass an object if we want.</p>
 <h3><a name="Customizing-designtime-Farkles" class="anchor" href="#Customizing-designtime-Farkles">Customizing designtime Farkles</a></h3>
 <p>To customize things like the case-sensitivity of designtime Farkles, there are some extension methods for them that reside in the <code>Farkle</code> namespace. Let's take a look at an example:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
@@ -166,8 +243,8 @@
 <span class="l">7: </span>
 <span class="l">8: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="csharp"><span class="k">var</span> test <span class="o">=</span>
-    Terminals.Int<span class="n">32</span>(<span class="s">"Test"</span>)
+<td class="snippet"><pre class="fssnip highlighted"><code lang="csharp"><span class="k">var</span> customized <span class="o">=</span>
+    SimpleMaths.Designtime
         .AddBlockComment(<span class="s">"/*"</span>, <span class="s">"*/"</span>)
         .AddLineComment(<span class="s">"//"</span>)
         .AutoWhitespace(<span class="k">false</span>)

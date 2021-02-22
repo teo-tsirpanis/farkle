@@ -43,8 +43,11 @@
 </p>
 <div class="xmldoc">
 <p>Functions to set metadata for designtime Farkles.
-Keep in mind that apart from renames, only the metadata of the <em>topmost</em>
-designtime Farkle matter. Any other metadata changes will be disregarded.</p>
+With few exceptions, these functions will have to be applied to the topmost
+designtime Farkle that will get build, or they will have no effect.
+Designime Farkles that were applied the functions of this module must not
+be used with the original designimte Farkles in the same context; only
+one grammar symbol will be created, with undefined behavior.</p>
 
 </div>
 
@@ -58,15 +61,15 @@ designtime Farkle matter. Any other metadata changes will be disregarded.</p>
     <tbody>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '23', 23)" onmouseover="showTip(event, '23', 23)">
+          <code onmouseout="hideTip(event, '26', 26)" onmouseover="showTip(event, '26', 26)">
             addBlockComment(...)
           </code>
-          <div class="tip" id="23">
+          <div class="tip" id="26">
             <strong>Signature:</strong> commentStart:string -&gt; commentEnd:string -&gt; df:DesigntimeFarkle&lt;&#39;a&gt; -&gt; DesigntimeFarkle&lt;&#39;a&gt;<br />
                           <strong>Type parameters:</strong> 'a                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L320-320" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Builder/DesigntimeFarkle/Operators.fs#L289-289" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -77,15 +80,15 @@ designtime Farkle matter. Any other metadata changes will be disregarded.</p>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '24', 24)" onmouseover="showTip(event, '24', 24)">
+          <code onmouseout="hideTip(event, '27', 27)" onmouseover="showTip(event, '27', 27)">
             addLineComment commentStart df
           </code>
-          <div class="tip" id="24">
+          <div class="tip" id="27">
             <strong>Signature:</strong> commentStart:string -&gt; df:DesigntimeFarkle&lt;&#39;a&gt; -&gt; DesigntimeFarkle&lt;&#39;a&gt;<br />
                           <strong>Type parameters:</strong> 'a                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L315-315" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Builder/DesigntimeFarkle/Operators.fs#L284-284" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -96,15 +99,15 @@ designtime Farkle matter. Any other metadata changes will be disregarded.</p>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '25', 25)" onmouseover="showTip(event, '25', 25)">
+          <code onmouseout="hideTip(event, '28', 28)" onmouseover="showTip(event, '28', 28)">
             addNoiseSymbol name regex df
           </code>
-          <div class="tip" id="25">
+          <div class="tip" id="28">
             <strong>Signature:</strong> name:string -&gt; regex:Regex -&gt; df:DesigntimeFarkle&lt;&#39;a&gt; -&gt; DesigntimeFarkle&lt;&#39;a&gt;<br />
                           <strong>Type parameters:</strong> 'a                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L307-307" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Builder/DesigntimeFarkle/Operators.fs#L276-276" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -115,15 +118,15 @@ designtime Farkle matter. Any other metadata changes will be disregarded.</p>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '26', 26)" onmouseover="showTip(event, '26', 26)">
+          <code onmouseout="hideTip(event, '29', 29)" onmouseover="showTip(event, '29', 29)">
             autoWhitespace flag df
           </code>
-          <div class="tip" id="26">
+          <div class="tip" id="29">
             <strong>Signature:</strong> flag:bool -&gt; df:DesigntimeFarkle&lt;&#39;a&gt; -&gt; DesigntimeFarkle&lt;&#39;a&gt;<br />
                           <strong>Type parameters:</strong> 'a                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L304-304" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Builder/DesigntimeFarkle/Operators.fs#L273-273" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -134,15 +137,15 @@ designtime Farkle matter. Any other metadata changes will be disregarded.</p>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '27', 27)" onmouseover="showTip(event, '27', 27)">
+          <code onmouseout="hideTip(event, '30', 30)" onmouseover="showTip(event, '30', 30)">
             caseSensitive flag df
           </code>
-          <div class="tip" id="27">
+          <div class="tip" id="30">
             <strong>Signature:</strong> flag:bool -&gt; df:DesigntimeFarkle&lt;&#39;a&gt; -&gt; DesigntimeFarkle&lt;&#39;a&gt;<br />
                           <strong>Type parameters:</strong> 'a                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L301-301" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Builder/DesigntimeFarkle/Operators.fs#L270-270" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -153,63 +156,86 @@ designtime Farkle matter. Any other metadata changes will be disregarded.</p>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '28', 28)" onmouseover="showTip(event, '28', 28)">
+          <code onmouseout="hideTip(event, '31', 31)" onmouseover="showTip(event, '31', 31)">
             cast(df)
           </code>
-          <div class="tip" id="28">
+          <div class="tip" id="31">
             <strong>Signature:</strong> df:DesigntimeFarkle -&gt; DesigntimeFarkle&lt;obj&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L287-287" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Builder/DesigntimeFarkle/Operators.fs#L258-258" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Converts an untyped designtime Farkle to a typed one that accepts an object.
-This is the recommended way to apply metadata to untyped designtime Farkles.
-The object they will return is typically null, but it should not be taken for granted.
-After the metadata have been set, it is better to upcast back to an untyped one.</p>
+          <p>Converts an untyped designtime Farkle to a typed one that returns an object.
+This function is used to apply metadata to untyped designtime Farkles.
+The object the designtime Farkle this function will return is undefined.
+After the metadata have been set, it is recommended to upcast back to an
+untyped one.</p>
 
 
         </td>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '29', 29)" onmouseover="showTip(event, '29', 29)">
+          <code onmouseout="hideTip(event, '32', 32)" onmouseover="showTip(event, '32', 32)">
             rename newName df
           </code>
-          <div class="tip" id="29">
+          <div class="tip" id="32">
             <strong>Signature:</strong> newName:string -&gt; df:DesigntimeFarkle&lt;&#39;a&gt; -&gt; DesigntimeFarkle&lt;&#39;a&gt;<br />
                           <strong>Type parameters:</strong> 'a                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L296-296" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Builder/DesigntimeFarkle/Operators.fs#L265-265" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           <p>Changes the name of a designtime Farkle. This function can be applied
-anywhere, not only to the topmost one, like with other metadata changes.
-Using the same designtime Farkle with a different name will create only
-one grammar symbol whose name is undefined.</p>
+anywhere, not only to the topmost one, like with other metadata changes.</p>
 
 
         </td>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '30', 30)" onmouseover="showTip(event, '30', 30)">
+          <code onmouseout="hideTip(event, '33', 33)" onmouseover="showTip(event, '33', 33)">
             withMetadata metadata df
           </code>
-          <div class="tip" id="30">
-            <strong>Signature:</strong> metadata:GrammarMetadata -&gt; df:DesigntimeFarkle&lt;&#39;?9341&gt; -&gt; DesigntimeFarkle&lt;&#39;?9341&gt;<br />
-                          <strong>Type parameters:</strong> '?9341                      </div>
+          <div class="tip" id="33">
+            <strong>Signature:</strong> metadata:GrammarMetadata -&gt; df:DesigntimeFarkle&lt;&#39;a&gt; -&gt; DesigntimeFarkle&lt;&#39;a&gt;<br />
+                          <strong>Type parameters:</strong> 'a                      </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Builder/DesigntimeFarkleOperators.fs#L280-280" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Builder/DesigntimeFarkle/Operators.fs#L243-243" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Sets a custom <a href="farkle-builder-grammarmetadata.html" title="GrammarMetadata"><code>GrammarMetadata</code></a> object to a <code>DesigntimeFarkle&amp;lt;'T&amp;gt;</code>.</p>
+          <p>Sets a <a href="farkle-builder-grammarmetadata.html" title="GrammarMetadata"><code>GrammarMetadata</code></a> object to a typed designtime Farkle.
+Most other functions in this module are convenience wrappers over this
+function.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '34', 34)" onmouseover="showTip(event, '34', 34)">
+            withOperatorScope opScope df
+          </code>
+          <div class="tip" id="34">
+            <strong>Signature:</strong> opScope:OperatorScope -&gt; df:DesigntimeFarkle&lt;&#39;a&gt; -&gt; DesigntimeFarkle&lt;&#39;a&gt;<br />
+                          <strong>Type parameters:</strong> 'a                      </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Builder/DesigntimeFarkle/Operators.fs#L250-250" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Sets an <a href="farkle-builder-operatorprecedence-operatorscope.html" title="OperatorScope"><code>OperatorScope</code></a> object to a typed designtime Farkle.
+This function can be applied in designtime Farkles that are not the
+topmost ones. Applying this function many times will discard the existing
+operator scope.</p>
 
 
         </td>

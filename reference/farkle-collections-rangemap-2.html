@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>RangeMap<'key, 'a> - Farkle</title>
+    <title>RangeMap<'TKey, 'TValue> - Farkle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content="Theodore Tsirpanis"/>
@@ -32,11 +32,17 @@
         <div class="span9" id="main">
           
 
-<h1>RangeMap<'key, 'a></h1>
+<h1>RangeMap<'TKey, 'TValue></h1>
 <p>
 
     <span>Namespace: Farkle.Collections</span><br />
-    </p>
+            <span>
+            Attributes: <br />
+[&lt;DebuggerTypeProxy(&quot;Farkle.DebugTypeProxies.RangeMapDebugProxy`2&quot;)&gt;]<br />
+[&lt;DebuggerDisplay(&quot;Count: {arr.Length}&quot;)&gt;]<br />
+            
+        </span>
+</p>
 <div class="xmldoc">
 <p>An associative data structure that assigns ranges of keys to a value.</p>
 
@@ -49,15 +55,15 @@
     <tbody>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '474', 474)" onmouseover="showTip(event, '474', 474)">
+          <code onmouseout="hideTip(event, '530', 530)" onmouseover="showTip(event, '530', 530)">
             new(ranges)
           </code>
-          <div class="tip" id="474">
-            <strong>Signature:</strong> (ranges:seq&lt;&#39;key * &#39;key * &#39;a&gt;) -&gt; RangeMap&lt;&#39;key,&#39;a&gt;<br />
+          <div class="tip" id="530">
+            <strong>Signature:</strong> (ranges:seq&lt;&#39;TKey * &#39;TKey * &#39;TValue&gt;) -&gt; RangeMap&lt;&#39;TKey,&#39;TValue&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Collections/RangeMap.fs#L66-66" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Collections/RangeMap.fs#L72-72" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -78,15 +84,15 @@ An exception will be raised if some ranges overlap.</p>
     <tbody>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '475', 475)" onmouseover="showTip(event, '475', 475)">
+          <code onmouseout="hideTip(event, '531', 531)" onmouseover="showTip(event, '531', 531)">
             x.ContainsKey(k)
           </code>
-          <div class="tip" id="475">
-            <strong>Signature:</strong> k:&#39;key -&gt; bool<br />
+          <div class="tip" id="531">
+            <strong>Signature:</strong> k:&#39;TKey -&gt; bool<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Collections/RangeMap.fs#L102-102" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Collections/RangeMap.fs#L108-108" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -97,15 +103,15 @@ An exception will be raised if some ranges overlap.</p>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '476', 476)" onmouseover="showTip(event, '476', 476)">
+          <code onmouseout="hideTip(event, '532', 532)" onmouseover="showTip(event, '532', 532)">
             x.Elements
           </code>
-          <div class="tip" id="476">
-            <strong>Signature:</strong> ReadOnlySpan&lt;RangeMapElement&lt;&#39;key,&#39;a&gt;&gt;<br />
+          <div class="tip" id="532">
+            <strong>Signature:</strong> ReadOnlySpan&lt;RangeMapElement&lt;&#39;TKey,&#39;TValue&gt;&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Collections/RangeMap.fs#L98-98" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Collections/RangeMap.fs#L104-104" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -117,15 +123,32 @@ An exception will be raised if some ranges overlap.</p>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '477', 477)" onmouseover="showTip(event, '477', 477)">
+          <code onmouseout="hideTip(event, '533', 533)" onmouseover="showTip(event, '533', 533)">
+            x.GetEnumerator()
+          </code>
+          <div class="tip" id="533">
+            <strong>Signature:</strong> unit -&gt; Enumerator&lt;RangeMapElement&lt;&#39;TKey,&#39;TValue&gt;&gt;<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Collections/RangeMap.fs#L109-109" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '534', 534)" onmouseover="showTip(event, '534', 534)">
             x.IsEmpty
           </code>
-          <div class="tip" id="477">
+          <div class="tip" id="534">
             <strong>Signature:</strong> bool<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Collections/RangeMap.fs#L100-100" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Collections/RangeMap.fs#L106-106" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -137,15 +160,15 @@ An exception will be raised if some ranges overlap.</p>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '478', 478)" onmouseover="showTip(event, '478', 478)">
+          <code onmouseout="hideTip(event, '535', 535)" onmouseover="showTip(event, '535', 535)">
             x.TryFind(k)
           </code>
-          <div class="tip" id="478">
-            <strong>Signature:</strong> k:&#39;key -&gt; &#39;a voption<br />
+          <div class="tip" id="535">
+            <strong>Signature:</strong> k:&#39;TKey -&gt; &#39;TValue voption<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Collections/RangeMap.fs#L79-79" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Collections/RangeMap.fs#L85-85" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -165,15 +188,15 @@ corresponding value, if it exists.</p>
     <tbody>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '479', 479)" onmouseover="showTip(event, '479', 479)">
+          <code onmouseout="hideTip(event, '536', 536)" onmouseover="showTip(event, '536', 536)">
             RangeMap.Empty
           </code>
-          <div class="tip" id="479">
-            <strong>Signature:</strong> RangeMap&lt;&#39;key,&#39;a&gt;<br />
+          <div class="tip" id="536">
+            <strong>Signature:</strong> RangeMap&lt;&#39;TKey,&#39;TValue&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Collections/RangeMap.fs#L104-104" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Collections/RangeMap.fs#L111-111" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>

@@ -36,9 +36,15 @@
 <p>
 
     <span>Namespace: Farkle.Grammar</span><br />
-    </p>
+            <span>
+            Attributes: <br />
+[&lt;DebuggerDisplay(&quot;State #{Index}&quot;)&gt;]<br />
+[&lt;DebuggerTypeProxy(&quot;Farkle.DebugTypeProxies.LALRStateDebugProxy&quot;)&gt;]<br />
+            
+        </span>
+</p>
 <div class="xmldoc">
-<p>A LALR state. Many of them define the parsing logic of a <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a>.</p>
+<p>A LALR state. Together, many of them define the parsing logic of a <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a>.</p>
 
 </div>
   <h3>Record Fields</h3>
@@ -49,15 +55,15 @@
     <tbody>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '532', 532)" onmouseover="showTip(event, '532', 532)">
+          <code onmouseout="hideTip(event, '590', 590)" onmouseover="showTip(event, '590', 590)">
             Actions
           </code>
-          <div class="tip" id="532">
+          <div class="tip" id="590">
             <strong>Signature:</strong> ImmutableDictionary&lt;Terminal,LALRAction&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Grammar/GrammarTypes.fs#L258-258" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Grammar/GrammarTypes.fs#L253-253" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -69,15 +75,19 @@ depending on the next <code>Terminal</code> encountered.</p>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '533', 533)" onmouseover="showTip(event, '533', 533)">
+          <code onmouseout="hideTip(event, '591', 591)" onmouseover="showTip(event, '591', 591)">
             EOFAction
           </code>
-          <div class="tip" id="533">
+          <div class="tip" id="591">
             <strong>Signature:</strong> LALRAction option<br />
-                                  </div>
+                                    <span>
+            <strong>Attributes:</strong><br />
+[&lt;Nullable([|2; 1|])&gt;]<br />
+          </span>
+          </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Grammar/GrammarTypes.fs#L260-260" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Grammar/GrammarTypes.fs#L255-255" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -88,15 +98,15 @@ depending on the next <code>Terminal</code> encountered.</p>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '534', 534)" onmouseover="showTip(event, '534', 534)">
+          <code onmouseout="hideTip(event, '592', 592)" onmouseover="showTip(event, '592', 592)">
             GotoActions
           </code>
-          <div class="tip" id="534">
+          <div class="tip" id="592">
             <strong>Signature:</strong> ImmutableDictionary&lt;Nonterminal,uint32&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Grammar/GrammarTypes.fs#L264-264" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Grammar/GrammarTypes.fs#L259-259" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -109,15 +119,15 @@ jumps to the state that represents the shifted nonterminal.</p>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '535', 535)" onmouseover="showTip(event, '535', 535)">
+          <code onmouseout="hideTip(event, '593', 593)" onmouseover="showTip(event, '593', 593)">
             Index
           </code>
-          <div class="tip" id="535">
+          <div class="tip" id="593">
             <strong>Signature:</strong> uint32<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/Grammar/GrammarTypes.fs#L255-255" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/Grammar/GrammarTypes.fs#L250-250" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>

@@ -58,15 +58,15 @@ an expression of the language of this grammar.</p>
     <tbody>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '308', 308)" onmouseover="showTip(event, '308', 308)">
+          <code onmouseout="hideTip(event, '318', 318)" onmouseover="showTip(event, '318', 318)">
             Grammar
           </code>
-          <div class="tip" id="308">
-            <strong>Signature:</strong> Result&lt;Grammar,BuildError&gt;<br />
+          <div class="tip" id="318">
+            <strong>Signature:</strong> Result&lt;Grammar,BuildError list&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/RuntimeFarkle.fs#L53-53" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/RuntimeFarkle.fs#L51-51" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -75,15 +75,32 @@ an expression of the language of this grammar.</p>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '309', 309)" onmouseover="showTip(event, '309', 309)">
+          <code onmouseout="hideTip(event, '319', 319)" onmouseover="showTip(event, '319', 319)">
             PostProcessor
           </code>
-          <div class="tip" id="309">
+          <div class="tip" id="319">
             <strong>Signature:</strong> PostProcessor&lt;&#39;TResult&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/RuntimeFarkle.fs#L54-54" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/RuntimeFarkle.fs#L52-52" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '320', 320)" onmouseover="showTip(event, '320', 320)">
+            TokenizerFactory
+          </code>
+          <div class="tip" id="320">
+            <strong>Signature:</strong> TokenizerFactory<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/RuntimeFarkle.fs#L53-53" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -100,11 +117,31 @@ an expression of the language of this grammar.</p>
     <tbody>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '310', 310)" onmouseover="showTip(event, '310', 310)">
+          <code onmouseout="hideTip(event, '321', 321)" onmouseover="showTip(event, '321', 321)">
+            x.Cast()
+          </code>
+          <div class="tip" id="321">
+            <strong>Signature:</strong> unit -&gt; RuntimeFarkle&lt;obj&gt;<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/RuntimeFarkle.fs#L134-134" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Changes the runtime Farkle's returning type to
+, without changing its post-processsor.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '322', 322)" onmouseover="showTip(event, '322', 322)">
             x.ChangePostProcessor(pp)
           </code>
-          <div class="tip" id="310">
-            <strong>Signature:</strong> pp:PostProcessor&lt;&#39;?7893&gt; -&gt; RuntimeFarkle&lt;&#39;?7893&gt;<br />
+          <div class="tip" id="322">
+            <strong>Signature:</strong> pp:PostProcessor&lt;&#39;TNewResult&gt; -&gt; RuntimeFarkle&lt;&#39;TNewResult&gt;<br />
                                     <span>
             <strong>Attributes:</strong><br />
 [&lt;MethodImpl(256)&gt;]<br />
@@ -112,7 +149,7 @@ an expression of the language of this grammar.</p>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/RuntimeFarkle.fs#L309-309" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/RuntimeFarkle.fs#L127-127" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -123,36 +160,53 @@ an expression of the language of this grammar.</p>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '311', 311)" onmouseover="showTip(event, '311', 311)">
-            x.GetBuildError()
+          <code onmouseout="hideTip(event, '323', 323)" onmouseover="showTip(event, '323', 323)">
+            x.ChangeTokenizer()
           </code>
-          <div class="tip" id="311">
-            <strong>Signature:</strong> unit -&gt; BuildError<br />
+          <div class="tip" id="323">
+            <strong>Signature:</strong> unit -&gt; RuntimeFarkle&lt;&#39;TResult&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/RuntimeFarkle.fs#L95-95" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/RuntimeFarkle.fs#L161-161" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Returns a domain-specific error object that
-describes what had gone wrong while building,
-or raises an exception if building had been successful.</p>
+          <p>Changes the  type this runtime Farkle will use.</p>
 
 
         </td>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '312', 312)" onmouseover="showTip(event, '312', 312)">
+          <code onmouseout="hideTip(event, '324', 324)" onmouseover="showTip(event, '324', 324)">
+            x.ChangeTokenizer(tokenizerFactory)
+          </code>
+          <div class="tip" id="324">
+            <strong>Signature:</strong> tokenizerFactory:TokenizerFactory -&gt; RuntimeFarkle&lt;&#39;TResult&gt;<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/RuntimeFarkle.fs#L151-151" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Changes the  of this runtime Farkle.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '325', 325)" onmouseover="showTip(event, '325', 325)">
             x.GetBuildErrorMessage()
           </code>
-          <div class="tip" id="312">
+          <div class="tip" id="325">
             <strong>Signature:</strong> unit -&gt; string<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/RuntimeFarkle.fs#L103-103" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/RuntimeFarkle.fs#L87-87" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -165,15 +219,36 @@ or an empty string if building had been successful.</p>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '313', 313)" onmouseover="showTip(event, '313', 313)">
+          <code onmouseout="hideTip(event, '326', 326)" onmouseover="showTip(event, '326', 326)">
+            x.GetBuildErrors()
+          </code>
+          <div class="tip" id="326">
+            <strong>Signature:</strong> unit -&gt; BuildError list<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/RuntimeFarkle.fs#L79-79" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Returns a list of <a href="farkle-builder-builderror.html" title="BuildError"><code>BuildError</code></a> objects that
+describe what had gone wrong while building, or returns
+an empty list if building had been successful.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '327', 327)" onmouseover="showTip(event, '327', 327)">
             x.GetGrammar()
           </code>
-          <div class="tip" id="313">
+          <div class="tip" id="327">
             <strong>Signature:</strong> unit -&gt; Grammar<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/RuntimeFarkle.fs#L112-112" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/RuntimeFarkle.fs#L96-96" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -185,15 +260,15 @@ behind the .</p>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '314', 314)" onmouseover="showTip(event, '314', 314)">
+          <code onmouseout="hideTip(event, '328', 328)" onmouseover="showTip(event, '328', 328)">
             x.IsBuildSuccessful
           </code>
-          <div class="tip" id="314">
+          <div class="tip" id="328">
             <strong>Signature:</strong> bool<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/RuntimeFarkle.fs#L87-87" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/RuntimeFarkle.fs#L71-71" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -206,10 +281,10 @@ If loaded from an EGT file, it will always return true.</p>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '315', 315)" onmouseover="showTip(event, '315', 315)">
+          <code onmouseout="hideTip(event, '329', 329)" onmouseover="showTip(event, '329', 329)">
             x.Parse(textReader)
           </code>
-          <div class="tip" id="315">
+          <div class="tip" id="329">
             <strong>Signature:</strong> textReader:TextReader -&gt; Result&lt;&#39;TResult,FarkleError&gt;<br />
                                     <span>
             <strong>Attributes:</strong><br />
@@ -218,7 +293,7 @@ If loaded from an EGT file, it will always return true.</p>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/RuntimeFarkle.fs#L303-303" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/RuntimeFarkle.fs#L329-329" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -229,11 +304,11 @@ If loaded from an EGT file, it will always return true.</p>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '316', 316)" onmouseover="showTip(event, '316', 316)">
-            x.Parse(stream, encoding, doLazyLoad)
+          <code onmouseout="hideTip(event, '330', 330)" onmouseover="showTip(event, '330', 330)">
+            x.Parse(...)
           </code>
-          <div class="tip" id="316">
-            <strong>Signature:</strong> (stream:Stream * encoding:Encoding * doLazyLoad:bool) -&gt; Result&lt;&#39;TResult,FarkleError&gt;<br />
+          <div class="tip" id="330">
+            <strong>Signature:</strong> (inputStream:Stream * encoding:Encoding * doLazyLoad:bool) -&gt; Result&lt;&#39;TResult,FarkleError&gt;<br />
                                     <span>
             <strong>Attributes:</strong><br />
 [&lt;MethodImpl(256)&gt;]<br />
@@ -246,7 +321,7 @@ If loaded from an EGT file, it will always return true.</p>
               <strong>WARNING: </strong> This API is obsolete
               <p>Streams are supposed to contain binary data; not text. Parse a TextReader instead.</p>
               </div> 
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/RuntimeFarkle.fs#L294-294" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/RuntimeFarkle.fs#L319-319" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -258,11 +333,11 @@ If loaded from an EGT file, it will always return true.</p>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '317', 317)" onmouseover="showTip(event, '317', 317)">
-            x.Parse(str)
+          <code onmouseout="hideTip(event, '331', 331)" onmouseover="showTip(event, '331', 331)">
+            x.Parse(inputString)
           </code>
-          <div class="tip" id="317">
-            <strong>Signature:</strong> str:string -&gt; Result&lt;&#39;TResult,FarkleError&gt;<br />
+          <div class="tip" id="331">
+            <strong>Signature:</strong> inputString:string -&gt; Result&lt;&#39;TResult,FarkleError&gt;<br />
                                     <span>
             <strong>Attributes:</strong><br />
 [&lt;MethodImpl(256)&gt;]<br />
@@ -270,30 +345,7 @@ If loaded from an EGT file, it will always return true.</p>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/RuntimeFarkle.fs#L282-282" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Parses and post-processes a .</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-          <code onmouseout="hideTip(event, '318', 318)" onmouseover="showTip(event, '318', 318)">
-            x.Parse(mem)
-          </code>
-          <div class="tip" id="318">
-            <strong>Signature:</strong> mem:ReadOnlyMemory&lt;char&gt; -&gt; Result&lt;&#39;TResult,FarkleError&gt;<br />
-                                    <span>
-            <strong>Attributes:</strong><br />
-[&lt;MethodImpl(256)&gt;]<br />
-          </span>
-          </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/RuntimeFarkle.fs#L275-275" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/RuntimeFarkle.fs#L307-307" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -304,11 +356,11 @@ If loaded from an EGT file, it will always return true.</p>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '319', 319)" onmouseover="showTip(event, '319', 319)">
-            x.Parse(charStream)
+          <code onmouseout="hideTip(event, '332', 332)" onmouseover="showTip(event, '332', 332)">
+            x.Parse(input)
           </code>
-          <div class="tip" id="319">
-            <strong>Signature:</strong> charStream:CharStream -&gt; Result&lt;&#39;TResult,FarkleError&gt;<br />
+          <div class="tip" id="332">
+            <strong>Signature:</strong> input:ReadOnlyMemory&lt;char&gt; -&gt; Result&lt;&#39;TResult,FarkleError&gt;<br />
                                     <span>
             <strong>Attributes:</strong><br />
 [&lt;MethodImpl(256)&gt;]<br />
@@ -316,7 +368,27 @@ If loaded from an EGT file, it will always return true.</p>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/RuntimeFarkle.fs#L268-268" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/RuntimeFarkle.fs#L300-300" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Parses and post-processes a
+.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '333', 333)" onmouseover="showTip(event, '333', 333)">
+            x.Parse(input)
+          </code>
+          <div class="tip" id="333">
+            <strong>Signature:</strong> input:CharStream -&gt; Result&lt;&#39;TResult,FarkleError&gt;<br />
+                                  </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/RuntimeFarkle.fs#L105-105" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -327,10 +399,33 @@ If loaded from an EGT file, it will always return true.</p>
       </tr>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '320', 320)" onmouseover="showTip(event, '320', 320)">
+          <code onmouseout="hideTip(event, '334', 334)" onmouseover="showTip(event, '334', 334)">
+            x.ParseFile(path)
+          </code>
+          <div class="tip" id="334">
+            <strong>Signature:</strong> path:string -&gt; Result&lt;&#39;TResult,FarkleError&gt;<br />
+                                    <span>
+            <strong>Attributes:</strong><br />
+[&lt;MethodImpl(256)&gt;]<br />
+          </span>
+          </div>
+        </td>
+        <td class="xmldoc">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/RuntimeFarkle.fs#L337-337" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Parses and post-processes a file.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+          <code onmouseout="hideTip(event, '335', 335)" onmouseover="showTip(event, '335', 335)">
             x.SyntaxCheck()
           </code>
-          <div class="tip" id="320">
+          <div class="tip" id="335">
             <strong>Signature:</strong> unit -&gt; RuntimeFarkle&lt;obj&gt;<br />
                                     <span>
             <strong>Attributes:</strong><br />
@@ -339,12 +434,12 @@ If loaded from an EGT file, it will always return true.</p>
           </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/RuntimeFarkle.fs#L313-313" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/RuntimeFarkle.fs#L341-341" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Changes the  of this runtime Farkle to a dummy
-one that is useful for syntax-checking, not parsing.</p>
+          <p>Changes the  of this runtime Farkle to
+a dummy one that is useful for syntax-checking instead of parsing.</p>
 
 
         </td>
@@ -359,60 +454,20 @@ one that is useful for syntax-checking, not parsing.</p>
     <tbody>
       <tr>
         <td class="member-name">
-          <code onmouseout="hideTip(event, '321', 321)" onmouseover="showTip(event, '321', 321)">
+          <code onmouseout="hideTip(event, '336', 336)" onmouseover="showTip(event, '336', 336)">
             RuntimeFarkle.Create(...)
           </code>
-          <div class="tip" id="321">
-            <strong>Signature:</strong> (fileName:string * postProcessor:PostProcessor&lt;&#39;?7863&gt;) -&gt; RuntimeFarkle&lt;&#39;?7863&gt;<br />
+          <div class="tip" id="336">
+            <strong>Signature:</strong> (grammar:Grammar * postProcessor:PostProcessor&lt;&#39;TResult&gt;) -&gt; RuntimeFarkle&lt;&#39;TResult&gt;<br />
                                   </div>
         </td>
         <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/RuntimeFarkle.fs#L71-71" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Creates a  from the given
-EGT file and .</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-          <code onmouseout="hideTip(event, '322', 322)" onmouseover="showTip(event, '322', 322)">
-            RuntimeFarkle.Create(...)
-          </code>
-          <div class="tip" id="322">
-            <strong>Signature:</strong> (grammar:Grammar * postProcessor:PostProcessor&lt;&#39;?7860&gt;) -&gt; RuntimeFarkle&lt;&#39;?7860&gt;<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/RuntimeFarkle.fs#L64-64" class="github-link">
+                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/42da59/src/Farkle/RuntimeFarkle.fs#L64-64" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           <p>Creates a  from the given
 and .</p>
-
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-          <code onmouseout="hideTip(event, '323', 323)" onmouseover="showTip(event, '323', 323)">
-            RuntimeFarkle.CreateFromBase64String(...)
-          </code>
-          <div class="tip" id="323">
-            <strong>Signature:</strong> (str:string * postProcessor:PostProcessor&lt;&#39;?7866&gt;) -&gt; RuntimeFarkle&lt;&#39;?7866&gt;<br />
-                                  </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/fb4303/src/Farkle/RuntimeFarkle.fs#L79-79" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Creates a  from the given
-EGT file encoded in Base64 and .</p>
 
 
         </td>
