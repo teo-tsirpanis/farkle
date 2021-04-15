@@ -1,187 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <title>DesigntimeFarkleBuild - Farkle</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content=""/>
-    <meta name="author" content="Theodore Tsirpanis"/>
+<head>
+  <meta charset="utf-8">
+  <title>DesigntimeFarkleBuild (Farkle)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Theodore Tsirpanis">
+  <meta name="description" content="Farkle - DesigntimeFarkleBuild (Farkle)">
 
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" async></script>
-    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-    <link href="https://stackpath.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" integrity="sha384-4FeI0trTH/PCsLWrGCD1mScoFu9Jf2NdknFdFoJhXZFwsvzZ3Bo5sAh7+zL8Xgnd" crossorigin="anonymous">
+  <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 
-    <link type="text/css" rel="stylesheet" href="/Farkle/content/style.css" />
-    <script type="text/javascript" src="/Farkle/content/tips.js" async></script>
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <![endif]-->
-  </head>
+  <link type="text/css" rel="stylesheet" href="https://teo-tsirpanis.github.io/Farkle/content/navbar-fixed-left.css" />
+  <link type="text/css" rel="stylesheet" href="https://teo-tsirpanis.github.io/Farkle/content/fsdocs-default.css" />
+  <link type="text/css" rel="stylesheet" href="https://teo-tsirpanis.github.io/Farkle/content/fsdocs-custom.css" />
+  <script async type="text/javascript" src="https://teo-tsirpanis.github.io/Farkle/content/fsdocs-tips.js"></script>
+  <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+  <!-- END SEARCH BOX: this adds support for the search box -->
+</head>
+
   <body>
-    <div class="container">
-      <div class="masthead">
-        <ul class="nav nav-pills pull-right">
-          <li><a href="https://github.com/teo-tsirpanis/Farkle">github page</a></li>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-nav">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <a href="https://teo-tsirpanis.github.io/Farkle/index.html"><img id="fsdocs-logo" src="https://teo-tsirpanis.github.io/Farkle/img/logo.png" /></a>
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <div id="header">
+          <div class="searchbox" id="fsdocs-searchbox">
+            <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+          </div>
+        </div>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+
+        <ul class="navbar-nav">
+          <li class="nav-header">Links</li>
+          <li class="nav-item"><a class="nav-link" href="https://nuget.org/packages/Farkle">Get Library via NuGet</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/teo-tsirpanis/Farkle">Source Code on GitHub</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/license.html">License</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/release-notes.html">Release Notes</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/choosing-a-parser.html">Choosing a parser: Farkle vs alternatives</a></li>
+
+          <li class="nav-header">Getting started</li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/quickstart.html">Quick Start with F#</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/csharp.html">Using Farkle with C#</a></li>
+
+          <li class="nav-header">Documentation</li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/reference/index.html">API Reference</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/templates.html">Templating Reference</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/string-regexes.html">String regex reference</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/the-precompiler.html">The precompiler</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/advanced-features.html">Advanced Features</a></li>
         </ul>
-        <h3 class="muted"><a href="/Farkle/index.html">Farkle</a></h3>
       </div>
-      <hr />
-      <div class="row">
-        <div class="span9" id="main">
-          
-
-<h1>DesigntimeFarkleBuild</h1>
-<p>
-  <span>Namespace: Farkle.Builder</span><br />
-  </p>
-<div class="xmldoc">
-<p>Functions to create <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a>s
-and <code>PostProcessor</code>s from <a href="farkle-builder-designtimefarkle.html" title="DesigntimeFarkle"><code>DesigntimeFarkle</code></a>s.</p>
-
-</div>
-
-<!-- Render nested types and modules, if there are any -->
-
-  <h3>Functions and values</h3>
-  <table class="table table-bordered member-list">
-    <thead>
-      <tr><td>Function or value</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="member-name">
-          <code onmouseout="hideTip(event, '35', 35)" onmouseover="showTip(event, '35', 35)">
-            build(df)
-          </code>
-          <div class="tip" id="35">
-            <strong>Signature:</strong> df:DesigntimeFarkle&lt;&#39;TOutput&gt; -&gt; Result&lt;Grammar,BuildError list&gt; * PostProcessor&lt;&#39;TOutput&gt;<br />
-                          <strong>Type parameters:</strong> 'TOutput                        <span>
-            <strong>Attributes:</strong><br />
-[&lt;CompiledName(&quot;Build&quot;)&gt;]<br />
-          </span>
-          </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/b8f9db/src/Farkle/Builder/DesigntimeFarkleBuild.fs#L436-436" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Creates a <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a> and a <code>PostProcessor</code> from a typed <a href="farkle-builder-designtimefarkle.html" title="DesigntimeFarkle"><code>DesigntimeFarkle</code></a>.
-The construction of the grammar may fail. In this case, the output of the
-post-processor is indeterminate. Using this function (and all others in this
-module) will always build a new grammar, even if a precompiled one is available.</p>
-
-
-              <p>CompiledName: <code>Build</code></p>
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-          <code onmouseout="hideTip(event, '36', 36)" onmouseover="showTip(event, '36', 36)">
-            buildGrammarOnly(grammarDef)
-          </code>
-          <div class="tip" id="36">
-            <strong>Signature:</strong> grammarDef:GrammarDefinition -&gt; Result&lt;Grammar,BuildError list&gt;<br />
-                                    <span>
-            <strong>Attributes:</strong><br />
-[&lt;CompiledName(&quot;BuildGrammarOnly&quot;)&gt;]<br />
-          </span>
-          </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/b8f9db/src/Farkle/Builder/DesigntimeFarkleBuild.fs#L396-396" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Creates a <a href="farkle-grammar-grammar.html" title="Grammar"><code>Grammar</code></a> from a <a href="farkle-builder-grammardefinition.html" title="GrammarDefinition"><code>GrammarDefinition</code></a>.</p>
-
-
-              <p>CompiledName: <code>BuildGrammarOnly</code></p>
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-          <code onmouseout="hideTip(event, '37', 37)" onmouseover="showTip(event, '37', 37)">
-            buildPostProcessorOnly(df)
-          </code>
-          <div class="tip" id="37">
-            <strong>Signature:</strong> df:DesigntimeFarkle&lt;&#39;TOutput&gt; -&gt; PostProcessor&lt;&#39;TOutput&gt;<br />
-                          <strong>Type parameters:</strong> 'TOutput                        <span>
-            <strong>Attributes:</strong><br />
-[&lt;CompiledName(&quot;BuildPostProcessorOnly&quot;)&gt;]<br />
-          </span>
-          </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/b8f9db/src/Farkle/Builder/DesigntimeFarkleBuild.fs#L447-447" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Creates a <code>PostProcessor</code> from the given <a href="farkle-builder-designtimefarkle.html" title="DesigntimeFarkle"><code>DesigntimeFarkle</code></a>.
-By not creating a grammar, some potentially expensive steps are skipped.
-This function is useful only for some very limited scenarios, such as
-having many designtime Farkles with an identical grammar but different post-processors.</p>
-
-
-              <p>CompiledName: <code>BuildPostProcessorOnly</code></p>
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-          <code onmouseout="hideTip(event, '38', 38)" onmouseover="showTip(event, '38', 38)">
-            createGrammarDefinition(df)
-          </code>
-          <div class="tip" id="38">
-            <strong>Signature:</strong> df:DesigntimeFarkle -&gt; GrammarDefinition<br />
-                                    <span>
-            <strong>Attributes:</strong><br />
-[&lt;CompiledName(&quot;CreateGrammarDefinition&quot;)&gt;]<br />
-          </span>
-          </div>
-        </td>
-        <td class="xmldoc">
-                      <a href="https://github.com/teo-tsirpanis/Farkle/tree/b8f9db/src/Farkle/Builder/DesigntimeFarkleBuild.fs#L346-346" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Creates a <a href="farkle-builder-grammardefinition.html" title="GrammarDefinition"><code>GrammarDefinition</code></a> from an untyped <a href="farkle-builder-designtimefarkle.html" title="DesigntimeFarkle"><code>DesigntimeFarkle</code></a>.</p>
-
-
-              <p>CompiledName: <code>CreateGrammarDefinition</code></p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://teo-tsirpanis.github.io/Farkle/index.html">Farkle</a></h3>
         </div>
-        <div class="span3">
-          <img src="/Farkle/img/logo.png" alt="F# Project" style="width:150px;margin:10px" />
-          <ul class="nav nav-list" id="menu" style="margin-top: 20px;">
-            <li class="nav-header">Farkle</li>
-            <li><a href="/Farkle/index.html">Home page</a></li>
-            <li class="divider"></li>
-            <li><a href="https://nuget.org/packages/Farkle">Get Library via NuGet</a></li>
-            <li><a href="https://github.com/teo-tsirpanis/Farkle">Source Code on GitHub</a></li>
-            <li><a href="/Farkle/license.html">License</a></li>
-            <li><a href="/Farkle/release-notes.html">Release Notes</a></li>
-            <li><a href="/Farkle/choosing-a-parser.html">Choosing a parser: Farkle vs alternatives</a></li>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h2>
+    DesigntimeFarkleBuild Module
+  </h2>
+  <dl class="fsdocs-metadata">
+    <dt>
+      Namespace: 
+      <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder.html">
+        Farkle.Builder
+      </a>
+    </dt>
+    <dt>
+      Assembly: Farkle.dll
+    </dt>
+  </dl>
+  <div class="fsdocs-xmldoc">
+    <div>
+      <p class="fsdocs-summary">
+        
+ Functions to create `Grammar`s
+ and `PostProcessor`s from `DesigntimeFarkle`s.
 
-            <li class="nav-header">Getting started</li>
-            <li><a href="/Farkle/quickstart.html">Quick Start with F#</a></li>
-            <li><a href="/Farkle/csharp.html">Using Farkle with C#</a></li>
-
-            <li class="nav-header">Documentation</li>
-            <li><a href="/Farkle/reference/index.html">API Reference</a></li>
-            <li><a href="/Farkle/templates.html">Templating Reference</a></li>
-            <li><a href="/Farkle/string-regexes.html">String regex reference</a></li>
-            <li><a href="/Farkle/the-precompiler.html">The precompiler</a></li>
-            <li><a href="/Farkle/advanced-features.html">Advanced Features</a></li>
-          </ul>
-        </div>
-      </div>
+      </p>
     </div>
-    <a href="https://github.com/teo-tsirpanis/Farkle" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  </div>
+  <div>
+    <h3>
+      Functions and values
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Function or value
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '32', 32)" onmouseover="showTip(event, '32', 32)">
+                <p>
+                  <a id="build">
+                    <a href="#build">
+                      <code><span>build&#32;<span>df</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="32">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>build&#32;<span>df</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        df
+                      </b>
+                      :
+                      <code><span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-designtimefarkle-1.html">DesigntimeFarkle</a>&lt;'TOutput&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpresult-2">Result</a>&lt;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-grammar.html">Grammar</a>,&#32;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-builderror.html">BuildError</a>&#32;list</span></span>&gt;</span>&#32;*&#32;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-postprocessor-1.html">PostProcessor</a>&lt;'TOutput&gt;</span></span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('```cref:M:Farkle.Builder.DesigntimeFarkleBuild.Build``1```')">
+                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:Farkle.Builder.DesigntimeFarkleBuild.Build``1\'/>')">
+                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <p class="fsdocs-summary">
+                
+ Creates a `Grammar` and a `PostProcessor` from a typed `DesigntimeFarkle`.
+ The construction of the grammar may fail. In this case, the output of the
+ post-processor is indeterminate. Using this function (and all others in this
+ module) will always build a new grammar, even if a precompiled one is available.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  df
+                </span>
+                :
+                <code><span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-designtimefarkle-1.html">DesigntimeFarkle</a>&lt;'TOutput&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpresult-2">Result</a>&lt;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-grammar.html">Grammar</a>,&#32;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-builderror.html">BuildError</a>&#32;list</span></span>&gt;</span>&#32;*&#32;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-postprocessor-1.html">PostProcessor</a>&lt;'TOutput&gt;</span></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '33', 33)" onmouseover="showTip(event, '33', 33)">
+                <p>
+                  <a id="buildGrammarOnly">
+                    <a href="#buildGrammarOnly">
+                      <code><span>buildGrammarOnly&#32;<span>grammarDef</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="33">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>buildGrammarOnly&#32;<span>grammarDef</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        grammarDef
+                      </b>
+                      :
+                      <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-grammardefinition.html">GrammarDefinition</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpresult-2">Result</a>&lt;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-grammar.html">Grammar</a>,&#32;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-builderror.html">BuildError</a>&#32;list</span></span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:M:Farkle.Builder.DesigntimeFarkleBuild.BuildGrammarOnly`')">
+                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:Farkle.Builder.DesigntimeFarkleBuild.BuildGrammarOnly\'/>')">
+                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <p class="fsdocs-summary">
+                
+ Creates a `Grammar` from a `GrammarDefinition`.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  grammarDef
+                </span>
+                :
+                <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-grammardefinition.html">GrammarDefinition</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpresult-2">Result</a>&lt;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-grammar.html">Grammar</a>,&#32;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-builderror.html">BuildError</a>&#32;list</span></span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '34', 34)" onmouseover="showTip(event, '34', 34)">
+                <p>
+                  <a id="buildPostProcessorOnly">
+                    <a href="#buildPostProcessorOnly">
+                      <code><span>buildPostProcessorOnly&#32;<span>df</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="34">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>buildPostProcessorOnly&#32;<span>df</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        df
+                      </b>
+                      :
+                      <code><span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-designtimefarkle-1.html">DesigntimeFarkle</a>&lt;'TOutput&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-postprocessor-1.html">PostProcessor</a>&lt;'TOutput&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('```cref:M:Farkle.Builder.DesigntimeFarkleBuild.BuildPostProcessorOnly``1```')">
+                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:Farkle.Builder.DesigntimeFarkleBuild.BuildPostProcessorOnly``1\'/>')">
+                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <p class="fsdocs-summary">
+                
+ Creates a `PostProcessor` from the given `DesigntimeFarkle`.
+ By not creating a grammar, some potentially expensive steps are skipped.
+ This function is useful only for some very limited scenarios, such as
+ having many designtime Farkles with an identical grammar but different post-processors.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  df
+                </span>
+                :
+                <code><span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-designtimefarkle-1.html">DesigntimeFarkle</a>&lt;'TOutput&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-postprocessor-1.html">PostProcessor</a>&lt;'TOutput&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '35', 35)" onmouseover="showTip(event, '35', 35)">
+                <p>
+                  <a id="createGrammarDefinition">
+                    <a href="#createGrammarDefinition">
+                      <code><span>createGrammarDefinition&#32;<span>df</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="35">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>createGrammarDefinition&#32;<span>df</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        df
+                      </b>
+                      :
+                      <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-designtimefarkle.html">DesigntimeFarkle</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-grammardefinition.html">GrammarDefinition</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:M:Farkle.Builder.DesigntimeFarkleBuild.CreateGrammarDefinition`')">
+                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:Farkle.Builder.DesigntimeFarkleBuild.CreateGrammarDefinition\'/>')">
+                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <p class="fsdocs-summary">
+                
+ Creates a `GrammarDefinition` from an untyped `DesigntimeFarkle`.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  df
+                </span>
+                :
+                <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-designtimefarkle.html">DesigntimeFarkle</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-grammardefinition.html">GrammarDefinition</a></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+            
+        </div>
+    </div>
+
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <script type="text/javascript">var fsdocs_search_baseurl = 'https://teo-tsirpanis.github.io/Farkle/';</script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+    <script async type="text/javascript" src="https://teo-tsirpanis.github.io/Farkle/content/fsdocs-search.js"></script>
+    <!-- END SEARCH BOX: this adds support for the search box -->
   </body>
+
 </html>

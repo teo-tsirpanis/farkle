@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Farkle.Grammar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Theodore Tsirpanis">
+  <meta name="description" content="Farkle - Farkle.Grammar">
+
+  <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+  <link type="text/css" rel="stylesheet" href="https://teo-tsirpanis.github.io/Farkle/content/navbar-fixed-left.css" />
+  <link type="text/css" rel="stylesheet" href="https://teo-tsirpanis.github.io/Farkle/content/fsdocs-default.css" />
+  <link type="text/css" rel="stylesheet" href="https://teo-tsirpanis.github.io/Farkle/content/fsdocs-custom.css" />
+  <script async type="text/javascript" src="https://teo-tsirpanis.github.io/Farkle/content/fsdocs-tips.js"></script>
+  <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+  <!-- END SEARCH BOX: this adds support for the search box -->
+</head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-nav">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <a href="https://teo-tsirpanis.github.io/Farkle/index.html"><img id="fsdocs-logo" src="https://teo-tsirpanis.github.io/Farkle/img/logo.png" /></a>
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <div id="header">
+          <div class="searchbox" id="fsdocs-searchbox">
+            <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+          </div>
+        </div>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+
+        <ul class="navbar-nav">
+          <li class="nav-header">Links</li>
+          <li class="nav-item"><a class="nav-link" href="https://nuget.org/packages/Farkle">Get Library via NuGet</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/teo-tsirpanis/Farkle">Source Code on GitHub</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/license.html">License</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/release-notes.html">Release Notes</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/choosing-a-parser.html">Choosing a parser: Farkle vs alternatives</a></li>
+
+          <li class="nav-header">Getting started</li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/quickstart.html">Quick Start with F#</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/csharp.html">Using Farkle with C#</a></li>
+
+          <li class="nav-header">Documentation</li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/reference/index.html">API Reference</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/templates.html">Templating Reference</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/string-regexes.html">String regex reference</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/the-precompiler.html">The precompiler</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/advanced-features.html">Advanced Features</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://teo-tsirpanis.github.io/Farkle/index.html">Farkle</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h2 id="farkle-grammar">
+    Farkle.Grammar Namespace
+  </h2>
+  <div class="fsdocs-xmldoc"></div>
+  <table class="table outer-list fsdocs-entity-list">
+    <thead>
+      <tr>
+        <td>
+          Type/Module
+        </td>
+        <td>
+          Description
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="AdvanceMode">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-advancemode.html">
+                AdvanceMode
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.Grammar.AdvanceMode`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.Grammar.AdvanceMode\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ A type indicating how a group advances.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="DFAState">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-dfastate.html">
+                DFAState
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.Grammar.DFAState`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.Grammar.DFAState\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ A DFA state. It defines the logic that produces tokens out of strings.
+ It consists of edges that the tokenizer follows, depending on the character it encounters.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="DFASymbol">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-dfasymbolmodule.html">
+                DFASymbol (Module)
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.Grammar.DFASymbolModule`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.Grammar.DFASymbolModule\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ Functions to work with `DFASymbol`s.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="DFASymbol">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-dfasymbol.html">
+                DFASymbol (Type)
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.Grammar.DFASymbol`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.Grammar.DFASymbol\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ A symbol that can be yielded by the DFA.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="EGT">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-egt.html">
+                EGT
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.Grammar.EGT`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.Grammar.EGT\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ Functions to read and write grammars from EGT files.
+ Grammars can be read either from GOLD Parser's Enhanced
+ Grammar Tables (version 5.0) or from Farkle's EGTneo format.
+ EGTneo (new encoding option) is a file format designed for Farkle that
+ is more compact and easier to read. GOLD Parser cannot read EGTneo files.
+ Grammars can only be written in the EGTneo format.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="EndingMode">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-endingmode.html">
+                EndingMode
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.Grammar.EndingMode`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.Grammar.EndingMode\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ A type indicating how the ending symbol of a group is handled.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Grammar">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-grammar.html">
+                Grammar
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.Grammar.Grammar`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.Grammar.Grammar\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ A context-free grammar according to which Farkle can parse text.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="GrammarProperties">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-grammarproperties.html">
+                GrammarProperties
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.Grammar.GrammarProperties`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.Grammar.GrammarProperties\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ Stores additional information about a grammar. The members of this
+ type are purely informative and not used by Farkle's parser in any way.
+ They are mostly used from the templates.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="GrammarSource">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-grammarsource.html">
+                GrammarSource
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.Grammar.GrammarSource`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.Grammar.GrammarSource\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ Indicates where a grammar came from.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Group">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-group.html">
+                Group
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.Grammar.Group`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.Grammar.Group\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ A lexical group.
+ In GOLD, lexical groups are used for situations where a number
+ of recognized tokens should be organized into a single "group".
+ This mechanism is most commonly used to handle line and block comments.
+ However, it is not limited to "noise", but can be used for any content.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="GroupEnd">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-groupend.html">
+                GroupEnd
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.Grammar.GroupEnd`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.Grammar.GroupEnd\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ A symbol signifying the end of a group.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="GroupStart">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-groupstart.html">
+                GroupStart
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.Grammar.GroupStart`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.Grammar.GroupStart\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ A symbol signifying the start of a group.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="IGrammarProvider">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-igrammarprovider.html">
+                IGrammarProvider
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.Grammar.IGrammarProvider`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.Grammar.IGrammarProvider\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              This interface is implemented by <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-grammar.html">Grammar</a>s and
+ <a href="https://docs.microsoft.com/dotnet/api/runtimefarkle{tresult}">RuntimeFarkle{TResult}</a>s and provides a uniform
+ way to work with grammars inside runtime Farkles and grammars
+ themselves, while accounting for potential build errors in an
+ exception-free way.
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="LALRAction">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-lalraction.html">
+                LALRAction
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.Grammar.LALRAction`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.Grammar.LALRAction\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ An action to be taken by the LALR parser according to the given `Terminal`.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="LALRState">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-lalrstate.html">
+                LALRState
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.Grammar.LALRState`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.Grammar.LALRState\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ A LALR state. Together, many of them define the parsing logic of a `Grammar`.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="LALRSymbol">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-lalrsymbol.html">
+                LALRSymbol
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.Grammar.LALRSymbol`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.Grammar.LALRSymbol\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ A symbol that is relevant to the LALR parser.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Noise">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-noise.html">
+                Noise
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.Grammar.Noise`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.Grammar.Noise\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ A symbol which is produced through a DFA, but is not significant for the grammar and is discarded.
+ An example of a noise symbol would be a source code comment.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Nonterminal">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-nonterminal.html">
+                Nonterminal
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.Grammar.Nonterminal`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.Grammar.Nonterminal\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ A symbol which is produced by a concatenation of other `Terminal`s
+ and `Nonterminal`s, as the LALR parser dictates. Nonterminals with
+ the same index are considered equal.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Production">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-production.html">
+                Production
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.Grammar.Production`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.Grammar.Production\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ A sequence of `Terminal`s and `Nonterminal`s that can produce a specific `Nonterminal`.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Symbols">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-symbols.html">
+                Symbols
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.Grammar.Symbols`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.Grammar.Symbols\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ A type containing all symbols of a grammar, grouped by kind.
+ Group start and end symbols can be found at the group table.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Terminal">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-terminal.html">
+                Terminal
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.Grammar.Terminal`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.Grammar.Terminal\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ A symbol which is produced through a DFA, and is significant for the grammar.
+ Terminals with the same index are considered equal.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+            
+        </div>
+    </div>
+
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <script type="text/javascript">var fsdocs_search_baseurl = 'https://teo-tsirpanis.github.io/Farkle/';</script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+    <script async type="text/javascript" src="https://teo-tsirpanis.github.io/Farkle/content/fsdocs-search.js"></script>
+    <!-- END SEARCH BOX: this adds support for the search box -->
+  </body>
+
+</html>

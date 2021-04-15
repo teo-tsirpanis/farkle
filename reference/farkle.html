@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Farkle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Theodore Tsirpanis">
+  <meta name="description" content="Farkle - Farkle">
+
+  <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/materia/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+  <link type="text/css" rel="stylesheet" href="https://teo-tsirpanis.github.io/Farkle/content/navbar-fixed-left.css" />
+  <link type="text/css" rel="stylesheet" href="https://teo-tsirpanis.github.io/Farkle/content/fsdocs-default.css" />
+  <link type="text/css" rel="stylesheet" href="https://teo-tsirpanis.github.io/Farkle/content/fsdocs-custom.css" />
+  <script async type="text/javascript" src="https://teo-tsirpanis.github.io/Farkle/content/fsdocs-tips.js"></script>
+  <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+  <!-- END SEARCH BOX: this adds support for the search box -->
+</head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-nav">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <a href="https://teo-tsirpanis.github.io/Farkle/index.html"><img id="fsdocs-logo" src="https://teo-tsirpanis.github.io/Farkle/img/logo.png" /></a>
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <div id="header">
+          <div class="searchbox" id="fsdocs-searchbox">
+            <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+          </div>
+        </div>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+
+        <ul class="navbar-nav">
+          <li class="nav-header">Links</li>
+          <li class="nav-item"><a class="nav-link" href="https://nuget.org/packages/Farkle">Get Library via NuGet</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/teo-tsirpanis/Farkle">Source Code on GitHub</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/license.html">License</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/release-notes.html">Release Notes</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/choosing-a-parser.html">Choosing a parser: Farkle vs alternatives</a></li>
+
+          <li class="nav-header">Getting started</li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/quickstart.html">Quick Start with F#</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/csharp.html">Using Farkle with C#</a></li>
+
+          <li class="nav-header">Documentation</li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/reference/index.html">API Reference</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/templates.html">Templating Reference</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/string-regexes.html">String regex reference</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/the-precompiler.html">The precompiler</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://teo-tsirpanis.github.io/Farkle/advanced-features.html">Advanced Features</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://teo-tsirpanis.github.io/Farkle/index.html">Farkle</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h2 id="farkle">
+    Farkle Namespace
+  </h2>
+  <div class="fsdocs-xmldoc"></div>
+  <table class="table outer-list fsdocs-entity-list">
+    <thead>
+      <tr>
+        <td>
+          Type/Module
+        </td>
+        <td>
+          Description
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="AST">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-astmodule.html">
+                AST (Module)
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.ASTModule`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.ASTModule\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ Functions to work with `AST`s.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="AST">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-ast.html">
+                AST (Type)
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.AST`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.AST\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ A domain-ignorant Abstract Syntax Tree that describes the output of a parser.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="FarkleError">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-farkleerror.html">
+                FarkleError
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.FarkleError`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.FarkleError\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ A type signifying an error during the parsing process.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="FarkleException">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-farkleexception.html">
+                FarkleException
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.FarkleException`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.FarkleException\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ The base class for all exceptions
+ that might be thrown from Farkle.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="ITransformer<'TSymbol>">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-itransformer-1.html">
+                ITransformer<'TSymbol>
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('``cref:T:Farkle.ITransformer`1``')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.ITransformer`1\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              An interface that transforms tokens from a <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-io-charstream.html">CharStream</a>.
+ It is implemented by <a href="https://docs.microsoft.com/dotnet/api/postprocessor{tresult}">PostProcessor{TResult}</a>s.
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="ITransformerContext">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-itransformercontext.html">
+                ITransformerContext
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.ITransformerContext`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.ITransformerContext\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              A type that is passed to the transformers and
+ provides additional information about the terminal being transformed.
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="ParserApplicationException">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-parserapplicationexception.html">
+                ParserApplicationException
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.ParserApplicationException`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.ParserApplicationException\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              A parsing error that did not originate from
+ the parser, but from user code during post-processing.
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="ParserException">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-parserexception.html">
+                ParserException
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.ParserException`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.ParserException\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ An exception thrown by Farkle's parser on a snytax or lexical error.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="Position">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-position.html">
+                Position
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.Position`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.Position\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ A point in 2D space with integer coordinates, suitable for the position of a character in a text.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="PostProcessor<'T>">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-postprocessor-1.html">
+                PostProcessor<'T>
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('``cref:T:Farkle.PostProcessor`1``')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.PostProcessor`1\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              Post-processors convert strings of a grammar into more
+ meaningful types for the library that uses the parser.
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="PostProcessorException">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-postprocessorexception.html">
+                PostProcessorException
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.PostProcessorException`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.PostProcessorException\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ An exception thrown by Farkle when the post-processor throws
+ another exception. That exception is wrapped to this one.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="PostProcessors">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-postprocessors.html">
+                PostProcessors
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.PostProcessors`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.PostProcessors\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ Some reusable `PostProcessor`s.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="RuntimeFarkle">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-runtimefarkle.html">
+                RuntimeFarkle
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:T:Farkle.RuntimeFarkle`')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.RuntimeFarkle\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              
+ Functions to create and use `RuntimeFarkle`s.
+
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="fsdocs-entity-name">
+          <p>
+            <a name="RuntimeFarkle<'TResult>">
+              <a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-runtimefarkle-1.html">
+                RuntimeFarkle<'TResult>
+              </a>
+            </a>
+          </p>
+        </td>
+        <td class="fsdocs-entity-xmldoc">
+          <div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('``cref:T:Farkle.RuntimeFarkle`1``')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+            </div>
+            <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'T:Farkle.RuntimeFarkle`1\'/>')">
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+              <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+            </div>
+            <p class="fsdocs-summary">
+              A reusable parser and post-processor,
+ created for a specific grammar, and returning
+ a specific type of object that best describes
+ an expression of the language of this grammar.
+            </p>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+            
+        </div>
+    </div>
+
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <script type="text/javascript">var fsdocs_search_baseurl = 'https://teo-tsirpanis.github.io/Farkle/';</script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+    <script async type="text/javascript" src="https://teo-tsirpanis.github.io/Farkle/content/fsdocs-search.js"></script>
+    <!-- END SEARCH BOX: this adds support for the search box -->
+  </body>
+
+</html>
