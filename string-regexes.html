@@ -82,9 +82,9 @@
 <p>And in C#:</p>
 <table class="pre"><tr><td class="snippet"><pre class="fssnip highlighted"><code lang="csharp"><span class="k">using</span> Farkle.Builder;
 
-<span class="k">var</span> number <span class="o">=</span> Regex.FromRegexString(<span class="s">"[+-]?\d+"</span>);
+<span class="k">var</span> number <span class="o">=</span> Regex.FromRegexString(<span class="s">"[+-]?\\d+"</span>);
 </code></pre></td></tr></table>
-<p>These regexes are full-blown <code>Regex</code>-typed objects. They are composable, reusable and can be used anywhere instead of constructed regexes. Despite their similarity however, the language of regex strings is not the same with the language of popular regex libraries, say PCRE. In this guide we will take a look at what is supported in regex strings and what isn't. So, are you ready? Let's do this!</p>
+<p>These regexes are full-blown <code>Regex</code>-typed objects. They are composable, reusable and can be used anywhere instead of constructed regexes. Despite their similarity however, the language of regex strings is not the same with the language of popular regex libraries like PCRE or .NET's own <code>System.Text.RegularExpressions.Regex</code>. In this guide we will take a look at what is supported in regex strings, what isn't and what is different. So, are you ready? Let's do this!</p>
 <h2><a name="Supported-string-regex-constructs" class="anchor" href="#Supported-string-regex-constructs">Supported string regex constructs</a></h2>
 <h3><a name="Character-classes" class="anchor" href="#Character-classes">Character classes</a></h3>
 <p>In Farkle's string regexes, you can define character classes mostly in the same way with PCRE regexes Here's what is supported:</p>
@@ -92,13 +92,19 @@
 <li>You can define a regex that recognizes only one character -say <code>A</code>- surprisingly simply, by typing <code>A</code>.</li>
 <li>You can define a regex that recognizes only some characters -say <code>A</code>, <code>D</code>, <code>O</code> and <code>U</code>-, by typing <code>[ADOU]</code>. If you want your regex to match any character except of the four that were mentioned before, you can do that by typing <code>[^ADOU]</code>.</li>
 <li>You can define a regex that recognizes all characters in a range -say between <code>A</code> and <code>Z</code>-, by typing <code>[A-Z]</code>. Similarly, you can match all characters that don't lie between <code>A</code> and <code>Z</code> by typing <code>[^A-Z]</code>.</li>
-<li>You can define a regex that recognizes all characters in a predefined set -say <code>Katakana</code>- by typing <code>\p{Katakana}</code>. The predefined sets' names are the same in the <code>Farkle.Builder.PredefinedSets</code> module. Similarly you can match all characters except of Katakana by typing <code>\P{Katakana}</code>.</li>
+<li>Since Farkle 6.2.0, you can combine the two previous rules and recognize multiple character sets and ranges on the same regex construct. For example you can match all valid Base64 characters (excluding the padding) by typing <code>[A-Za-z+/]</code> and you can match all characters except of those that appear in valid Base64 by typing <code>[^A-Za-z+/]</code>.</li>
+<li>You can define a regex that recognizes all characters in a predefined set -say <code>Katakana</code>- by typing <code>\p{Katakana}</code>. The predefined sets' names are the same in the <a href="reference/farkle-builder-predefinedsets.html"><code>Farkle.Builder.PredefinedSets</code> module</a>. Similarly you can match all characters except of Katakana by typing <code>\P{Katakana}</code>.</li>
 <li>Decimal digits can be matched by typing <code>\d</code>. All characters except of decimal digits can be matched by typing <code>\D</code>.</li>
 <li>Whitespace can be matched by typing <code>\s</code>. All characters except of whitespace can be matched by typing <code>\S</code>. Carriage return, line feed, space and horizontal tab are considered whitespace.</li>
 <li>You can match any other character by typing <code>.</code>. Just be careful of <a href="#The-dot-regex">the caveats</a>.</li>
-<li>You can match a literal sequence of characters by enclosing them into single quotes. For example <code>'[ADOU].'</code> will literally match the seven characters inside the single quotes without treating them specially. A single quote inside a literal sequence can be inserted by typing <code>\'</code>. A single quote outside of a literal sequence can be inserted by typing <code>''</code>. <strong>Starting with Farkle 6.2.0, using this construct is no longer recommended. It might be removed in a future major release.</strong></li>
-<li>In character sets and ranges you can escape a character with a <code>\</code>. For example, to match either left or the right brackets you have to type <code>[\[\]]</code>.</li>
-<li>Starting with Farkle 6.2.0, you can similarly escape characters anywhere in a regex. For example, to match a literal dot, use <code>\.</code>.</li>
+<li>You can match a literal sequence of characters by enclosing them into single quotes. For example <code>'[ADOU].'</code> will literally match the seven characters inside the single quotes without treating them specially. A single quote can be escaped by typing <code>''</code>.</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> Prior to Farkle 6.2.0, single quotes could be escaped with <code>\'</code>. After that version the regex parser was improved but some construct like that are no longer possible to maintain ambiguity. <code>\</code> is not anymore specially treated in literal strings.</p>
+</blockquote>
+<ul>
+<li>In character sets and ranges you have to use <code>\</code> to escape the following characters: <code>-\]^</code>. For example, to match either left or the right brackets you have to type <code>[\[\]]</code>.</li>
+<li>The backslash character itself can be escaped with <code>\\</code>.</li>
 </ul>
 <h3><a name="Quantifiers" class="anchor" href="#Quantifiers">Quantifiers</a></h3>
 <p>As with PCRE regexes, quantifiers like the <code>*</code>, <code>+</code> or <code>?</code> mean "zero or more", "one or more", and "zero or one" respectively. Less known quantifiers like <code>{m,n}</code>, <code>{m,}</code> and <code>{m}</code> mean "between <code>m</code> and <code>n</code> times", "at least <code>m</code> times" and "exactly <code>m</code> times" respectively.</p>
@@ -126,12 +132,13 @@
 <p>This deliberate deviation from the typical regex syntax was made due to Farkle's philosophy that whitespace is automatically handled by default, and allows you to write big regexes in a more clean and less compact way.</p>
 <h3><a name="Escaping" class="anchor" href="#Escaping">Escaping</a></h3>
 <p>When using <code>\</code> in regexes, be careful with the string escaping performed by programming languages themselves. To match a decimal digit, F# allows you to write an unrecognized escape sequence like <code>"\d"</code>, but C# doesn't, failing with an error and you have to use a verbatim string like <code>@"\d"</code>.</p>
-<p>In a more complicated example, if you want to match the literal sequence of characters <code>\d</code>, the regex is <code>\\d</code>, which you would write as <code>"\\\\d"</code>, or as <code>@"\\d"</code> with a verbatim string.</p>
-<p>Similarly, writing <code>"\n"</code> somewhere in a regex will be ignored because it is whitespace, as we saw earlier. If you want to match the literal sequence of characters <code>\n</code>, the regex is <code>\\n</code>, which you would write as we saw in the previous paragraph. If you want to match a literal line feed character, you would either write the regex with escaping as <code>"\\\n"</code>, or with a character set as <code>"[\n]"</code>.</p>
+<p>In a more complicated example, if you want to match the literal sequence of characters <code>\d</code>, the regex is either <code>'\d'</code> or <code>\\d</code>, which you would write as either <code>"'\\d'"</code> or <code>"\\\\d"</code>, or as either <code>@"'\d'"</code> or <code>@"\\d"</code> with a verbatim string.</p>
+<p>Similarly, writing <code>"\n"</code> somewhere in a regex will be ignored because it is whitespace, as we saw earlier. If you want to match the literal sequence of characters <code>\n</code>, you would follow the example we saw in the previous paragraph. If you want to match an actual line feed character, you would either write it with a literal string as <code>"'\n'"</code>, or with a character set as <code>"[\n]"</code>.</p>
 <h3><a name="Unicode-categories" class="anchor" href="#Unicode-categories">Unicode categories</a></h3>
 <p>Matching characters that belong in a Unicode category is not yet possible. Support <em>might</em> be added in a future version of Farkle if there is demand for it.</p>
 <h2><a name="How-do-they-work" class="anchor" href="#How-do-they-work">How do they work</a></h2>
 <p>Finally, let's take a look at how string regexes work. It's actually surprisingly simple. These strings are parsed and converted to constructed regexes using Farkle itself. That parsing happens when you build a designtime Farkle containing a string regex. If a syntax error occurs in a regex string, building the designtime Farkle will fail.</p>
+<p>You can parse strings into regular expressions yourself by using the objects in the <a href="reference/farkle-builder-regexgrammar.html"><code>Farkle.Builder.RegexGrammar</code> module</a>.</p>
 <hr />
 <p>So I hope you enjoyed this little tutorial. If you did, don't forget to give Farkle a try and maybe you feel especially quantified today and want to hit the star button as well. I hope that all of you have a wonderful day, and to see you soon. Goodbye!</p>
 

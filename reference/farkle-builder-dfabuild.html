@@ -131,6 +131,9 @@
                       </b>
                       :
                       <code>bool</code>
+                       - 
+                      Whether to prioritize
+ regexes that don't have stars over those that do in case of a conflict.
                     </span>
                     <br/>
                     <span>
@@ -139,6 +142,8 @@
                       </b>
                       :
                       <code>bool</code>
+                       - 
+                      Whether the resulting DFA is case-sensitive.
                     </span>
                     <br/>
                     <span>
@@ -147,6 +152,8 @@
                       </b>
                       :
                       <code><span><span>(<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-regex.html">Regex</a>&#32;*&#32;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-dfasymbol.html">DFASymbol</a></span>)</span>&#32;list</span></code>
+                       - 
+                      The list of regexes, paired with the symbol they recognize.
                     </span>
                     <br/>
                   </ul>
@@ -155,6 +162,8 @@
                     Returns: 
                     <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpresult-2">Result</a>&lt;<span><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-dfastate.html">DFAState</a>&gt;</span>,&#32;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-builderror.html">BuildError</a>&#32;list</span></span>&gt;</span></code>
                   </span>
+                  An immutable array of the DFA states or a
+ list of the errors that were encountered.
                   <br/>
                 </div>
               </div>
@@ -171,13 +180,7 @@
                 <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
               </div>
               <p class="fsdocs-summary">
-                
- Builds a DFA that recognizes the given `Regex`es, each
- accepting a `DFASymbol`. DFA symbols that can be
- derived by a regular expression without stars can be
- prioritized over those with them, in case of conflicts.
- Moreover, the resulting DFA can be case sensitive.
-
+                Builds a DFA that recignizes one of the given regexes.
               </p>
             </div>
             <dl class="fsdocs-params">
@@ -188,7 +191,12 @@
                 :
                 <code>bool</code>
               </dt>
-              <dd class="fsdocs-param-docs"></dd>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Whether to prioritize
+ regexes that don't have stars over those that do in case of a conflict.
+                </p>
+              </dd>
               <dt class="fsdocs-param">
                 <span class="fsdocs-param-name">
                   caseSensitive
@@ -196,7 +204,11 @@
                 :
                 <code>bool</code>
               </dt>
-              <dd class="fsdocs-param-docs"></dd>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Whether the resulting DFA is case-sensitive.
+                </p>
+              </dd>
               <dt class="fsdocs-param">
                 <span class="fsdocs-param-name">
                   regexes
@@ -204,7 +216,11 @@
                 :
                 <code><span><span>(<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-regex.html">Regex</a>&#32;*&#32;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-dfasymbol.html">DFASymbol</a></span>)</span>&#32;list</span></code>
               </dt>
-              <dd class="fsdocs-param-docs"></dd>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The list of regexes, paired with the symbol they recognize.
+                </p>
+              </dd>
             </dl>
             <dl class="fsdocs-returns">
               <dt>
@@ -213,14 +229,232 @@
                 </span>
                 <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpresult-2">Result</a>&lt;<span><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-dfastate.html">DFAState</a>&gt;</span>,&#32;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-builderror.html">BuildError</a>&#32;list</span></span>&gt;</span></code>
               </dt>
-              <dd class="fsdocs-return-docs"></dd>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An immutable array of the DFA states or a
+ list of the errors that were encountered.
+                </p>
+              </dd>
             </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/insufficientexecutionstackexception">
+                    InsufficientExecutionStackException
+                  </a>
+                </td>
+                <td>
+                  One of the <span class="fsdocs-param-name">regexes</span>
+ was extremely deep and complex to be handled by Farkle.
+                </td>
+              </tr>
+            </table>
           </td>
         </tr>
         <tr>
           <td class="fsdocs-member-usage">
             <div>
               <code onmouseout="hideTip(event, '22', 22)" onmouseover="showTip(event, '22', 22)">
+                <p>
+                  <a id="buildRegexesToDFAEx">
+                    <a href="#buildRegexesToDFAEx">
+                      <code><span>buildRegexesToDFAEx&#32;<span>ct&#32;options&#32;prioritizeFixedLengthSymbols&#32;caseSensitive&#32;regexes</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="22">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>buildRegexesToDFAEx&#32;<span>ct&#32;options&#32;prioritizeFixedLengthSymbols&#32;caseSensitive&#32;regexes</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        ct
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                       - 
+                      Used to cancel the operation.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        options
+                      </b>
+                      :
+                      <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-buildoptions.html">BuildOptions</a></code>
+                       - 
+                      Used to further configure the operation.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        prioritizeFixedLengthSymbols
+                      </b>
+                      :
+                      <code>bool</code>
+                       - 
+                      Whether to prioritize
+ regexes that don't have stars over those that do in case of a conflict.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        caseSensitive
+                      </b>
+                      :
+                      <code>bool</code>
+                       - 
+                      Whether the resulting DFA is case-sensitive.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        regexes
+                      </b>
+                      :
+                      <code><span><span>(<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-regex.html">Regex</a>&#32;*&#32;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-dfasymbol.html">DFASymbol</a></span>)</span>&#32;list</span></code>
+                       - 
+                      The list of regexes, paired with the symbol they recognize.
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpresult-2">Result</a>&lt;<span><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-dfastate.html">DFAState</a>&gt;</span>,&#32;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-builderror.html">BuildError</a>&#32;list</span></span>&gt;</span></code>
+                  </span>
+                  An immutable array of the DFA states or a
+ list of the errors that were encountered.
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:M:Farkle.Builder.DFABuild.buildRegexesToDFAEx`')">
+                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:Farkle.Builder.DFABuild.buildRegexesToDFAEx\'/>')">
+                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <p class="fsdocs-summary">
+                Builds a DFA that recignizes one of the given regexes.
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ct
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Used to cancel the operation.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  options
+                </span>
+                :
+                <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-buildoptions.html">BuildOptions</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Used to further configure the operation.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  prioritizeFixedLengthSymbols
+                </span>
+                :
+                <code>bool</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Whether to prioritize
+ regexes that don't have stars over those that do in case of a conflict.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  caseSensitive
+                </span>
+                :
+                <code>bool</code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Whether the resulting DFA is case-sensitive.
+                </p>
+              </dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  regexes
+                </span>
+                :
+                <code><span><span>(<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-regex.html">Regex</a>&#32;*&#32;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-dfasymbol.html">DFASymbol</a></span>)</span>&#32;list</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The list of regexes, paired with the symbol they recognize.
+                </p>
+              </dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpresult-2">Result</a>&lt;<span><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-dfastate.html">DFAState</a>&gt;</span>,&#32;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-builderror.html">BuildError</a>&#32;list</span></span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An immutable array of the DFA states or a
+ list of the errors that were encountered.
+                </p>
+              </dd>
+            </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/operationcanceledexception">
+                    OperationCanceledException
+                  </a>
+                </td>
+                <td>
+                  <span class="fsdocs-param-name">ct</span> was triggered.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/insufficientexecutionstackexception">
+                    InsufficientExecutionStackException
+                  </a>
+                </td>
+                <td>
+                  One of the <span class="fsdocs-param-name">regexes</span>
+ was extremely deep and complex to be handled by Farkle.
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '23', 23)" onmouseover="showTip(event, '23', 23)">
                 <p>
                   <a id="parseRegexString">
                     <a href="#parseRegexString">
@@ -229,7 +463,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="22">
+              <div class="fsdocs-tip" id="23">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>parseRegexString&#32;<span></span></span></code>

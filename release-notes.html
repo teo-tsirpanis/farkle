@@ -63,27 +63,18 @@
         </div>
         <hr />
         <div class="container" id="fsdocs-content">
-            <h4><a name="6-2-0" class="anchor" href="#6-2-0">6.2.0</a></h4>
+            <h4><a name="6-2-0-17-05-2021" class="anchor" href="#6-2-0-17-05-2021">6.2.0 - 17-05-2021</a></h4>
 <ul>
+<li><strong>Breaking change:</strong> The <code>Farkle.Builder.LALRBuildTypes</code> module, as well as most functions of the <code>Farkle.Builder.LALRBuild</code> module became internal.</li>
 <li><strong>Minor breaking change:</strong> Whitespace inside the "between", "at least" and "exactly <code>n</code> times" regex string quantifiers is no longer allowed. Using string regexes like <code>\d{ 4}</code> will cause an error.</li>
-<li>
-<strong>Minor breaking change:</strong> A function in the <code>Farkle.Builder.DFABuild</code> module became private. It was public by accident and served no purpose for Farkle's users.
-*
-<strong>Minor breaking change:</strong> Users that write their own tokenizers must ensure that CRLF line endings are <code>Advance</code>d at once, otherwise the character stream's position will be incorrect.
-
-  The vast majority of use cases (those that doesn't involve custom tokenizers) will not be affected by this change.
-</li>
-</ul>
-<p>*
-<strong>Minor breaking change:</strong> Terminals, literals, and groups that are case-insensitively named <code>NewLine</code> will have an underscore prepended to their name when built, making them <code>_NewLine</code> for example.</p>
-<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">This</span> <span class="id">change</span> <span class="id">is</span> <span class="id">a</span> <span class="id">temporary</span> <span class="id">workaround</span> <span class="k">for</span> <span class="id">a</span> <span class="id">design</span> <span class="id">deficiency</span> <span class="k">of</span> <span class="id">Farkle</span><span class="pn">,</span> <span class="id">where</span> <span class="id">these</span> <span class="id">terminals</span> <span class="id">could</span> <span class="k">end</span> <span class="id">line</span> <span class="id">groups</span> <span class="k">and</span> <span class="id">comments</span><span class="pn">.</span> <span class="id">It</span> <span class="id">will</span> <span class="id">be</span> <span class="id">thouroughly</span> <span class="k">fixed</span> <span class="k">in</span> <span class="id">the</span> <span class="id">next</span> <span class="id">major</span> <span class="id">version</span><span class="pn">.</span>
-
-<span class="id">Because</span> <span class="id">these</span> <span class="id">names</span> <span class="id">are</span> <span class="id">only</span> <span class="id">used</span> <span class="k">for</span> <span class="id">diagnostics</span> <span class="k">and</span> <span class="id">documentation</span> <span class="id">generation</span><span class="pn">,</span> <span class="id">parser</span> <span class="id">behavior</span> <span class="id">will</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="id">not</span> <span class="id">be</span> <span class="id">affected</span> <span class="id">by</span> <span class="id">this</span> <span class="id">change</span><span class="pn">.</span> <span class="id">Nor</span> <span class="id">will</span> <span class="id">grammars</span> <span class="id">read</span> <span class="id">by</span> <span class="id">EGT</span> <span class="id">files</span> <span class="id">be</span> <span class="id">changed</span><span class="pn">.</span>
-</code></pre>
-<ul>
-<li>Fixed some bugs and added some new features in the grammar of string regexes. Take a look at <a href="string-regexes.html">the string regex reference</a> for more details.</li>
+<li><strong>Minor breaking change:</strong> The <code>Farkle.Builder.IRawDelegateProvider</code> interface and a function in the <code>Farkle.Builder.DFABuild</code> module became private. They were public by accident and served no purpose for Farkle's users.</li>
+<li><strong>Minor breaking change:</strong> Users that write their own tokenizers must ensure that CRLF line endings are <code>Advance</code>d at once, otherwise the character stream's position will be incorrect. The vast majority of use cases (those that doesn't involve custom tokenizers) will not be affected by this change.</li>
+<li><strong>Minor breaking change:</strong> Terminals, literals, and groups that are case-insensitively named <code>NewLine</code> will have an underscore prepended to their name when built, making them <code>_NewLine</code> for example. This change is a temporary workaround for a design deficiency of Farkle, where these terminals could end line groups and comments. It will be thoroughly fixed in the next major version. Because these names are only used for diagnostics and documentation generation, parser behavior will not be affected by this change. Nor will grammars read by EGT files be changed.</li>
+<li><strong>Minor breaking change:</strong> The <code>\s</code> and <code>\S</code> string regex symbol will now match exactly either horizontal tabs, line feeds, carriage returns or spaces. Other characters like vertical tabs and non-breaking spaces are no longer matched. This change matches Farkle's definition of whitespace. To revert to the previous behavior use <code>\p{Whitespace}</code> or <code>\P{Whitespace}</code>.</li>
+<li>Farkle's string regexes got many improvements and bug fixes, bringing their syntax closer -but not a 100% match- to popular regex languages. Take a look at <a href="string-regexes.html">the string regex reference</a> for more details.</li>
 <li>The precompiler now works when used on a project targeting a framework earlier than .NET Core 3.1.</li>
 <li>The <code>Position.Advance</code> method got a new overload that accepts a <code>ReadOnlySpan</code> of characters. It is recommended over the existing one that accepts a single character because it reliably handles line endings.</li>
+<li>Building a grammar can now be cancelled by new functions introduced in <code>Farkle.Builder</code>'s <code>DFABuild</code>, <code>LALRBuild</code> and <code>DesigntimeFarkleBuild</code> modules. Additionally the <code>Build</code> and <code>BuildUntyped</code> extension methods of designtime Farkles now accept an optional cancellation token.</li>
 <li>Fixed a bug where the wrong error position was sometimes reported on text with LF line endings.</li>
 <li>Fixed a bug where the wrong error position was reported on syntax errors.</li>
 </ul>
@@ -95,7 +86,7 @@
 <li>The designtime Farkles that are returned by the <code>many</code> and <code>many1</code> operators now have the correct name.</li>
 <li>Throwing a <code>ParserException</code> during post-processing will not be thrown in user code inside a <code>PostProcessorException</code>, but will be caught by the runtime Farkle API, allowing to customize the parser error message in greater detail.</li>
 </ul>
-<h4><a name="6-0-0-23-02-2020" class="anchor" href="#6-0-0-23-02-2020">6.0.0 - 23-02-2020</a></h4>
+<h4><a name="6-0-0-23-02-2021" class="anchor" href="#6-0-0-23-02-2021">6.0.0 - 23-02-2021</a></h4>
 <ul>
 <li><strong>Breaking change:</strong> The functions <code>RuntimeFarkle.ofEGTFile</code> and <code>RuntimeFarkle.ofBase64String</code>as well as their corresponding <code>RuntimeFarkle</code> static methods  were removed. Users are advised to migrate away from GOLD Parser.</li>
 <li><strong>Breaking change:</strong> The <code>RuntimeFarkle.GetBuildError</code> method was replaced by <code>GetBuildErrors</code>, which returns a list of build errors.</li>
@@ -300,8 +291,7 @@
 <li>Started the project.</li>
 </ul>
 
-            <div class="fsdocs-tip" id="fs1">val not : value:bool -&gt; bool</div>
-
+            
         </div>
     </div>
 

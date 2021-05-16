@@ -162,9 +162,14 @@
 <td><p><code>RuntimeFarkle.build x</code></p></td>
 <td><p><code>x.Build()</code></p></td>
 </tr>
+<tr class="even">
+<td><p><code>RuntimeFarkle.buildUntyped x</code></p></td>
+<td><p><code>x.BuildUntyped()</code></p></td>
+</tr>
 </tbody>
 </table>
 
+<p>The <code>Build</code> and <code>BuildUntyped</code> extension methods accept an optional <code>CancellationToken</code> and will throw an <code>OperationCanceledException</code> if it gets triggered.</p>
 <h3><a name="A-complete-example" class="anchor" href="#A-complete-example">A complete example</a></h3>
 <p>Let's take a look at <a href="quickstart.html#Writing-more-complex-nonterminals">the calculator we made at the quick start guide</a> written in C#:</p>
 <table class="pre"><tr><td class="snippet"><pre class="fssnip highlighted"><code lang="csharp"><span class="k">using</span> System;
@@ -204,7 +209,7 @@
 </code></pre></td></tr></table>
 <p>Notice how we called the <code>WithPrecedence</code> method. In F# we were passing an object to the <code>prec</code> function. In C# we let the method create and return that object to us, taking advantage of C# 7.0's <code>out var</code> construct. We can still pass an object if we want.</p>
 <h3><a name="Customizing-designtime-Farkles" class="anchor" href="#Customizing-designtime-Farkles">Customizing designtime Farkles</a></h3>
-<p>To customize things like the case-sensitivity of designtime Farkles, there are some extension methods for them that reside in the <code>Farkle</code> namespace. Let's take a look at an example:</p>
+<p>To customize things like the case-sensitivity of designtime Farkles, there are some extension methods for them that reside in the <code>Farkle.Builder</code> namespace. Let's take a look at an example:</p>
 <table class="pre"><tr><td class="snippet"><pre class="fssnip highlighted"><code lang="csharp"><span class="k">var</span> customized <span class="o">=</span>
     SimpleMaths.Designtime
         .AddBlockComment(<span class="s">"/*"</span>, <span class="s">"*/"</span>)

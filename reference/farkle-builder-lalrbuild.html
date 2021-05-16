@@ -106,7 +106,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '67', 67)" onmouseover="showTip(event, '67', 67)">
+              <code onmouseout="hideTip(event, '70', 70)" onmouseover="showTip(event, '70', 70)">
                 <p>
                   <a id="buildProductionsToLALRStates">
                     <a href="#buildProductionsToLALRStates">
@@ -115,7 +115,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="67">
+              <div class="fsdocs-tip" id="70">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>buildProductionsToLALRStates&#32;<span>resolver&#32;startSymbol&#32;terminals&#32;nonterminals&#32;productions</span></span></code>
@@ -129,6 +129,8 @@
                       </b>
                       :
                       <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrconflictresolution-lalrconflictresolver.html">LALRConflictResolver</a></code>
+                       - 
+                      Used to resolve LALR conflicts.
                     </span>
                     <br/>
                     <span>
@@ -137,6 +139,8 @@
                       </b>
                       :
                       <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-nonterminal.html">Nonterminal</a></code>
+                       - 
+                      The grammar's starting symbol.
                     </span>
                     <br/>
                     <span>
@@ -145,6 +149,8 @@
                       </b>
                       :
                       <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-terminal.html">Terminal</a>&gt;</span></code>
+                       - 
+                      The grammar's terminals.
                     </span>
                     <br/>
                     <span>
@@ -153,6 +159,8 @@
                       </b>
                       :
                       <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-nonterminal.html">Nonterminal</a>&gt;</span></code>
+                       - 
+                      The grammar's nonterminals.
                     </span>
                     <br/>
                     <span>
@@ -161,6 +169,8 @@
                       </b>
                       :
                       <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-production.html">Production</a>&gt;</span></code>
+                       - 
+                      The grammar's productions.
                     </span>
                     <br/>
                   </ul>
@@ -169,6 +179,8 @@
                     Returns: 
                     <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpresult-2">Result</a>&lt;<span><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-lalrstate.html">LALRState</a>&gt;</span>,&#32;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-builderror.html">BuildError</a>&#32;list</span></span>&gt;</span></code>
                   </span>
+                  An immutable array of the LALR states or a
+ list of the errors that were encountered.
                   <br/>
                 </div>
               </div>
@@ -185,10 +197,7 @@
                 <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
               </div>
               <p class="fsdocs-summary">
-                
- Builds an LALR parsing table from the grammar with the given
- starting symbol that contains the given `Production`s.
-
+                Builds an LALR parsing table.
               </p>
             </div>
             <dl class="fsdocs-params">
@@ -199,7 +208,11 @@
                 :
                 <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrconflictresolution-lalrconflictresolver.html">LALRConflictResolver</a></code>
               </dt>
-              <dd class="fsdocs-param-docs"></dd>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Used to resolve LALR conflicts.
+                </p>
+              </dd>
               <dt class="fsdocs-param">
                 <span class="fsdocs-param-name">
                   startSymbol
@@ -207,7 +220,11 @@
                 :
                 <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-nonterminal.html">Nonterminal</a></code>
               </dt>
-              <dd class="fsdocs-param-docs"></dd>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The grammar's starting symbol.
+                </p>
+              </dd>
               <dt class="fsdocs-param">
                 <span class="fsdocs-param-name">
                   terminals
@@ -215,7 +232,11 @@
                 :
                 <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-terminal.html">Terminal</a>&gt;</span></code>
               </dt>
-              <dd class="fsdocs-param-docs"></dd>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The grammar's terminals.
+                </p>
+              </dd>
               <dt class="fsdocs-param">
                 <span class="fsdocs-param-name">
                   nonterminals
@@ -223,7 +244,11 @@
                 :
                 <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-nonterminal.html">Nonterminal</a>&gt;</span></code>
               </dt>
-              <dd class="fsdocs-param-docs"></dd>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The grammar's nonterminals.
+                </p>
+              </dd>
               <dt class="fsdocs-param">
                 <span class="fsdocs-param-name">
                   productions
@@ -231,7 +256,11 @@
                 :
                 <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-production.html">Production</a>&gt;</span></code>
               </dt>
-              <dd class="fsdocs-param-docs"></dd>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The grammar's productions.
+                </p>
+              </dd>
             </dl>
             <dl class="fsdocs-returns">
               <dt>
@@ -240,334 +269,12 @@
                 </span>
                 <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpresult-2">Result</a>&lt;<span><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-lalrstate.html">LALRState</a>&gt;</span>,&#32;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-builderror.html">BuildError</a>&#32;list</span></span>&gt;</span></code>
               </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
-          </td>
-        </tr>
-        <tr>
-          <td class="fsdocs-member-usage">
-            <div>
-              <code onmouseout="hideTip(event, '68', 68)" onmouseover="showTip(event, '68', 68)">
+              <dd class="fsdocs-return-docs">
                 <p>
-                  <a id="closure1">
-                    <a href="#closure1">
-                      <code><span>closure1&#32;<span>fGetAllProductions&#32;firstSets&#32;xs</span></span></code>
-                    </a>
-                  </a>
+                  An immutable array of the LALR states or a
+ list of the errors that were encountered.
                 </p>
-              </code>
-              <div class="fsdocs-tip" id="68">
-                <div class="member-tooltip">
-                  Full Usage: 
-                  <code><span>closure1&#32;<span>fGetAllProductions&#32;firstSets&#32;xs</span></span></code>
-                  <br/>
-                  <br/>
-                  Parameters: 
-                  <ul>
-                    <span>
-                      <b>
-                        fGetAllProductions
-                      </b>
-                      :
-                      <code><span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-nonterminal.html">Nonterminal</a>&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1">Set</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-production.html">Production</a>&gt;</span></span></code>
-                    </span>
-                    <br/>
-                    <span>
-                      <b>
-                        firstSets
-                      </b>
-                      :
-                      <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-firstsets.html">FirstSets</a></code>
-                    </span>
-                    <br/>
-                    <span>
-                      <b>
-                        xs
-                      </b>
-                      :
-                      <code><span>seq&lt;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-lr0item.html">LR0Item</a>&#32;*&#32;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-lookaheadset.html">LookaheadSet</a></span>&gt;</span></code>
-                    </span>
-                    <br/>
-                  </ul>
-                  <br/>
-                  <span>
-                    Returns: 
-                    <code><span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-lr1item.html">LR1Item</a>&#32;list</span></code>
-                  </span>
-                  <br/>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td class="fsdocs-member-xmldoc">
-            <div class="fsdocs-summary">
-              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:M:Farkle.Builder.LALRBuild.closure1`')">
-                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
-                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
-              </div>
-              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:Farkle.Builder.LALRBuild.closure1\'/>')">
-                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
-                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
-              </div>
-              <p class="fsdocs-summary">
-                
- Computes the LR(1) CLOSURE function of a single LR(1) item, which
- is made of the given `LR0Item` and the given set of lookahead `Terminal`s.
- A function to get the FIRST set and the productions of a `Nonterminal` is required.
-
-              </p>
-            </div>
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  fGetAllProductions
-                </span>
-                :
-                <code><span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-nonterminal.html">Nonterminal</a>&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1">Set</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-production.html">Production</a>&gt;</span></span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  firstSets
-                </span>
-                :
-                <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-firstsets.html">FirstSets</a></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  xs
-                </span>
-                :
-                <code><span>seq&lt;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-lr0item.html">LR0Item</a>&#32;*&#32;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-lookaheadset.html">LookaheadSet</a></span>&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns:
-                </span>
-                <code><span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-lr1item.html">LR1Item</a>&#32;list</span></code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
-          </td>
-        </tr>
-        <tr>
-          <td class="fsdocs-member-usage">
-            <div>
-              <code onmouseout="hideTip(event, '69', 69)" onmouseover="showTip(event, '69', 69)">
-                <p>
-                  <a id="computeFirstSetMap">
-                    <a href="#computeFirstSetMap">
-                      <code><span>computeFirstSetMap&#32;<span>terminals&#32;nonterminals&#32;productions</span></span></code>
-                    </a>
-                  </a>
-                </p>
-              </code>
-              <div class="fsdocs-tip" id="69">
-                <div class="member-tooltip">
-                  Full Usage: 
-                  <code><span>computeFirstSetMap&#32;<span>terminals&#32;nonterminals&#32;productions</span></span></code>
-                  <br/>
-                  <br/>
-                  Parameters: 
-                  <ul>
-                    <span>
-                      <b>
-                        terminals
-                      </b>
-                      :
-                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-terminal.html">Terminal</a>&gt;</span></code>
-                    </span>
-                    <br/>
-                    <span>
-                      <b>
-                        nonterminals
-                      </b>
-                      :
-                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-nonterminal.html">Nonterminal</a>&gt;</span></code>
-                    </span>
-                    <br/>
-                    <span>
-                      <b>
-                        productions
-                      </b>
-                      :
-                      <code><span>seq&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-production.html">Production</a>&gt;</span></code>
-                    </span>
-                    <br/>
-                  </ul>
-                  <br/>
-                  <span>
-                    Returns: 
-                    <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-firstsets.html">FirstSets</a></code>
-                  </span>
-                  <br/>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td class="fsdocs-member-xmldoc">
-            <div class="fsdocs-summary">
-              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:M:Farkle.Builder.LALRBuild.computeFirstSetMap`')">
-                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
-                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
-              </div>
-              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:Farkle.Builder.LALRBuild.computeFirstSetMap\'/>')">
-                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
-                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
-              </div>
-              <p class="fsdocs-summary">
-                
- Computes the FIRST set of the `Nonterminal`s
- of the given sequence of `Production`s.
-
-              </p>
-            </div>
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  terminals
-                </span>
-                :
-                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-terminal.html">Terminal</a>&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  nonterminals
-                </span>
-                :
-                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-nonterminal.html">Nonterminal</a>&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  productions
-                </span>
-                :
-                <code><span>seq&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-production.html">Production</a>&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns:
-                </span>
-                <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-firstsets.html">FirstSets</a></code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
-          </td>
-        </tr>
-        <tr>
-          <td class="fsdocs-member-usage">
-            <div>
-              <code onmouseout="hideTip(event, '70', 70)" onmouseover="showTip(event, '70', 70)">
-                <p>
-                  <a id="computeLookaheadItems">
-                    <a href="#computeLookaheadItems">
-                      <code><span>computeLookaheadItems&#32;<span>fGetAllProductions&#32;firstSets&#32;itemSets</span></span></code>
-                    </a>
-                  </a>
-                </p>
-              </code>
-              <div class="fsdocs-tip" id="70">
-                <div class="member-tooltip">
-                  Full Usage: 
-                  <code><span>computeLookaheadItems&#32;<span>fGetAllProductions&#32;firstSets&#32;itemSets</span></span></code>
-                  <br/>
-                  <br/>
-                  Parameters: 
-                  <ul>
-                    <span>
-                      <b>
-                        fGetAllProductions
-                      </b>
-                      :
-                      <code><span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-nonterminal.html">Nonterminal</a>&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1">Set</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-production.html">Production</a>&gt;</span></span></code>
-                    </span>
-                    <br/>
-                    <span>
-                      <b>
-                        firstSets
-                      </b>
-                      :
-                      <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-firstsets.html">FirstSets</a></code>
-                    </span>
-                    <br/>
-                    <span>
-                      <b>
-                        itemSets
-                      </b>
-                      :
-                      <code><span>ResizeArray&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-lr0itemset.html">LR0ItemSet</a>&gt;</span></code>
-                    </span>
-                    <br/>
-                  </ul>
-                  <br/>
-                  <span>
-                    Returns: 
-                    <code><span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-lookaheadsetdictionary-1.html">LookaheadSetDictionary</a>&lt;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-lr0item.html">LR0Item</a>&#32;*&#32;int</span>&gt;</span></code>
-                  </span>
-                  <br/>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td class="fsdocs-member-xmldoc">
-            <div class="fsdocs-summary">
-              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:M:Farkle.Builder.LALRBuild.computeLookaheadItems`')">
-                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
-                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
-              </div>
-              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:Farkle.Builder.LALRBuild.computeLookaheadItems\'/>')">
-                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
-                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
-              </div>
-              <p class="fsdocs-summary">
-                
- Computes the lookahead symbols for the given `LR0ItemSet`s.
-
-              </p>
-            </div>
-            <dl class="fsdocs-params">
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  fGetAllProductions
-                </span>
-                :
-                <code><span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-nonterminal.html">Nonterminal</a>&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1">Set</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-production.html">Production</a>&gt;</span></span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  firstSets
-                </span>
-                :
-                <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-firstsets.html">FirstSets</a></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  itemSets
-                </span>
-                :
-                <code><span>ResizeArray&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-lr0itemset.html">LR0ItemSet</a>&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns:
-                </span>
-                <code><span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-lookaheadsetdictionary-1.html">LookaheadSetDictionary</a>&lt;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-lr0item.html">LR0Item</a>&#32;*&#32;int</span>&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
+              </dd>
             </dl>
           </td>
         </tr>
@@ -576,9 +283,9 @@
             <div>
               <code onmouseout="hideTip(event, '71', 71)" onmouseover="showTip(event, '71', 71)">
                 <p>
-                  <a id="createLALRStates">
-                    <a href="#createLALRStates">
-                      <code><span>createLALRStates&#32;<span>fGetAllProductions&#32;firstSets&#32;fResolveConflict&#32;conflicts&#32;startSymbol&#32;itemSets&#32;lookaheadTables</span></span></code>
+                  <a id="buildProductionsToLALRStatesEx">
+                    <a href="#buildProductionsToLALRStatesEx">
+                      <code><span>buildProductionsToLALRStatesEx&#32;<span>ct&#32;options&#32;resolver&#32;startSymbol&#32;terminals&#32;nonterminals&#32;productions</span></span></code>
                     </a>
                   </a>
                 </p>
@@ -586,41 +293,39 @@
               <div class="fsdocs-tip" id="71">
                 <div class="member-tooltip">
                   Full Usage: 
-                  <code><span>createLALRStates&#32;<span>fGetAllProductions&#32;firstSets&#32;fResolveConflict&#32;conflicts&#32;startSymbol&#32;itemSets&#32;lookaheadTables</span></span></code>
+                  <code><span>buildProductionsToLALRStatesEx&#32;<span>ct&#32;options&#32;resolver&#32;startSymbol&#32;terminals&#32;nonterminals&#32;productions</span></span></code>
                   <br/>
                   <br/>
                   Parameters: 
                   <ul>
                     <span>
                       <b>
-                        fGetAllProductions
+                        ct
                       </b>
                       :
-                      <code><span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-nonterminal.html">Nonterminal</a>&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1">Set</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-production.html">Production</a>&gt;</span></span></code>
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                       - 
+                      Used to cancel the operation.
                     </span>
                     <br/>
                     <span>
                       <b>
-                        firstSets
+                        options
                       </b>
                       :
-                      <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-firstsets.html">FirstSets</a></code>
+                      <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-buildoptions.html">BuildOptions</a></code>
+                       - 
+                      Used to further configure the operation.
                     </span>
                     <br/>
                     <span>
                       <b>
-                        fResolveConflict
+                        resolver
                       </b>
                       :
-                      <code><span><span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-terminal.html">Terminal</a>&#32;option</span>&#32;->&#32;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-lalraction.html">LALRAction</a>&#32;->&#32;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-lalraction.html">LALRAction</a>&#32;->&#32;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrconflictresolution-conflictresolutiondecision.html">ConflictResolutionDecision</a></span></code>
-                    </span>
-                    <br/>
-                    <span>
-                      <b>
-                        conflicts
-                      </b>
-                      :
-                      <code><span>ResizeArray&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-builderror.html">BuildError</a>&gt;</span></code>
+                      <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrconflictresolution-lalrconflictresolver.html">LALRConflictResolver</a></code>
+                       - 
+                      Used to resolve LALR conflicts.
                     </span>
                     <br/>
                     <span>
@@ -629,30 +334,48 @@
                       </b>
                       :
                       <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-nonterminal.html">Nonterminal</a></code>
+                       - 
+                      The grammar's starting symbol.
                     </span>
                     <br/>
                     <span>
                       <b>
-                        itemSets
+                        terminals
                       </b>
                       :
-                      <code><span>ResizeArray&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-lr0itemset.html">LR0ItemSet</a>&gt;</span></code>
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-terminal.html">Terminal</a>&gt;</span></code>
+                       - 
+                      The grammar's terminals.
                     </span>
                     <br/>
                     <span>
                       <b>
-                        lookaheadTables
+                        nonterminals
                       </b>
                       :
-                      <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-lookaheaditemstable.html">LookaheadItemsTable</a></code>
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-nonterminal.html">Nonterminal</a>&gt;</span></code>
+                       - 
+                      The grammar's nonterminals.
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        productions
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-production.html">Production</a>&gt;</span></code>
+                       - 
+                      The grammar's productions.
                     </span>
                     <br/>
                   </ul>
                   <br/>
                   <span>
                     Returns: 
-                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-lalrstate.html">LALRState</a>&gt;</span></code>
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpresult-2">Result</a>&lt;<span><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-lalrstate.html">LALRState</a>&gt;</span>,&#32;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-builderror.html">BuildError</a>&#32;list</span></span>&gt;</span></code>
                   </span>
+                  An immutable array of the LALR states or a
+ list of the errors that were encountered.
                   <br/>
                 </div>
               </div>
@@ -660,53 +383,55 @@
           </td>
           <td class="fsdocs-member-xmldoc">
             <div class="fsdocs-summary">
-              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:M:Farkle.Builder.LALRBuild.createLALRStates`')">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:M:Farkle.Builder.LALRBuild.buildProductionsToLALRStatesEx`')">
                 <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
                 <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
               </div>
-              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:Farkle.Builder.LALRBuild.createLALRStates\'/>')">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:Farkle.Builder.LALRBuild.buildProductionsToLALRStatesEx\'/>')">
                 <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
                 <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
               </div>
               <p class="fsdocs-summary">
-                
- Creates an LALR state table.
-
+                Builds an LALR parsing table.
               </p>
             </div>
             <dl class="fsdocs-params">
               <dt class="fsdocs-param">
                 <span class="fsdocs-param-name">
-                  fGetAllProductions
+                  ct
                 </span>
                 :
-                <code><span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-nonterminal.html">Nonterminal</a>&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1">Set</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-production.html">Production</a>&gt;</span></span></code>
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
               </dt>
-              <dd class="fsdocs-param-docs"></dd>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Used to cancel the operation.
+                </p>
+              </dd>
               <dt class="fsdocs-param">
                 <span class="fsdocs-param-name">
-                  firstSets
+                  options
                 </span>
                 :
-                <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-firstsets.html">FirstSets</a></code>
+                <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-buildoptions.html">BuildOptions</a></code>
               </dt>
-              <dd class="fsdocs-param-docs"></dd>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Used to further configure the operation.
+                </p>
+              </dd>
               <dt class="fsdocs-param">
                 <span class="fsdocs-param-name">
-                  fResolveConflict
+                  resolver
                 </span>
                 :
-                <code><span><span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-terminal.html">Terminal</a>&#32;option</span>&#32;->&#32;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-lalraction.html">LALRAction</a>&#32;->&#32;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-lalraction.html">LALRAction</a>&#32;->&#32;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrconflictresolution-conflictresolutiondecision.html">ConflictResolutionDecision</a></span></code>
+                <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrconflictresolution-lalrconflictresolver.html">LALRConflictResolver</a></code>
               </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  conflicts
-                </span>
-                :
-                <code><span>ResizeArray&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-builderror.html">BuildError</a>&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  Used to resolve LALR conflicts.
+                </p>
+              </dd>
               <dt class="fsdocs-param">
                 <span class="fsdocs-param-name">
                   startSymbol
@@ -714,237 +439,74 @@
                 :
                 <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-nonterminal.html">Nonterminal</a></code>
               </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  itemSets
-                </span>
-                :
-                <code><span>ResizeArray&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-lr0itemset.html">LR0ItemSet</a>&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  lookaheadTables
-                </span>
-                :
-                <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-lookaheaditemstable.html">LookaheadItemsTable</a></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns:
-                </span>
-                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-lalrstate.html">LALRState</a>&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
-          </td>
-        </tr>
-        <tr>
-          <td class="fsdocs-member-usage">
-            <div>
-              <code onmouseout="hideTip(event, '72', 72)" onmouseover="showTip(event, '72', 72)">
+              <dd class="fsdocs-param-docs">
                 <p>
-                  <a id="createLR0KernelItems">
-                    <a href="#createLR0KernelItems">
-                      <code><span>createLR0KernelItems&#32;<span>fGetAllProductions&#32;startSymbol</span></span></code>
-                    </a>
-                  </a>
+                  The grammar's starting symbol.
                 </p>
-              </code>
-              <div class="fsdocs-tip" id="72">
-                <div class="member-tooltip">
-                  Full Usage: 
-                  <code><span>createLR0KernelItems&#32;<span>fGetAllProductions&#32;startSymbol</span></span></code>
-                  <br/>
-                  <br/>
-                  Parameters: 
-                  <ul>
-                    <span>
-                      <b>
-                        fGetAllProductions
-                      </b>
-                      :
-                      <code><span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-nonterminal.html">Nonterminal</a>&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1">Set</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-production.html">Production</a>&gt;</span></span></code>
-                    </span>
-                    <br/>
-                    <span>
-                      <b>
-                        startSymbol
-                      </b>
-                      :
-                      <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-nonterminal.html">Nonterminal</a></code>
-                    </span>
-                    <br/>
-                  </ul>
-                  <br/>
-                  <span>
-                    Returns: 
-                    <code><span>ResizeArray&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-lr0itemset.html">LR0ItemSet</a>&gt;</span></code>
-                  </span>
-                  <br/>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td class="fsdocs-member-xmldoc">
-            <div class="fsdocs-summary">
-              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:M:Farkle.Builder.LALRBuild.createLR0KernelItems`')">
-                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
-                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
-              </div>
-              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:Farkle.Builder.LALRBuild.createLR0KernelItems\'/>')">
-                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
-                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
-              </div>
-              <p class="fsdocs-summary">
-                
- Creates the LR(0) kernel sets for a grammar.
- A function that gets the corresponding productions for
- a nonterminal and the start symbol are required.
-
-              </p>
-            </div>
-            <dl class="fsdocs-params">
+              </dd>
               <dt class="fsdocs-param">
                 <span class="fsdocs-param-name">
-                  fGetAllProductions
+                  terminals
                 </span>
                 :
-                <code><span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-nonterminal.html">Nonterminal</a>&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1">Set</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-production.html">Production</a>&gt;</span></span></code>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-terminal.html">Terminal</a>&gt;</span></code>
               </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  startSymbol
-                </span>
-                :
-                <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-nonterminal.html">Nonterminal</a></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
-            </dl>
-            <dl class="fsdocs-returns">
-              <dt>
-                <span class="fsdocs-return-name">
-                  Returns:
-                </span>
-                <code><span>ResizeArray&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-lr0itemset.html">LR0ItemSet</a>&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-return-docs"></dd>
-            </dl>
-          </td>
-        </tr>
-        <tr>
-          <td class="fsdocs-member-usage">
-            <div>
-              <code onmouseout="hideTip(event, '73', 73)" onmouseover="showTip(event, '73', 73)">
+              <dd class="fsdocs-param-docs">
                 <p>
-                  <a id="getFirstSetOfSequence">
-                    <a href="#getFirstSetOfSequence">
-                      <code><span>getFirstSetOfSequence&#32;<span>firstSets&#32;lookahead&#32;xs</span></span></code>
-                    </a>
-                  </a>
+                  The grammar's terminals.
                 </p>
-              </code>
-              <div class="fsdocs-tip" id="73">
-                <div class="member-tooltip">
-                  Full Usage: 
-                  <code><span>getFirstSetOfSequence&#32;<span>firstSets&#32;lookahead&#32;xs</span></span></code>
-                  <br/>
-                  <br/>
-                  Parameters: 
-                  <ul>
-                    <span>
-                      <b>
-                        firstSets
-                      </b>
-                      :
-                      <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-firstsets.html">FirstSets</a></code>
-                    </span>
-                    <br/>
-                    <span>
-                      <b>
-                        lookahead
-                      </b>
-                      :
-                      <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-lookaheadset.html">LookaheadSet</a></code>
-                    </span>
-                    <br/>
-                    <span>
-                      <b>
-                        xs
-                      </b>
-                      :
-                      <code><span>seq&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-lalrsymbol.html">LALRSymbol</a>&gt;</span></code>
-                    </span>
-                    <br/>
-                  </ul>
-                  <br/>
-                  <span>
-                    Returns: 
-                    <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-lookaheadset.html">LookaheadSet</a></code>
-                  </span>
-                  <br/>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td class="fsdocs-member-xmldoc">
-            <div class="fsdocs-summary">
-              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:M:Farkle.Builder.LALRBuild.getFirstSetOfSequence`')">
-                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
-                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
-              </div>
-              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:Farkle.Builder.LALRBuild.getFirstSetOfSequence\'/>')">
-                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
-                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
-              </div>
-              <p class="fsdocs-summary">
-                
- Returns the FIRST set of the given sequence of `LALRSymbol`s.
- If all the symbols contain the empty symbol in their FIRST set,
- the terminals in `lookahead` are included in the result.
-
-              </p>
-            </div>
-            <dl class="fsdocs-params">
+              </dd>
               <dt class="fsdocs-param">
                 <span class="fsdocs-param-name">
-                  firstSets
+                  nonterminals
                 </span>
                 :
-                <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-firstsets.html">FirstSets</a></code>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-nonterminal.html">Nonterminal</a>&gt;</span></code>
               </dt>
-              <dd class="fsdocs-param-docs"></dd>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The grammar's nonterminals.
+                </p>
+              </dd>
               <dt class="fsdocs-param">
                 <span class="fsdocs-param-name">
-                  lookahead
+                  productions
                 </span>
                 :
-                <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-lookaheadset.html">LookaheadSet</a></code>
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-production.html">Production</a>&gt;</span></code>
               </dt>
-              <dd class="fsdocs-param-docs"></dd>
-              <dt class="fsdocs-param">
-                <span class="fsdocs-param-name">
-                  xs
-                </span>
-                :
-                <code><span>seq&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-lalrsymbol.html">LALRSymbol</a>&gt;</span></code>
-              </dt>
-              <dd class="fsdocs-param-docs"></dd>
+              <dd class="fsdocs-param-docs">
+                <p>
+                  The grammar's productions.
+                </p>
+              </dd>
             </dl>
             <dl class="fsdocs-returns">
               <dt>
                 <span class="fsdocs-return-name">
                   Returns:
                 </span>
-                <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-lalrbuildtypes-lookaheadset.html">LookaheadSet</a></code>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpresult-2">Result</a>&lt;<span><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.immutable.immutablearray-1">ImmutableArray</a>&lt;<a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-lalrstate.html">LALRState</a>&gt;</span>,&#32;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-builderror.html">BuildError</a>&#32;list</span></span>&gt;</span></code>
               </dt>
-              <dd class="fsdocs-return-docs"></dd>
+              <dd class="fsdocs-return-docs">
+                <p>
+                  An immutable array of the LALR states or a
+ list of the errors that were encountered.
+                </p>
+              </dd>
             </dl>
+            <table class="fsdocs-exception-list">
+              <tr>
+                <td>
+                  <a href="https://docs.microsoft.com/dotnet/api/operationcanceledexception">
+                    OperationCanceledException
+                  </a>
+                </td>
+                <td>
+                  <span class="fsdocs-param-name">ct</span> was triggered.
+                </td>
+              </tr>
+            </table>
           </td>
         </tr>
       </tbody>

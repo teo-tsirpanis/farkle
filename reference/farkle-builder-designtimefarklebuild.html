@@ -107,7 +107,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '32', 32)" onmouseover="showTip(event, '32', 32)">
+              <code onmouseout="hideTip(event, '33', 33)" onmouseover="showTip(event, '33', 33)">
                 <p>
                   <a id="build">
                     <a href="#build">
@@ -116,7 +116,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="32">
+              <div class="fsdocs-tip" id="33">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>build&#32;<span>df</span></span></code>
@@ -186,7 +186,119 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '33', 33)" onmouseover="showTip(event, '33', 33)">
+              <code onmouseout="hideTip(event, '34', 34)" onmouseover="showTip(event, '34', 34)">
+                <p>
+                  <a id="buildEx">
+                    <a href="#buildEx">
+                      <code><span>buildEx&#32;<span>ct&#32;options&#32;df</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="34">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>buildEx&#32;<span>ct&#32;options&#32;df</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        ct
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        options
+                      </b>
+                      :
+                      <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-buildoptions.html">BuildOptions</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        df
+                      </b>
+                      :
+                      <code><span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-designtimefarkle-1.html">DesigntimeFarkle</a>&lt;'TOutput&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpresult-2">Result</a>&lt;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-grammar.html">Grammar</a>,&#32;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-builderror.html">BuildError</a>&#32;list</span></span>&gt;</span>&#32;*&#32;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-postprocessor-1.html">PostProcessor</a>&lt;'TOutput&gt;</span></span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('```cref:M:Farkle.Builder.DesigntimeFarkleBuild.BuildEx``1```')">
+                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:Farkle.Builder.DesigntimeFarkleBuild.BuildEx``1\'/>')">
+                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <p class="fsdocs-summary">
+                
+ Creates a `Grammar` and a `PostProcessor` from a typed `DesigntimeFarkle`.
+ The construction of the grammar may fail. In this case, the output of the
+ post-processor is indeterminate. Using this function (and all others in this
+ module) will always build a new grammar, even if a precompiled one is available.
+ This function also allows the build to be cancelled and further configured.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ct
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  options
+                </span>
+                :
+                <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-buildoptions.html">BuildOptions</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  df
+                </span>
+                :
+                <code><span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-designtimefarkle-1.html">DesigntimeFarkle</a>&lt;'TOutput&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><span><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpresult-2">Result</a>&lt;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-grammar.html">Grammar</a>,&#32;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-builderror.html">BuildError</a>&#32;list</span></span>&gt;</span>&#32;*&#32;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-postprocessor-1.html">PostProcessor</a>&lt;'TOutput&gt;</span></span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '35', 35)" onmouseover="showTip(event, '35', 35)">
                 <p>
                   <a id="buildGrammarOnly">
                     <a href="#buildGrammarOnly">
@@ -195,7 +307,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="33">
+              <div class="fsdocs-tip" id="35">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>buildGrammarOnly&#32;<span>grammarDef</span></span></code>
@@ -262,7 +374,117 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '34', 34)" onmouseover="showTip(event, '34', 34)">
+              <code onmouseout="hideTip(event, '36', 36)" onmouseover="showTip(event, '36', 36)">
+                <p>
+                  <a id="buildGrammarOnlyEx">
+                    <a href="#buildGrammarOnlyEx">
+                      <code><span>buildGrammarOnlyEx&#32;<span>ct&#32;options&#32;grammarDef</span></span></code>
+                    </a>
+                  </a>
+                </p>
+              </code>
+              <div class="fsdocs-tip" id="36">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>buildGrammarOnlyEx&#32;<span>ct&#32;options&#32;grammarDef</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameters: 
+                  <ul>
+                    <span>
+                      <b>
+                        ct
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        options
+                      </b>
+                      :
+                      <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-buildoptions.html">BuildOptions</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        grammarDef
+                      </b>
+                      :
+                      <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-grammardefinition.html">GrammarDefinition</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Returns: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpresult-2">Result</a>&lt;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-grammar.html">Grammar</a>,&#32;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-builderror.html">BuildError</a>&#32;list</span></span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-member-xmldoc">
+            <div class="fsdocs-summary">
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('`cref:M:Farkle.Builder.DesigntimeFarkleBuild.BuildGrammarOnlyEx`')">
+                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md.png" class="normal"/>
+                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-md-blue.png" class="hover"/>
+              </div>
+              <div class="fsdocs-source-link" onclick="Clipboard_CopyTo('<see cref=\'M:Farkle.Builder.DesigntimeFarkleBuild.BuildGrammarOnlyEx\'/>')">
+                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy.png" class="normal"/>
+                <img src="https://teo-tsirpanis.github.io/Farkle/content/img/copy-blue.png" class="hover"/>
+              </div>
+              <p class="fsdocs-summary">
+                
+ Creates a `Grammar` from a `GrammarDefinition`. The operation
+ can be cancelled, throwing an `OperationCanceledException`.
+ It also accepts a `BuildOptions` object, allowing further configuration.
+
+              </p>
+            </div>
+            <dl class="fsdocs-params">
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  ct
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  options
+                </span>
+                :
+                <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-buildoptions.html">BuildOptions</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+              <dt class="fsdocs-param">
+                <span class="fsdocs-param-name">
+                  grammarDef
+                </span>
+                :
+                <code><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-grammardefinition.html">GrammarDefinition</a></code>
+              </dt>
+              <dd class="fsdocs-param-docs"></dd>
+            </dl>
+            <dl class="fsdocs-returns">
+              <dt>
+                <span class="fsdocs-return-name">
+                  Returns:
+                </span>
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpresult-2">Result</a>&lt;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-grammar-grammar.html">Grammar</a>,&#32;<span><a href="https://teo-tsirpanis.github.io/Farkle/reference/farkle-builder-builderror.html">BuildError</a>&#32;list</span></span>&gt;</span></code>
+              </dt>
+              <dd class="fsdocs-return-docs"></dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-usage">
+            <div>
+              <code onmouseout="hideTip(event, '37', 37)" onmouseover="showTip(event, '37', 37)">
                 <p>
                   <a id="buildPostProcessorOnly">
                     <a href="#buildPostProcessorOnly">
@@ -271,7 +493,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="34">
+              <div class="fsdocs-tip" id="37">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>buildPostProcessorOnly&#32;<span>df</span></span></code>
@@ -341,7 +563,7 @@
         <tr>
           <td class="fsdocs-member-usage">
             <div>
-              <code onmouseout="hideTip(event, '35', 35)" onmouseover="showTip(event, '35', 35)">
+              <code onmouseout="hideTip(event, '38', 38)" onmouseover="showTip(event, '38', 38)">
                 <p>
                   <a id="createGrammarDefinition">
                     <a href="#createGrammarDefinition">
@@ -350,7 +572,7 @@
                   </a>
                 </p>
               </code>
-              <div class="fsdocs-tip" id="35">
+              <div class="fsdocs-tip" id="38">
                 <div class="member-tooltip">
                   Full Usage: 
                   <code><span>createGrammarDefinition&#32;<span>df</span></span></code>
